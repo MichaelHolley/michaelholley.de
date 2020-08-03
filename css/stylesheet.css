@@ -1,0 +1,54 @@
+#header-separator {
+    height: 2px;
+    background-color: #ff5e00;
+}
+
+#header-div a,
+a {
+    color: #ff5e00;
+}
+
+#header-div a:hover .fa-xing:before,
+#header-div a:hover .fa-github:before,
+#header-div a:hover .fa-envelope:before,
+a:hover {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.progress {
+    background-color: #aaa;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.progress-bar {
+    background-color: #ff5e00;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    background-color: #aaa;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-color {
+    background-color: #ff5e00;
+}
+
+.mh-badge {
+    margin: 2px 5px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #aaa;
+    color: #343a40;
+}
+
+.card .btn-primary {
+    background-color: #ff5e00;
+    color: #343a40;
+    border-color: #ff5e00;
+}

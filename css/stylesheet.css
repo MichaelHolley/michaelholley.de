@@ -1,11 +1,11 @@
 #header-separator {
     height: 2px;
-    background-color: #00ff6e;
+    background-color: #ff5e00;
 }
 
 #header-div a,
 a {
-    color: #00ff6e;
+    color: #ff5e00;
 }
 
 #header-div a:hover .fa-xing:before,
@@ -23,7 +23,7 @@ a:hover {
 }
 
 .progress-bar {
-    background-color: #00ff6e;
+    background-color: #ff5e00;
 }
 
 .dot {
@@ -35,7 +35,7 @@ a:hover {
 }
 
 .dot-color {
-    background-color: #00ff6e;
+    background-color: #ff5e00;
 }
 
 .mh-badge {

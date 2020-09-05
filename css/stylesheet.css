@@ -52,3 +52,32 @@ a:hover {
     color: #343a40;
     border-color: #ff5e00;
 }
+
+.form-btn {
+    background-color: #343a40;
+    color: #ff5e00;
+    border: 2px solid #343a40;
+    border-radius: 5px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.form-btn:hover {
+    background-color: #ff5e00;
+    color: #343a40;
+    border-color: #ff5e00;
+}
+
+.form-btn-outline {
+    color: #343a40;
+    border: 2px solid #ff5e00;
+    border-radius: 5px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.form-btn-outline:hover {
+    background-color: transparent;
+    color: #ff5e00;
+    border-color: #ff5e00;
+}

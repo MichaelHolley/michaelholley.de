@@ -10,46 +10,13 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://kit.fontawesome.com/14118e334b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Michael Holley</title>
 </head>
 
 <body>
-
-    <header>
-        <div class="bg-secondary" style="height: 400px;">
-            <div id="header-div" class="container text-center my-auto">
-                <p class="h1 text-white mb-4" style="padding-top: 100px;">Michael Holley</p>
-                <p class="h3 text-white my-4 mx-3">Auszubildender zum Fachinformatiker für Anwendungsentwicklung</p>
-                <p class="h4 my-4">
-                    <a href="https://www.xing.com/profile/Michael_Holley/cv" target="_blank" title="Xing-Profil">
-                        <i class="fab fa-xing fa-lg mx-2"></i>
-                    </a>
-                    <a href="https://github.com/MichaelHolley" target="_blank" title="GitHub-Profil">
-                        <i class="fab fa-github fa-lg mx-2"></i>
-                    </a>
-                    <a href="contact.html" title="Kontakt">
-                        <i class="fas fa-envelope fa-lg mx-2"></i>
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <div id="header-separator"></div>
-
-        <nav class="navbar navbar-dark navbar-expand-sm bg-dark justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item mx-2" data-toggle="tooltip">
-                    <a class="nav-link h5" href="index.html">Über mich</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link h5" href="projects.html">Projekte</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link h5" href="cv.html">Lebenslauf</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header"></header>
 
     <main class="container">
         <div class="my-5 text-justify">
@@ -169,11 +136,10 @@
                 </div>
             </div>
         </div>
-
-        <footer class="mt-5 mb-2 text-center">
-            <b class="text-dark"><a href="contact.html" title="E-Mail">Kontaktieren Sie mich</a></b>
-        </footer>
     </main>
+
+    <footer id="footer"></footer>
+
     <script>
         function getAge(birth) {
             var today = new Date();
@@ -193,11 +159,13 @@
                 age = parseInt(age) - 1;
             }
             return age;
-
         }
 
         document.getElementById("age-div").innerHTML = getAge(new Date("June 8, 1999"));
         document.getElementById("exp-div").innerHTML = getAge(new Date("July 1, 2016"));
+
+        $("#header").load("/assets/components/header.html");
+        $("#footer").load("/assets/components/footer.html");
     </script>
 </body>
 

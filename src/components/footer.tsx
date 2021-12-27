@@ -4,19 +4,24 @@ import {
   FaXingSquare,
   FaLinkedin,
   FaEnvelope,
-  FaExternalLinkAlt,
+  FaShareAlt,
 } from "react-icons/fa";
 
 function Footer() {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <div className="bg-b0 fixed bottom-5 right-5 p-3 rounded-full">
+    <footer className="bg-b0 fixed bottom-5 right-5 p-3 rounded-full">
       <ul className="flex flex-row-reverse text-w0">
-        <li className="mx-2 cursor-pointer" onClick={() => setCollapsed(!collapsed)}>
-          <FaExternalLinkAlt size="1.5em" />
+        <li
+          className="mx-2 cursor-pointer"
+          onClick={() => setCollapsed(!collapsed)}
+        >
+          <FaShareAlt size="1.5em" />
         </li>
-        <li className="mx-2" hidden={collapsed}><span className="border-r-2"> </span></li>
+        <li className="mx-2" hidden={collapsed}>
+          <span className="border-r-2"> </span>
+        </li>
         {!collapsed ? (
           <>
             <NavBarIconItem
@@ -40,7 +45,7 @@ function Footer() {
           <></>
         )}
       </ul>
-    </div>
+    </footer>
   );
 }
 

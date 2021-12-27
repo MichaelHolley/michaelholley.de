@@ -1,11 +1,14 @@
 import React from "react";
+import PageHeader from "../components/page-header";
 
 function CV() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">CV</h1>
-      <p>as odhoah doash doashodash od haso</p>
-    </>
+    <main className="bg-w0">
+      <PageHeader
+        imgSrc=""
+        title="Lebenslauf"
+      ></PageHeader>
+    </main>
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
   FaProjectDiagram,
   FaUser,
-  FaAddressBook,
+  FaCubes,
   FaTimes,
   FaBars,
 } from "react-icons/fa";
@@ -30,19 +30,19 @@ function NavBar() {
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <NavBarLinkItem
               route="/"
-              title="Home"
+              title="About"
               icon={<FaUser size="1.2em" />}
+            />
+            <NavBarLinkItem
+              route="Skills"
+              title="Skills"
+              icon={<FaCubes size="1.2em" />}
             />
             <NavBarLinkItem
               route="Projects"
               title="Projekte"
               icon={<FaProjectDiagram size="1.2em" />}
             />
-            <NavBarLinkItem
-              route="CV"
-              title="Lebenslauf"
-              icon={<FaAddressBook size="1.2em" />}
-            />{" "}
           </ul>
         </div>
       </div>

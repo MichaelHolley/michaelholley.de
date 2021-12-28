@@ -1,15 +1,15 @@
 import React from "react";
 import PageHeader from "../components/page-header";
 
-function CV() {
+function Skills() {
   return (
     <main className="bg-w0">
       <PageHeader
         imgSrc=""
-        title="Lebenslauf"
+        title="Skills"
       ></PageHeader>
     </main>
   );
 }
 
-export default CV;
+export default Skills;

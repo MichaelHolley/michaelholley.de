@@ -11,7 +11,7 @@ function Footer() {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <footer className="bg-b0 fixed bottom-5 right-5 p-3 rounded-full">
+    <footer className="bg-b0 fixed bottom-5 right-5 p-3 rounded-full border-2 border-w0">
       <ul className="flex flex-row-reverse text-w0">
         <li
           className="mx-2 cursor-pointer"

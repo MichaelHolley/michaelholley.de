@@ -22,9 +22,19 @@ function NavBar() {
         <button
           type="button"
           onClick={() => setCollapsed(!collapsed)}
-          className="inline-flex items-center p-2 ml-3 text-sm text-b0 rounded-lg md:hidden hover:bg-gray-100focus:outline-none focus:ring-2 focus:ring-gray-200 hover:animate-pulse"
+          className="inline-flex items-center p-2 ml-3 text-sm text-b0 rounded-lg md:hidden"
         >
-          {collapsed ? <FaBars size="1.5em" /> : <FaTimes size="1.5em" />}
+          {collapsed ? (
+            <FaBars
+              size="1.5em"
+              className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
+            />
+          ) : (
+            <FaTimes
+              size="1.5em"
+              className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
+            />
+          )}
         </button>
         <div className="w-full md:block md:w-auto" hidden={collapsed}>
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
@@ -55,10 +65,10 @@ function NavBarLinkItem(props: { route: string; title: string; icon: any }) {
     <li>
       <a
         href={props.route}
-        className="py-2 pr-4 pl-3 text-b0 text-md flex rounded hover:bg-r0 hover:bg-opacity-40 transition-all duration-500"
+        className="py-2 pr-4 pl-3 text-b0 text-md flex rounded hover:bg-r0 hover:bg-opacity-40 transition-all duration-500 group"
         aria-current="page"
       >
-        <span className="mr-1">{props.icon}</span>
+        <span className="mr-2 group-hover:scale-125 transition duration-500 ease-in-out">{props.icon}</span>
         <span>{props.title}</span>
       </a>
     </li>

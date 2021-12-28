@@ -10,9 +10,6 @@ module.exports = {
         b0: '#30475E',
         bl0: '#121212'
       },
-      transitionProperty: {
-        'width': 'width'
-      },
     },
   },
   plugins: [],

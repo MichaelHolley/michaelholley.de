@@ -2,19 +2,34 @@ import React, { useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 
 function Skills() {
-  const [offset, setOffset] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [allowWheelInput, setAllowWheelInput] = useState(true);
 
-  useEffect(() => {
-    window.onscroll = () => {
-      setOffset(window.pageYOffset);
-    };
-  }, []);
+  const sections = [1, 2, 3, 4, 5];
 
-  console.log(offset);
+  const handleWheel = (event: React.WheelEvent) => {
+    if (!allowWheelInput) {
+      return;
+    }
+
+    setAllowWheelInput(false);
+    setTimeout(() => setAllowWheelInput(true), 200);
+
+    if (event.deltaY < 0) {
+      setIndex((index + 1) % sections.length);
+    } else if (event.deltaY > 0) {
+      setIndex((index + 1) % sections.length);
+    }
+
+    console.log(index);
+  };
 
   return (
-    <main className="bg-w0">
-      <span className="w-screen h-screen absolute top-0 left-0 -z-10" onWheel={() => console.log("t")}></span>
+    <main>
+      <span
+        className="w-screen h-screen absolute top-0 left-0 -z-10"
+        onWheel={(e) => handleWheel(e)}
+      ></span>
       <Particles
         id="tsparticles"
         options={{

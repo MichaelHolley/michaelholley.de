@@ -83,8 +83,4 @@ function Skills() {
   );
 }
 
-const getParticlesCanvas = () => {
-  return;
-};
-
 export default Skills;

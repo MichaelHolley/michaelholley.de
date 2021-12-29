@@ -11,7 +11,7 @@ function NavBar() {
   const [collapsed, setCollapsed] = useState(true);
 
   return (
-    <nav className="px-2 sm:px-4 py-2.5 shadow-xl bg-w0 w-full z-10">
+    <nav className="px-2 sm:px-4 py-2.5 shadow-xl bg-w0 w-full z-10 fixed top-0">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex">
           <img src="/logo512.png" className="mr-3 h-10" />

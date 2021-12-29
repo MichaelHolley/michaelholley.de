@@ -19,7 +19,7 @@ function Skills() {
     }
 
     setAllowWheelInput(false);
-    setTimeout(() => setAllowWheelInput(true), 150);
+    setTimeout(() => setAllowWheelInput(true), 100);
 
     if (event.deltaY < 0 && index > 0) {
       setIndex(index - 1);
@@ -38,7 +38,7 @@ function Skills() {
             index === i ? "bg-r0 border-2 scale-110 text-bl0" : "bg-bl0"
           } bg-opacity-60 min-w-[27px] mx-2 px-2 hover:cursor-pointer`}
         >
-          {index === i ? sections[i] : "  "}
+          {index === i ? section : "  "}
         </span>
       );
     });

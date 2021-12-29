@@ -10,6 +10,8 @@ import {
 function NavBar() {
   const [collapsed, setCollapsed] = useState(true);
 
+  const loc = window.location.pathname.substring(1);
+
   return (
     <nav className="px-2 sm:px-4 py-2.5 shadow-xl bg-w0 w-full z-10 fixed top-0 font-mono">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -68,7 +70,9 @@ function NavBarLinkItem(props: { route: string; title: string; icon: any }) {
         className="py-2 pr-4 pl-3 text-b0 text-md flex rounded hover:bg-r0 hover:bg-opacity-40 transition-all duration-500 group"
         aria-current="page"
       >
-        <span className="mr-2 group-hover:scale-125 ease-in-out duration-500">{props.icon}</span>
+        <span className="mr-2 group-hover:scale-125 ease-in-out duration-300">
+          {props.icon}
+        </span>
         <span>{props.title}</span>
       </a>
     </li>

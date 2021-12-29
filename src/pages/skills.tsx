@@ -1,48 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
+import { DiMysql } from "react-icons/di";
+import {
+  FaAngular,
+  FaBootstrap,
+  FaGitAlt,
+  FaGithub,
+  FaLinux,
+  FaReact,
+  FaWindows
+} from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
+import {
+  SiAntdesign, SiCsharp, SiDotnet, SiGitlab, SiJava, SiMicrosoftoffice, SiMongodb, SiSqlite, SiTailwindcss, SiTypescript
+} from "react-icons/si";
 import Particles from "react-tsparticles";
 
 function Skills() {
-  const [index, setIndex] = useState(0);
-  const [allowWheelInput, setAllowWheelInput] = useState(true);
-
   const sections = [
-    "Allgemein",
-    "Technologien",
-    "Frameworks",
-    "Tools",
-    "Software",
+    {
+      title: "Frontend",
+      percent: 85,
+      icons: [
+        <FaAngular />,
+        <FaReact />,
+        <FaBootstrap />,
+        <SiTailwindcss />,
+        <SiAntdesign />,
+        <SiTypescript />,
+      ],
+    },
+    {
+      title: "Backend",
+      percent: 75,
+      icons: [
+        <SiCsharp />,
+        <SiDotnet />,
+        <SiJava />,
+        <DiMysql />,
+        <SiSqlite />,
+        <SiMongodb />,
+      ],
+    },
+    {
+      title: "Tools",
+      percent: 60,
+      icons: [
+        <FaGitAlt />,
+        <FaGithub />,
+        <SiGitlab />,
+        <FaWindows />,
+        <FaLinux />,
+        <SiMicrosoftoffice />,
+      ],
+    },
   ];
-
-  const handleWheel = (event: React.WheelEvent) => {
-    if (!allowWheelInput) {
-      return;
-    }
-
-    setAllowWheelInput(false);
-    setTimeout(() => setAllowWheelInput(true), 100);
-
-    if (event.deltaY < 0 && index > 0) {
-      setIndex(index - 1);
-    } else if (event.deltaY > 0 && index < sections.length - 1) {
-      setIndex(index + 1);
-    }
-  };
-
-  const getIndicator = () => {
-    return sections.map((section, i) => {
-      return (
-        <span
-          key={`indicator_${i}`}
-          onClick={() => setIndex(i)}
-          className={`rounded-full ${
-            index === i ? "bg-r0 border-2 scale-110 text-bl0" : "bg-bl0"
-          } bg-opacity-60 min-w-[27px] mx-2 px-2 hover:cursor-pointer`}
-        >
-          {index === i ? section : "  "}
-        </span>
-      );
-    });
-  };
 
   return (
     <main>
@@ -94,27 +105,35 @@ function Skills() {
           detectRetina: true,
         }}
       />
-      <span
-        className="w-screen h-screen absolute top-0 left-0"
-        style={{ zIndex: 1 }}
-        onWheel={(e) => handleWheel(e)}
-      ></span>
-      <div className="mx-4 mt-20 sm:mx-12 sm:mt-24 md:mx-24 md:mt-28 lg:mx-48 xl:mx-72 p-12 bg-w0 bg-opacity-80 rounded z-0">
-        <div className="flex flex-row justify-center mb-3">
-          {getIndicator()}
-        </div>
-        <div>
-          qwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw
-          eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw
-          eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw
-          eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw
-          eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe
-          qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw
-          eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe
-          qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw
-          eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe
-          qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw e
-        </div>
+      <div className="mx-4 mt-20 sm:mx-12 sm:mt-24 md:mx-24 md:mt-28 lg:mx-48 xl:mx-72 px-12 py-3 bg-bl0 bg-opacity-80 rounded-xl z-0">
+        {sections.map((section, index) => {
+          return (
+            <div className="my-14">
+              <div className="grid lg:flex mb-2 lg:mb-0">
+                <h2 className="text-2xl text-w0 mb-1 font-mono mr-8">
+                  {section.title}
+                </h2>
+                <div className="flex">
+                  <IconContext.Provider
+                    value={{
+                      size: "2rem",
+                      className: "my-1 sm:my-0 mx-[1px] sm:mx-2",
+                      color: "white",
+                    }}
+                  >
+                    {section.icons}
+                  </IconContext.Provider>
+                </div>
+              </div>
+              <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-w0">
+                <div
+                  style={{ width: `${section.percent}%` }}
+                  className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-r0"
+                ></div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </main>
   );

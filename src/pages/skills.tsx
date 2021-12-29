@@ -5,7 +5,13 @@ function Skills() {
   const [index, setIndex] = useState(0);
   const [allowWheelInput, setAllowWheelInput] = useState(true);
 
-  const sections = [1, 2, 3, 4, 5];
+  const sections = [
+    "Frameworks",
+    "Technologien",
+    "Tools",
+    "Software",
+    "Allgemein",
+  ];
 
   const handleWheel = (event: React.WheelEvent) => {
     if (!allowWheelInput) {
@@ -24,12 +30,26 @@ function Skills() {
     console.log(index);
   };
 
+  const getIndicator = () => {
+    var indicators = [];
+
+    return sections.map((section, i) => {
+      return (
+        <span
+          key={`indicator_${i}`}
+          onClick={() => setIndex(i)}
+          className={`rounded-full ${
+            index == i ? "bg-r0 border-2 scale-110" : "bg-bl0"
+          } bg-opacity-60 min-w-[27px] mx-2 px-2 hover:cursor-pointer`}
+        >
+          {index == i ? sections[i] : "  "}
+        </span>
+      );
+    });
+  };
+
   return (
     <main>
-      <span
-        className="w-screen h-screen absolute top-0 left-0 -z-10"
-        onWheel={(e) => handleWheel(e)}
-      ></span>
       <Particles
         id="tsparticles"
         options={{
@@ -78,7 +98,28 @@ function Skills() {
           detectRetina: true,
         }}
       />
-      <div></div>
+      {/* <span
+        className="w-screen h-screen absolute top-0 left-0"
+        style={{ zIndex: 1 }}
+        onWheel={(e) => handleWheel(e)}
+      ></span> */}
+      <div className="mx-4 mt-4 sm:mx-12 sm:mt-12 md:mx-24 md:mt-16 lg:mx-48 xl:mx-72 p-12 bg-w0 bg-opacity-40 rounded z-0">
+        <div className="flex flex-row justify-center mb-3">
+          {getIndicator()}
+        </div>
+        <div>
+          qwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw
+          eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw
+          eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw
+          eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw
+          eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe
+          qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw
+          eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe
+          qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw
+          eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw eqwe qwe
+          qw eqw eqw eqw eqw eqwe qwe qw eqw eqw eqw eqw e
+        </div>
+      </div>
     </main>
   );
 }

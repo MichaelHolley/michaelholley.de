@@ -17,7 +17,7 @@ function NavBar() {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex">
           <img src="/logo512.png" className="mr-3 h-10" />
-          <span className="text-b0 self-center text-xl font-semibold whitespace-nowrap">
+          <span className="text-b0 self-center text-xl font-semibold whitespace-nowrap transition-all duration-500 hover:-translate-y-1">
             Michael Holley
           </span>
         </a>
@@ -64,10 +64,10 @@ function NavBar() {
 
 function NavBarLinkItem(props: { route: string; title: string; icon: any }) {
   return (
-    <li>
+    <li className="border-b-2 border-transparent hover:border-r0">
       <a
         href={props.route}
-        className="py-2 pr-4 pl-3 text-b0 text-md flex rounded hover:bg-r0 hover:bg-opacity-40 transition-all duration-500 group"
+        className="py-2 pr-4 pl-3 text-b0 text-md flex transition-all duration-500 hover:-translate-y-1 group"
         aria-current="page"
       >
         <span className="mr-2 group-hover:scale-125 ease-in-out duration-300">

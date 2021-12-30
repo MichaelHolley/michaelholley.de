@@ -31,95 +31,59 @@ function Home() {
         title="Michael Holley"
         subtitle="Auszubildender zum Fachinformatiker für Anwendungsentwicklung"
       ></PageHeader>
-      <section className="container mx-auto bg-w0 text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48">
-        <p className="text-3xl text-center mb-3 font-bold">Wer bin ich?</p>
-        <p className="py-2">
-          Michael, {getAge(new Date(1999, 6, 8))} Jahre jung und aktuell in der
-          Ausbildung zum Fachinformatiker für Anwendungsentwicklung.
-        </p>
-        <p className="py-2">
-          Seit <span id="exp-div"></span> Jahren beschäftige ich mich bereits
-          mit Computern, Problemlösung und vor allem Programmieren, mit
-          besonderer Leidenschaft für Softwareentwicklung.
-        </p>
-        <p className="py-2">
-          Die Herausforderung war für mich der Grund, unzählige Stunden vor dem
-          Rechner zu verbringen, um meiner Passion nachzugehen. Bis heute mache
-          ich mich täglich mit neuen Technologien und Prozessen vertraut, um
-          meinen Wissensdrang zu stillen.
-        </p>
-        <div className="flex justify-center">
-          <a
-            href="https://www.xing.com/profile/Michael_Holley"
-            target="_blank"
-            className="mx-2"
-          >
-            <FaXingSquare
-              size="2em"
-              className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/michael-holley-791a64228/"
-            target="_blank"
-            className="mx-2"
-          >
-            <FaLinkedin
-              size="2em"
-              className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
-            />
-          </a>
-          <a
-            href="mailto:michael.philipp.holley@gmail.com"
-            target="_blank"
-            className="mx-2"
-          >
-            <FaEnvelopeSquare
-              size="2em"
-              className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
-            />
-          </a>
-        </div>
-      </section>
-      <section className="bg-r0">
-        <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0">
-          <p className="text-3xl text-center mb-3 font-bold">Steckbrief</p>
-          <div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">Geboren</div>
-              <div>8. Juni 1999</div>
-            </div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">Alter</div>
-              <div>{getAge(new Date(1999, 6, 8))}</div>
-            </div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">Geburtsort</div>
-              <div>Augsburg, Bayern</div>
-            </div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">Voller Name</div>
-              <div>Michael Philipp Holley</div>
-            </div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">StA</div>
-              <div>deutsch</div>
-            </div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">E-Mail</div>
-              <div>
-                <a
-                  href="mailto:michael.philipp.holley@gmail.com"
-                  className="hover:animate-pulse"
-                >
-                  michael.philipp.holley@gmail.com
-                </a>
-              </div>
-            </div>
+      <section className="bg-w0">
+        <div className="container mx-auto  text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48">
+          <p className="text-3xl text-center mb-3 font-bold">Wer bin ich?</p>
+          <p className="py-2">
+            Michael, {getAge(new Date(1999, 6, 8))} Jahre jung und aktuell in
+            der Ausbildung zum Fachinformatiker für Anwendungsentwicklung.
+          </p>
+          <p className="py-2">
+            Seit <span id="exp-div"></span> Jahren beschäftige ich mich bereits
+            mit Computern, Problemlösung und vor allem Programmieren, mit
+            besonderer Leidenschaft für Softwareentwicklung.
+          </p>
+          <p className="py-2">
+            Die Herausforderung war für mich der Grund, unzählige Stunden vor
+            dem Rechner zu verbringen, um meiner Passion nachzugehen. Bis heute
+            mache ich mich täglich mit neuen Technologien und Prozessen
+            vertraut, um meinen Wissensdrang zu stillen.
+          </p>
+          <div className="flex justify-center">
+            <a
+              href="https://www.xing.com/profile/Michael_Holley"
+              target="_blank"
+              className="mx-2"
+            >
+              <FaXingSquare
+                size="2em"
+                className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/michael-holley-791a64228/"
+              target="_blank"
+              className="mx-2"
+            >
+              <FaLinkedin
+                size="2em"
+                className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
+              />
+            </a>
+            <a
+              href="mailto:michael.philipp.holley@gmail.com"
+              target="_blank"
+              className="mx-2"
+            >
+              <FaEnvelopeSquare
+                size="2em"
+                className="hover:fill-r0 transition ease-out duration-500 hover:scale-125"
+              />
+            </a>
           </div>
         </div>
       </section>
-      <section className="bg-b0">
+      <section className="bg-r0">
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0">
           <p className="text-3xl text-center mb-3 font-bold">Berufsweg</p>
           <div>
@@ -134,27 +98,62 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto bg-w0 text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0">
-        <p className="text-3xl text-center mb-3 font-bold">Bildungsweg</p>
-        <div>
-          <div className="flex flex-row my-3">
-            <div className="w-52">Okt. 2017 - Aug. 2019</div>
-            <div>
-              Bachelor-Studiengang Informatik und Multimedia | Universität
-              Augsburg
+      <section className="bg-b0">
+        <div className="container mx-auto text-lg text-justify px-0 sm:px4 sm:px-10 md:px-24 lg:px-48 text-w0">
+          <div className="flex flex-row h-[320px]">
+            <img
+              src="/img/WSPreis_Schulen.jpeg"
+              className="h-[320px] shadow-xl absolute xl:relative "
+            ></img>
+            <div className="w-full my-auto p-4 z-10 bg-b0 bg-opacity-70 xl:bg-transparent">
+              <p className="text-2xl font-bold">2. Platz</p>
+              <p className="text-xl font-bold">
+                <a
+                  href="https://www.augsburg.de/aktuelles-aus-der-stadt/detail/wissenschaftspreis-augsburger-schulen-2020-21-vergeben"
+                  target={"_blank"}
+                  className="hover:animate-pulse"
+                >
+                  Wissenschaftspreis Augsburger Schulen 2020/21
+                </a>
+              </p>
+              <div className="my-3">
+                <div className="font-bold">Titel</div>
+                <div>
+                  Projekt zur Messung und Darstellung von Feinstaubpartikeln mit
+                  Hilfe eines Raspberry Pi
+                </div>
+              </div>
+              <div className="my-3">
+                <div className="font-bold">Teammitglieder</div>
+                <div>Luca Schäfer // Johannes Stock // Kajetan Kuczorski</div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="bg-w0">
+        <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0">
+          <p className="text-3xl text-center mb-3 font-bold">Bildungsweg</p>
+          <div>
+            <div className="flex flex-row my-3">
+              <div className="w-52">Okt. 2017 - Aug. 2019</div>
+              <div>
+                Bachelor-Studiengang Informatik und Multimedia | Universität
+                Augsburg
+              </div>
+            </div>
 
-          <div className="flex flex-row my-3">
-            <div className="w-52">2009 - 2017</div>
-            <div>
-              <p>Maria-Theresia-Gymnasium | Augsburg</p>
-              <p>abgeschlossen mit der Allgemeinen Hochschulreife</p>
+            <div className="flex flex-row my-3">
+              <div className="w-52">2009 - 2017</div>
+              <div>
+                <p>Maria-Theresia-Gymnasium | Augsburg</p>
+                <p>abgeschlossen mit der Allgemeinen Hochschulreife</p>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-row my-3">
-            <div className="w-52">2005 - 2009</div>
-            <div>St. Max Grundschule | Augsburg</div>
+            <div className="flex flex-row my-3">
+              <div className="w-52">2005 - 2009</div>
+              <div>St. Max Grundschule | Augsburg</div>
+            </div>
           </div>
         </div>
       </section>

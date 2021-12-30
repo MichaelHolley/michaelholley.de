@@ -8,16 +8,6 @@ function Footer() {
       <ul className="flex flex-row-reverse text-w0">
         <NavBarIconItem
           icon={
-            <FiGithub
-              size="1.5em"
-              className="hover:stroke-r0 transition ease-out duration-300 hover:scale-110"
-            />
-          }
-          link="https://github.com/MichaelHolley"
-          title="GitHub"
-        ></NavBarIconItem>
-        <NavBarIconItem
-          icon={
             <FaXing
               size="1.5em"
               className="hover:fill-r0 transition ease-out duration-300 hover:scale-110"
@@ -45,6 +35,16 @@ function Footer() {
           }
           link="mailto:michael.philipp.holley@gmail.com"
           title="Mail"
+        ></NavBarIconItem>
+        <NavBarIconItem
+          icon={
+            <FiGithub
+              size="1.5em"
+              className="hover:stroke-r0 transition ease-out duration-300 hover:scale-110"
+            />
+          }
+          link="https://github.com/MichaelHolley"
+          title="GitHub"
         ></NavBarIconItem>
       </ul>
     </footer>

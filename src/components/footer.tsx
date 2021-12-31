@@ -4,7 +4,7 @@ import { FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
 
 function Footer() {
   return (
-    <footer className="bg-b0 bg-opacity-60 shadow-2xl fixed z-20 bottom-5 right-5 p-3 rounded-full border-2 border-w0 transition-[width] duration-500">
+    <footer className="bg-b0 bg-opacity-60 shadow-2xl fixed z-20 bottom-5 right-5 p-3 rounded-full border-2 border-w0 transition-[width] duration-500 backdrop-blur-[2px]">
       <ul className="flex flex-row-reverse text-w0">
         <NavBarIconItem
           icon={

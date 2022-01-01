@@ -135,23 +135,22 @@ function Home() {
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0">
           <p className="text-3xl text-center mb-3 font-bold">Bildungsweg</p>
           <div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">Okt. 2017 - Aug. 2019</div>
+            <div className="my-3">
+              <div className="font-bold">Okt. 2017 - Aug. 2019</div>
               <div>
                 Bachelor-Studiengang Informatik und Multimedia | Universität
                 Augsburg
               </div>
             </div>
-
-            <div className="flex flex-row my-3">
-              <div className="w-52">2009 - 2017</div>
+            <div className="my-3">
+              <div className="font-bold">2009 - 2017</div>
               <div>
                 <p>Maria-Theresia-Gymnasium | Augsburg</p>
                 <p>abgeschlossen mit der Allgemeinen Hochschulreife</p>
               </div>
             </div>
-            <div className="flex flex-row my-3">
-              <div className="w-52">2005 - 2009</div>
+            <div className="my-3">
+              <div className="font-bold">2005 - 2009</div>
               <div>St. Max Grundschule | Augsburg</div>
             </div>
           </div>

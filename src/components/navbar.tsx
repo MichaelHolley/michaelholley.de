@@ -75,7 +75,7 @@ function NavBarLinkItem(props: {
     <li
       className={`border-b-2 border-transparent ${
         props.isActive ? "border-r0" : ""
-      } hover:border-r0`}
+      }`}
     >
       <a
         href={props.route}

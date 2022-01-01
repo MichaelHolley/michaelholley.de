@@ -52,7 +52,7 @@ function Skills() {
     },
     {
       title: "Tools",
-      percent: 60,
+      percent: 70,
       icons: [
         <FaGitAlt />,
         <FaGithub />,
@@ -113,7 +113,7 @@ function Skills() {
           detectRetina: true,
         }}
       />
-      <div className="mx-4 mt-20 sm:mx-12 sm:mt-24 md:mx-24 md:mt-28 lg:mx-48 xl:mx-72 px-12 py-3 bg-bl0 bg-opacity-70 rounded-xl z-0 backdrop-blur-sm flex flex-col 2xl:flex-row 2xl:py-16">
+      <div className="mx-4 mt-20 mb-4 sm:mx-12 sm:mt-24 md:mx-24 md:mt-28 lg:mx-48 xl:mx-72 px-12 py-3 bg-bl0 bg-opacity-70 rounded-xl z-0 backdrop-blur-sm flex flex-col 2xl:flex-row 2xl:py-16">
         <div className="w-full p-4 text-w0 h-full my-auto">
           <p className="text-3xl text-center mb-3 font-mono">Erfahrung</p>
           <p className="text-lg text-justify mb-3">

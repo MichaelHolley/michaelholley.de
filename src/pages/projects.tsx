@@ -5,6 +5,7 @@ import PageHeader from "../components/page-header";
 
 function Projects() {
   const [index, setIndex] = useState(0);
+  const swipeRange = 75;
 
   const incrementIndex = () => {
     if (index < projects.length - 1) {
@@ -47,11 +48,11 @@ function Projects() {
   }
 
   function handleTouchEnd() {
-    if (touchStart - touchEnd > 150) {
+    if (touchStart - touchEnd > swipeRange) {
       incrementIndex();
     }
 
-    if (touchStart - touchEnd < -150) {
+    if (touchStart - touchEnd < swipeRange * -1) {
       decrementIndex();
     }
   }
@@ -64,10 +65,10 @@ function Projects() {
     links?: { icon: any; ref: string }[];
   }[] = [
     {
-      header: "Wissenschaftspreis Augsburger Schule 2020/21",
+      header: "Wissenschaftspreis Augsburger Schulen 2020/21",
       paragraphs: [
         "Bei der Umsetzung des Projekts wurden zunächst die einzelnen Abschnitte unterteilt und nach Kompetenzen zugewiesen. Ich erhielt die Zuständigkeit für die Entwicklung einer API mit ASP.NET Core, welche Dateien per HTTP-Request speichert und zurückgibt.",
-        "Während der Umsetzung entwickelte sich meine Rolle hin zu einem Projektleiter, der in allen Bereichen der Entwicklung mitwirkte. So unterstützte ich die Entwicklung der Webseite sowie die Datenaggregation mit Python auf einem Raspi. Zudem erhielt ich die Zuständigkeit für die Dokumentation und kontrollierte dessen Bearbeitung durch Teammitglieder.",
+        "Während der Umsetzung entwickelte sich meine Rolle hin zu eine Art Projektleiter, der in allen Bereichen der Entwicklung mitwirkt. So unterstützte ich die Entwicklung der Webseite sowie die Datenaggregation mit Python auf einem Raspi. Zudem erhielt ich die Zuständigkeit für die Dokumentation und kontrollierte dessen Bearbeitung durch Teammitglieder.",
         "Die Zusammenarbeit wurde letztendlich mit dem 2. Platz und einem Preisgeld von 1000€ belohnt.",
       ],
       technologies: [

@@ -110,7 +110,7 @@ function Projects() {
     {
       header: "michaelholley.de",
       paragraphs: [
-        "Die Darstellung der Webseite hat bereits mehrere Versionen durchlaufen und wird stetig ergänzt und aktualisiert. Dabei wird vor allem auf die Faktoren Performance, Technologie, Design und Interaktion geachtet. Informationen sollen möglichst schnell zu finden und verständlich sein.",
+        "Die Darstellung der Webseite hat bereits mehrere Versionen durchlaufen und wird stetig ergänzt und aktualisiert. Dabei wird vor allem auf die Faktoren Performance, Technologie, Design und Interaktion geachtet. Informationen sollen möglichst schnell zu finden, verständlich und auf das Nötigste reduziert sein.",
       ],
       technologies: ["React", "Tailwind CSS", "tsParticles", "TypeScript"],
       links: [
@@ -123,7 +123,7 @@ function Projects() {
     {
       header: "MyPoll",
       paragraphs: [
-        "MyPoll ist eine Angular-Anwendung mit der man einfache Umfragen mit einer einzelnen Fragen erstellen kann. Antworten können dabei optional beschränkt werden, wie feste Antworten, eigene Antworten, private Umfragen und die Auswahl von mehreren Antworten.",
+        "MyPoll ist eine Angular-Anwendung mit der man einfache Umfragen mit einer einzelnen Fragen erstellen kann. Antworten können dabei optional beschränkt werden, wie feste Antworten, eigene Antworten, private Umfragen und die Mehrfachauswahl.",
         "Dahinter arbeitet ein ASP.NET Core Backend, welches die Daten in einer SQLite-Datenbank verwaltet.",
       ],
       technologies: [

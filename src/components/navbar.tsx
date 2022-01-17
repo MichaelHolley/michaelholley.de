@@ -16,7 +16,11 @@ function NavBar() {
     <nav className="px-2 sm:px-4 py-2 shadow-xl bg-w0 w-full z-10 fixed top-0 font-mono">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex">
-          <img src="/logo512.png" className="mr-3 h-10" />
+          <img
+            src="/logo512.png"
+            className="mr-3 h-10"
+            alt="Michael Holley - Icon"
+          />
           <span className="text-b0 self-center text-xl font-semibold whitespace-nowrap">
             Michael Holley
           </span>

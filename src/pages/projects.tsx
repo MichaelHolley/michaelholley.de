@@ -136,6 +136,7 @@ function Projects() {
       ],
       links: [
         { icon: <FaGithub />, ref: "https://github.com/MichaelHolley/MyPoll" },
+        { icon: <FaGlobe />, ref: "http://poll.michaelholley.de/" },
       ],
     },
   ];

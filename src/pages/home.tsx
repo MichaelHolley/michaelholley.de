@@ -27,7 +27,6 @@ function Home() {
   return (
     <main className="bg-w0">
       <PageHeader
-        imgSrc=""
         title="Michael Holley"
         subtitle="Auszubildender zum Fachinformatiker für Anwendungsentwicklung"
       ></PageHeader>
@@ -103,7 +102,8 @@ function Home() {
           <div className="flex flex-row h-[320px]">
             <img
               src="/img/WSPreis_Schulen.jpeg"
-              className="h-[320px] shadow-xl absolute xl:relative "
+              className="h-[320px] shadow-xl absolute xl:relative"
+              alt="Gruppenbild Wissenschaftspreis"
             ></img>
             <div className="w-full my-auto p-4 z-10 bg-b0 bg-opacity-70 xl:bg-transparent">
               <p className="text-2xl font-bold">2. Platz</p>

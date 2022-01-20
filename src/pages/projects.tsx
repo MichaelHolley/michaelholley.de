@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
-import PageHeader from "../components/page-header";
 
 function Projects() {
   const [index, setIndex] = useState(0);

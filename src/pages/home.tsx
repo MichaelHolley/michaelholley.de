@@ -28,14 +28,13 @@ function Home() {
     <main className="bg-w0">
       <PageHeader
         title="Michael Holley"
-        subtitle="Auszubildender zum Fachinformatiker für Anwendungsentwicklung"
+        subtitle="Junior Software Developer"
       ></PageHeader>
       <section className="bg-w0">
         <div className="container mx-auto  text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48">
           <p className="text-3xl text-center mb-3 font-bold">Wer bin ich?</p>
           <p className="py-2">
-            Michael, {getAge(new Date(1999, 6, 8))} Jahre jung und aktuell in
-            der Ausbildung zum Fachinformatiker für Anwendungsentwicklung.
+            Michael, {getAge(new Date(1999, 6, 8))} Jahre jung mit einer Begeisterung für Code und Software.
           </p>
           <p className="py-2">
             Seit <span id="exp-div"></span> Jahren beschäftige ich mich bereits
@@ -84,15 +83,26 @@ function Home() {
       </section>
       <section className="bg-r0">
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0">
-          <p className="text-3xl text-center mb-3 font-bold">Berufsweg</p>
-          <div>
-            <p className="text-xl mb-3 font-bold">
-              Auszubildender (seit Sept. 2019) | AraCom IT Services AG
+          <p className="text-3xl text-center mb-2 font-bold">Berufsweg</p>
+          <div className="text-right my-5">
+            <p>Seit Jan. 2022</p>
+            <p className="text-xl mb-1 font-bold">
+              Junior Software Developer | AraCom IT Services AG
             </p>
             <ul>
               <li>Entwicklung von Individualsoftware</li>
               <li>Arbeiten im Team an der Umsetzung von Softwarelösungen</li>
               <li>Spezialisierung auf Webentwicklung</li>
+            </ul>
+          </div>
+          <div className="text-left my-5">
+            <p>Sept. 2019 - Jan. 2022</p>
+            <p className="text-xl mb-1 font-bold">
+              Auszubildender zum Fachinformatiker | AraCom IT Services AG
+            </p>
+            <ul>
+              <li>Berufsschule abgeschlossen mit 1,0</li>
+              <li>IHK Prüfung abgelegt mit SEHR GUT</li>
             </ul>
           </div>
         </div>

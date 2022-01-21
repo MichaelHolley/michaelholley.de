@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
-import PageHeader from "../components/page-header";
 
 function Projects() {
   const [index, setIndex] = useState(0);
@@ -136,6 +135,7 @@ function Projects() {
       ],
       links: [
         { icon: <FaGithub />, ref: "https://github.com/MichaelHolley/MyPoll" },
+        { icon: <FaGlobe />, ref: "http://poll.michaelholley.de/" },
       ],
     },
   ];

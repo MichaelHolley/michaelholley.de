@@ -1,5 +1,4 @@
 function PageHeader(props: {
-  imgSrc: string;
   title: string;
   subtitle?: string;
 }) {

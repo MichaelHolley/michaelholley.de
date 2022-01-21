@@ -4,10 +4,8 @@ import {
   FaAngular,
   FaBootstrap,
   FaGitAlt,
-  FaGithub,
-  FaLinux,
-  FaReact,
-  FaWindows,
+  FaGithub, FaReact,
+  FaWindows
 } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import {
@@ -20,7 +18,7 @@ import {
   SiMongodb,
   SiSqlite,
   SiTailwindcss,
-  SiTypescript,
+  SiTypescript
 } from "react-icons/si";
 import Particles from "react-tsparticles";
 
@@ -91,7 +89,7 @@ function Skills() {
               enable: true,
               outMode: "bounce",
               random: false,
-              speed: 3,
+              speed: 1,
               straight: false,
             },
             number: {
@@ -99,10 +97,10 @@ function Skills() {
                 enable: true,
                 area: 800,
               },
-              value: 70,
+              value: 80,
             },
             opacity: {
-              value: 0.5,
+              value: 0.7,
             },
             shape: {},
             size: {

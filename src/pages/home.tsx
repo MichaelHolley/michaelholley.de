@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEnvelopeSquare, FaLinkedin, FaXingSquare } from "react-icons/fa";
+import HomeNavigator from "../components/home-navigator";
 import PageHeader from "../components/page-header";
 
 function Home() {
@@ -30,11 +31,12 @@ function Home() {
         title="Michael Holley"
         subtitle="Junior Software Developer"
       ></PageHeader>
-      <section className="bg-w0">
+      <section className="bg-w0" id="about">
         <div className="container mx-auto  text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48">
           <p className="text-3xl text-center mb-3 font-bold">Wer bin ich?</p>
           <p className="py-2">
-            Michael, {getAge(new Date(1999, 6, 8))} Jahre jung mit einer Begeisterung für Code und Software.
+            Michael, {getAge(new Date(1999, 6, 8))} Jahre jung mit einer
+            Begeisterung für Code und Software.
           </p>
           <p className="py-2">
             Seit <span id="exp-div"></span> Jahren beschäftige ich mich bereits
@@ -81,33 +83,38 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-r0">
+      <section className="bg-tiles" id="career">
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0">
-          <p className="text-3xl text-center mb-2 font-bold">Berufsweg</p>
-          <div className="text-right my-5">
-            <p>Seit Jan. 2022</p>
-            <p className="text-xl mb-1 font-bold">
-              Junior Software Developer | AraCom IT Services AG
-            </p>
-            <ul>
-              <li>Entwicklung von Individualsoftware</li>
-              <li>Arbeiten im Team an der Umsetzung von Softwarelösungen</li>
-              <li>Spezialisierung auf Webentwicklung</li>
-            </ul>
-          </div>
-          <div className="text-left my-5">
-            <p>Sept. 2019 - Jan. 2022</p>
-            <p className="text-xl mb-1 font-bold">
-              Auszubildender zum Fachinformatiker | AraCom IT Services AG
-            </p>
-            <ul>
-              <li>Berufsschule abgeschlossen mit 1,0</li>
-              <li>IHK Prüfung abgelegt mit SEHR GUT</li>
-            </ul>
+          <div className="py-2 px-3 rounded">
+            <p className="text-3xl text-center mb-2 font-bold">Berufsweg</p>
+            <div className="text-right my-5">
+              <p>Seit Jan. 2022</p>
+              <p className="text-xl mb-1 font-bold">
+                Junior Software Developer | AraCom IT Services AG
+              </p>
+              <ul>
+                <li>Entwicklung von Individualsoftware</li>
+                <li>Arbeiten im Team an der Umsetzung von Softwarelösungen</li>
+                <li>Spezialisierung auf Webentwicklung</li>
+              </ul>
+            </div>
+            <div className="text-left my-5">
+              <p>Sept. 2019 - Jan. 2022</p>
+              <p className="text-xl mb-1 font-bold">
+                Auszubildender zum Fachinformatiker | AraCom IT Services AG
+              </p>
+              <ul>
+                <li>Berufsschule abgeschlossen mit 1,0</li>
+                <li>
+                  IHK Prüfung abgelegt mit{" "}
+                  <span className="font-bold">96 von 100</span> Punkten gesamt
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-      <section className="bg-b0">
+      <section className="bg-b0" id="awards">
         <div className="container mx-auto text-lg text-justify px-0 sm:px4 sm:px-10 md:px-24 lg:px-48 text-w0">
           <div className="flex flex-row h-[320px]">
             <img
@@ -141,7 +148,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-w0">
+      <section className="bg-w0" id="education">
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0">
           <p className="text-3xl text-center mb-3 font-bold">Bildungsweg</p>
           <div>
@@ -166,6 +173,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <HomeNavigator />
     </main>
   );
 }

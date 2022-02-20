@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEnvelopeSquare, FaLinkedin, FaXingSquare } from "react-icons/fa";
+import HomeNavigator from "../components/home-navigator";
 import PageHeader from "../components/page-header";
 
 function Home() {
@@ -30,7 +31,7 @@ function Home() {
         title="Michael Holley"
         subtitle="Junior Software Developer"
       ></PageHeader>
-      <section className="bg-w0">
+      <section className="bg-w0" id="about">
         <div className="container mx-auto  text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48">
           <p className="text-3xl text-center mb-3 font-bold">Wer bin ich?</p>
           <p className="py-2">
@@ -82,7 +83,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-tiles">
+      <section className="bg-tiles" id="career">
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0">
           <div className="py-2 px-3 rounded">
             <p className="text-3xl text-center mb-2 font-bold">Berufsweg</p>
@@ -113,7 +114,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-b0">
+      <section className="bg-b0" id="awards">
         <div className="container mx-auto text-lg text-justify px-0 sm:px4 sm:px-10 md:px-24 lg:px-48 text-w0">
           <div className="flex flex-row h-[320px]">
             <img
@@ -147,7 +148,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-w0">
+      <section className="bg-w0" id="education">
         <div className="container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0">
           <p className="text-3xl text-center mb-3 font-bold">Bildungsweg</p>
           <div>
@@ -172,6 +173,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <HomeNavigator />
     </main>
   );
 }

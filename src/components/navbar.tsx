@@ -21,7 +21,7 @@ function NavBar() {
             className="mr-3 h-10"
             alt="Michael Holley - Icon"
           />
-          <span className="text-b0 self-center text-xl font-semibold whitespace-nowrap">
+          <span className="text-b0 self-center text-xl font-semibold whitespace-nowrap invisible md:visible">
             Michael Holley
           </span>
         </a>

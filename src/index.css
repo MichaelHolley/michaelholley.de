@@ -7,3 +7,10 @@
   width: 100%;
   z-index: -2;
 }
+
+.bg-tiles {
+  background-image: url(../public/img/Backdrop.PNG);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

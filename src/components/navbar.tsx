@@ -12,7 +12,11 @@ function NavBar() {
   const [collapsed, setCollapsed] = useState(true);
 
   const loc = window.location.pathname.substring(1);
-  const [activeRoute, setActiveRoute] = useState('/');
+  const [activeRoute, setActiveRoute] = useState(
+    window.location.pathname !== '/'
+      ? window.location.pathname.substring(1)
+      : window.location.pathname,
+  );
 
   return (
     <nav className='px-2 sm:px-4 py-2 shadow-xl bg-w0 w-full z-10 fixed top-0 font-mono'>

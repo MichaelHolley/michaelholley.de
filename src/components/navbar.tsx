@@ -6,16 +6,22 @@ import {
   FaTimes,
   FaBars,
 } from 'react-icons/fa';
+import { Link, Route } from 'react-router-dom';
 
 function NavBar() {
   const [collapsed, setCollapsed] = useState(true);
 
   const loc = window.location.pathname.substring(1);
+  const [activeRoute, setActiveRoute] = useState(
+    window.location.pathname !== '/'
+      ? window.location.pathname.substring(1)
+      : window.location.pathname,
+  );
 
   return (
     <nav className='px-2 sm:px-4 py-2 shadow-xl bg-w0 w-full z-10 fixed top-0 font-mono'>
       <div className='container flex flex-wrap justify-between items-center mx-auto'>
-        <a href='/' className='flex'>
+        <Link to='/' className='flex'>
           <img
             src='/logo512.png'
             className='mr-3 h-10'
@@ -24,7 +30,7 @@ function NavBar() {
           <span className='text-b0 self-center text-xl font-semibold whitespace-nowrap invisible md:visible'>
             Michael Holley
           </span>
-        </a>
+        </Link>
         <button
           type='button'
           onClick={() => setCollapsed(!collapsed)}
@@ -46,20 +52,23 @@ function NavBar() {
             <NavBarLinkItem
               route='/'
               title='About'
-              isActive={loc === ''}
+              activeRoute={activeRoute}
               icon={<FaUser size='1.2em' />}
+              setActiveRoute={setActiveRoute}
             />
             <NavBarLinkItem
               route='Skills'
               title='Skills'
-              isActive={loc === 'Skills'}
+              activeRoute={activeRoute}
               icon={<FaCubes size='1.2em' />}
+              setActiveRoute={setActiveRoute}
             />
             <NavBarLinkItem
               route='Projects'
               title='Projekte'
-              isActive={loc === 'Projects'}
+              activeRoute={activeRoute}
               icon={<FaProjectDiagram size='1.2em' />}
+              setActiveRoute={setActiveRoute}
             />
           </ul>
         </div>
@@ -72,22 +81,28 @@ function NavBarLinkItem(props: {
   route: string;
   title: string;
   icon: any;
-  isActive: boolean;
+  activeRoute: string;
+  setActiveRoute: (route: string) => void;
 }) {
+  const isActive = props.activeRoute === props.route;
+
   return (
     <li
       className={`border-b-2 border-transparent ${
-        props.isActive ? 'border-r0' : ''
+        isActive ? 'border-r0' : ''
       }`}>
-      <a
-        href={props.route}
+      <Link
+        to={props.route}
         className='py-2 pr-4 pl-3 text-b0 text-base flex transition-all duration-500 hover:-translate-y-[3px] group'
-        aria-current='page'>
+        aria-current='page'
+        onClick={(event) => {
+          props.setActiveRoute(props.route);
+        }}>
         <span className='mr-2 group-hover:scale-125 ease-in-out duration-300'>
           {props.icon}
         </span>
         <span>{props.title}</span>
-      </a>
+      </Link>
     </li>
   );
 }

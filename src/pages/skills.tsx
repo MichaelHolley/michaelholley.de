@@ -29,35 +29,35 @@ function Skills() {
       title: 'Frontend',
       percent: 85,
       icons: [
-        <FaAngular />,
-        <FaReact />,
-        <FaBootstrap />,
-        <SiTailwindcss />,
-        <SiAntdesign />,
-        <SiTypescript />,
+        <FaAngular key='' />,
+        <FaReact key='' />,
+        <FaBootstrap key='' />,
+        <SiTailwindcss key='' />,
+        <SiAntdesign key='' />,
+        <SiTypescript key='' />,
       ],
     },
     {
       title: 'Backend',
       percent: 75,
       icons: [
-        <SiCsharp />,
-        <SiDotnet />,
-        <SiJava />,
-        <DiMysql />,
-        <FaPython />,
-        <SiMongodb />,
+        <SiCsharp key='' />,
+        <SiDotnet key='' />,
+        <SiJava key='' />,
+        <DiMysql key='' />,
+        <FaPython key='' />,
+        <SiMongodb key='' />,
       ],
     },
     {
       title: 'Tools',
       percent: 70,
       icons: [
-        <FaGitAlt />,
-        <FaGithub />,
-        <SiGitlab />,
-        <FaWindows />,
-        <SiMicrosoftoffice />,
+        <FaGitAlt key='' />,
+        <FaGithub key='' />,
+        <SiGitlab key='' />,
+        <FaWindows key='' />,
+        <SiMicrosoftoffice key='' />,
       ],
     },
   ];
@@ -81,9 +81,9 @@ function Skills() {
           </p>
         </div>
         <div className='w-full h-full my-auto p-3 2xl:border-l-2 border-w0'>
-          {sections.map((section, index) => {
+          {sections.map((section) => {
             return (
-              <div className='2xl:ml-3 mb-8'>
+              <div className='2xl:ml-3 mb-8' key={section.title}>
                 <div className='flex flex-col sm:flex-row mb-2 lg:mb-0'>
                   <h2 className='text-2xl text-w0 mb-1 font-mono mr-8'>
                     {section.title}

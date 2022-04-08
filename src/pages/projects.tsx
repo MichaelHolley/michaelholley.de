@@ -56,12 +56,12 @@ function Projects() {
     }
   }
 
-  let projects: {
+  const projects: {
     header: string;
     paragraphs?: string[];
     imgFileNames?: string[];
-    technologies?: string[];
-    links?: { icon: any; ref: string }[];
+    technologies: string[];
+    links?: { icon: JSX.Element; ref: string }[];
   }[] = [
     {
       header: 'Wissenschaftspreis Augsburger Schulen 2020/21',
@@ -170,12 +170,20 @@ function Projects() {
           {projects[index].header}
         </p>
         {projects[index].paragraphs?.map((p, i) => {
-          return <p className='my-3 text-justify'>{p}</p>;
+          return (
+            <p key={`p-${i}`} className='my-3 text-justify'>
+              {p}
+            </p>
+          );
         })}
         <p className='flex flex-row justify-center'>
-          {projects[index].links?.map((link) => {
+          {projects[index].links?.map((link, i) => {
             return (
-              <a href={link.ref} target={'_blank'}>
+              <a
+                key={`link-${i}`}
+                href={link.ref}
+                target={'_blank'}
+                rel='noreferrer'>
                 <IconContext.Provider
                   value={{
                     size: '2rem',
@@ -190,10 +198,10 @@ function Projects() {
           })}
         </p>
         <p className='text-lg font-mono text-center my-3'>
-          {projects[index].technologies?.map((tech, i) => {
+          {projects[index]?.technologies?.map((tech, i) => {
             return (
               tech +
-              (i != projects[index].technologies!.length - 1 ? ' // ' : '')
+              (i != projects[index].technologies.length - 1 ? ' // ' : '')
             );
           })}
         </p>

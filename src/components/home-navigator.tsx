@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaAward, FaBriefcase, FaRegUserCircle } from 'react-icons/fa';
 import { MdSchool } from 'react-icons/md';
 
@@ -36,7 +37,7 @@ function HomeNavigator() {
 }
 
 function NavigatorListItem(props: {
-  icon: any;
+  icon: JSX.Element;
   title: string;
   section: string;
 }) {

@@ -5,18 +5,18 @@ import PageHeader from '../components/page-header';
 
 function Home() {
   const getAge = (birth: Date) => {
-    var today = new Date();
-    var nowyear = today.getFullYear();
-    var nowmonth = today.getMonth();
-    var nowday = today.getDate();
+    const today = new Date();
+    const nowyear = today.getFullYear();
+    const nowmonth = today.getMonth();
+    const nowday = today.getDate();
 
-    var birthyear = birth.getFullYear();
-    var birthmonth = birth.getMonth();
-    var birthday = birth.getDate();
+    const birthyear = birth.getFullYear();
+    const birthmonth = birth.getMonth();
+    const birthday = birth.getDate();
 
-    var age = nowyear - birthyear;
-    var age_month = nowmonth - birthmonth;
-    var age_day = nowday - birthday;
+    let age = nowyear - birthyear;
+    const age_month = nowmonth - birthmonth;
+    const age_day = nowday - birthday;
 
     if (age_month < 0 || (age_month == 0 && age_day < 0)) {
       age = age - 1;
@@ -52,7 +52,8 @@ function Home() {
             <a
               href='https://www.xing.com/profile/Michael_Holley'
               target='_blank'
-              className='mx-2'>
+              className='mx-2'
+              rel='noreferrer'>
               <FaXingSquare
                 size='2em'
                 className='hover:fill-r0 transition ease-out duration-500 hover:scale-125'
@@ -61,7 +62,8 @@ function Home() {
             <a
               href='https://www.linkedin.com/in/michael-holley-791a64228/'
               target='_blank'
-              className='mx-2'>
+              className='mx-2'
+              rel='noreferrer'>
               <FaLinkedin
                 size='2em'
                 className='hover:fill-r0 transition ease-out duration-500 hover:scale-125'
@@ -70,7 +72,8 @@ function Home() {
             <a
               href='mailto:michael.philipp.holley@gmail.com'
               target='_blank'
-              className='mx-2'>
+              className='mx-2'
+              rel='noreferrer'>
               <FaEnvelopeSquare
                 size='2em'
                 className='hover:fill-r0 transition ease-out duration-500 hover:scale-125'
@@ -121,7 +124,8 @@ function Home() {
             <div className='w-full my-auto p-4 z-10 bg-b0 bg-opacity-70 xl:bg-transparent'>
               <a
                 href='https://www.augsburg.de/aktuelles-aus-der-stadt/detail/wissenschaftspreis-augsburger-schulen-2020-21-vergeben'
-                target={'_blank'}>
+                target={'_blank'}
+                rel='noreferrer'>
                 <p className='text-2xl font-bold'>2. Platz</p>
                 <p className='text-xl font-bold'>
                   Wissenschaftspreis Augsburger Schulen 2020/21

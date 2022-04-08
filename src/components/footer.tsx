@@ -47,10 +47,14 @@ function Footer() {
   );
 }
 
-function NavBarIconItem(props: { icon: any; link: string; title: string }) {
+function NavBarIconItem(props: {
+  icon: JSX.Element;
+  link: string;
+  title: string;
+}) {
   return (
     <li className='mx-[6px] group'>
-      <a href={props.link} target='_blank'>
+      <a href={props.link} target='_blank' rel='noreferrer'>
         {props.icon}
       </a>
       <span className='absolute w-auto px-1 m-2 -top-10 -ml-2 rounded-md shadow-2xl text-w0 bg-b0 bg-opacity-60 origin-left hidden group-hover:block'>

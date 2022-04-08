@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import {
-  FaProjectDiagram,
-  FaUser,
-  FaCubes,
-  FaTimes,
-  FaBars,
+  FaBars, FaCubes, FaProjectDiagram, FaTimes, FaUser
 } from 'react-icons/fa';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [collapsed, setCollapsed] = useState(true);
 
-  const loc = window.location.pathname.substring(1);
   const [activeRoute, setActiveRoute] = useState(
     window.location.pathname !== '/'
       ? window.location.pathname.substring(1)
@@ -80,7 +75,7 @@ function NavBar() {
 function NavBarLinkItem(props: {
   route: string;
   title: string;
-  icon: any;
+  icon: JSX.Element;
   activeRoute: string;
   setActiveRoute: (route: string) => void;
 }) {
@@ -96,7 +91,7 @@ function NavBarLinkItem(props: {
         to={props.route}
         className='py-2 pr-4 pl-3 text-b0 text-base flex transition-all duration-500 hover:-translate-y-[3px] group'
         aria-current='page'
-        onClick={(event) => {
+        onClick={() => {
           props.setActiveRoute(props.route);
         }}>
         <span className='mr-2 group-hover:scale-125 ease-in-out duration-300'>

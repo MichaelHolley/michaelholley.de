@@ -119,15 +119,14 @@ function Home() {
               className='h-[320px] shadow-xl absolute xl:relative'
               alt='Gruppenbild Wissenschaftspreis'></img>
             <div className='w-full my-auto p-4 z-10 bg-b0 bg-opacity-70 xl:bg-transparent'>
-              <p className='text-2xl font-bold'>2. Platz</p>
-              <p className='text-xl font-bold'>
-                <a
-                  href='https://www.augsburg.de/aktuelles-aus-der-stadt/detail/wissenschaftspreis-augsburger-schulen-2020-21-vergeben'
-                  target={'_blank'}
-                  className='hover:animate-pulse'>
+              <a
+                href='https://www.augsburg.de/aktuelles-aus-der-stadt/detail/wissenschaftspreis-augsburger-schulen-2020-21-vergeben'
+                target={'_blank'}>
+                <p className='text-2xl font-bold'>2. Platz</p>
+                <p className='text-xl font-bold'>
                   Wissenschaftspreis Augsburger Schulen 2020/21
-                </a>
-              </p>
+                </p>
+              </a>
               <div className='my-3'>
                 <div className='font-bold'>Titel</div>
                 <div>

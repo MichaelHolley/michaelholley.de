@@ -57,7 +57,7 @@ function NavBarIconItem(props: {
       <a href={props.link} target='_blank' rel='noreferrer'>
         {props.icon}
       </a>
-      <span className='absolute w-auto px-1 m-2 -top-10 -ml-2 rounded-md shadow-2xl text-w0 bg-b0 bg-opacity-60 origin-left hidden group-hover:block'>
+      <span className='absolute w-auto px-1 m-2 -top-[3.7rem] -ml-2 rounded-md shadow-2xl text-w0 bg-b0 bg-opacity-60 origin-left opacity-0 group-hover:-top-10 transition-all group-hover:opacity-100 duration-[400ms] ease-in-out'>
         {props.title}
       </span>
     </li>

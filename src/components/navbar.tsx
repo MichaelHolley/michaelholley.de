@@ -94,7 +94,7 @@ function NavBarLinkItem(props: {
         onClick={() => {
           props.setActiveRoute(props.route);
         }}>
-        <span className='mr-2 group-hover:scale-125 ease-in-out duration-300'>
+        <span className='mr-2 group-hover:scale-110 ease-in-out duration-300'>
           {props.icon}
         </span>
         <span>{props.title}</span>

@@ -49,7 +49,7 @@ function NavigatorListItem(props: {
         {props.icon}
       </a>
       <span
-        className='absolute px-1 mt-[6px] ml-5 min-w-max rounded-md shadow-2xl text-w0 bg-b0 bg-opacity-60 origin-left opacity-0 group-hover:ml-11 group-hover:opacity-100 transition-all duration-[400ms] ease-in-out'
+        className='absolute px-1 mt-[6px] ml-6 min-w-max rounded-md shadow-2xl text-w0 bg-b0 bg-opacity-60 origin-left opacity-0 group-hover:ml-11 group-hover:opacity-100 transition-all duration-[400ms] ease-in-out'
         style={{ wordBreak: 'normal' }}>
         {props.title}
       </span>

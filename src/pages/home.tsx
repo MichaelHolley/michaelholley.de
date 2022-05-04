@@ -2,6 +2,8 @@ import React from 'react';
 import { FaEnvelopeSquare, FaLinkedin, FaXingSquare } from 'react-icons/fa';
 import HomeNavigator from '../components/home-navigator';
 import PageHeader from '../components/page-header';
+import { EducationSvg } from '../components/svgs/education-svg';
+import { ProgrammingSvg } from '../components/svgs/programming-svg';
 
 function Home() {
   const getAge = (birth: Date) => {
@@ -83,33 +85,43 @@ function Home() {
         </div>
       </section>
       <section className='bg-tiles' id='career'>
-        <div className='container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0'>
+        <div className='container mx-auto text-lg text-justify justify-center py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0'>
           <div className='py-2 px-3 rounded'>
             <p className='text-3xl text-center mb-2 font-bold'>Berufsweg</p>
-            <div className='text-right my-5'>
-              <p>Seit Jan. 2022</p>
-              <p className='text-xl mb-1 font-bold'>
-                Junior Software Developer | AraCom IT Services AG
-              </p>
-              <ul>
-                <li>Entwicklung von Individualsoftware</li>
-                <li>Arbeiten im Team an der Umsetzung von Softwarelösungen</li>
-                <li>Spezialisierung auf Webentwicklung</li>
-              </ul>
-            </div>
-            <div className='text-left my-5'>
-              <p>Sept. 2019 - Jan. 2022</p>
-              <p className='text-xl mb-1 font-bold'>
-                Ausbildung zum Fachinformatiker für Anwendungsentwicklung
-              </p>
-              <ul>
-                <li>Betrieb: AraCom IT Services AG</li>
-                <li>Berufsschule abgeschlossen mit 1,0</li>
-                <li>
-                  IHK Prüfung abgelegt mit{' '}
-                  <span className='font-bold'>96 von 100</span> Punkten gesamt
-                </li>
-              </ul>
+            <div className='flex flex-row'>
+              <div className='basis-0 xl:basis-1/4 h-full mr-0 xl:mr-6'>
+                <ProgrammingSvg />
+              </div>
+              <div className='basis-auto'>
+                <div className='text-right my-5'>
+                  <p>Seit Jan. 2022</p>
+                  <p className='text-xl mb-1 font-bold'>
+                    Junior Software Developer | AraCom IT Services AG
+                  </p>
+                  <ul>
+                    <li>Entwicklung von Individualsoftware</li>
+                    <li>
+                      Arbeiten im Team an der Umsetzung von Softwarelösungen
+                    </li>
+                    <li>Spezialisierung auf Webentwicklung</li>
+                  </ul>
+                </div>
+                <div className='text-left my-5'>
+                  <p>Sept. 2019 - Jan. 2022</p>
+                  <p className='text-xl mb-1 font-bold'>
+                    Ausbildung zum Fachinformatiker für Anwendungsentwicklung
+                  </p>
+                  <ul>
+                    <li>Betrieb: AraCom IT Services AG</li>
+                    <li>Berufsschule abgeschlossen mit 1,0</li>
+                    <li>
+                      IHK Prüfung abgelegt mit{' '}
+                      <span className='font-bold'>96 von 100</span> Punkten
+                      gesamt
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -147,26 +159,31 @@ function Home() {
         </div>
       </section>
       <section className='bg-w0' id='education'>
-        <div className='container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0'>
+        <div className='container mx-auto text-lg text-justify justify-center py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0'>
           <p className='text-3xl text-center mb-3 font-bold'>Bildungsweg</p>
-          <div>
-            <div className='my-3'>
-              <div className='font-bold'>Okt. 2017 - Aug. 2019</div>
-              <div>
-                Bachelor-Studiengang Informatik und Multimedia | Universität
-                Augsburg
-              </div>
+          <div className='flex flex-row'>
+            <div className='basis-0 xl:basis-1/4 h-full mr-0 xl:mr-6'>
+              <EducationSvg />
             </div>
-            <div className='my-3'>
-              <div className='font-bold'>2009 - 2017</div>
-              <div>
-                <p>Maria-Theresia-Gymnasium | Augsburg</p>
-                <p>abgeschlossen mit der Allgemeinen Hochschulreife</p>
+            <div className='basis-auto'>
+              <div className='my-3'>
+                <div className='font-bold'>Okt. 2017 - Aug. 2019</div>
+                <div>
+                  Bachelor-Studiengang Informatik und Multimedia | Universität
+                  Augsburg
+                </div>
               </div>
-            </div>
-            <div className='my-3'>
-              <div className='font-bold'>2005 - 2009</div>
-              <div>St. Max Grundschule | Augsburg</div>
+              <div className='my-3 xl:ml-8'>
+                <div className='font-bold'>2009 - 2017</div>
+                <div>
+                  <p>Maria-Theresia-Gymnasium | Augsburg</p>
+                  <p>abgeschlossen mit der Allgemeinen Hochschulreife</p>
+                </div>
+              </div>
+              <div className='my-3 xl:ml-16'>
+                <div className='font-bold'>2005 - 2009</div>
+                <div>St. Max Grundschule | Augsburg</div>
+              </div>
             </div>
           </div>
         </div>

@@ -85,11 +85,11 @@ function Home() {
         </div>
       </section>
       <section className='bg-tiles' id='career'>
-        <div className='container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0'>
+        <div className='container mx-auto text-lg text-justify justify-center py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-w0'>
           <div className='py-2 px-3 rounded'>
             <p className='text-3xl text-center mb-2 font-bold'>Berufsweg</p>
             <div className='flex flex-row'>
-              <div className='basis-0 xl:basis-1/4 mr-6 h-full align-bottom'>
+              <div className='basis-0 xl:basis-1/4 h-full mr-0 xl:mr-6'>
                 <ProgrammingSvg />
               </div>
               <div className='basis-auto'>
@@ -159,10 +159,10 @@ function Home() {
         </div>
       </section>
       <section className='bg-w0' id='education'>
-        <div className='container mx-auto text-lg text-justify py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0'>
+        <div className='container mx-auto text-lg text-justify justify-center py-16 px-4 sm:px-10 md:px-24 lg:px-48 text-bl0'>
           <p className='text-3xl text-center mb-3 font-bold'>Bildungsweg</p>
           <div className='flex flex-row'>
-            <div className='basis-0 xl:basis-1/4 mx-6 h-full align-bottom'>
+            <div className='basis-0 xl:basis-1/4 h-full mr-0 xl:mr-6'>
               <EducationSvg />
             </div>
             <div className='basis-auto'>

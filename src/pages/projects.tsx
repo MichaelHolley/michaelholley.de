@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
+import GitHubCommitDisplayPerYear from '../components/count-up-value-display';
 
 function Projects() {
   const [index, setIndex] = useState(0);
@@ -156,55 +157,70 @@ function Projects() {
   };
 
   return (
-    <main
-      className='bg-b0 pt-32 pb-14 text-w0'
-      onWheel={(e) => handleWheel(e)}
-      onTouchStart={(e) => handleTouchStart(e)}
-      onTouchMove={(e) => handleTouchMove(e)}
-      onTouchEnd={() => handleTouchEnd()}>
-      <div className=' flex flex-row justify-center my-3 transition-all'>
-        {getIndicators()}
+    <main className='bg-b0 pt-32 pb-14 text-w0'>
+      <div className='container mx-auto text-lg px-4 sm:px-10 md:px-24 lg:px-48 mb-6'>
+        <div className='text-3xl text-center'>GitHub-Commits</div>
+        <div className='flex justify-around'>
+          <div />
+          <GitHubCommitDisplayPerYear commits={185} year={2019} />
+          <GitHubCommitDisplayPerYear commits={221} year={2020} />
+          <GitHubCommitDisplayPerYear commits={341} year={2021} />
+          <GitHubCommitDisplayPerYear commits={165} year={2022} />
+          <div />
+        </div>
       </div>
-      <div className='container mx-auto  text-lg text-justify px-4 sm:px-10 md:px-24 lg:px-48'>
-        <p className='text-3xl mb-4 font-bold text-center'>
-          {projects[index].header}
-        </p>
-        {projects[index].paragraphs?.map((p, i) => {
-          return (
-            <p key={`p-${i}`} className='my-3 text-justify'>
-              {p}
-            </p>
-          );
-        })}
-        <p className='flex flex-row justify-center'>
-          {projects[index].links?.map((link, i) => {
+      <div className='flex justify-center mb-12'>
+        <div className='w-96 border-b-2 border-w0 border-opacity-50'></div>
+      </div>
+      <div
+        onWheel={(e) => handleWheel(e)}
+        onTouchStart={(e) => handleTouchStart(e)}
+        onTouchMove={(e) => handleTouchMove(e)}
+        onTouchEnd={() => handleTouchEnd()}>
+        <div className=' flex flex-row justify-center my-3 transition-all'>
+          {getIndicators()}
+        </div>
+        <div className='container mx-auto text-lg text-justify px-4 sm:px-10 md:px-24 lg:px-48'>
+          <p className='text-3xl mb-4 font-bold text-center'>
+            {projects[index].header}
+          </p>
+          {projects[index].paragraphs?.map((p, i) => {
             return (
-              <a
-                key={`link-${i}`}
-                href={link.ref}
-                target={'_blank'}
-                rel='noreferrer'>
-                <IconContext.Provider
-                  value={{
-                    size: '2rem',
-                    className:
-                      'my-1 sm:my-0 mx-[1px] sm:mx-2 hover:fill-r0 hover:scale-110 transition-all',
-                    color: 'white',
-                  }}>
-                  {link.icon}
-                </IconContext.Provider>
-              </a>
+              <p key={`p-${i}`} className='my-3 text-justify'>
+                {p}
+              </p>
             );
           })}
-        </p>
-        <p className='text-lg font-mono text-center my-3'>
-          {projects[index]?.technologies?.map((tech, i) => {
-            return (
-              tech +
-              (i != projects[index].technologies.length - 1 ? ' // ' : '')
-            );
-          })}
-        </p>
+          <p className='flex flex-row justify-center'>
+            {projects[index].links?.map((link, i) => {
+              return (
+                <a
+                  key={`link-${i}`}
+                  href={link.ref}
+                  target={'_blank'}
+                  rel='noreferrer'>
+                  <IconContext.Provider
+                    value={{
+                      size: '2rem',
+                      className:
+                        'my-1 sm:my-0 mx-[1px] sm:mx-2 hover:fill-r0 hover:scale-110 transition-all',
+                      color: 'white',
+                    }}>
+                    {link.icon}
+                  </IconContext.Provider>
+                </a>
+              );
+            })}
+          </p>
+          <p className='text-lg font-mono text-center my-3'>
+            {projects[index]?.technologies?.map((tech, i) => {
+              return (
+                tech +
+                (i != projects[index].technologies.length - 1 ? ' // ' : '')
+              );
+            })}
+          </p>
+        </div>
       </div>
     </main>
   );

@@ -18,7 +18,7 @@ function NavBar() {
       <div className='container flex flex-wrap justify-between items-center mx-auto'>
         <Link to='/' className='flex'>
           <img
-            src='/logo512.png'
+            src='/logo310.png'
             className='mr-3 h-10'
             alt='Michael Holley - Icon'
           />

@@ -8,22 +8,11 @@ import { ProgrammingSvg } from '../components/svgs/programming-svg';
 function Home() {
   const getAge = (birth: Date) => {
     const today = new Date();
-    const nowyear = today.getFullYear();
-    const nowmonth = today.getMonth();
-    const nowday = today.getDate();
-
-    const birthyear = birth.getFullYear();
-    const birthmonth = birth.getMonth();
-    const birthday = birth.getDate();
-
-    let age = nowyear - birthyear;
-    const age_month = nowmonth - birthmonth;
-    const age_day = nowday - birthday;
-
-    if (age_month < 0 || (age_month == 0 && age_day < 0)) {
-      age = age - 1;
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--;
     }
-
     return age;
   };
 
@@ -36,7 +25,7 @@ function Home() {
         <div className='container mx-auto  text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48'>
           <p className='text-3xl text-center mb-3 font-bold'>Wer bin ich?</p>
           <p className='py-2'>
-            Michael, {getAge(new Date(1999, 6, 8))} Jahre jung mit einer
+            Michael, {getAge(new Date("1999-06-08"))} Jahre jung mit einer
             Begeisterung für Code und Software.
           </p>
           <p className='py-2'>

@@ -165,7 +165,7 @@ function Projects() {
           <GitHubCommitDisplayPerYear commits={185} year={2019} />
           <GitHubCommitDisplayPerYear commits={221} year={2020} />
           <GitHubCommitDisplayPerYear commits={341} year={2021} />
-          <GitHubCommitDisplayPerYear commits={198} year={2022} />
+          <GitHubCommitDisplayPerYear commits={316} year={2022} />
           <div />
         </div>
       </div>

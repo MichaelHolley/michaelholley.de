@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import {
-  FaBars, FaCubes, FaProjectDiagram, FaTimes, FaUser
+  FaBars,
+  FaCubes,
+  FaProjectDiagram,
+  FaTimes,
+  FaUser,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +23,7 @@ function NavBar() {
         <Link to='/' className='flex'>
           <img
             src='/logo310.png'
-            className='mr-3 h-10'
+            className='mr-3 h-10 drop-shadow-md'
             alt='Michael Holley - Icon'
           />
           <span className='text-b0 self-center text-xl font-semibold whitespace-nowrap invisible md:visible'>

@@ -1,20 +1,10 @@
 import React from 'react';
-import { FaXing } from 'react-icons/fa';
 import { FiLinkedin, FiGithub, FiMail } from 'react-icons/fi';
 
 function Footer() {
   return (
     <footer className='bg-b0 bg-opacity-60 shadow-2xl fixed z-20 bottom-5 right-5 p-3 rounded-full border-2 border-w0 backdrop-blur-[2px]'>
       <ul className='flex flex-row-reverse text-w0'>
-        <NavBarIconItem
-          icon={
-            <FaXing
-              size='1.5em'
-              className='transition ease-out duration-300 hover:scale-110'
-            />
-          }
-          link='https://www.xing.com/profile/Michael_Holley'
-          title='Xing'></NavBarIconItem>
         <NavBarIconItem
           icon={
             <FiLinkedin

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelopeSquare, FaLinkedin, FaXingSquare } from 'react-icons/fa';
+import { FaEnvelopeSquare, FaLinkedin } from 'react-icons/fa';
 import HomeNavigator from '../components/home-navigator';
 import PageHeader from '../components/page-header';
 import { EducationSvg } from '../components/svgs/education-svg';
@@ -11,7 +11,7 @@ function Home() {
     let age = today.getFullYear() - birth.getFullYear();
     const m = today.getMonth() - birth.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
-        age--;
+      age--;
     }
     return age;
   };
@@ -25,7 +25,7 @@ function Home() {
         <div className='container mx-auto  text-lg text-justify text-bl0 py-16 px-4 sm:px-10 md:px-24 lg:px-48'>
           <p className='text-3xl text-center mb-3 font-bold'>Wer bin ich?</p>
           <p className='py-2'>
-            Michael, {getAge(new Date("1999-06-08"))} Jahre jung mit einer
+            Michael, {getAge(new Date('1999-06-08'))} Jahre jung mit einer
             Begeisterung für Code und Software.
           </p>
           <p className='py-2'>
@@ -40,16 +40,6 @@ function Home() {
             vertraut, um meinen Wissensdrang zu stillen.
           </p>
           <div className='flex justify-center'>
-            <a
-              href='https://www.xing.com/profile/Michael_Holley'
-              target='_blank'
-              className='mx-2'
-              rel='noreferrer'>
-              <FaXingSquare
-                size='2em'
-                className='hover:fill-r0 transition ease-out duration-500 hover:scale-125'
-              />
-            </a>
             <a
               href='https://www.linkedin.com/in/michael-holley-791a64228/'
               target='_blank'

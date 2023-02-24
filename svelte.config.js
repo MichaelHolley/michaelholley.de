@@ -15,8 +15,7 @@ const config = {
 			precompress: false,
 			strict: true
 		})
-	},
-	preprocess: vitePreprocess()
+	}
 };
 
 export default config;

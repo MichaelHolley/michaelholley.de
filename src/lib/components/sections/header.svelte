@@ -16,6 +16,7 @@
 				href="https://www.linkedin.com/in/michael-holley-791a64228/"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="LinkedIn-Profile"
 			>
 				<LinkedinIcon color={colors.white} />
 			</a>
@@ -24,6 +25,7 @@
 				href="https://github.com/MichaelHolley"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="GitHub-Profile"
 			>
 				<GithubIcon color={colors.white} />
 			</a>

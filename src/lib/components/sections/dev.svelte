@@ -2,28 +2,25 @@
 	<div class="lg:w-1/3 sm:px-7 my-8 lg:my-0">
 		<h2 class="text-4xl font-bold mb-1">Backend</h2>
 		<p class="text-justify">
-			I'm probably not the typical designer positioned behind an Illustrator artboard adjusting
-			pixels, but I design. Immersed in stylesheets tweaking font sizes and contemplating layouts is
-			where you'll find me (~_^). I'm committed to creating fluent user experiences while staying
-			fashionable
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti officiis fuga recusandae,
+			perferendis pariatur, non aperiam vitae quisquam eius atque voluptatem facilis illo ad veniam,
+			maxime reiciendis. Sint, error voluptas.
 		</p>
 	</div>
 	<div class="lg:w-1/3 lg:ml-[33%] sm:px-7 my-8 lg:my-0">
 		<h2 class="text-4xl font-bold mb-1">Frontend</h2>
 		<p class="text-justify">
-			I'm probably not the typical designer positioned behind an Illustrator artboard adjusting
-			pixels, but I design. Immersed in stylesheets tweaking font sizes and contemplating layouts is
-			where you'll find me (~_^). I'm committed to creating fluent user experiences while staying
-			fashionable
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti officiis fuga recusandae,
+			perferendis pariatur, non aperiam vitae quisquam eius atque voluptatem facilis illo ad veniam,
+			maxime reiciendis. Sint, error voluptas.
 		</p>
 	</div>
-	<div class="lg:w-1/3 lg:ml-[67%] sm:px-7 my-8 lg:my-0">
+	<div class="lg:w-1/3 lg:ml-[66%] sm:px-7 my-8 lg:my-0">
 		<h2 class="text-4xl font-bold mb-1">DevOps</h2>
 		<p class="text-justify">
-			I'm probably not the typical designer positioned behind an Illustrator artboard adjusting
-			pixels, but I design. Immersed in stylesheets tweaking font sizes and contemplating layouts is
-			where you'll find me (~_^). I'm committed to creating fluent user experiences while staying
-			fashionable
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti officiis fuga recusandae,
+			perferendis pariatur, non aperiam vitae quisquam eius atque voluptatem facilis illo ad veniam,
+			maxime reiciendis. Sint, error voluptas.
 		</p>
 	</div>
 </section>

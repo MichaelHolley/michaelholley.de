@@ -9,10 +9,4 @@ html {
 body {
 	color: theme('colors.mhWhite');
 	font-family: 'Raleway', sans-serif;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-	display: none;
 }

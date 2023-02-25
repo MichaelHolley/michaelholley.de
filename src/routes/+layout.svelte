@@ -3,6 +3,6 @@
 	import SectionNavigator from '../lib/components/misc/sectionNavigator.svelte';
 </script>
 
-<SectionNavigator />
+<!-- <SectionNavigator /> -->
 
 <slot />

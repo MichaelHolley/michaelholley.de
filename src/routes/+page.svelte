@@ -8,6 +8,6 @@
 <main>
 	<Header />
 	<Dev />
-	<Career />
 	<Projects />
+	<Career />
 </main>

@@ -1,6 +1,13 @@
-<div>
-	<h1 id="about">about</h1>
-	<h1 id="career">career</h1>
-	<h1 id="projects">projects</h1>
-	<h1 id="awards">awards</h1>
-</div>
+<script>
+	import Career from '$lib/components/sections/career.svelte';
+	import Header from '$lib/components/sections/header.svelte';
+	import Projects from '$lib/components/sections/projects.svelte';
+	import Dev from '$lib/components/sections/dev.svelte';
+</script>
+
+<main>
+	<Header />
+	<Dev />
+	<Career />
+	<Projects />
+</main>

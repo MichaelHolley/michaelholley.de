@@ -5,8 +5,8 @@
 	import LinkedinIcon from '../misc/linkedinIcon.svelte';
 </script>
 
-<section class="flex flex-col lg:flex-row header-bg">
-	<div class="basis-3/5 p-10 py-16 flex flex-col justify-center ">
+<section class="flex flex-col justify-between lg:flex-row header-bg">
+	<div class="px-10 flex flex-col justify-center ">
 		<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>
 		<h1 class="text-5xl sm:text-8xl font-bold">Holley</h1>
 		<h3 class="text-xl pl-1 mt-6">Fullstack-Developer</h3>
@@ -31,8 +31,12 @@
 			</a>
 		</div>
 	</div>
-	<div class="basis-2/5 p-10 pt-0 lg:pt-10 flex flex-col justify-center">
-		<img src={MeImg} alt="Michael Holley" class="w-[250px] lg:w-3/5 align-middle mx-auto lg:mx-0" />
+	<div class="p-10 lg:pr-52 flex flex-col justify-center">
+		<img
+			src={MeImg}
+			alt="Michael Holley"
+			class="w-[250px] lg:w-[350px] align-middle mx-auto lg:mx-0"
+		/>
 	</div>
 </section>
 

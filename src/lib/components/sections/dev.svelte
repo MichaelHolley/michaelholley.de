@@ -1,4 +1,4 @@
-<section id="dev" class="dev-bg bg-mhWhite p-16">
+<section id="dev" class="dev-bg bg-mhWhite p-8 md:p-32 lg:p-16">
 	<div class="lg:w-1/3 sm:px-7 my-8 lg:my-0">
 		<h2 class="text-4xl font-bold mb-1">Backend</h2>
 		<p class="text-justify">

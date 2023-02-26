@@ -40,7 +40,7 @@
 		}
 	];
 
-	let hoveredIndex = 1;
+	let hoveredIndex = -1;
 
 	function setHoveredProjectByIndex(index: number) {
 		hoveredIndex = index;
@@ -55,7 +55,7 @@
 				<li
 					class="mb-1"
 					on:mouseenter={() => setHoveredProjectByIndex(i)}
-					on:mouseleave={() => setHoveredProjectByIndex(1)}
+					on:mouseleave={() => setHoveredProjectByIndex(-1)}
 				>
 					<h4
 						class="text-4xl font-bold uppercase hover:text-mhPrimary hover:cursor-pointer transition-all"

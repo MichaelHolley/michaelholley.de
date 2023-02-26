@@ -3,7 +3,7 @@
 </script>
 
 <section id="taetigkeiten" class="bg-mhAlt py-6">
-	<SectionHeader title="Tätigkeiten" position="center" />
+	<SectionHeader title="Tätigkeiten" class="text-center" />
 	<div class="flex flex-col justify-center text-justify text-lg">
 		<div class="w-10/12 lg:w-2/5 mx-auto my-6">
 			<div class="pl-5 text-xl">Seit Jan. 2022</div>

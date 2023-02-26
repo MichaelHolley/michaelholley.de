@@ -1,13 +1,13 @@
 # Portfolio page for Michael Holley
 
-### Install
+## Install
 
-yarn install
+``yarn install``
 
-### Run
+## Run
 
-yarn dev
+``yarn dev``
 
-### Build
+## Build
 
-yarn build
+``yarn build``

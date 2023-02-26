@@ -1,0 +1,59 @@
+<script>
+	import MeImg from '$lib/assets/images/image.jpg';
+	import colors from 'tailwindcss/colors';
+	import GithubIcon from '../misc/githubIcon.svelte';
+	import LinkedinIcon from '../misc/linkedinIcon.svelte';
+	import MailIcon from '../misc/mailIcon.svelte';
+</script>
+
+<section class="flex flex-col justify-between lg:flex-row header-bg">
+	<div class="px-10 pt-10 lg:pt-0 flex flex-col justify-center ">
+		<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>
+		<h1 class="text-5xl sm:text-8xl font-bold">Holley</h1>
+		<h3 class="text-xl pl-1 mt-6">Fullstack-Developer</h3>
+		<div class="h-11 flex flex-row mt-6 pl-1">
+			<a
+				class="hover:scale-110 transition-all"
+				href="https://www.linkedin.com/in/michael-holley-791a64228/"
+				target="_blank"
+				rel="noreferrer"
+				aria-label="LinkedIn-Profile"
+			>
+				<LinkedinIcon color={colors.white} />
+			</a>
+			<a
+				class="ml-3 hover:scale-110 transition-all"
+				href="https://github.com/MichaelHolley"
+				target="_blank"
+				rel="noreferrer"
+				aria-label="GitHub-Profile"
+			>
+				<GithubIcon color={colors.white} />
+			</a>
+			<a
+				class="ml-3 hover:scale-110 transition-all"
+				href="mailto:michael.philipp.holley@gmail.com"
+				aria-label="GitHub-Profile"
+			>
+				<MailIcon color={colors.white} />
+			</a>
+		</div>
+	</div>
+	<div class="p-10 lg:pr-52 flex flex-col justify-center">
+		<img
+			src={MeImg}
+			alt="Michael Holley"
+			class="w-[250px] lg:w-[350px] align-middle mx-auto lg:mx-0"
+		/>
+	</div>
+</section>
+
+<style>
+	.header-bg {
+		background-image: linear-gradient(
+			-30deg,
+			theme('colors.mhPrimary') 33%,
+			theme('colors.mhSecondary') 0%
+		);
+	}
+</style>

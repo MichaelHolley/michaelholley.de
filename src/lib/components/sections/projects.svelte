@@ -89,7 +89,7 @@
 					{/each}
 				</div>
 			{:else}
-				<h3 class="text-center">Wählen Sie ein Projekt</h3>
+				<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>
 			{/if}
 		</div>
 	</div>

@@ -3,6 +3,7 @@
 	import colors from 'tailwindcss/colors';
 	import GithubIcon from '../misc/githubIcon.svelte';
 	import LinkedinIcon from '../misc/linkedinIcon.svelte';
+	import MailIcon from '../misc/mailIcon.svelte';
 </script>
 
 <section class="flex flex-col justify-between lg:flex-row header-bg">
@@ -28,6 +29,13 @@
 				aria-label="GitHub-Profile"
 			>
 				<GithubIcon color={colors.white} />
+			</a>
+			<a
+				class="ml-3 hover:scale-110 transition-all"
+				href="mailto:michael.philipp.holley@gmail.com"
+				aria-label="GitHub-Profile"
+			>
+				<MailIcon color={colors.white} />
 			</a>
 		</div>
 	</div>

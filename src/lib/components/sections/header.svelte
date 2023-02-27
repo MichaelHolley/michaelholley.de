@@ -10,7 +10,7 @@
 	<div class="px-10 pt-10 lg:pt-0 flex flex-col justify-center ">
 		<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>
 		<h1 class="text-5xl sm:text-8xl font-bold">Holley</h1>
-		<h3 class="text-xl pl-1 mt-6">Fullstack-Developer</h3>
+		<h2 class="text-xl pl-1 mt-6">Fullstack-Developer</h2>
 		<div class="h-11 flex flex-row mt-6 pl-1">
 			<a
 				class="hover:scale-110 transition-all"

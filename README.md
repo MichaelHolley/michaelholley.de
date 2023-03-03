@@ -6,12 +6,12 @@ Overall, your intention was to build a portfolio website that showcased your ski
 
 ## Install
 
-``yarn install``
+`yarn install`
 
 ## Run
 
-``yarn dev``
+`yarn dev`
 
 ## Build
 
-``yarn build``
+`yarn build`

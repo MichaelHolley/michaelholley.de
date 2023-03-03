@@ -17,7 +17,7 @@
 		<div class="w-10/12 lg:w-2/5 mx-auto my-6 ">
 			<div class="pl-5 text-xl">Sept. 2019 - Jan. 2022</div>
 			<h4 class="text-2xl font-bold">Ausbildung zum Fachinformatiker für Anwendungsentwicklung</h4>
-			<div>Betrieb: AraCom IT Services AG</div>
+			<div>AraCom IT Services AG</div>
 			<div>Berufsschule abgeschlossen mit 1,0</div>
 			<div>IHK Prüfung abgelegt mit <strong>96 von 100</strong> Punkten gesamt</div>
 		</div>

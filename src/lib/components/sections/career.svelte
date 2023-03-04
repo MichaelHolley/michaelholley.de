@@ -23,3 +23,9 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	::selection {
+		background: theme('colors.mhPrimary');
+	}
+</style>

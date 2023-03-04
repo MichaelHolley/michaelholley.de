@@ -43,7 +43,7 @@
 		<img
 			src={MeImg}
 			alt="Michael Holley"
-			class="w-[250px] lg:w-[350px] align-middle mx-auto lg:mx-0"
+			class="w-[250px] lg:w-[350px] align-middle mx-auto lg:mx-0 shadow-2xl"
 		/>
 	</div>
 </section>

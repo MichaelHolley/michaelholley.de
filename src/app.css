@@ -10,3 +10,7 @@ body {
 	color: theme('colors.mhWhite');
 	font-family: 'Raleway', sans-serif;
 }
+
+::selection {
+	background: theme('colors.mhAlt');
+}

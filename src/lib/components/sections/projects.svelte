@@ -52,9 +52,9 @@
 	}
 </script>
 
-<section id="projekte" class="bg-mhWhite text-mhBlack py-6">
-	<SectionHeader title="Projekte" class="text-center md:text-start" />
-	<div class="mt-6 flex flex-col md:flex-row pr-4">
+<section id="projekte" class="bg-mhWhite text-mhBlack py-6 px-16">
+	<SectionHeader title="Projekte" class="text-center md:text-start md:pl-7" />
+	<div class="mt-6 flex flex-col md:flex-row pr-4 md:pl-7">
 		<ul class="break-words mb-6">
 			{#each projects as p, i}
 				<li

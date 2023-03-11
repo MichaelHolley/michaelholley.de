@@ -6,8 +6,8 @@
 	import MailIcon from '../misc/mailIcon.svelte';
 </script>
 
-<section class="flex flex-col justify-between lg:flex-row header-bg">
-	<div class="px-10 pt-10 lg:pt-0 flex flex-col justify-center ">
+<section class="flex flex-col justify-between lg:flex-row header-bg md:pl-16">
+	<div class="px-10 md:px-7 pt-10 lg:pt-0 flex flex-col justify-center ">
 		<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>
 		<h1 class="text-5xl sm:text-8xl font-bold">Holley</h1>
 		<h2 class="text-xl pl-1 mt-6">Fullstack-Developer</h2>

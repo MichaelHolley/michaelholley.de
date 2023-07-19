@@ -7,7 +7,7 @@
 	<div class="flex flex-col justify-center text-justify text-lg">
 		<div class="w-10/12 lg:w-2/5 mx-auto my-6">
 			<div class="pl-5 text-xl">Seit Jan. 2022</div>
-			<h4 class="text-2xl font-bold">Junior Software Developer</h4>
+			<h4 class="text-2xl font-bold">Software Developer</h4>
 			<div>AraCom IT Services AG</div>
 			<div>
 				Teambasierte Entwicklung von Individual-Software für Kunden aus unterschiedlichsten Branchen

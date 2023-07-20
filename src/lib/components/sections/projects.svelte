@@ -1,4 +1,6 @@
 <script lang="ts">
+	import colors from 'tailwindcss/colors';
+	import GithubIcon from '../misc/icons/githubIcon.svelte';
 	import SectionHeader from '../misc/sectionHeader.svelte';
 
 	interface Project {
@@ -21,14 +23,16 @@
 			description: [
 				'Meine Absicht war es, eine Portfolio-Website zu erstellen, die meine Fähigkeiten und mein Fachwissen als Entwickler präsentiert, gleichzeitig aber auch eine gute User-Experience bietet.',
 				'Durch die Verwendung der neuesten Web-Technologien (SvelteKit + Tailwindcss) und die Erstellung visuell ansprechender und interaktiver Elemente hoffe ich, einen positiven Eindruck bei potenziellen Kunden und Arbeitgebern zu hinterlassen.'
-			]
+			],
+			github: 'https://github.com/MichaelHolley/michaelholley.de'
 		},
 		{
 			title: 'OnTrack',
 			description: [
 				'Insgesamt ist die OnTrack Web-App ein nützliches Tool für alle, die ihre täglichen Aktivitäten, ToDos und Ausgaben im Auge behalten wollen. Dank der benutzerfreundlichen Oberfläche und der grafischen Darstellung ist es einfach, organisiert zu bleiben.',
 				'Entwickelt mit React und Mantine-Components für das Front-End und einem ASP.NET-Back-End mit Google Sign-In für die Benutzerauthentifizierung sowie MongoDB-Datenbank.'
-			]
+			],
+			github: 'https://github.com/MichaelHolley/OnTrack'
 		},
 		{
 			title: 'MyPoll',
@@ -41,7 +45,8 @@
 			description: [
 				'Das PaymentsDashboard ist eine Anwendung in der finanzielle Ausgaben gespeichert und dargestellt werden. Unter Verwendung von Tags, ist der Nutzer in der Lage Zahlungen mit Stichwörtern zu versehen, die eine Sortierung bzw. Filterung ermöglichen.',
 				'Jede Zahlung erhält verpflichtend einen primären Tag, der bei der visuellen Aufbereitung in Form von Graphen zur Darstellung verwendet wird.'
-			]
+			],
+			github: 'https://github.com/MichaelHolley/PaymentsDashboard'
 		}
 	];
 
@@ -78,15 +83,32 @@
 			{/each}
 		</ul>
 		<div
-			class="h-[450px] w-full {selectedIndex != -1
+			class="h-[380px] w-full 2xl:mr-40 {selectedIndex != -1
 				? 'overflow-hidden hover:overflow-y-scroll pr-1 hover:pr-0 scroll'
 				: ''}"
 		>
 			{#if selectedIndex >= 0 && selectedIndex < projects.length}
-				<div class="pl-8 pr-4 text-justify text-lg">
-					{#each projects[selectedIndex].description as descr, i}
-						<p class={i != 0 ? 'mt-2' : ''}>{descr}</p>
-					{/each}
+				<div class="flex flex-col">
+					<div class="pl-8 pr-4 text-justify text-lg">
+						{#each projects[selectedIndex].description as descr, i}
+							<p class={i != 0 ? 'mt-4' : ''}>
+								{descr}
+							</p>
+						{/each}
+					</div>
+					<div class="mt-3 p-2 flex flex-row justify-center">
+						{#if !!projects[selectedIndex].github && projects[selectedIndex].github != ''}
+							<a
+								class="h-11 ml-3 hover:scale-110 transition-all"
+								href="https://github.com/MichaelHolley/michaelholley.de"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="GitHub-Repository"
+							>
+								<GithubIcon color={colors.black} />
+							</a>
+						{/if}
+					</div>
 				</div>
 			{:else}
 				<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>

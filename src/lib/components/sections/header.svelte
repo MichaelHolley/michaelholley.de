@@ -1,9 +1,9 @@
 <script>
 	import MeImg from '$lib/assets/images/image.jpg';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '../misc/githubIcon.svelte';
-	import LinkedinIcon from '../misc/linkedinIcon.svelte';
-	import MailIcon from '../misc/mailIcon.svelte';
+	import GithubIcon from '../misc/icons/githubIcon.svelte';
+	import LinkedinIcon from '../misc/icons/linkedinIcon.svelte';
+	import MailIcon from '../misc/icons/mailIcon.svelte';
 </script>
 
 <section class="flex flex-col justify-between lg:flex-row header-bg md:pl-16">

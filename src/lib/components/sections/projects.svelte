@@ -38,7 +38,8 @@
 			title: 'MyPoll',
 			description: [
 				'MyPoll ist eine Angular-Anwendung mit der man einfache Umfragen mit einer einzelnen Fragen erstellen kann. Antworten können dabei optional beschränkt werden, wie feste Antworten, eigene Antworten, private Umfragen und die Mehrfachauswahl. Dahinter arbeitet ein ASP.NET Core Backend, welches die Daten in einer SQLite-Datenbank verwaltet.'
-			]
+			],
+			github: 'https://github.com/MichaelHolley/MyPoll'
 		},
 		{
 			title: 'PaymentsDashboard',

@@ -101,7 +101,7 @@
 						{#if !!projects[selectedIndex].github && projects[selectedIndex].github != ''}
 							<a
 								class="h-11 ml-3 hover:scale-110 transition-all"
-								href="https://github.com/MichaelHolley/michaelholley.de"
+								href={projects[selectedIndex].github}
 								target="_blank"
 								rel="noreferrer"
 								aria-label="GitHub-Repository"

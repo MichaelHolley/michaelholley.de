@@ -64,7 +64,7 @@
 		<ul class="break-words mb-6">
 			{#each projects as p, i}
 				<li
-					class="mb-1"
+					class="mb-1 hover:scale-105 transition-all"
 					role="button"
 					tabindex="0"
 					on:click={() => selectProject(i)}

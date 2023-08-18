@@ -16,6 +16,8 @@
 				return 'from-left';
 			case 'right':
 				return 'from-right';
+			default:
+				return 'from-bottom';
 		}
 	}
 </script>

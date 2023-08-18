@@ -107,13 +107,13 @@
 					<div class="mt-3 p-2 flex flex-row justify-center">
 						{#if !!projects[selectedIndex].github && projects[selectedIndex].github != ''}
 							<a
-								class="h-11 ml-3 hover:scale-110 transition-all"
+								class="hover:scale-110 transition-all"
 								href={projects[selectedIndex].github}
 								target="_blank"
 								rel="noreferrer"
 								aria-label="GitHub-Repository"
 							>
-								<GithubIcon color={colors.black} />
+								<GithubIcon color={colors.black} height={40} />
 							</a>
 						{/if}
 					</div>

@@ -2,6 +2,7 @@
 	import colors from 'tailwindcss/colors';
 	import GithubIcon from '../misc/icons/githubIcon.svelte';
 	import SectionHeader from '../misc/sectionHeader.svelte';
+	import AnimatedSectionWrapper from './animatedSectionWrapper.svelte';
 
 	interface Project {
 		title: string;
@@ -66,63 +67,65 @@
 </script>
 
 <section id="projekte" class="bg-mhWhite text-mhBlack p-8 md:p-16">
-	<SectionHeader title="Projekte" class="text-center md:text-start md:pl-7" />
-	<div class="mt-6 flex flex-col md:flex-row md:pl-7">
-		<ul class="break-words mb-6">
-			{#each projects as p, i}
-				<li
-					class="mb-1 hover:scale-105 transition-all"
-					role="button"
-					tabindex="0"
-					on:click={() => selectProject(i)}
-					on:keyup={(e) => {
-						if (e.key == 'Enter') selectProject(i);
-					}}
-				>
-					<h4
-						class="text-2xl md:text-3xl lg:text-4xl text-center md:text-start font-bold uppercase hover:text-mhSecondary hover:cursor-pointer transition-all duration-300 {i ===
-						selectedIndex
-							? 'text-mhPrimary'
-							: 'text-mhBlack'}"
+	<AnimatedSectionWrapper from="left">
+		<SectionHeader title="Projekte" class="text-center md:text-start md:pl-7" />
+		<div class="mt-6 flex flex-col md:flex-row md:pl-7">
+			<ul class="break-words mb-6">
+				{#each projects as p, i}
+					<li
+						class="mb-1 hover:scale-105 transition-all"
+						role="button"
+						tabindex="0"
+						on:click={() => selectProject(i)}
+						on:keyup={(e) => {
+							if (e.key == 'Enter') selectProject(i);
+						}}
 					>
-						{p.title}
-					</h4>
-				</li>
-			{/each}
-		</ul>
-		<div
-			class="h-[380px] w-full 2xl:mr-40 {selectedIndex != -1
-				? 'overflow-hidden hover:overflow-y-scroll pr-1 hover:pr-0 scroll'
-				: ''}"
-		>
-			{#if selectedIndex >= 0 && selectedIndex < projects.length}
-				<div class="flex flex-col">
-					<div class="pl-8 pr-4 text-justify text-lg">
-						{#each projects[selectedIndex].description as descr, i}
-							<p class={i != 0 ? 'mt-4' : ''}>
-								{descr}
-							</p>
-						{/each}
+						<h4
+							class="text-2xl md:text-3xl lg:text-4xl text-center md:text-start font-bold uppercase hover:text-mhSecondary hover:cursor-pointer transition-all duration-300 {i ===
+							selectedIndex
+								? 'text-mhPrimary'
+								: 'text-mhBlack'}"
+						>
+							{p.title}
+						</h4>
+					</li>
+				{/each}
+			</ul>
+			<div
+				class="h-[380px] w-full 2xl:mr-40 {selectedIndex != -1
+					? 'overflow-hidden hover:overflow-y-scroll pr-1 hover:pr-0 scroll'
+					: ''}"
+			>
+				{#if selectedIndex >= 0 && selectedIndex < projects.length}
+					<div class="flex flex-col">
+						<div class="pl-8 pr-4 text-justify text-lg">
+							{#each projects[selectedIndex].description as descr, i}
+								<p class={i != 0 ? 'mt-4' : ''}>
+									{descr}
+								</p>
+							{/each}
+						</div>
+						<div class="mt-3 p-2 flex flex-row justify-center">
+							{#if !!projects[selectedIndex].github && projects[selectedIndex].github != ''}
+								<a
+									class="hover:scale-110 transition-all"
+									href={projects[selectedIndex].github}
+									target="_blank"
+									rel="noreferrer"
+									aria-label="GitHub-Repository"
+								>
+									<GithubIcon color={colors.black} height={40} />
+								</a>
+							{/if}
+						</div>
 					</div>
-					<div class="mt-3 p-2 flex flex-row justify-center">
-						{#if !!projects[selectedIndex].github && projects[selectedIndex].github != ''}
-							<a
-								class="hover:scale-110 transition-all"
-								href={projects[selectedIndex].github}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="GitHub-Repository"
-							>
-								<GithubIcon color={colors.black} height={40} />
-							</a>
-						{/if}
-					</div>
-				</div>
-			{:else}
-				<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>
-			{/if}
+				{:else}
+					<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>
+				{/if}
+			</div>
 		</div>
-	</div>
+	</AnimatedSectionWrapper>
 </section>
 
 <style>

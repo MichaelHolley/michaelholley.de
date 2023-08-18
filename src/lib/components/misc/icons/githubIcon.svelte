@@ -1,8 +1,9 @@
 <script lang="ts">
 	export let color: string;
+	export let height: number;
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="100%"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" {height}
 	><path
 		fill-rule="evenodd"
 		clip-rule="evenodd"

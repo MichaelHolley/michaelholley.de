@@ -19,7 +19,7 @@
 				rel="noreferrer"
 				aria-label="LinkedIn-Profile"
 			>
-				<LinkedinIcon color={colors.white} />
+				<LinkedinIcon color={colors.white} height={45} />
 			</a>
 			<a
 				class="ml-3 hover:scale-110 transition-all"
@@ -28,14 +28,14 @@
 				rel="noreferrer"
 				aria-label="GitHub-Profile"
 			>
-				<GithubIcon color={colors.white} />
+				<GithubIcon color={colors.white} height={45} />
 			</a>
 			<a
 				class="ml-3 hover:scale-110 transition-all"
 				href="mailto:michael.philipp.holley@gmail.com"
 				aria-label="GitHub-Profile"
 			>
-				<MailIcon color={colors.white} />
+				<MailIcon color={colors.white} height={45} />
 			</a>
 		</div>
 	</div>

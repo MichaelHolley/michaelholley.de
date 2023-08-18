@@ -8,7 +8,7 @@
 </script>
 
 <section class="header-bg">
-	<AnimatedSectionWrapper>
+	<AnimatedSectionWrapper from="right">
 		<div class="flex flex-col justify-between lg:flex-row md:pl-16">
 			<div class="px-8 md:px-7 pt-10 lg:pt-0 flex flex-col justify-center ">
 				<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>

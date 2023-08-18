@@ -67,7 +67,7 @@
 </script>
 
 <section id="projekte" class="bg-mhWhite text-mhBlack p-8 md:p-16">
-	<AnimatedSectionWrapper>
+	<AnimatedSectionWrapper from="left">
 		<SectionHeader title="Projekte" class="text-center md:text-start md:pl-7" />
 		<div class="mt-6 flex flex-col md:flex-row md:pl-7">
 			<ul class="break-words mb-6">

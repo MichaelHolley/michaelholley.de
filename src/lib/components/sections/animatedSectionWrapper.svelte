@@ -30,9 +30,8 @@
 	on:exitViewport={() => {
 		isVisible = false;
 	}}
-	class:animate-in={true}
+	class={`animate-in ${getSlideClass()}`}
 	class:visible={isVisible}
-	class={getSlideClass()}
 >
 	<slot />
 </div>

@@ -1,7 +1,3 @@
-<script>
-	import AnimatedSectionWrapper from './animatedSectionWrapper.svelte';
-</script>
-
 <section id="dev" class="dev-bg p-8 md:p-16">
 	<div class="flex flex-row justify-between">
 		<div class="lg:w-1/3 sm:px-7 my-8 lg:my-0">

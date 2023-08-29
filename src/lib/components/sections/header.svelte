@@ -4,7 +4,6 @@
 	import GithubIcon from '../misc/icons/githubIcon.svelte';
 	import LinkedinIcon from '../misc/icons/linkedinIcon.svelte';
 	import MailIcon from '../misc/icons/mailIcon.svelte';
-	import AnimatedSectionWrapper from './animatedSectionWrapper.svelte';
 </script>
 
 <section class="header-bg">

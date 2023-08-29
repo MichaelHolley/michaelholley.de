@@ -2,7 +2,6 @@
 	import colors from 'tailwindcss/colors';
 	import GithubIcon from '../misc/icons/githubIcon.svelte';
 	import SectionHeader from '../misc/sectionHeader.svelte';
-	import AnimatedSectionWrapper from './animatedSectionWrapper.svelte';
 
 	interface Project {
 		title: string;

@@ -54,8 +54,8 @@
 	.header-bg {
 		background-image: linear-gradient(
 			-30deg,
-			theme('colors.mhPrimary') 33%,
-			theme('colors.mhSecondary') 0%
+			theme('colors.primary.DEFAULT') 33%,
+			theme('colors.secondary.DEFAULT') 0%
 		);
 	}
 

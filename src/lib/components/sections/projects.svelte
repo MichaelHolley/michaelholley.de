@@ -102,7 +102,7 @@
 						<div
 							class="flex flex-col"
 							in:fly={{ x: -200, duration: 500, delay: 500 }}
-							out:fly={{ x: 200, duration: 500 }}
+							out:fly={{ x: -200, duration: 500 }}
 						>
 							<div class="pl-8 pr-4 text-justify text-lg">
 								{#each project.description as descr, i}

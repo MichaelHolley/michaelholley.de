@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	import colors from 'tailwindcss/colors';
 	import GithubIcon from '../misc/icons/githubIcon.svelte';
 	import SectionHeader from '../misc/sectionHeader.svelte';
@@ -96,28 +97,36 @@
 				: ''}"
 		>
 			{#if selectedIndex >= 0 && selectedIndex < projects.length}
-				<div class="flex flex-col">
-					<div class="pl-8 pr-4 text-justify text-lg">
-						{#each projects[selectedIndex].description as descr, i}
-							<p class={i != 0 ? 'mt-4' : ''}>
-								{descr}
-							</p>
-						{/each}
-					</div>
-					<div class="mt-3 p-2 flex flex-row justify-center">
-						{#if !!projects[selectedIndex].github && projects[selectedIndex].github != ''}
-							<a
-								class="hover:scale-110 transition-all"
-								href={projects[selectedIndex].github}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="GitHub-Repository"
-							>
-								<GithubIcon color={colors.black} height={40} />
-							</a>
-						{/if}
-					</div>
-				</div>
+				{#each projects as project, index}
+					{#if index === selectedIndex}
+						<div
+							class="flex flex-col"
+							in:fly={{ x: -200, duration: 500, delay: 500 }}
+							out:fly={{ x: 200, duration: 500 }}
+						>
+							<div class="pl-8 pr-4 text-justify text-lg">
+								{#each project.description as descr, i}
+									<p class={i != 0 ? 'mt-4' : ''}>
+										{descr}
+									</p>
+								{/each}
+							</div>
+							<div class="mt-3 p-2 flex flex-row justify-center">
+								{#if !!project.github && projects[selectedIndex].github != ''}
+									<a
+										class="hover:scale-110 transition-all"
+										href={project.github}
+										target="_blank"
+										rel="noreferrer"
+										aria-label="GitHub-Repository"
+									>
+										<GithubIcon color={colors.black} height={40} />
+									</a>
+								{/if}
+							</div>
+						</div>
+					{/if}
+				{/each}
 			{:else}
 				<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>
 			{/if}

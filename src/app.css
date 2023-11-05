@@ -10,7 +10,3 @@ body {
 	color: theme('colors.white');
 	font-family: 'Raleway', sans-serif;
 }
-
-::selection {
-	background: theme('colors.tertiary.DEFAULT');
-}

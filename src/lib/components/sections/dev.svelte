@@ -9,7 +9,7 @@
 				von Lösungen rund um Daten und deren Verarbeitung faszinieren mich.
 			</p>
 		</div>
-		<div class="hidden lg:block min-h-full w-1/5 border-r-8 border-t-8 border-mhSecondary" />
+		<div class="hidden lg:block min-h-full w-1/5 border-r-8 border-t-8 border-secondary" />
 	</div>
 	<div class="flex flex-row justify-center">
 		<div class="lg:w-1/3 sm:px-7 my-8 lg:my-0">
@@ -40,9 +40,9 @@
 	.dev-bg {
 		background-image: linear-gradient(
 			30deg,
-			theme('colors.mhBlack') 19%,
-			theme('colors.mhPrimary') 0% 29%,
-			theme('colors.mhBlack') 0%
+			theme('colors.black') 19%,
+			theme('colors.primary.DEFAULT') 0% 29%,
+			theme('colors.black') 0%
 		);
 	}
 </style>

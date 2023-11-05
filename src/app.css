@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 html {
-	background-color: theme('colors.mhBlack');
+	background-color: theme('colors.black');
 }
 
 body {
-	color: theme('colors.mhWhite');
+	color: theme('colors.white');
 	font-family: 'Raleway', sans-serif;
 }
 
 ::selection {
-	background: theme('colors.mhAlt');
+	background: theme('colors.tertiary.DEFAULT');
 }

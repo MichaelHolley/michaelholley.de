@@ -22,7 +22,7 @@
 			title: 'Wissenschaftspreis',
 			description: [
 				'Mit unserem Projekt haben wir mehrere Ziele erreicht. Erstens haben wir erfolgreich CO2-Daten mit einem Raspberry Pi und einem CO2-Sensor gemessen und gespeichert. Zweitens haben wir eine REST-API erstellt, mit der wir auf die CO2-Daten zugreifen und sie in einer Webanwendung anzeigen konnten. Drittens haben wir eine benutzerfreundliche Webanwendung erstellt, die die CO2-Daten im Zeitverlauf auf optisch ansprechende Weise anzeigt.',
-				'Insgesamt hat unser Projekt unsere Fähigkeiten in den Bereichen Programmierung, Webentwicklung und Datenanalyse unter Beweis gestellt. Außerdem sammelten wir wertvolle Erfahrungen bei der Arbeit im Team und bei der Zusammenarbeit an einem Projekt. Unser zweiter Platz beim Wissenschaftspreis Augsburger Schulen war ein Beweis für unsere harte Arbeit und unsere Hingabe, welche mit einem Preisgeld von 1000€ belohnt wurde.'
+				'Insgesamt hat unser Projekt unsere Fähigkeiten in den Bereichen Programmierung, Webentwicklung und Datenanalyse unter Beweis gestellt. Außerdem sammelten wir wertvolle Erfahrungen bei der Arbeit im Team und bei der Zusammenarbeit an einem Projekt. Unser zweiter Platz beim Wissenschaftspreis Augsburger Schulen 2021 war ein Beweis für unsere harte Arbeit und unsere Hingabe, welche mit einem Preisgeld von 1000€ belohnt wurde.'
 			]
 		},
 		{
@@ -65,7 +65,7 @@
 	}
 </script>
 
-<section id="projekte" class="bg-mhWhite text-mhBlack p-8 md:p-16">
+<section id="projekte" class="bg-white text-black p-8 md:p-16">
 	<SectionHeader title="Projekte" class="text-center md:text-start md:pl-7" />
 	<div class="mt-6 flex flex-col md:flex-row md:pl-7">
 		<ul class="break-words mb-6">
@@ -80,10 +80,10 @@
 					}}
 				>
 					<h4
-						class="text-2xl md:text-3xl lg:text-4xl text-center md:text-start font-bold uppercase hover:text-mhSecondary hover:cursor-pointer transition-all duration-300 {i ===
+						class="text-2xl md:text-3xl lg:text-4xl text-center md:text-start font-bold uppercase hover:text-secondary hover:cursor-pointer transition-all duration-300 {i ===
 						selectedIndex
-							? 'text-mhPrimary'
-							: 'text-mhBlack'}"
+							? 'text-primary'
+							: 'text-black'}"
 					>
 						{p.title}
 					</h4>
@@ -129,7 +129,7 @@
 	/* Firefox */
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: theme('colors.mhAlt') transparent;
+		scrollbar-color: theme('colors.tertiary.DEFAULT') transparent;
 	}
 
 	/* Chrome, Edge, and Safari */
@@ -142,6 +142,6 @@
 	}
 
 	*::-webkit-scrollbar-thumb {
-		background-color: theme('colors.mhAlt');
+		background-color: theme('colors.tertiary.DEFAULT');
 	}
 </style>

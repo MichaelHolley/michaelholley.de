@@ -20,7 +20,7 @@
 			<span class="block">AraCom IT Services AG</span>
 			<span class="block mt-2 text-justify">Berufsschule abgeschlossen mit 1,0</span>
 			<span class="block text-justify">
-				IHK Prüfung abgelegt mit gesamt <strong>96 von 100</strong> Punkten gesamt
+				IHK Prüfung abgelegt mit <strong>96 von 100</strong> Punkten gesamt
 			</span>
 		</div>
 	</div>

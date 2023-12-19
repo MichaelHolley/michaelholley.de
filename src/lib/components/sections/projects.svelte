@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '../misc/icons/githubIcon.svelte';
-	import SectionHeader from '../misc/sectionHeader.svelte';
+	import GithubIcon from '../shared/icons/githubIcon.svelte';
+	import SectionHeader from '../shared/sectionHeader.svelte';
 
 	interface Project {
 		title: string;

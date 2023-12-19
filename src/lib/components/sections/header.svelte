@@ -1,9 +1,9 @@
 <script>
 	import MeImg from '$lib/assets/images/image.jpg';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '../misc/icons/githubIcon.svelte';
-	import LinkedinIcon from '../misc/icons/linkedinIcon.svelte';
-	import MailIcon from '../misc/icons/mailIcon.svelte';
+	import GithubIcon from '../shared/icons/githubIcon.svelte';
+	import LinkedinIcon from '../shared/icons/linkedinIcon.svelte';
+	import MailIcon from '../shared/icons/mailIcon.svelte';
 </script>
 
 <section class="header-bg">

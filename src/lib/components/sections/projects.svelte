@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import colors from 'tailwindcss/colors';
 	import GithubIcon from '../misc/icons/githubIcon.svelte';
 	import SectionHeader from '../misc/sectionHeader.svelte';
@@ -99,11 +99,7 @@
 			{#if selectedIndex >= 0 && selectedIndex < projects.length}
 				{#each projects as project, index}
 					{#if index === selectedIndex}
-						<div
-							class="flex flex-col"
-							in:fly={{ x: -200, duration: 500, delay: 500 }}
-							out:fly={{ x: -200, duration: 500 }}
-						>
+						<div class="flex flex-col" in:fade={{ delay: 400 }} out:fade={{ duration: 300 }}>
 							<div class="pl-8 pr-4 text-justify text-lg">
 								{#each project.description as descr, i}
 									<p class={i != 0 ? 'mt-4' : ''}>

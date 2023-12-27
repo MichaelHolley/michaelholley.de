@@ -7,7 +7,7 @@
 	id="taetigkeiten"
 	class={`min-w-full container p-8 md:p-16 sm:px-16 md:px-32 lg:px-64 bg-white text-black  selection:bg-primary`}
 >
-	<SectionHeader title="Tätigkeiten" class="text-center" />
+	<SectionHeader title="Experience" class="text-center" />
 	<div class="text-lg text-left">
 		<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
 			<ul class="list-disc list-inside">

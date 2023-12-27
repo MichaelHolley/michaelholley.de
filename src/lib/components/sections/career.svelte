@@ -3,7 +3,7 @@
 	import Step from '../career/step.svelte';
 </script>
 
-<section id="taetigkeiten" class={`bg-tertiary p-8 md:p-16 selection:bg-primary`}>
+<section id="taetigkeiten" class={`bg-white text-black p-8 md:p-16 selection:bg-primary`}>
 	<SectionHeader title="Tätigkeiten" class="text-center" />
 	<div class="flex flex-col justify-center text-lg text-left">
 		<Step period="Seit Jan. 2022" title="Software Developer" workplace="AraCom IT Services AG">

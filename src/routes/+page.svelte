@@ -8,6 +8,6 @@
 <main class="selection:bg-primary">
 	<Header />
 	<Dev />
-	<Projects />
 	<Career />
+	<Projects />
 </main>

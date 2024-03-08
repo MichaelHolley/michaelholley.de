@@ -2,6 +2,12 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		listStyleType: {
+			none: 'none',
+			disc: 'disc',
+			decimal: 'decimal',
+			square: 'square'
+		},
 		colors: {
 			black: '#141414',
 			white: '#F5F5F5',

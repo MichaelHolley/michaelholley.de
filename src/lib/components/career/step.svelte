@@ -4,12 +4,12 @@
 	export let workplace: string;
 </script>
 
-<div class="mx-auto py-6 pl-8 border-l-4 relative">
+<div class="mx-auto py-7 pl-8 border-l-4 relative">
 	<span class="block">{workplace}</span>
 	<div class="relative">
 		<div class="flex flex-row justify-between">
 			<h4 class="text-2xl font-bold">{title}</h4>
-			<span class="block pl-5 text-xl text-gray">{period}</span>
+			<span class="block pl-5 text-xl text-tertiary">{period}</span>
 		</div>
 		<div class="h-6 w-6 bg-black rounded-full absolute top-[50%] -translate-y-[50%] -left-[46px]" />
 	</div>

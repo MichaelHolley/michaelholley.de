@@ -66,7 +66,7 @@
 	}
 </script>
 
-<section id="projekte" class="bg-white text-black p-8 md:p-16">
+<section id="projekte" class="bg-tertiary text-white p-8 md:p-16">
 	<SectionHeader title="Projekte" class="text-center md:text-start md:pl-7" />
 	<div class="mt-6 flex flex-col md:flex-row md:pl-7">
 		<ul class="break-words mb-6">
@@ -81,10 +81,10 @@
 					}}
 				>
 					<h4
-						class="text-2xl md:text-3xl lg:text-4xl text-center md:text-start font-bold uppercase hover:text-secondary hover:cursor-pointer transition-all duration-300 {i ===
+						class="text-2xl md:text-3xl lg:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-300 {i ===
 						selectedIndex
 							? 'text-primary'
-							: 'text-black'}"
+							: 'text-white'}"
 					>
 						{p.title}
 					</h4>
@@ -116,7 +116,7 @@
 										rel="noreferrer"
 										aria-label="GitHub-Repository"
 									>
-										<GithubIcon color={colors.black} height={40} />
+										<GithubIcon color={colors.white} height={40} />
 									</a>
 								{/if}
 							</div>
@@ -134,7 +134,7 @@
 	/* Firefox */
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: theme('colors.tertiary.DEFAULT') transparent;
+		scrollbar-color: theme('colors.black') transparent;
 	}
 
 	/* Chrome, Edge, and Safari */
@@ -147,6 +147,6 @@
 	}
 
 	*::-webkit-scrollbar-thumb {
-		background-color: theme('colors.tertiary.DEFAULT');
+		background-color: theme('colors.white');
 	}
 </style>

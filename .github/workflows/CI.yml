@@ -10,19 +10,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 20
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x
-      - name: Run install
-        uses: borales/actions-yarn@v4
+          node-version: 20
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm & dependencies
         with:
-          cmd: install
+          version: 8
+          run_install: true
+
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+        run: pnpm build
+
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:

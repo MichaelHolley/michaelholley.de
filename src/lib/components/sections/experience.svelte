@@ -12,7 +12,7 @@
 		<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
 			<ul class="list-square list-inside">
 				<li>
-					teambasierte Entwicklung von maßgeschneiderte Softwarelösungen für Kunden aus
+					teambasierte Entwicklung von maßgeschneiderten Softwarelösungen für Kunden aus
 					verschiedenen Branchen
 				</li>
 				<li>Umsetzung von Verwaltungs-Tools in Form von webbasierten Dashboards</li>

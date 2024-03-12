@@ -8,12 +8,12 @@ Overall, my intention was to build a portfolio website that showcased my skills 
 
 ## Install
 
-`yarn install`
+`pnpm install`
 
 ## Run
 
-`yarn dev`
+`pnpm dev`
 
 ## Build
 
-`yarn build`
+`pnpm build`

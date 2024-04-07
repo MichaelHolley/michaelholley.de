@@ -91,15 +91,11 @@
 				</li>
 			{/each}
 		</ul>
-		<div
-			class="h-[380px] w-full 2xl:mr-40 {selectedIndex != -1
-				? 'overflow-hidden hover:overflow-y-scroll pr-1 hover:pr-0 scroll'
-				: ''}"
-		>
+		<div class="h-[380px] w-full 2xl:mr-40 {selectedIndex != -1 ? 'overflow-y-auto pr-1' : ''}">
 			{#if selectedIndex >= 0 && selectedIndex < projects.length}
 				{#each projects as project, index}
 					{#if index === selectedIndex}
-						<div class="flex flex-col" in:fade={{ delay: 400 }} out:fade={{ duration: 300 }}>
+						<div class="flex flex-col">
 							<div class="pl-8 pr-4 text-justify text-lg">
 								{#each project.description as descr, i}
 									<p class={i != 0 ? 'mt-4' : ''}>

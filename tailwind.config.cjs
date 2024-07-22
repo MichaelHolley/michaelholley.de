@@ -2,6 +2,14 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		container: {
+			center: true,
+			padding: {
+				DEFAULT: '2rem',
+				sm: '3rem',
+				lg: '4rem'
+			}
+		},
 		listStyleType: {
 			none: 'none',
 			disc: 'disc',

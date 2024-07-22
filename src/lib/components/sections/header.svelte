@@ -7,8 +7,8 @@
 </script>
 
 <section class="header-bg">
-	<div class="flex flex-col justify-between lg:flex-row md:pl-16">
-		<div class="px-8 md:px-7 pt-10 lg:pt-0 flex flex-col justify-center ">
+	<div class="container flex flex-col lg:flex-row justify-between gap-12 py-10">
+		<div class="flex flex-col justify-center ">
 			<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>
 			<h1 class="text-5xl sm:text-8xl font-bold">Holley</h1>
 			<h2 class="text-xl pl-1 mt-6">Fullstack-Developer</h2>
@@ -40,11 +40,11 @@
 				</a>
 			</div>
 		</div>
-		<div class="p-10 lg:pr-52 flex flex-col justify-center">
+		<div class="flex flex-col justify-center items-center">
 			<img
 				src={MeImg}
 				alt="Michael Holley"
-				class="w-[250px] lg:w-[350px] align-middle mx-auto lg:mx-0 shadow-2xl header-img"
+				class="max-w-[280px] lg:max-w-[350px] shadow-2xl header-img"
 			/>
 		</div>
 	</div>

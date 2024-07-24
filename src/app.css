@@ -4,9 +4,14 @@
 
 html {
 	background-color: theme('colors.black');
+	scroll-snap-type: y mandatory;
 }
 
 body {
 	color: theme('colors.white');
 	font-family: 'Raleway', sans-serif;
+}
+
+section {
+	scroll-snap-align: start;
 }

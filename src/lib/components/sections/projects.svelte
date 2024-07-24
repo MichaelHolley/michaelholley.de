@@ -41,21 +41,6 @@
 				'Entwickelt mit React und Mantine-Components für das Front-End und einem ASP.NET-Back-End mit Google Sign-In für die Benutzerauthentifizierung sowie MongoDB-Datenbank.'
 			],
 			github: 'https://github.com/MichaelHolley/OnTrack'
-		},
-		{
-			title: 'MyPoll',
-			description: [
-				'MyPoll ist eine Angular-Anwendung mit der man einfache Umfragen mit einer einzelnen Fragen erstellen kann. Antworten können dabei optional beschränkt werden, wie feste Antworten, eigene Antworten, private Umfragen und die Mehrfachauswahl. Dahinter arbeitet ein ASP.NET Core Backend, welches die Daten in einer SQLite-Datenbank verwaltet.'
-			],
-			github: 'https://github.com/MichaelHolley/MyPoll'
-		},
-		{
-			title: 'PaymentsDashboard',
-			description: [
-				'Das PaymentsDashboard ist eine Anwendung in der finanzielle Ausgaben gespeichert und dargestellt werden. Unter Verwendung von Tags, ist der Nutzer in der Lage Zahlungen mit Stichwörtern zu versehen, die eine Sortierung bzw. Filterung ermöglichen.',
-				'Jede Zahlung erhält verpflichtend einen primären Tag, der bei der visuellen Aufbereitung in Form von Graphen zur Darstellung verwendet wird.'
-			],
-			github: 'https://github.com/MichaelHolley/PaymentsDashboard'
 		}
 	];
 
@@ -69,8 +54,8 @@
 <section id="projekte" class="bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="text-center md:text-start" />
-		<div class="mt-6 flex flex-col md:flex-row">
-			<ul class="break-words mb-6">
+		<div class="mt-6 flex flex-col md:flex-row gap-4 md:gap-2">
+			<ul class="break-words">
 				{#each projects as p, i}
 					<li
 						class="mb-1 hover:scale-105 transition-all"

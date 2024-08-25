@@ -67,7 +67,7 @@
 						}}
 					>
 						<h4
-							class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-200 {i ===
+							class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-200 selection:bg-secondary {i ===
 							selectedIndex
 								? 'text-primary'
 								: 'text-white'}"

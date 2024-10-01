@@ -8,7 +8,7 @@
 		<SectionHeader title="Experience" class="text-center" />
 		<div class="text-lg text-left">
 			<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
-				<ul class="list-square list-inside">
+				<ul class="list-square list-outside">
 					<li>
 						teambasierte Entwicklung von maßgeschneiderten Softwarelösungen für Kunden aus
 						verschiedenen Branchen
@@ -25,7 +25,7 @@
 				title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"
 				workplace="AraCom IT Services AG"
 			>
-				<ul class="list-square list-inside">
+				<ul class="list-square list-outside">
 					<li>Verkürzte Ausbildung auf 2.5 Jahre</li>
 					<li>Abschluss der Berufsschule mit <strong>Note 1,0</strong></li>
 					<li>IHK Prüfung abgelegt mit <strong>96 von 100</strong> Punkten gesamt</li>

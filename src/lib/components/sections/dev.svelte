@@ -1,7 +1,7 @@
 <section id="dev" class="dev-bg">
-	<div class="container py-8 md:py-16 flex flex-col gap-6">
+	<div class="container py-8 md:py-16 flex flex-col gap-7">
 		<div class="flex flex-row justify-between">
-			<div class="lg:w-1/3 lg:pr-7">
+			<div class="xl:w-1/3 xl:pr-7">
 				<h2 class="text-4xl font-bold mb-1 text-start pb-1">Backend</h2>
 				<p class="text-justify">
 					Ich habe eine Leidenschaft für das Entwerfen und Erstellen der Architektur eines Systems,
@@ -10,10 +10,10 @@
 					Finden von Lösungen rund um Daten und deren Verarbeitung faszinieren mich.
 				</p>
 			</div>
-			<div class="hidden lg:block min-h-full w-1/5 border-r-8 border-t-8 border-secondary" />
+			<div class="hidden xl:block min-h-full w-1/5 border-r-8 border-t-8 border-secondary" />
 		</div>
 		<div class="flex flex-row justify-center">
-			<div class="lg:w-1/3 lg:px-7">
+			<div class="xl:w-1/3 xl:px-7">
 				<h2 class="text-4xl font-bold mb-1 text-start pb-1">Frontend</h2>
 				<p class="text-justify">
 					Insgesamt bin ich von der Frontend-Entwicklung begeistert, weil sie es mir ermöglicht,
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="flex flex-row justify-end">
-			<div class="lg:w-1/3 lg:pl-7">
+			<div class="xl:w-1/3 xl:pl-7">
 				<h2 class="text-4xl font-bold mb-1 text-start pb-1">DevOps</h2>
 				<p class="text-justify">
 					Ich arbeite gerne im Bereich DevOps, weil hier der Einsatz von Automatisierungstools und

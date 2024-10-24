@@ -7,39 +7,41 @@
 </script>
 
 <section class="header-bg">
-	<div class="container flex flex-col lg:flex-row justify-between gap-12 py-10">
+	<div class="container flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 py-10">
 		<div class="flex flex-col justify-center">
 			<div class="mb-4 sm:mb-5">
 				<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
 				<h1 class="text-5xl sm:text-7xl font-bold">Holley</h1>
 			</div>
-			<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
-			<div class="h-11 flex flex-row pl-1">
-				<a
-					class="hover:scale-110 transition-all"
-					href="https://www.linkedin.com/in/michael-holley-791a64228/"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="LinkedIn-Profile"
-				>
-					<LinkedinIcon color={colors.white} height={45} />
-				</a>
-				<a
-					class="ml-3 hover:scale-110 transition-all"
-					href="https://github.com/MichaelHolley"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="GitHub-Profile"
-				>
-					<GithubIcon color={colors.white} height={45} />
-				</a>
-				<a
-					class="ml-3 hover:scale-110 transition-all"
-					href="mailto:michael.philipp.holley@gmail.com"
-					aria-label="GitHub-Profile"
-				>
-					<MailIcon color={colors.white} height={45} />
-				</a>
+			<div>
+				<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
+				<div class="h-11 flex flex-row pl-1">
+					<a
+						class="hover:scale-110 transition-all"
+						href="https://www.linkedin.com/in/michael-holley-791a64228/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="LinkedIn-Profile"
+					>
+						<LinkedinIcon color={colors.white} height={45} />
+					</a>
+					<a
+						class="ml-3 hover:scale-110 transition-all"
+						href="https://github.com/MichaelHolley"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="GitHub-Profile"
+					>
+						<GithubIcon color={colors.white} height={45} />
+					</a>
+					<a
+						class="ml-3 hover:scale-110 transition-all"
+						href="mailto:michael.philipp.holley@gmail.com"
+						aria-label="GitHub-Profile"
+					>
+						<MailIcon color={colors.white} height={45} />
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="flex flex-col justify-center items-center">

@@ -8,7 +8,7 @@
 
 <section class="header-bg">
 	<div class="container flex flex-col lg:flex-row justify-between gap-12 py-10">
-		<div class="flex flex-col justify-center ">
+		<div class="flex flex-col justify-center">
 			<div class="mb-4 sm:mb-5">
 				<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
 				<h1 class="text-5xl sm:text-7xl font-bold">Holley</h1>
@@ -65,5 +65,6 @@
 		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
 			rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
 			rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		clip-path: polygon(17% 0, 100% 0%, 83% 100%, 0% 100%);
 	}
 </style>

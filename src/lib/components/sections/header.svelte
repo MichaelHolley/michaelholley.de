@@ -9,10 +9,12 @@
 <section class="header-bg">
 	<div class="container flex flex-col lg:flex-row justify-between gap-12 py-10">
 		<div class="flex flex-col justify-center ">
-			<h1 class="text-5xl sm:text-8xl font-bold">Michael</h1>
-			<h1 class="text-5xl sm:text-8xl font-bold">Holley</h1>
-			<h2 class="text-xl pl-1 mt-6">Fullstack-Developer</h2>
-			<div class="h-11 flex flex-row mt-6 pl-1">
+			<div class="mb-4 sm:mb-5">
+				<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
+				<h1 class="text-5xl sm:text-7xl font-bold">Holley</h1>
+			</div>
+			<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
+			<div class="h-11 flex flex-row pl-1">
 				<a
 					class="hover:scale-110 transition-all"
 					href="https://www.linkedin.com/in/michael-holley-791a64228/"

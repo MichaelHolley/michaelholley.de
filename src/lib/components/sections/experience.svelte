@@ -10,14 +10,13 @@
 			<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
 				<ul class="list-square list-inside">
 					<li>
-						teambasierte Entwicklung von maßgeschneiderten Softwarelösungen für Kunden aus
-						verschiedenen Branchen
+						teambasierte Entwicklung diverser webbasierten Dashboards und weiterer Softwarelösungen
 					</li>
-					<li>Umsetzung von Verwaltungs-Tools in Form von webbasierten Dashboards</li>
 					<li>
-						die Rolle des Technical Leads im Frontend während der Betriebsphase einer Smartphone-App
-						im Lebensmittelbereich
+						Rolle des Technical Leads Frontend in der Betriebsphase einer Smartphone-App im
+						Lebensmittelbereich
 					</li>
+					<li>Azubi-Betreuung und Ausbildung</li>
 				</ul>
 			</Step>
 			<Step

@@ -11,9 +11,9 @@
 			<h4 class="text-2xl font-bold">{title}</h4>
 			<span class="block text-tertiary text-base md:text-lg">{period}</span>
 		</div>
-		<div class="h-6 w-6 bg-black rounded-full absolute top-[50%] -translate-y-[50%] -left-[46px]" />
+		<div class="h-5 w-5 bg-black rounded-full absolute top-[50%] -translate-y-[50%] -left-[44px]" />
 	</div>
-	<span class="block mt-2 text-justify">
+	<span class="block mt-2">
 		<slot />
 	</span>
 </div>

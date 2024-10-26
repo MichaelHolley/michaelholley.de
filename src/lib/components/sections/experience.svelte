@@ -16,7 +16,7 @@
 						Rolle des Technical Leads Frontend in der Betriebsphase einer Smartphone-App im
 						Lebensmittelbereich
 					</li>
-					<li>Azubi-Betreuung und Ausbildung</li>
+					<li>Engagierte Unterstützung bei der Ausbildung von Nachwuchskräften</li>
 				</ul>
 			</Step>
 			<Step

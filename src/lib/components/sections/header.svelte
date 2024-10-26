@@ -4,8 +4,8 @@
 	import GithubIcon from '../shared/icons/githubIcon.svelte';
 	import LinkedinIcon from '../shared/icons/linkedinIcon.svelte';
 	import MailIcon from '../shared/icons/mailIcon.svelte';
-	import Blurfade from '../shared/blurfade.svelte';
-	import BoxReveal from '../shared/boxreveal.svelte';
+	import Blurfade from '../shared/BlurFade.svelte';
+	import BoxReveal from '../shared/BoxReveal.svelte';
 </script>
 
 <section class="header-bg">

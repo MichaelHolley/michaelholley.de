@@ -1,8 +1,8 @@
 <script lang="ts">
 	import colors from 'tailwindcss/colors';
 	import GithubIcon from '../shared/icons/githubIcon.svelte';
-	import SectionHeader from '../shared/sectionHeader.svelte';
-	import Blurfade from '../shared/blurfade.svelte';
+	import SectionHeader from '../shared/SectionHeader.svelte';
+	import Blurfade from '../shared/BlurFade.svelte';
 
 	interface Project {
 		title: string;

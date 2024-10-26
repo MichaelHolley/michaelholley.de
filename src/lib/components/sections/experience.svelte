@@ -1,7 +1,7 @@
 <script>
-	import SectionHeader from '../shared/SectionHeader.svelte';
 	import Step from '../career/Step.svelte';
 	import Blurfade from '../shared/BlurFade.svelte';
+	import SectionHeader from '../shared/SectionHeader.svelte';
 </script>
 
 <section id="taetigkeiten" class={`bg-white text-black  selection:bg-primary`}>

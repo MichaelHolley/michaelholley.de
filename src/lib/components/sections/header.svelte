@@ -4,44 +4,54 @@
 	import GithubIcon from '../shared/icons/githubIcon.svelte';
 	import LinkedinIcon from '../shared/icons/linkedinIcon.svelte';
 	import MailIcon from '../shared/icons/mailIcon.svelte';
+	import Blurfade from '../shared/blurfade.svelte';
+	import BoxReveal from '../shared/boxreveal.svelte';
 </script>
 
 <section class="header-bg">
 	<div class="container flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 py-10">
 		<div class="flex flex-col justify-center">
-			<div class="mb-4 sm:mb-5">
-				<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
-				<h1 class="text-5xl sm:text-7xl font-bold">Holley</h1>
+			<div>
+				<BoxReveal boxColor={'#fff'} duration={0.6}>
+					<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
+				</BoxReveal>
+				<BoxReveal boxColor={'#fff'} duration={0.4}>
+					<h1 class="text-5xl sm:text-7xl font-bold pb-4">Holley</h1>
+				</BoxReveal>
 			</div>
 			<div>
-				<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
-				<div class="h-11 flex flex-row pl-1">
-					<a
-						class="hover:scale-110 transition-all"
-						href="https://www.linkedin.com/in/michael-holley-791a64228/"
-						target="_blank"
-						rel="noreferrer"
-						aria-label="LinkedIn-Profile"
-					>
-						<LinkedinIcon color={colors.white} height={45} />
-					</a>
-					<a
-						class="ml-3 hover:scale-110 transition-all"
-						href="https://github.com/MichaelHolley"
-						target="_blank"
-						rel="noreferrer"
-						aria-label="GitHub-Profile"
-					>
-						<GithubIcon color={colors.white} height={45} />
-					</a>
-					<a
-						class="ml-3 hover:scale-110 transition-all"
-						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="GitHub-Profile"
-					>
-						<MailIcon color={colors.white} height={45} />
-					</a>
-				</div>
+				<BoxReveal boxColor={'#fff'} duration={0.8}>
+					<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
+				</BoxReveal>
+				<Blurfade delay={0.5} once>
+					<div class="h-11 flex flex-row pl-1">
+						<a
+							class="hover:scale-110 transition-all"
+							href="https://www.linkedin.com/in/michael-holley-791a64228/"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="LinkedIn-Profile"
+						>
+							<LinkedinIcon color={colors.white} height={45} />
+						</a>
+						<a
+							class="ml-3 hover:scale-110 transition-all"
+							href="https://github.com/MichaelHolley"
+							target="_blank"
+							rel="noreferrer"
+							aria-label="GitHub-Profile"
+						>
+							<GithubIcon color={colors.white} height={45} />
+						</a>
+						<a
+							class="ml-3 hover:scale-110 transition-all"
+							href="mailto:michael.philipp.holley@gmail.com"
+							aria-label="GitHub-Profile"
+						>
+							<MailIcon color={colors.white} height={45} />
+						</a>
+					</div>
+				</Blurfade>
 			</div>
 		</div>
 		<div class="flex flex-col justify-center items-center">

@@ -3,29 +3,28 @@
 		<div>
 			<h2 class="text-2xl tracking-widest mb-1 text-neutral-500">Backend</h2>
 			<p class="text-justify">
-				Ich habe eine Leidenschaft für das Entwerfen und Erstellen der Architektur eines Systems,
-				das die Funktionalität einer Anwendung bereit stellt. Besonders interessant finde ich die
-				Aspekte Performance sowie Skalierbarkeit. Das Arbeiten an komplexen Problemen und das Finden
-				von Lösungen rund um Daten und deren Verarbeitung faszinieren mich.
+				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
+				Datenbanken und APIs, um leistungsstarke und skalierbare Anwendungen zu bauen, ist für mich
+				pure Leidenschaft. Ich liebe es, effiziente Lösungen zu entwickeln und komplexe Probleme zu
+				lösen.
 			</p>
 		</div>
 		<div>
 			<h2 class="text-2xl tracking-widest mb-1 text-neutral-500">Frontend</h2>
 			<p class="text-justify">
-				Insgesamt bin ich von der Frontend-Entwicklung begeistert, weil sie es mir ermöglicht,
-				schöne, benutzerfreundliche Designs zu erstellen, mit anderen Experten in diesem Bereich
-				zusammenzuarbeiten, mit den neuesten Webtechnologien zu arbeiten, sofortiges Feedback zu
-				erhalten und als Entwickler ständig zu lernen und zu wachsen.
+				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
+				gerne mit den neuesten Technologien und Frameworks, um performante und skalierbare
+				Webanwendungen zu bauen. Die Freiheit, meine Kreativität auszuleben und gleichzeitig
+				technisch anspruchsvolle Probleme zu lösen, begeistert mich.
 			</p>
 		</div>
 		<div>
 			<h2 class="text-2xl tracking-widest mb-1 text-neutral-500">DevOps</h2>
 			<p class="text-justify">
-				Ich arbeite gerne im Bereich DevOps, weil hier der Einsatz von Automatisierungstools und
-				-technologien gefördert wird, die dazu beitragen können, menschliche Fehler zu reduzieren,
-				die Effizienz zu steigern und die Softwarequalität insgesamt zu verbessern. Ich liebe es,
-				sich wiederholende Aufgaben zu automatisieren und dadurch mehr Zeit für spannendere Projekte
-				zu gewinnen.
+				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
+				faszinierend, Prozesse zu automatisieren und die Zusammenarbeit zwischen Entwicklern und
+				Operations-Teams zu optimieren. Durch DevOps können wir schnellere und zuverlässigere
+				Software-Releases ermöglichen.
 			</p>
 		</div>
 	</div>

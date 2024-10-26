@@ -1,5 +1,5 @@
 <section id="dev">
-	<div class="container py-12 md:py-20 flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
+	<div class="container py-12 md:py-20 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
 		<div>
 			<h2 class="text-2xl tracking-widest mb-1 text-neutral-500">Backend</h2>
 			<p class="text-justify">

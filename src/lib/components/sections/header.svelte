@@ -1,11 +1,11 @@
 <script>
 	import MeImg from '$lib/assets/images/image.jpg';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '../shared/icons/githubIcon.svelte';
-	import LinkedinIcon from '../shared/icons/linkedinIcon.svelte';
-	import MailIcon from '../shared/icons/mailIcon.svelte';
-	import Blurfade from '../shared/BlurFade.svelte';
-	import BoxReveal from '../shared/BoxReveal.svelte';
+	import GithubIcon from '$lib/components/shared/icons/githubIcon.svelte';
+	import LinkedinIcon from '$lib/components/shared/icons/linkedinIcon.svelte';
+	import MailIcon from '$lib/components/shared/icons/mailIcon.svelte';
+	import Blurfade from '$lib/components/shared/BlurFade.svelte';
+	import BoxReveal from '$lib/components/shared/BoxReveal.svelte';
 </script>
 
 <section class="header-bg">

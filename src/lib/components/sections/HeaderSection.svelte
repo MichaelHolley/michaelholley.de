@@ -1,9 +1,9 @@
 <script>
 	import MeImg from '$lib/assets/images/image.jpg';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '$lib/components/shared/icons/githubIcon.svelte';
-	import LinkedinIcon from '$lib/components/shared/icons/linkedinIcon.svelte';
-	import MailIcon from '$lib/components/shared/icons/mailIcon.svelte';
+	import GithubIcon from '$lib/components/shared/icons/GithubIcon.svelte';
+	import LinkedinIcon from '$lib/components/shared/icons/LinkedinIcon.svelte';
+	import MailIcon from '$lib/components/shared/icons/MailIcon.svelte';
 	import Blurfade from '$lib/components/shared/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/BoxReveal.svelte';
 </script>

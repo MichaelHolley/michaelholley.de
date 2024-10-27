@@ -4,11 +4,11 @@
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 </script>
 
-<section id="taetigkeiten" class={`bg-white text-black  selection:bg-primary`}>
+<section id="experience" class={`bg-white text-black  selection:bg-primary`}>
 	<div class="container py-8 md:py-16 2xl:px-64">
 		<SectionHeader title="Experience" class="text-center" />
 		<div class="text-lg text-left">
-			<Blurfade delay={0.2}>
+			<Blurfade delay={0.2} once>
 				<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
 					<ul class="list-square list-inside">
 						<li>
@@ -23,7 +23,7 @@
 					</ul>
 				</Step>
 			</Blurfade>
-			<Blurfade delay={0.4}>
+			<Blurfade delay={0.4} once>
 				<Step
 					period="2019 - 2022"
 					title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"

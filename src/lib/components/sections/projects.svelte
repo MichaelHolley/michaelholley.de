@@ -51,7 +51,7 @@
 	}
 </script>
 
-<section id="projekte" class="bg-tertiary text-white">
+<section id="projects" class="bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="text-center md:text-start" />
 		<div class="mt-6 flex flex-col md:flex-row gap-4 md:gap-2">

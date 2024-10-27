@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '../shared/icons/githubIcon.svelte';
-	import SectionHeader from '../shared/sectionHeader.svelte';
+	import GithubIcon from '$lib/components/shared/icons/githubIcon.svelte';
+	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+	import Blurfade from '$lib/components/shared/BlurFade.svelte';
 
 	interface Project {
 		title: string;
@@ -51,30 +51,32 @@
 	}
 </script>
 
-<section id="projekte" class="bg-tertiary text-white">
+<section id="projects" class="bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="text-center md:text-start" />
 		<div class="mt-6 flex flex-col md:flex-row gap-4 md:gap-2">
 			<ul class="break-words">
 				{#each projects as p, i}
-					<li
-						class="mb-1 hover:scale-105 transition-all"
-						role="button"
-						tabindex="0"
-						on:click={() => selectProject(i)}
-						on:keyup={(e) => {
-							if (e.key == 'Enter') selectProject(i);
-						}}
-					>
-						<h4
-							class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-200 selection:bg-secondary {i ===
-							selectedIndex
-								? 'text-primary'
-								: 'text-white'}"
+					<Blurfade delay={0.08 * i}>
+						<li
+							class="mb-1 hover:scale-105 transition-all"
+							role="button"
+							tabindex="0"
+							on:click={() => selectProject(i)}
+							on:keyup={(e) => {
+								if (e.key == 'Enter') selectProject(i);
+							}}
 						>
-							{p.title}
-						</h4>
-					</li>
+							<h4
+								class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-200 selection:bg-secondary {i ===
+								selectedIndex
+									? 'text-primary'
+									: 'text-white'}"
+							>
+								{p.title}
+							</h4>
+						</li>
+					</Blurfade>
 				{/each}
 			</ul>
 			<div class="h-[380px] w-full {selectedIndex != -1 ? 'overflow-y-auto pr-1' : ''}">

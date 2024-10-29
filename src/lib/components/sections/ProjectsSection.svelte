@@ -84,7 +84,7 @@
 					{#each projects as project, index}
 						{#if index === selectedIndex}
 							<div class="flex flex-col">
-								<div class="text-justify text-lg px-4">
+								<div class="text-lg px-4">
 									{#each project.description as descr, i}
 										<p class={i != 0 ? 'mt-4' : ''}>
 											{descr}

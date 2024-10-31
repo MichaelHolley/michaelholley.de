@@ -39,3 +39,14 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.list-square li::marker {
+		color: theme('colors.secondary.DEFAULT');
+	}
+
+	.list-square li {
+		padding-left: 1.5rem;
+		text-indent: -1.5rem;
+	}
+</style>

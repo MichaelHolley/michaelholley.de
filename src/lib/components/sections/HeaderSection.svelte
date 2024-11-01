@@ -12,15 +12,15 @@
 	<div class="container flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 py-10">
 		<div class="flex flex-col justify-center">
 			<div>
-				<BoxReveal boxColor={'#fff'} duration={0.6}>
+				<BoxReveal duration={0.6}>
 					<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
 				</BoxReveal>
-				<BoxReveal boxColor={'#fff'} duration={0.4}>
+				<BoxReveal duration={0.4}>
 					<h1 class="text-5xl sm:text-7xl font-bold pb-4">Holley</h1>
 				</BoxReveal>
 			</div>
 			<div>
-				<BoxReveal boxColor={'#fff'} duration={0.8}>
+				<BoxReveal duration={0.8}>
 					<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
 				</BoxReveal>
 				<Blurfade delay={0.5} once>

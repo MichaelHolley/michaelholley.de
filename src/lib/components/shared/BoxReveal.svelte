@@ -1,9 +1,10 @@
 <script>
 	import { inview } from 'svelte-inview';
 	import { Motion, useAnimation } from 'svelte-motion';
+	import colors from 'tailwindcss/colors';
 
 	export let width = 'fit-content';
-	export let boxColor = '#5046e6';
+	export let boxColor = colors.white;
 	export let duration = 0.5;
 
 	//   Animation Controls

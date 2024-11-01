@@ -55,12 +55,11 @@
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="text-center md:text-start" />
 		<div class="mt-6 flex flex-col md:flex-row gap-4 md:gap-2">
-			<ul class="break-words">
+			<div>
 				{#each projects as p, i}
 					<Blurfade delay={0.08 * i}>
-						<li
-							class="mb-1 hover:scale-105 transition-all"
-							role="button"
+						<button
+							class="w-full mb-1 hover:scale-105 transition-all group"
 							tabindex="0"
 							on:click={() => selectProject(i)}
 							on:keyup={(e) => {
@@ -68,17 +67,17 @@
 							}}
 						>
 							<h4
-								class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-200 selection:bg-secondary {i ===
+								class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase transition-all duration-200 {i ===
 								selectedIndex
 									? 'text-primary'
 									: 'text-white'}"
 							>
 								{p.title}
 							</h4>
-						</li>
+						</button>
 					</Blurfade>
 				{/each}
-			</ul>
+			</div>
 			<div class="h-[380px] w-full {selectedIndex != -1 ? 'overflow-y-auto pr-1' : ''}">
 				{#if selectedIndex >= 0 && selectedIndex < projects.length}
 					{#each projects as project, index}

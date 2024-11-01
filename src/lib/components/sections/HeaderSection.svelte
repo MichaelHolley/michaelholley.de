@@ -48,7 +48,7 @@
 							href="mailto:michael.philipp.holley@gmail.com"
 							aria-label="GitHub-Profile"
 						>
-							<MailIcon color={colors.white} height={45} />
+							<MailIcon color={colors.white} height={46} />
 						</a>
 					</div>
 				</Blurfade>

@@ -79,7 +79,7 @@
 					</Blurfade>
 				{/each}
 			</div>
-			<div class={cn('max-h-[380px] w-full', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
+			<div class={cn('h-[380px] w-full', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
 				{#if selectedIndex >= 0 && selectedIndex < projects.length}
 					{#each projects as project, index}
 						{#if index === selectedIndex}

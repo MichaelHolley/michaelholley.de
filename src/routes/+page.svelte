@@ -1,8 +1,9 @@
 <script>
-	import Experience from '$lib/components/sections/experience.svelte';
-	import Dev from '$lib/components/sections/dev.svelte';
-	import Header from '$lib/components/sections/header.svelte';
-	import Projects from '$lib/components/sections/projects.svelte';
+	import Experience from '$lib/components/sections/ExperienceSection.svelte';
+	import Dev from '$lib/components/sections/DevSection.svelte';
+	import Header from '$lib/components/sections/HeaderSection.svelte';
+	import Projects from '$lib/components/sections/ProjectsSection.svelte';
+	import Footer from '$lib/components/shared/Footer.svelte';
 </script>
 
 <main class="selection:bg-primary">
@@ -10,4 +11,5 @@
 	<Dev />
 	<Experience />
 	<Projects />
+	<Footer />
 </main>

@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import colors from 'tailwindcss/colors';
-	import GithubIcon from '../shared/icons/githubIcon.svelte';
-	import SectionHeader from '../shared/sectionHeader.svelte';
+	import GithubIcon from '$lib/components/shared/icons/GithubIcon.svelte';
+	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+	import Blurfade from '$lib/components/shared/BlurFade.svelte';
+	import { cn } from '$lib/utils';
 
 	interface Project {
 		title: string;
@@ -13,7 +14,7 @@
 
 	const projects: Project[] = [
 		{
-			title: 'Bonuspunkteprogramm',
+			title: 'Treuepunkte App',
 			description: [
 				'Als Team-Lead des Frontend übernahm ich die Verantwortung und Leitung einer umfangreichen Bonuspunkte-App einschließlich Web-Anwendung einer führenden Lebensmittelkette mit mehreren zehntausend Nutzern. Meine Tätigkeiten begannen, als die App bereits in der Betriebsphase war, mit dem Ziel neue Features zu implementieren und Optimierungen bzgl. Stabilität, Performance und UX durchzuführen.',
 				'Während der Projektlaufzeit waren mein Team und ich in der Lage, die App zur Zufriedenheit des Kunden weiterzuentwickeln, sowie eine erhebliche Verbesserung der Bewertung in den App-Stores zu erreichen. Ich bin stolz darauf, einen Beitrag zu einem so bedeutenden Projekt geleistet zu haben.'
@@ -51,40 +52,41 @@
 	}
 </script>
 
-<section id="projekte" class="bg-tertiary text-white">
+<section id="projects" class="bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="text-center md:text-start" />
 		<div class="mt-6 flex flex-col md:flex-row gap-4 md:gap-2">
-			<ul class="break-words">
+			<div>
 				{#each projects as p, i}
-					<li
-						class="mb-1 hover:scale-105 transition-all"
-						role="button"
-						tabindex="0"
-						on:click={() => selectProject(i)}
-						on:keyup={(e) => {
-							if (e.key == 'Enter') selectProject(i);
-						}}
-					>
-						<h4
-							class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase hover:cursor-pointer transition-all duration-200 selection:bg-secondary {i ===
-							selectedIndex
-								? 'text-primary'
-								: 'text-white'}"
+					<Blurfade delay={0.08 * i}>
+						<button
+							class="w-full mb-1 hover:scale-105 transition-all group"
+							tabindex="0"
+							on:click={() => selectProject(i)}
+							on:keyup={(e) => {
+								if (e.key == 'Enter') selectProject(i);
+							}}
 						>
-							{p.title}
-						</h4>
-					</li>
+							<h4
+								class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase transition-all duration-200 {i ===
+								selectedIndex
+									? 'text-primary'
+									: 'text-white'}"
+							>
+								{p.title}
+							</h4>
+						</button>
+					</Blurfade>
 				{/each}
-			</ul>
-			<div class="h-[380px] w-full {selectedIndex != -1 ? 'overflow-y-auto pr-1' : ''}">
+			</div>
+			<div class={cn('max-h-[380px] w-full', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
 				{#if selectedIndex >= 0 && selectedIndex < projects.length}
 					{#each projects as project, index}
 						{#if index === selectedIndex}
 							<div class="flex flex-col">
-								<div class="text-justify text-lg px-4">
+								<div class="text-lg pr-4">
 									{#each project.description as descr, i}
-										<p class={i != 0 ? 'mt-4' : ''}>
+										<p class={cn(i != 0 ? 'mt-4' : '')}>
 											{descr}
 										</p>
 									{/each}

@@ -10,7 +10,7 @@
 		<span class="text-neutral-300">|</span>
 		<span>{period}</span>
 	</span>
-	<h4 class="text-2xl font-bold">{title}</h4>
+	<h4 class="text-xl sm:text-2xl font-bold">{title}</h4>
 	<span class="block mt-1 text-lg">
 		<slot />
 	</span>

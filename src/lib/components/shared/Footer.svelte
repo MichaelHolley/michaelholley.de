@@ -6,49 +6,59 @@
 	import BlurFade from './BlurFade.svelte';
 </script>
 
-<footer class="bg-tertiary">
-	<div class="container pb-4 text-white space-y-4">
-		<div class="flex flex-col sm:flex-row gap-4 sm:gap-10 justify-center">
-			<BlurFade delay={0.1} once>
-				<a
-					class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
-					href="mailto:michael.philipp.holley@gmail.com"
-					aria-label="GitHub-Profile"
-				>
-					<div class="group-hover:scale-110 transition-all">
-						<MailIcon color={colors.white} height={38} />
-					</div>
-					Contact me
-				</a>
-			</BlurFade>
-			<BlurFade delay={0.3} once>
-				<a
-					class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
-					href="https://github.com/MichaelHolley"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="GitHub-Profile"
-				>
-					<div class="group-hover:scale-110 transition-all">
-						<GithubIcon color={colors.white} height={36} />
-					</div>
-					GitHub
-				</a>
-			</BlurFade>
-			<BlurFade delay={0.5} once>
-				<a
-					class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
-					href="https://www.linkedin.com/in/michael-holley-791a64228/"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="LinkedIn-Profile"
-				>
-					<div class="group-hover:scale-110 transition-all">
-						<LinkedinIcon color={colors.white} height={36} />
-					</div>
-					LinkedIn
-				</a>
-			</BlurFade>
+<footer class="bg-black">
+	<div class="container pt-8 pb-4 text-white space-y-6">
+		<div class="flex flex-col sm:flex-row gap-8 justify-center">
+			<div class="text-right">
+				<p class="text-4xl">Frontend</p>
+				<p class="text-4xl">mit</p>
+				<p class="text-4xl">Leidenschaft.</p>
+			</div>
+
+			<div
+				class="flex flex-row sm:flex-col flex-wrap justify-center sm:items-start gap-x-10 sm:gap-x-0 gap-y-4"
+			>
+				<BlurFade delay={0.1} once>
+					<a
+						class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
+						href="mailto:michael.philipp.holley@gmail.com"
+						aria-label="GitHub-Profile"
+					>
+						<div class="group-hover:scale-110 transition-all">
+							<MailIcon color={colors.white} height={31} />
+						</div>
+						Contact me
+					</a>
+				</BlurFade>
+				<BlurFade delay={0.3} once>
+					<a
+						class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
+						href="https://github.com/MichaelHolley"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="GitHub-Profile"
+					>
+						<div class="group-hover:scale-110 transition-all">
+							<GithubIcon color={colors.white} height={30} />
+						</div>
+						GitHub
+					</a>
+				</BlurFade>
+				<BlurFade delay={0.5} once>
+					<a
+						class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
+						href="https://www.linkedin.com/in/michael-holley-791a64228/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="LinkedIn-Profile"
+					>
+						<div class="group-hover:scale-110 transition-all">
+							<LinkedinIcon color={colors.white} height={30} />
+						</div>
+						LinkedIn
+					</a>
+				</BlurFade>
+			</div>
 		</div>
 		<p class="text-center">&copy; {new Date().getFullYear()} Michael Holley</p>
 	</div>

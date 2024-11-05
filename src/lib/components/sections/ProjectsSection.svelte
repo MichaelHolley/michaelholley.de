@@ -60,7 +60,7 @@
 				{#each projects as p, i}
 					<Blurfade delay={0.08 * i}>
 						<button
-							class="w-full mb-1 hover:scale-105 transition-all group"
+							class="w-full mb-1 hover:scale-[1.03] transition-all group"
 							tabindex="0"
 							on:click={() => selectProject(i)}
 							on:keyup={(e) => {

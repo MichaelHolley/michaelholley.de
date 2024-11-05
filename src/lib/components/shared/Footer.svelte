@@ -4,9 +4,10 @@
 	import GithubIcon from './icons/GithubIcon.svelte';
 	import MailIcon from './icons/MailIcon.svelte';
 	import BlurFade from './BlurFade.svelte';
+	import DotPattern from './DotPattern.svelte';
 </script>
 
-<footer class="bg-black">
+<footer class="relative bg-black">
 	<div class="container pt-8 pb-4 text-white space-y-6">
 		<div class="flex flex-col sm:flex-row gap-8 justify-center">
 			<div class="text-right">
@@ -60,6 +61,15 @@
 				</BlurFade>
 			</div>
 		</div>
-		<p class="text-center">&copy; {new Date().getFullYear()} Michael Holley</p>
+		<p class="text-center text-sm">&copy; {new Date().getFullYear()} Michael Holley</p>
 	</div>
+
+	<DotPattern
+		width={20}
+		height={20}
+		cx={10}
+		cy={10}
+		cr={1}
+		class="[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+	/>
 </footer>

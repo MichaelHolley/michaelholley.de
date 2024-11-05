@@ -1,4 +1,8 @@
-<section id="dev">
+<script>
+	import DotPattern from '$lib/components/shared/DotPattern.svelte';
+</script>
+
+<section id="dev" class="relative">
 	<div class="container py-12 md:py-20 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
 		<div>
 			<h2 class="text-2xl tracking-widest mb-2 text-neutral-500">Backend</h2>
@@ -30,4 +34,12 @@
 			</p>
 		</div>
 	</div>
+	<DotPattern
+		width={20}
+		height={20}
+		cx={10}
+		cy={10}
+		cr={1}
+		class="[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
+	/>
 </section>

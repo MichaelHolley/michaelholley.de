@@ -21,7 +21,7 @@
 			</div>
 			<div>
 				<BoxReveal duration={0.8}>
-					<h2 class="text-xl pl-1 mb-2">Fullstack-Developer</h2>
+					<h2 class="text-xl pl-1 mb-2">FullStack Developer</h2>
 				</BoxReveal>
 				<Blurfade delay={0.5} once>
 					<div class="h-11 flex flex-row pl-1">

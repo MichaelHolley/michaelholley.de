@@ -9,8 +9,8 @@
 <footer class="relative bg-black">
 	<div class="container pt-8 pb-4 text-white space-y-6">
 		<div class="flex flex-col sm:flex-row gap-8 justify-center">
-			<div class="text-right">
-				<p class="text-4xl">Frontend</p>
+			<div class="text-right space-y-1">
+				<p class="text-4xl">Code</p>
 				<p class="text-4xl">mit</p>
 				<p class="text-4xl">Leidenschaft.</p>
 			</div>

@@ -6,6 +6,7 @@
 	import MailIcon from '$lib/components/shared/icons/MailIcon.svelte';
 	import Blurfade from '$lib/components/shared/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/BoxReveal.svelte';
+	import Tooltip from '../shared/Tooltip.svelte';
 </script>
 
 <section class="header-bg">
@@ -25,31 +26,37 @@
 				</BoxReveal>
 				<Blurfade delay={0.5} once>
 					<div class="h-11 flex flex-row pl-1">
-						<a
-							class="hover:scale-110 transition-all"
-							href="https://www.linkedin.com/in/michael-holley-791a64228/"
-							target="_blank"
-							rel="noreferrer"
-							aria-label="LinkedIn-Profile"
-						>
-							<LinkedinIcon color={colors.white} height={45} />
-						</a>
-						<a
-							class="ml-3 hover:scale-110 transition-all"
-							href="https://github.com/MichaelHolley"
-							target="_blank"
-							rel="noreferrer"
-							aria-label="GitHub-Profile"
-						>
-							<GithubIcon color={colors.white} height={45} />
-						</a>
-						<a
-							class="ml-3 hover:scale-110 transition-all"
-							href="mailto:michael.philipp.holley@gmail.com"
-							aria-label="GitHub-Profile"
-						>
-							<MailIcon color={colors.white} height={46} />
-						</a>
+						<Tooltip position="bottom" text="LinkedIn" class="group bg-white text-black">
+							<a
+								class="group-hover:scale-110 transition-all relative"
+								href="https://www.linkedin.com/in/michael-holley-791a64228/"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="LinkedIn-Profile"
+							>
+								<LinkedinIcon color={colors.white} height={45} />
+							</a>
+						</Tooltip>
+						<Tooltip position="bottom" text="LinkedIn" class="group bg-white text-black">
+							<a
+								class="ml-3 hover:scale-110 transition-all relative"
+								href="https://github.com/MichaelHolley"
+								target="_blank"
+								rel="noreferrer"
+								aria-label="GitHub-Profile"
+							>
+								<GithubIcon color={colors.white} height={45} />
+							</a>
+						</Tooltip>
+						<Tooltip position="bottom" text="LinkedIn" class="group bg-white text-black">
+							<a
+								class="ml-3 hover:scale-110 transition-all"
+								href="mailto:michael.philipp.holley@gmail.com"
+								aria-label="GitHub-Profile"
+							>
+								<MailIcon color={colors.white} height={46} />
+							</a>
+						</Tooltip>
 					</div>
 				</Blurfade>
 			</div>

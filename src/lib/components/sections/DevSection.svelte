@@ -30,7 +30,7 @@
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
 				faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die
 				Zusammenarbeit zwischen Entwicklern und Operations-Teams zu optimieren. Durch DevOps können
-				wir <span class="text-secondary">schnellere und zuverlässigere Software-Releases</span> ermöglichen.
+				wir <span class="text-secondary">schnellere und zuverlässigere</span> Software-Releases ermöglichen.
 			</p>
 		</div>
 	</div>

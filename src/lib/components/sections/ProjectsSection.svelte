@@ -1,9 +1,8 @@
 <script lang="ts">
-	import colors from 'tailwindcss/colors';
-	import GithubIcon from '$lib/components/shared/icons/GithubIcon.svelte';
+	import BlurFade from '$lib/components/shared/misc/BlurFade.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
-	import Blurfade from '$lib/components/shared/BlurFade.svelte';
 	import { cn } from '$lib/utils';
+	import Icon from '@iconify/svelte';
 
 	interface Project {
 		title: string;
@@ -58,7 +57,7 @@
 		<div class="mt-6 flex flex-col md:flex-row gap-4 md:gap-2">
 			<div>
 				{#each projects as p, i}
-					<Blurfade delay={0.08 * i}>
+					<BlurFade delay={0.08 * i}>
 						<button
 							class="w-full mb-1 hover:scale-[1.03] transition-all group"
 							tabindex="0"
@@ -76,7 +75,7 @@
 								{p.title}
 							</h4>
 						</button>
-					</Blurfade>
+					</BlurFade>
 				{/each}
 			</div>
 			<div class={cn('h-[380px] w-full', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
@@ -100,7 +99,7 @@
 											rel="noreferrer"
 											aria-label="GitHub-Repository"
 										>
-											<GithubIcon color={colors.white} height={40} />
+											<Icon icon="fa:github" style="font-size:2.5rem" />
 										</a>
 									{/if}
 								</div>

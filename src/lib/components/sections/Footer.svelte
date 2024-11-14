@@ -1,9 +1,6 @@
 <script>
-	import colors from 'tailwindcss/colors';
-	import LinkedinIcon from './icons/LinkedinIcon.svelte';
-	import GithubIcon from './icons/GithubIcon.svelte';
-	import MailIcon from './icons/MailIcon.svelte';
-	import DotPattern from './DotPattern.svelte';
+	import Icon from '@iconify/svelte';
+	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 </script>
 
 <footer class="relative bg-black">
@@ -16,7 +13,7 @@
 			</div>
 
 			<div
-				class="flex flex-row sm:flex-col flex-wrap justify-center sm:items-start gap-x-10 sm:gap-x-0 gap-y-4"
+				class="flex flex-row sm:flex-col flex-wrap justify-center sm:items-start gap-x-10 sm:gap-x-0 gap-y-3"
 			>
 				<a
 					class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
@@ -24,7 +21,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<MailIcon color={colors.white} height={31} />
+						<Icon icon="tdesign:mail-filled" class="text-4xl" />
 					</div>
 					Contact me
 				</a>
@@ -36,7 +33,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<GithubIcon color={colors.white} height={30} />
+						<Icon icon="fa:github" class="text-4xl" />
 					</div>
 					GitHub
 				</a>
@@ -48,7 +45,7 @@
 					aria-label="LinkedIn-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<LinkedinIcon color={colors.white} height={30} />
+						<Icon icon="fa:linkedin-square" class="text-4xl" />
 					</div>
 					LinkedIn
 				</a>

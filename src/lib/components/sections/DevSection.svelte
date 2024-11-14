@@ -19,7 +19,10 @@
 			</p>
 		</div>
 		<div>
-			<HeaderTechstack header="Frontend" icons={['ri:svelte-fill', 'mdi:vuejs', 'mdi:react']} />
+			<HeaderTechstack
+				header="Frontend"
+				icons={['ri:svelte-fill', 'mdi:vuejs', 'mdi:language-typescript']}
+			/>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
 				gerne mit den <span class="text-secondary">neuesten Technologien und Frameworks</span>, um

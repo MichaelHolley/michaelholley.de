@@ -1,7 +1,7 @@
 <script>
 	import MeImg from '$lib/assets/images/image.jpg';
-	import Blurfade from '$lib/components/shared/BlurFade.svelte';
-	import BoxReveal from '$lib/components/shared/BoxReveal.svelte';
+	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
+	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 

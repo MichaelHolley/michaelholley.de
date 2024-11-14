@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Step from '$lib/components/career/Step.svelte';
-	import Blurfade from '$lib/components/shared/BlurFade.svelte';
+	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 </script>
 

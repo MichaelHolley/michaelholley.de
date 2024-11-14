@@ -1,5 +1,5 @@
 <script>
-	import DotPattern from '$lib/components/shared/DotPattern.svelte';
+	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 </script>
 
 <section id="dev" class="relative">

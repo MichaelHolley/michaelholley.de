@@ -1,8 +1,5 @@
 <script>
-	import colors from 'tailwindcss/colors';
-	import LinkedinIcon from './icons/LinkedinIcon.svelte';
-	import GithubIcon from './icons/GithubIcon.svelte';
-	import MailIcon from './icons/MailIcon.svelte';
+	import Icon from '@iconify/svelte';
 	import DotPattern from './DotPattern.svelte';
 </script>
 
@@ -24,7 +21,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<MailIcon color={colors.white} height={31} />
+						<Icon icon="fa:linkedin-square" style="font-size:2rem" />
 					</div>
 					Contact me
 				</a>
@@ -36,7 +33,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<GithubIcon color={colors.white} height={30} />
+						<Icon icon="fa:github" style="font-size:2rem" />
 					</div>
 					GitHub
 				</a>
@@ -48,7 +45,7 @@
 					aria-label="LinkedIn-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<LinkedinIcon color={colors.white} height={30} />
+						<Icon icon="tdesign:mail-filled" style="font-size:2rem" />
 					</div>
 					LinkedIn
 				</a>

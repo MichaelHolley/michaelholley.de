@@ -1,11 +1,8 @@
 <script>
 	import MeImg from '$lib/assets/images/image.jpg';
-	import colors from 'tailwindcss/colors';
-	import GithubIcon from '$lib/components/shared/icons/GithubIcon.svelte';
-	import LinkedinIcon from '$lib/components/shared/icons/LinkedinIcon.svelte';
-	import MailIcon from '$lib/components/shared/icons/MailIcon.svelte';
 	import Blurfade from '$lib/components/shared/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/BoxReveal.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
 <section class="header-bg">
@@ -32,7 +29,7 @@
 							rel="noreferrer"
 							aria-label="LinkedIn-Profile"
 						>
-							<LinkedinIcon color={colors.white} height={45} />
+							<Icon icon="fa:linkedin-square" style="font-size:3rem" />
 						</a>
 						<a
 							class="ml-3 hover:scale-110 transition-all"
@@ -41,14 +38,14 @@
 							rel="noreferrer"
 							aria-label="GitHub-Profile"
 						>
-							<GithubIcon color={colors.white} height={45} />
+							<Icon icon="fa:github" style="font-size:3rem" />
 						</a>
 						<a
 							class="ml-3 hover:scale-110 transition-all"
 							href="mailto:michael.philipp.holley@gmail.com"
 							aria-label="GitHub-Profile"
 						>
-							<MailIcon color={colors.white} height={46} />
+							<Icon icon="tdesign:mail-filled" style="font-size:3rem" />
 						</a>
 					</div>
 				</Blurfade>

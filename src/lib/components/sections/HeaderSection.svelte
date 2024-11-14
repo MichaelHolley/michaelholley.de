@@ -29,7 +29,7 @@
 							rel="noreferrer"
 							aria-label="LinkedIn-Profile"
 						>
-							<Icon icon="fa:linkedin-square" style="font-size:3rem" />
+							<Icon icon="fa:linkedin-square" class="text-4xl" />
 						</a>
 						<a
 							class="ml-3 hover:scale-110 transition-all"
@@ -38,14 +38,14 @@
 							rel="noreferrer"
 							aria-label="GitHub-Profile"
 						>
-							<Icon icon="fa:github" style="font-size:3rem" />
+							<Icon icon="fa:github" class="text-4xl" />
 						</a>
 						<a
 							class="ml-3 hover:scale-110 transition-all"
 							href="mailto:michael.philipp.holley@gmail.com"
 							aria-label="GitHub-Profile"
 						>
-							<Icon icon="tdesign:mail-filled" style="font-size:3rem" />
+							<Icon icon="tdesign:mail-filled" class="text-4xl" />
 						</a>
 					</div>
 				</Blurfade>

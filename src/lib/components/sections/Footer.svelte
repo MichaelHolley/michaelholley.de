@@ -13,7 +13,7 @@
 			</div>
 
 			<div
-				class="flex flex-row sm:flex-col flex-wrap justify-center sm:items-start gap-x-10 sm:gap-x-0 gap-y-4"
+				class="flex flex-row sm:flex-col flex-wrap justify-center sm:items-start gap-x-10 sm:gap-x-0 gap-y-3"
 			>
 				<a
 					class="flex flex-row gap-2 justify-start sm:justify-center group items-center"
@@ -21,7 +21,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<Icon icon="tdesign:mail-filled" style="font-size:2rem" />
+						<Icon icon="tdesign:mail-filled" class="text-4xl" />
 					</div>
 					Contact me
 				</a>
@@ -33,7 +33,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<Icon icon="fa:github" style="font-size:2rem" />
+						<Icon icon="fa:github" class="text-4xl" />
 					</div>
 					GitHub
 				</a>
@@ -45,7 +45,7 @@
 					aria-label="LinkedIn-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<Icon icon="fa:linkedin-square" style="font-size:2rem" />
+						<Icon icon="fa:linkedin-square" class="text-4xl" />
 					</div>
 					LinkedIn
 				</a>

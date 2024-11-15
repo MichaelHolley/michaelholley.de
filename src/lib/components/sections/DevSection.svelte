@@ -21,7 +21,7 @@
 		<div>
 			<HeaderTechstack
 				header="Frontend"
-				icons={['ri:svelte-fill', 'mdi:vuejs', 'mdi:language-typescript']}
+				icons={['flowbite:html-solid', 'mdi:language-typescript', 'mdi:react']}
 			/>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich

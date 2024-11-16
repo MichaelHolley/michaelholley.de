@@ -51,86 +51,63 @@
 	}
 </script>
 
-<section id="projects" class="bg-tertiary text-white">
+<section id="projects" class="h-v bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
-		<SectionHeader title="Projekte" class="text-center md:text-start" />
-		<div class="mt-6 flex flex-col md:flex-row gap-4">
+		<div class="mt-6 flex flex-col md:flex-row gap-4 relative">
 			<div>
-				{#each projects as p, i}
-					<BlurFade delay={0.08 * i}>
-						<button
-							class="w-full mb-1 hover:scale-[1.03] transition-all group"
-							tabindex="0"
-							on:click={() => selectProject(i)}
-							on:keyup={(e) => {
-								if (e.key == 'Enter') selectProject(i);
-							}}
-						>
-							<h4
-								class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase transition-all duration-200 {i ===
-								selectedIndex
-									? 'text-primary'
-									: 'text-white'}"
+				<div class="sticky top-1/2 -translate-y-1/2">
+					<SectionHeader title="Projekte" class="text-center md:text-start" />
+					{#each projects as p, i}
+						<BlurFade delay={0.08 * i} once={true}>
+							<button
+								class="w-full mb-1 hover:scale-[1.03] transition-all group"
+								tabindex="0"
+								on:click={() => selectProject(i)}
+								on:keyup={(e) => {
+									if (e.key == 'Enter') selectProject(i);
+								}}
 							>
-								{p.title}
-							</h4>
-						</button>
-					</BlurFade>
-				{/each}
-			</div>
-			<div class={cn('h-[380px] w-full', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
-				{#if selectedIndex >= 0 && selectedIndex < projects.length}
-					{#each projects as project, index}
-						{#if index === selectedIndex}
-							<div class="flex flex-col">
-								<div class="text-lg pr-4">
-									{#each project.description as descr, i}
-										<p class={cn(i != 0 ? 'mt-4' : '')}>
-											{descr}
-										</p>
-									{/each}
-								</div>
-								<div class="mt-3 p-2 flex flex-row justify-center">
-									{#if !!project.github && projects[selectedIndex].github != ''}
-										<a
-											class="hover:scale-110 transition-all"
-											href={project.github}
-											target="_blank"
-											rel="noreferrer"
-											aria-label="GitHub-Repository"
-										>
-											<Icon icon="fa:github" style="font-size:2.5rem" />
-										</a>
-									{/if}
-								</div>
-							</div>
-						{/if}
+								<h4
+									class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase transition-all duration-200 {i ===
+									selectedIndex
+										? 'text-primary'
+										: 'text-white'}"
+								>
+									{p.title}
+								</h4>
+							</button>
+						</BlurFade>
 					{/each}
-				{:else}
-					<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>
-				{/if}
+				</div>
+			</div>
+			<div class={cn('flex-grow', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
+				<div class="flex flex-col gap-64">
+					{#each projects as project}
+						<div class="flex flex-col">
+							<div class="text-lg pr-4">
+								{#each project.description as descr, i}
+									<p class={cn(i != 0 ? 'mt-4' : '')}>
+										{descr}
+									</p>
+								{/each}
+							</div>
+							<div class="mt-3 p-2 flex flex-row justify-center">
+								{#if !!project.github}
+									<a
+										class="hover:scale-110 transition-all"
+										href={project.github}
+										target="_blank"
+										rel="noreferrer"
+										aria-label="GitHub-Repository"
+									>
+										<Icon icon="fa:github" style="font-size:2.5rem" />
+									</a>
+								{/if}
+							</div>
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<style>
-	/* Firefox */
-	* {
-		scrollbar-width: thin;
-		scrollbar-color: theme('colors.white') transparent;
-	}
-
-	/* Chrome, Edge, and Safari */
-	*::-webkit-scrollbar {
-		width: 4px;
-	}
-
-	*::-webkit-scrollbar-track {
-		background: transparent;
-	}
-
-	*::-webkit-scrollbar-thumb {
-		background-color: theme('colors.white');
-	}
-</style>

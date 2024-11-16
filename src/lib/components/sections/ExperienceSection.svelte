@@ -3,7 +3,7 @@
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 </script>
 
-<section id="experience" class="bg-white text-black selection:bg-primary">
+<section id="experience" class="bg-white text-black">
 	<div class="container py-8 md:py-16 2xl:px-64">
 		<SectionHeader title="Experience" class="text-center" />
 		<div class="text-lg text-left">

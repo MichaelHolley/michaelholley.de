@@ -21,7 +21,7 @@
 		<div>
 			<HeaderTechstack
 				header="Frontend"
-				icons={['flowbite:html-solid', 'mdi:language-typescript', 'mdi:react']}
+				icons={['flowbite:html-solid', 'mdi:language-typescript']}
 			/>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich

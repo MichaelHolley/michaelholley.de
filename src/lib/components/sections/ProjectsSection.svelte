@@ -53,7 +53,7 @@
 
 <section id="projects" class="h-v bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
-		<div class="mt-6 flex flex-col md:flex-row gap-4 relative">
+		<div class="mt-6 flex flex-col md:flex-row gap-4 relative py-24">
 			<div>
 				<div class="sticky top-1/2 -translate-y-1/2">
 					<SectionHeader title="Projekte" class="text-center md:text-start" />

@@ -114,30 +114,25 @@
 
 <style>
 	.revealing {
-		/* Create View Timeline */
-		view-timeline-name: --revealing;
-		view-timeline-axis: block;
-
-		/* Attach animation, linked to the  View Timeline */
-		animation: linear reveal both;
-		animation-timeline: --revealing;
-
-		/* Tweak range when effect should run*/
-		animation-range: entry 25% cover 75%;
+		animation: autoBlurAnimation linear both;
+		animation-timeline: view();
 	}
 
-	@keyframes reveal {
-		0% {
-			opacity: 0;
+	@keyframes autoBlurAnimation {
+		0%,
+		20% {
+			filter: blur(5px);
+			translate: 0 300px;
 		}
-		25% {
-			opacity: 1;
+		30%,
+		70% {
+			filter: blur(0px);
+			translate: 0 0;
 		}
-		75% {
-			opacity: 1;
-		}
+		80%,
 		100% {
-			opacity: 0;
+			filter: blur(5px);
+			translate: 0 -300px;
 		}
 	}
 </style>

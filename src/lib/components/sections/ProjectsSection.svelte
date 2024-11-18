@@ -123,15 +123,21 @@
 		animation-timeline: --revealing;
 
 		/* Tweak range when effect should run*/
-		animation-range: entry 40% cover 45%;
+		animation-range: entry 25% cover 75%;
 	}
 
 	@keyframes reveal {
-		from {
+		0% {
 			opacity: 0;
 		}
-		to {
+		25% {
 			opacity: 1;
+		}
+		75% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
 		}
 	}
 </style>

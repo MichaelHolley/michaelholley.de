@@ -83,7 +83,7 @@
 			<div class={cn('flex-grow', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
 				<div class="flex flex-col gap-64">
 					{#each projects as project}
-						<div class="flex flex-col">
+						<div class="flex flex-col revealing">
 							<div class="text-lg pr-4">
 								{#each project.description as descr, i}
 									<p class={cn(i != 0 ? 'mt-4' : '')}>
@@ -111,3 +111,27 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.revealing {
+		/* Create View Timeline */
+		view-timeline-name: --revealing;
+		view-timeline-axis: block;
+
+		/* Attach animation, linked to the  View Timeline */
+		animation: linear reveal both;
+		animation-timeline: --revealing;
+
+		/* Tweak range when effect should run*/
+		animation-range: entry 40% cover 45%;
+	}
+
+	@keyframes reveal {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+</style>

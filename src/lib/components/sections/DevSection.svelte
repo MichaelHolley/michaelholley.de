@@ -8,7 +8,7 @@
 		<div>
 			<HeaderTechstack
 				header="Backend"
-				icons={['ant-design:java-outlined', 'simple-icons:dotnet']}
+				icons={['simple-icons:dotnet', 'ant-design:java-outlined']}
 			/>
 			<p class="leading-7">
 				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
@@ -21,7 +21,7 @@
 		<div>
 			<HeaderTechstack
 				header="Frontend"
-				icons={['flowbite:html-solid', 'mdi:language-typescript']}
+				icons={['flowbite:html-solid', 'mdi:language-typescript', 'mdi:tailwind']}
 			/>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
@@ -32,7 +32,7 @@
 			</p>
 		</div>
 		<div>
-			<HeaderTechstack header="DevOps" icons={['mdi:docker', 'fa:github', 'mdi:gitlab']} />
+			<HeaderTechstack header="DevOps" icons={['fa:github', 'mdi:gitlab', 'mdi:docker']} />
 			<p class="leading-7">
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
 				faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die

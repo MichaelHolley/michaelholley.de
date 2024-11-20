@@ -1,15 +1,13 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import { inview } from 'svelte-inview';
-	import { iconMap } from '../shared/icons';
-	import { projects } from '../shared/projects';
+	import { iconMap } from '../shared/data/icons';
+	import { projects } from '../shared/data/projects';
 </script>
 
 <section id="projects" class="h-v bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
 		<div class="flex flex-col md:flex-row gap-4 py-32 relative">
-			<div class="flex flex-col gap-64">
+			<div class="flex flex-col gap-24 md:gap-64">
 				{#each projects as project}
 					<div class="flex flex-col space-y-4 revealing">
 						<h3 class="text-center text-3xl font-light tracking-widest uppercase text-neutral-800">

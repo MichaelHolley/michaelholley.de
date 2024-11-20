@@ -1,7 +1,7 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
-	import { iconMap } from '../shared/icons';
+	import { iconMap } from '../shared/data/icons';
 </script>
 
 <footer class="relative bg-black">

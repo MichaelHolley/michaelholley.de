@@ -1,7 +1,7 @@
 <script>
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 	import HeaderTechstack from '../dev/HeaderTechstack.svelte';
-	import { iconMap } from '../shared/icons';
+	import { iconMap } from '../shared/data/icons';
 </script>
 
 <section id="dev" class="relative">

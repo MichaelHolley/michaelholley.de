@@ -3,7 +3,7 @@
 	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
-	import { iconMap } from '../shared/icons';
+	import { iconMap } from '../shared/data/icons';
 </script>
 
 <section class="header-bg">

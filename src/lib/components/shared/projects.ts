@@ -23,7 +23,8 @@ export const projects: Project[] = [
 			'Meine Absicht war es, eine Portfolio-Website zu erstellen, die meine Fähigkeiten und mein Fachwissen als Entwickler präsentiert, gleichzeitig aber auch eine gute User-Experience bietet.',
 			'Durch die Verwendung der neuesten Web-Technologien (SvelteKit + Tailwindcss) und die Erstellung visuell ansprechender und interaktiver Elemente hoffe ich, einen positiven Eindruck bei potenziellen Kunden und Arbeitgebern zu hinterlassen.'
 		],
-		github: 'https://github.com/MichaelHolley/michaelholley.de'
+		github: 'https://github.com/MichaelHolley/michaelholley.de',
+		tech: [iconMap.svelte, iconMap.typescript, iconMap.tailwind]
 	},
 	{
 		title: 'OnTrack',

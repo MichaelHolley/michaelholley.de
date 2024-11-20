@@ -63,6 +63,13 @@
 									</p>
 								{/each}
 							</div>
+							{#if !!project.tech && project.tech.length > 0}
+								<div class="mt-3 flex flex-row gap-2 justify-center">
+									{#each project.tech as techIcon}
+										<Icon icon={techIcon} class="text-4xl" />
+									{/each}
+								</div>
+							{/if}
 							{#if !!project.github}
 								<div class="mt-3 p-2 flex flex-row justify-center">
 									<a
@@ -74,13 +81,6 @@
 									>
 										<Icon icon={iconMap.github} style="font-size:2.5rem" />
 									</a>
-								</div>
-							{/if}
-							{#if !!project.tech && project.tech.length > 0}
-								<div class="mt-3 flex flex-row gap-2 justify-center">
-									{#each project.tech as techIcon}
-										<Icon icon={techIcon} class="text-4xl" />
-									{/each}
 								</div>
 							{/if}
 						</div>

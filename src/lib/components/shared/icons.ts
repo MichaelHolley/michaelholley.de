@@ -12,5 +12,6 @@ export const iconMap = {
 	docker: 'mdi:docker',
 	azure: 'mdi:microsoft-azure',
 	reactnative: 'tabler:brand-react-native',
-	linux: 'ant-design:linux-outlined'
+	linux: 'ant-design:linux-outlined',
+	svelte: 'ri:svelte-line'
 };

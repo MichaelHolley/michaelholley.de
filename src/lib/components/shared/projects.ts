@@ -32,7 +32,8 @@ export const projects: Project[] = [
 			'Insgesamt ist die OnTrack Web-App ein nützliches Tool für alle, die ihre täglichen Aktivitäten, ToDos und Ausgaben im Auge behalten wollen. Dank der benutzerfreundlichen Oberfläche und der grafischen Darstellung ist es einfach, organisiert zu bleiben.',
 			'Entwickelt mit React und Mantine-Components für das Front-End und einem ASP.NET-Back-End mit Google Sign-In für die Benutzerauthentifizierung sowie MongoDB-Datenbank.'
 		],
-		github: 'https://github.com/MichaelHolley/OnTrack'
+		github: 'https://github.com/MichaelHolley/OnTrack',
+		tech: [iconMap.react, iconMap.mongodb, iconMap.dotnet]
 	}
 ];
 

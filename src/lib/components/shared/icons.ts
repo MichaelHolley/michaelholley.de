@@ -13,5 +13,7 @@ export const iconMap = {
 	azure: 'mdi:microsoft-azure',
 	reactnative: 'tabler:brand-react-native',
 	linux: 'ant-design:linux-outlined',
-	svelte: 'ri:svelte-line'
+	svelte: 'ri:svelte-line',
+	react: 'mdi:react',
+	mongodb: 'lineicons:mongodb'
 };

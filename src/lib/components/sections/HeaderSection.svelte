@@ -3,6 +3,7 @@
 	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
+	import { iconMap } from '../shared/icons';
 </script>
 
 <section class="header-bg">
@@ -29,7 +30,7 @@
 							rel="noreferrer"
 							aria-label="LinkedIn-Profile"
 						>
-							<Icon icon="fa:linkedin-square" class="text-4xl" />
+							<Icon icon={iconMap.linkedin} class="text-4xl" />
 						</a>
 						<a
 							class="ml-3 hover:scale-110 transition-all"
@@ -38,14 +39,14 @@
 							rel="noreferrer"
 							aria-label="GitHub-Profile"
 						>
-							<Icon icon="fa:github" class="text-4xl" />
+							<Icon icon={iconMap.github} class="text-4xl" />
 						</a>
 						<a
 							class="ml-3 hover:scale-110 transition-all"
 							href="mailto:michael.philipp.holley@gmail.com"
 							aria-label="GitHub-Profile"
 						>
-							<Icon icon="tdesign:mail-filled" class="text-4xl" />
+							<Icon icon={iconMap.mail} class="text-4xl" />
 						</a>
 					</div>
 				</Blurfade>

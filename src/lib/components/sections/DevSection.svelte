@@ -1,15 +1,13 @@
 <script>
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 	import HeaderTechstack from '../dev/HeaderTechstack.svelte';
+	import { iconMap } from '../shared/icons';
 </script>
 
 <section id="dev" class="relative">
 	<div class="container py-12 md:py-20 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
 		<div>
-			<HeaderTechstack
-				header="Backend"
-				icons={['simple-icons:dotnet', 'ant-design:java-outlined']}
-			/>
+			<HeaderTechstack header="Backend" icons={[iconMap.dotnet, iconMap.java]} />
 			<p class="leading-7">
 				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
 				Datenbanken und APIs, um <span class="text-secondary"
@@ -21,7 +19,7 @@
 		<div>
 			<HeaderTechstack
 				header="Frontend"
-				icons={['flowbite:html-solid', 'mdi:language-typescript', 'mdi:tailwind']}
+				icons={[iconMap.html, iconMap.typescript, iconMap.tailwind]}
 			/>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
@@ -32,7 +30,7 @@
 			</p>
 		</div>
 		<div>
-			<HeaderTechstack header="DevOps" icons={['fa:github', 'mdi:gitlab', 'mdi:docker']} />
+			<HeaderTechstack header="DevOps" icons={[iconMap.github, iconMap.gitlab, iconMap.docker]} />
 			<p class="leading-7">
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
 				faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die

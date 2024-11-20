@@ -1,6 +1,7 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
+	import { iconMap } from '../shared/icons';
 </script>
 
 <footer class="relative bg-black">
@@ -21,7 +22,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<Icon icon="tdesign:mail-filled" class="text-2xl" />
+						<Icon icon={iconMap.mail} class="text-2xl" />
 					</div>
 					Contact me
 				</a>
@@ -33,7 +34,7 @@
 					aria-label="GitHub-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<Icon icon="fa:github" class="text-2xl" />
+						<Icon icon={iconMap.github} class="text-2xl" />
 					</div>
 					GitHub
 				</a>
@@ -45,7 +46,7 @@
 					aria-label="LinkedIn-Profile"
 				>
 					<div class="group-hover:scale-110 transition-all">
-						<Icon icon="fa:linkedin-square" class="text-2xl" />
+						<Icon icon={iconMap.linkedin} class="text-2xl" />
 					</div>
 					LinkedIn
 				</a>

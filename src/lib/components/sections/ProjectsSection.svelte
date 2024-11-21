@@ -2,11 +2,13 @@
 	import Icon from '@iconify/svelte';
 	import { iconMap } from '../shared/data/icons';
 	import { projects } from '../shared/data/projects';
+	import SectionHeader from '../shared/SectionHeader.svelte';
 </script>
 
 <section id="projects" class="h-v bg-tertiary text-white">
-	<div class="container py-8 md:py-16">
-		<div class="flex flex-col md:flex-row gap-4 py-32 relative">
+	<div class="container py-8 md:py-16 relative">
+		<SectionHeader title="Projekte" class="sticky top-4" />
+		<div class="flex flex-col md:flex-row gap-4 py-32 pt-16">
 			<div class="flex flex-col gap-24 md:gap-64">
 				{#each projects as project}
 					<div class="flex flex-col gap-4 revealing">

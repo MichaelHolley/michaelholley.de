@@ -9,7 +9,7 @@
 		<div class="flex flex-col md:flex-row gap-4 py-32 relative">
 			<div class="flex flex-col gap-24 md:gap-64">
 				{#each projects as project}
-					<div class="flex flex-col space-y-4 revealing">
+					<div class="flex flex-col gap-4 revealing">
 						<h3 class="text-center text-3xl font-light tracking-widest uppercase text-neutral-800">
 							{project.title}
 						</h3>
@@ -20,7 +20,7 @@
 								{/each}
 							</div>
 						{/if}
-						<div class="flex-col space-y-4 text-lg">
+						<div class="space-y-4 text-lg">
 							{#each project.description as descr, i}
 								<p>
 									{descr}
@@ -56,18 +56,21 @@
 	@keyframes autoBlurAnimation {
 		0%,
 		30% {
+			opacity: 0;
 			filter: blur(5px);
-			translate: 0 500px;
+			translate: 0 100px;
 		}
 		35%,
 		65% {
+			opacity: 1;
 			filter: blur(0px);
 			translate: 0 0;
 		}
 		70%,
 		100% {
+			opacity: 0;
 			filter: blur(5px);
-			translate: 0 -500px;
+			translate: 0 -100px;
 		}
 	}
 </style>

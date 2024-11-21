@@ -49,6 +49,13 @@
 
 <style>
 	.revealing {
+		/* TODO: is svelte incompatible with these media queries */
+
+		/* @media (prefers-reduced-motion: no-preference) {
+			@supports (animation-timeline: view()) {
+			}
+		} */
+
 		animation: autoBlurAnimation linear both;
 		animation-timeline: view();
 	}

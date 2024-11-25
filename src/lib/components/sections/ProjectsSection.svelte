@@ -65,18 +65,21 @@
 			opacity: 0;
 			filter: blur(5px);
 			translate: 0 100px;
+			scale: 0.8;
 		}
 		35%,
 		65% {
 			opacity: 1;
 			filter: blur(0px);
 			translate: 0 0;
+			scale: 1;
 		}
 		70%,
 		100% {
 			opacity: 0;
 			filter: blur(5px);
 			translate: 0 -100px;
+			scale: 0.8;
 		}
 	}
 </style>

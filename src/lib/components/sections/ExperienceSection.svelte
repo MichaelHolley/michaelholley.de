@@ -4,8 +4,8 @@
 </script>
 
 <section id="experience" class="bg-white text-black">
-	<div class="container py-8 md:py-16 2xl:px-64">
-		<SectionHeader title="Experience" class="text-center" />
+	<div class="container pt-8 pb-14 md:pt-12 md:pb-20 2xl:px-64">
+		<SectionHeader title="Experience" class="text-center pb-6" />
 		<div class="text-lg text-left">
 			<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
 				<ul class="list-square list-inside">

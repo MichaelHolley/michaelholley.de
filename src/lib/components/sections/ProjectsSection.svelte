@@ -14,7 +14,8 @@
 				{#each projects as project, i}
 					<div
 						class={cn(
-							'flex flex-col justify-center gap-4 h-[100vh] sticky top-0 revealing',
+							'flex flex-col justify-center gap-4 h-[100vh] sticky top-0',
+							i != 0 && 'revealing',
 							i === 0 && 'bg-neutral-600',
 							i === 1 && 'bg-neutral-500',
 							i === 2 && 'bg-neutral-400',

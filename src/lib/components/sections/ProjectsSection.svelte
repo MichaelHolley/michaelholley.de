@@ -3,7 +3,6 @@
 	import { iconMap } from '../shared/data/icons';
 	import { projects } from '../shared/data/projects';
 	import SectionHeader from '../shared/SectionHeader.svelte';
-	import { cn } from '$lib/utils';
 </script>
 
 <section id="projects" class="bg-tertiary text-white">
@@ -11,17 +10,8 @@
 		<SectionHeader title="Projekte" class="sticky top-4 z-10" />
 		<div class="flex flex-col md:flex-row gap-4 py-32 pt-16">
 			<div class="flex flex-col gap-24 md:gap-64">
-				{#each projects as project, i}
-					<div
-						class={cn(
-							'flex flex-col justify-center gap-4 h-[100vh] sticky top-0',
-							i != 0 && 'revealing',
-							i === 0 && 'bg-neutral-600',
-							i === 1 && 'bg-neutral-500',
-							i === 2 && 'bg-neutral-400',
-							i === 3 && 'bg-neutral-300'
-						)}
-					>
+				{#each projects as project}
+					<div class="flex flex-col gap-4 revealing">
 						<h3 class="text-center text-3xl font-light tracking-widest uppercase text-neutral-800">
 							{project.title}
 						</h3>

@@ -26,7 +26,7 @@
 		<svelte:component this={background} />
 	</div>
 	<div
-		class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10"
+		class="pointer-events-none z-10 flex transform-gpu flex-col gap-0.5 p-6 transition-all duration-300 group-hover:-translate-y-10"
 	>
 		<div class="flex flex-row items-center gap-2 text-xl">
 			{#if !!icon}

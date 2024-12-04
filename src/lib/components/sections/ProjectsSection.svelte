@@ -1,80 +1,25 @@
 <script lang="ts">
-	import Icon from '@iconify/svelte';
-	import { iconMap } from '../shared/data/icons';
 	import { projects } from '../shared/data/projects';
+	import BentoCard from '../shared/misc/BentoCard.svelte';
+	import BentoGrid from '../shared/misc/BentoGrid.svelte';
 	import SectionHeader from '../shared/SectionHeader.svelte';
 </script>
 
-<section id="projects" class="bg-tertiary text-white">
-	<div class="container py-8 md:py-16 relative">
-		<SectionHeader title="Projekte" class="sticky top-4 z-10" />
-		<div class="flex flex-col md:flex-row gap-4 py-32 pt-16">
-			<div class="flex flex-col gap-24 md:gap-64">
+<section id="projects" class="bg-white dark:bg-black text-white">
+	<div class="container py-8 md:py-16">
+		<SectionHeader title="Projekte" class="pb-6 dark:text-black" />
+		<div class="flex flex-col justify-center items-center gap-24 md:gap-64">
+			<BentoGrid>
 				{#each projects as project}
-					<div class="flex flex-col gap-4 revealing">
-						<h3 class="text-center text-3xl font-light tracking-widest uppercase text-neutral-800">
-							{project.title}
-						</h3>
-						{#if !!project.tech && project.tech.length > 0}
-							<div class="flex flex-row gap-2 justify-center">
-								{#each project.tech as techIcon}
-									<Icon icon={techIcon} class="text-3xl" />
-								{/each}
-							</div>
-						{/if}
-						<div class="space-y-4 text-lg">
-							{#each project.description as descr, i}
-								<p>
-									{descr}
-								</p>
-							{/each}
-						</div>
-						{#if !!project.github}
-							<div class="mt-3 p-2 flex flex-row justify-center">
-								<a
-									class="hover:scale-110 transition-all"
-									href={project.github}
-									target="_blank"
-									rel="noreferrer"
-									aria-label="GitHub-Repository"
-								>
-									<Icon icon={iconMap.github} style="font-size:2.5rem" />
-								</a>
-							</div>
-						{/if}
-					</div>
+					<BentoCard
+						name={project.title}
+						description={project.shortDescription}
+						icon={project.icon}
+						class={project.class}
+						cta="Learn more"
+					/>
 				{/each}
-			</div>
+			</BentoGrid>
 		</div>
 	</div>
 </section>
-
-<style>
-	@media (prefers-reduced-motion: no-preference) {
-		@supports (animation-timeline: view()) {
-			.revealing {
-				animation: autoBlurAnimation linear both;
-				animation-timeline: view();
-			}
-		}
-	}
-
-	@keyframes autoBlurAnimation {
-		0%,
-		25% {
-			opacity: 0;
-			filter: blur(5px);
-			transform: translateY(100px);
-		}
-		30%,
-		75% {
-			opacity: 1;
-			filter: blur(0px);
-			transform: translateY(0px);
-		}
-		80%,
-		100% {
-			filter: blur(5px);
-		}
-	}
-</style>

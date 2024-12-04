@@ -15,5 +15,10 @@ export const iconMap = {
 	linux: 'ant-design:linux-outlined',
 	svelte: 'ri:svelte-line',
 	react: 'mdi:react',
-	mongodb: 'lineicons:mongodb'
+	mongodb: 'lineicons:mongodb',
+	phone: 'mdi:mobile-phone',
+	web: 'mdi:web',
+	tracker: 'mdi:track-changes',
+	trophy: 'mdi:trophy-variant',
+	arrowright: 'mdi:arrow-right'
 };

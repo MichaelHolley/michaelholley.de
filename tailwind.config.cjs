@@ -34,6 +34,9 @@ module.exports = {
 					hover: '#7E8E8A',
 					active: '#A4ADA9'
 				}
+			},
+			transitionDuration: {
+				DEFAULT: '200ms'
 			}
 		}
 	},

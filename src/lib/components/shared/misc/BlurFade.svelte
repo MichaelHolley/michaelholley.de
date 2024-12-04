@@ -42,7 +42,7 @@
 			}}
 			class={cn(className)}
 		>
-			<slot>Default</slot>
+			<slot />
 		</div>
 	</Motion>
 </AnimatePresence>

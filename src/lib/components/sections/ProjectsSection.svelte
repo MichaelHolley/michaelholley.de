@@ -5,9 +5,9 @@
 	import SectionHeader from '../shared/SectionHeader.svelte';
 </script>
 
-<section id="projects" class="bg-white dark:bg-black text-white">
+<section id="projects" class="bg-black text-white">
 	<div class="container py-8 md:py-16">
-		<SectionHeader title="Projekte" class="pb-6 dark:text-black" />
+		<SectionHeader title="Projekte" class="pb-6" />
 		<div class="flex flex-col justify-center items-center gap-24 md:gap-64">
 			<BentoGrid>
 				{#each projects as project}

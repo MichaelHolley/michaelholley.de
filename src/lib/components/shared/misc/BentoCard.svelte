@@ -47,10 +47,10 @@
 		)}
 	>
 		<button class="pointer-events-auto" on:click={() => dispatch('click')}>
-			<a {href} class="flex justify-center items-center">
+			<span class="flex justify-center items-center">
 				{cta}
 				<Icon icon={iconMap.arrowright} class="ml-0.5" />
-			</a>
+			</span>
 		</button>
 	</div>
 	<div

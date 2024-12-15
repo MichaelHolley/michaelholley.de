@@ -5,7 +5,7 @@
 
 <section id="dev" class="relative">
 	<div class="container py-12 md:py-20 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12 xl:gap-16">
-		<div>
+		<div class="col-span-3 lg:col-span-1">
 			<h2 class="text-neutral-500 text-2xl tracking-widest pb-1">Backend</h2>
 			<p class="leading-7">
 				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
@@ -15,7 +15,7 @@
 				komplexe Probleme zu lösen.
 			</p>
 		</div>
-		<div>
+		<div class="col-span-3 lg:col-span-1">
 			<h2 class="text-neutral-500 text-2xl tracking-widest pb-1">Frontend</h2>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
@@ -25,7 +25,7 @@
 				Probleme zu lösen, begeistert mich.
 			</p>
 		</div>
-		<div>
+		<div class="col-span-3 lg:col-span-1">
 			<h2 class="text-neutral-500 text-2xl tracking-widest pb-1">DevOps</h2>
 			<p class="leading-7">
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es

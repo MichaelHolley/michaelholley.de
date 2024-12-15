@@ -1,5 +1,5 @@
 <script>
-	import MeImg from '$lib/assets/images/image.jpg';
+	import MeImg from '$lib/assets/images/image.webp';
 	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';

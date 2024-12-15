@@ -57,7 +57,7 @@
 
 	@keyframes scrollLeft {
 		to {
-			left: -40px;
+			left: -280px;
 		}
 	}
 

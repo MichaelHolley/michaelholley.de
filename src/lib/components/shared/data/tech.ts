@@ -29,6 +29,7 @@ export const tech: Tech[] = [
 		icon: 'devicon:react',
 		color: colors.cyan[300]
 	},
+	{ label: 'Vue', icon: 'devicon:vuejs', color: colors.emerald[400] },
 	{
 		icon: 'devicon:angular',
 		color: colors.fuchsia[500]

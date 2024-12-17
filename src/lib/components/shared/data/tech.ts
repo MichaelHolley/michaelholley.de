@@ -34,10 +34,6 @@ export const tech: Tech[] = [
 		color: colors.emerald[400]
 	},
 	{
-		icon: 'devicon:vuejs',
-		color: colors.emerald[400]
-	},
-	{
 		icon: 'devicon:css3',
 		color: colors.sky[400]
 	},

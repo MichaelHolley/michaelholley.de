@@ -24,7 +24,7 @@
 						icon={card.icon}
 						class={cn(
 							card.class,
-							selectedIndex != -1 && i === 0 && '!col-span-full row-span-2 transition-all',
+							selectedIndex != -1 && i === 0 && '!col-span-full row-span-2',
 							selectedIndex != -1 && 'col-span-1 lg:col-span-1'
 						)}
 						cta="Learn more"

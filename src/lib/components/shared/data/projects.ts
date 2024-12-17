@@ -4,7 +4,7 @@ export const projects: Project[] = [
 	{
 		title: 'Treuepunkte App',
 		shortDescription:
-			'Leitung und Weiterentwicklung einer umfangreichen Bonuspunkte-App für eine führende Lebensmittelkette',
+			'Leitung und Weiterentwicklung einer umfangreichen Bonuspunkte-App im Lebensmittelbereich',
 		description: [
 			'Als Team-Lead des Frontend übernahm ich die Verantwortung und Leitung einer umfangreichen Bonuspunkte-App einschließlich Web-Anwendung einer führenden Lebensmittelkette mit mehreren zehntausend Nutzern. Meine Tätigkeiten begannen, als die App bereits in der Betriebsphase war, mit dem Ziel neue Features zu implementieren und Optimierungen bzgl. Stabilität, Performance und UX durchzuführen.',
 			'Während der Projektlaufzeit waren mein Team und ich in der Lage, die App zur Zufriedenheit des Kunden weiterzuentwickeln, sowie eine erhebliche Verbesserung der Bewertung in den App-Stores zu erreichen. Ich bin stolz darauf, einen Beitrag zu einem so bedeutenden Projekt geleistet zu haben.'
@@ -40,7 +40,7 @@ export const projects: Project[] = [
 	{
 		title: 'Wissenschaftspreis',
 		shortDescription:
-			'Projekt zur Messung und Anzeige von CO2-Daten, ausgezeichnet mit dem zweiten Platz beim Wissenschaftspreis',
+			'Zweiter Platz beim Wissenschaftspreis Augsburger Schulen mit der Projekt zur Messung und Auswertung von CO2-Daten',
 		description: [
 			'Mit unserem Projekt haben wir mehrere Ziele erreicht. Erstens haben wir erfolgreich CO2-Daten mit einem Raspberry Pi und einem CO2-Sensor gemessen und gespeichert. Zweitens haben wir eine REST-API erstellt, mit der wir auf die CO2-Daten zugreifen und sie in einer Webanwendung anzeigen konnten. Drittens haben wir eine benutzerfreundliche Webanwendung erstellt, die die CO2-Daten im Zeitverlauf auf optisch ansprechende Weise anzeigt.',
 			'Insgesamt hat unser Projekt unsere Fähigkeiten in den Bereichen Programmierung, Webentwicklung und Datenanalyse unter Beweis gestellt. Außerdem sammelten wir wertvolle Erfahrungen bei der Arbeit im Team und bei der Zusammenarbeit an einem Projekt. Unser zweiter Platz beim Wissenschaftspreis Augsburger Schulen 2021 war ein Beweis für unsere harte Arbeit und unsere Hingabe, welche mit einem Preisgeld von 1000€ belohnt wurde.'

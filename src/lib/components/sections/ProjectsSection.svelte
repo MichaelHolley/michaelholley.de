@@ -6,6 +6,10 @@
 	import SectionHeader from '../shared/SectionHeader.svelte';
 
 	let selectedIndex = -1;
+	$: cards =
+		selectedIndex === -1
+			? projects
+			: [projects[selectedIndex], ...projects.filter((_, i) => i !== selectedIndex)];
 </script>
 
 <section id="projects" class="bg-black text-white">
@@ -13,12 +17,16 @@
 		<SectionHeader title="Projekte" class="pb-8" />
 		<div class="flex flex-col justify-center items-center gap-24 md:gap-64">
 			<BentoGrid>
-				{#each projects as project, i}
+				{#each cards as card, i}
 					<BentoCard
-						name={project.title}
-						description={project.shortDescription}
-						icon={project.icon}
-						class={cn(project.class, selectedIndex === i && '!col-span-full row-span-2')}
+						name={card.title}
+						description={card.shortDescription}
+						icon={card.icon}
+						class={cn(
+							card.class,
+							selectedIndex != -1 && i === 0 && '!col-span-full row-span-2 transition-all',
+							selectedIndex != -1 && 'col-span-1 lg:col-span-1'
+						)}
 						cta="Learn more"
 						selected={selectedIndex === i}
 						on:click={() => {

@@ -51,7 +51,7 @@ export const projects: Project[] = [
 	}
 ];
 
-interface Project {
+export interface Project {
 	title: string;
 	description: string[];
 	shortDescription: string;

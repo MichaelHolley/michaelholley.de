@@ -8,9 +8,7 @@
 	export let background: any;
 	export let icon: string | undefined;
 	export let description;
-	export let href: string;
 	export let cta;
-	export let selected: boolean;
 
 	const dispatch = createEventDispatcher();
 </script>

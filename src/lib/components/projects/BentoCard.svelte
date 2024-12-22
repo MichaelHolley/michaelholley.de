@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import { iconMap } from '../data/icons';
 	import { createEventDispatcher } from 'svelte';
+	import { iconMap } from '../shared/data/icons';
 
 	export let name;
 	export let background: any;
 	export let icon: string | undefined;
-	export let description;
-	export let cta;
+	export let subheader;
+	export let description: string[];
+	export let expanded;
 
 	const dispatch = createEventDispatcher();
 </script>
@@ -36,7 +37,18 @@
 				{name}
 			</h3>
 		</div>
-		<p class="mt-1 max-w-lg text-neutral-400">{description}</p>
+		<div class="max-w-lg" class:max-w-2xl={expanded}>
+			{#if !expanded}
+				<p class="my-2 text-neutral-400">
+					{subheader}
+				</p>
+			{/if}
+			{#if !!expanded && !!description}
+				{#each description as desc}
+					<p class="py-2 text-neutral-400">{desc}</p>
+				{/each}
+			{/if}
+		</div>
 	</div>
 
 	<div
@@ -46,7 +58,7 @@
 	>
 		<button class="pointer-events-auto" on:click={() => dispatch('click')}>
 			<span class="flex justify-center items-center">
-				{cta}
+				{expanded ? 'Schließen' : 'Mehr'}
 				<Icon icon={iconMap.arrowright} class="ml-0.5" />
 			</span>
 		</button>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import BentoCard from '../projects/BentoCard.svelte';
+	import BentoGrid from '../projects/BentoGrid.svelte';
 	import { projects } from '../shared/data/projects';
-	import BentoCard from '../shared/misc/BentoCard.svelte';
-	import BentoGrid from '../shared/misc/BentoGrid.svelte';
 	import SectionHeader from '../shared/SectionHeader.svelte';
 
 	let gridDivRef: HTMLElement;
@@ -17,20 +17,20 @@
 				{#each projects as card, i}
 					<BentoCard
 						name={card.title}
-						description={card.shortDescription}
+						subheader={card.shortDescription}
+						description={card.description}
 						icon={card.icon}
-						class={cn(
-							card.class,
-							selectedIndex === i && '-order-1 !col-span-full row-span-2',
-							selectedIndex != i && selectedIndex != -1 && 'col-span-1 lg:col-span-1'
-						)}
-						cta="Learn more"
-						selected={selectedIndex === i}
+						expanded={selectedIndex === i}
 						on:click={() => {
 							if (selectedIndex === i) selectedIndex = -1;
 							else selectedIndex = i;
 							gridDivRef.scrollIntoView({ behavior: 'smooth' });
 						}}
+						class={cn(
+							card.class,
+							selectedIndex === i && '-order-1 !col-span-full row-span-2',
+							selectedIndex != i && selectedIndex != -1 && 'col-span-1 lg:col-span-1'
+						)}
 					/>
 				{/each}
 			</BentoGrid>

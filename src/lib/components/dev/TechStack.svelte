@@ -20,11 +20,7 @@
 			}) * -1); left: max(calc(5rem * ${tech.length}), 100%);`}
 		>
 			<div
-				class={cn(
-					'group relative z-20 flex min-w-20 flex-row items-center justify-center overflow-hidden rounded-xl p-3 text-xl transition-all duration-500',
-					'bg-neutral-900 bg-opacity-60 backdrop-blur-lg',
-					`border border-neutral-700/50 hover:border-neutral-700/60`
-				)}
+				class="group relative z-20 flex min-w-20 flex-row items-center justify-center overflow-hidden rounded-xl border border-neutral-700/50 bg-neutral-900 bg-opacity-60 p-3 text-xl backdrop-blur-lg transition-all duration-500 hover:border-neutral-700/60"
 			>
 				<div
 					class={cn(

@@ -54,12 +54,12 @@
 <section id="projects" class="bg-tertiary text-white">
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="text-center md:text-start" />
-		<div class="mt-6 flex flex-col md:flex-row gap-4">
+		<div class="mt-6 flex flex-col gap-4 md:flex-row">
 			<div>
 				{#each projects as p, i}
 					<BlurFade delay={0.08 * i}>
 						<button
-							class="w-full mb-1 hover:scale-[1.03] transition-all group"
+							class="group mb-1 w-full transition-all hover:scale-[1.03]"
 							tabindex="0"
 							on:click={() => selectProject(i)}
 							on:keyup={(e) => {
@@ -67,7 +67,7 @@
 							}}
 						>
 							<h4
-								class="text-2xl lg:text-3xl xl:text-4xl text-center md:text-start font-bold uppercase transition-all duration-200 {i ===
+								class="text-center text-2xl font-bold uppercase transition-all duration-200 md:text-start lg:text-3xl xl:text-4xl {i ===
 								selectedIndex
 									? 'text-primary'
 									: 'text-white'}"
@@ -83,17 +83,17 @@
 					{#each projects as project, index}
 						{#if index === selectedIndex}
 							<div class="flex flex-col">
-								<div class="text-lg pr-4">
+								<div class="pr-4 text-lg">
 									{#each project.description as descr, i}
 										<p class={cn(i != 0 ? 'mt-4' : '')}>
 											{descr}
 										</p>
 									{/each}
 								</div>
-								<div class="mt-3 p-2 flex flex-row justify-center">
+								<div class="mt-3 flex flex-row justify-center p-2">
 									{#if !!project.github && projects[selectedIndex].github != ''}
 										<a
-											class="hover:scale-110 transition-all"
+											class="transition-all hover:scale-110"
 											href={project.github}
 											target="_blank"
 											rel="noreferrer"

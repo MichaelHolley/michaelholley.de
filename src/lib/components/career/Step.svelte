@@ -4,14 +4,14 @@
 	export let workplace: string;
 </script>
 
-<div class="mx-auto py-4 relative">
+<div class="relative mx-auto py-4">
 	<span class="inline-flex gap-2 text-base text-neutral-500">
 		<span>{workplace}</span>
 		<span class="text-neutral-300">//</span>
 		<span>{period}</span>
 	</span>
-	<h4 class="text-xl sm:text-2xl font-bold">{title}</h4>
-	<span class="block mt-1 text-lg">
+	<h4 class="text-xl font-bold sm:text-2xl">{title}</h4>
+	<span class="mt-1 block text-lg">
 		<slot />
 	</span>
 </div>

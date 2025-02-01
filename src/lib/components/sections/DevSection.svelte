@@ -1,6 +1,9 @@
-<script>
+<script lang="ts">
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 	import TechStack from '$lib/components/dev/TechStack.svelte';
+	import type { Tech } from '$lib/server/tech';
+
+	const { tech }: { tech: Tech[] } = $props();
 </script>
 
 <section id="dev" class="relative">
@@ -34,7 +37,7 @@
 				wir <span class="text-secondary">schnellere und zuverlässigere</span> Software-Releases ermöglichen.
 			</p>
 		</div>
-		<TechStack class="col-span-3" />
+		<TechStack class="col-span-3" {tech} />
 	</div>
 	<DotPattern
 		width={20}

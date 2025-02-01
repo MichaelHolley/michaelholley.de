@@ -1,13 +1,15 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { tech } from '$lib/components/shared/data/tech';
 	import { cn } from '$lib/utils';
+	import type { Tech } from '$lib/server/tech';
+
+	const { tech, class: className }: { tech: Tech[]; class: string } = $props();
 </script>
 
 <div
 	class={cn(
 		'wrapper-mask relative z-10 flex h-20 items-center justify-center overflow-hidden motion-reduce:hidden',
-		$$props.class
+		className
 	)}
 >
 	{#each tech as t, i}
@@ -27,10 +29,10 @@
 				<div
 					class={cn(
 						'absolute left-1/2 top-1/2 z-20 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transition-all duration-500',
-						`rounded-full opacity-0 blur-md group-hover:opacity-60`
+						'rounded-full opacity-0 blur-md group-hover:opacity-60'
 					)}
 					style={`background-color: ${t.color};`}
-				/>
+				></div>
 				<Icon
 					icon={t.icon}
 					class={cn(

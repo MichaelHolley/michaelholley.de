@@ -1,7 +1,12 @@
 <script lang="ts">
-	export let period: string;
-	export let title: string;
-	export let workplace: string;
+	import type { Snippet } from 'svelte';
+
+	const {
+		period,
+		title,
+		workplace,
+		children
+	}: { period: string; title: string; workplace: string; children: Snippet } = $props();
 </script>
 
 <div class="relative mx-auto py-4">
@@ -12,6 +17,6 @@
 	</span>
 	<h4 class="text-xl font-bold sm:text-2xl">{title}</h4>
 	<span class="mt-1 block text-lg">
-		<slot />
+		{@render children()}
 	</span>
 </div>

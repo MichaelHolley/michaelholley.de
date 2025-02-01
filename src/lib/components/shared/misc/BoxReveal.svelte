@@ -1,11 +1,15 @@
-<script>
+<script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { inview } from 'svelte-inview';
 	import { Motion, useAnimation } from 'svelte-motion';
 	import colors from 'tailwindcss/colors';
 
-	export let width = 'fit-content';
-	export let boxColor = colors.white;
-	export let duration = 0.5;
+	const {
+		width = 'fit-content',
+		boxColor = colors.white,
+		duration = 0.5,
+		children
+	}: { width?: string; boxColor?: string; duration?: number; children: Snippet } = $props();
 
 	//   Animation Controls
 	let mainControls = useAnimation();
@@ -18,7 +22,7 @@
 	};
 </script>
 
-<div class="relative overflow-hidden" style="width:{width}" use:inview on:inview_enter={viewEnter}>
+<div class="relative overflow-hidden" style="width:{width}" use:inview oninview_enter={viewEnter}>
 	<Motion
 		let:motion
 		variants={{
@@ -30,7 +34,7 @@
 		transition={{ duration: duration ? duration : 0.5, delay: 0.25 }}
 	>
 		<div use:motion>
-			<slot>Default</slot>
+			{@render children()}
 		</div>
 	</Motion>
 	<Motion
@@ -47,6 +51,6 @@
 			style="background:{boxColor}"
 			class="absolute bottom-[4px] left-0 right-0 top-[4px] z-40"
 			use:motion
-		/>
+		></div>
 	</Motion>
 </div>

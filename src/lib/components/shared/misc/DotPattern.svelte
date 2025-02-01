@@ -1,23 +1,34 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	export let width: string | number = 16;
-	export let height: string | number = 16;
-	export let x = 0;
-	export let y = 0;
-	export let cx = 1;
-	export let cy = 1;
-	export let cr = 1;
-	export let fillColor = 'rgb(163 163 163 / 0.8)';
 
-	let className: any = '';
-	export { className as class };
+	const {
+		width = 16,
+		height = 16,
+		x = 0,
+		y = 0,
+		cx = 1,
+		cy = 1,
+		cr = 1,
+		fillColor = 'rgb(163 163 163 / 0.8)',
+		class: className
+	}: {
+		width?: string | number;
+		height?: string | number;
+		x?: number;
+		y?: number;
+		cx?: number;
+		cy?: number;
+		cr?: number;
+		fillColor?: string;
+		class?: string;
+	} = $props();
+
 	let id = crypto.randomUUID().toString().slice(0, 10); // generating a unique ID for Components
 </script>
 
 <svg
 	aria-hidden="true"
 	class={cn('pointer-events-none absolute inset-0 h-full w-full ', className)}
-	{...$$restProps}
 	fill={fillColor}
 >
 	<defs>

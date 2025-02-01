@@ -19,7 +19,7 @@
 				<BoxReveal duration={0.8}>
 					<h2 class="mb-2 pl-1 text-xl">FullStack Developer</h2>
 				</BoxReveal>
-				<Blurfade delay={0.5} once>
+				<Blurfade delay={0.4} once>
 					<div class="flex h-11 flex-row pl-1">
 						<a
 							class="transition-all hover:scale-110"

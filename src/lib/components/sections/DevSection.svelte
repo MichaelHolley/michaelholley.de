@@ -1,6 +1,6 @@
 <script>
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
-	import TechStack from '../dev/TechStack.svelte';
+	import TechStack from '$lib/components/dev/TechStack.svelte';
 </script>
 
 <section id="dev" class="relative">

@@ -1,6 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { tech } from '../shared/data/tech';
+	import { tech } from '$lib/components/shared/data/tech';
 	import { cn } from '$lib/utils';
 </script>
 

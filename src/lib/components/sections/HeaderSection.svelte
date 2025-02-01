@@ -1,12 +1,11 @@
 <script>
-	import MeImg from '$lib/assets/images/image.webp';
 	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
 </script>
 
 <section class="header-bg">
-	<div class="container flex flex-col lg:flex-row justify-between gap-6 lg:gap-12 py-10">
+	<div class="container py-20 pb-16">
 		<div class="flex flex-col justify-center">
 			<div>
 				<BoxReveal duration={0.6}>
@@ -51,13 +50,6 @@
 				</Blurfade>
 			</div>
 		</div>
-		<div class="flex flex-col justify-center items-center">
-			<img
-				src={MeImg}
-				alt="Michael Holley"
-				class="max-w-[280px] lg:max-w-[350px] shadow-2xl header-img"
-			/>
-		</div>
 	</div>
 </section>
 
@@ -68,12 +60,5 @@
 			theme('colors.primary.DEFAULT') 33%,
 			theme('colors.secondary.DEFAULT') 0%
 		);
-	}
-
-	.header-img {
-		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
-			rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-			rgba(0, 0, 0, 0.09) 0px -3px 5px;
-		clip-path: polygon(17% 0, 100% 0%, 83% 100%, 0% 100%);
 	}
 </style>

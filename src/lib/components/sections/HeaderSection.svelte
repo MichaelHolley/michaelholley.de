@@ -9,20 +9,20 @@
 		<div class="flex flex-col justify-center">
 			<div>
 				<BoxReveal duration={0.6}>
-					<h1 class="text-5xl sm:text-7xl font-bold">Michael</h1>
+					<h1 class="text-5xl font-bold sm:text-7xl">Michael</h1>
 				</BoxReveal>
 				<BoxReveal duration={0.4}>
-					<h1 class="text-5xl sm:text-7xl font-bold pb-4">Holley</h1>
+					<h1 class="pb-4 text-5xl font-bold sm:text-7xl">Holley</h1>
 				</BoxReveal>
 			</div>
 			<div>
 				<BoxReveal duration={0.8}>
-					<h2 class="text-xl pl-1 mb-2">FullStack Developer</h2>
+					<h2 class="mb-2 pl-1 text-xl">FullStack Developer</h2>
 				</BoxReveal>
-				<Blurfade delay={0.5} once>
-					<div class="h-11 flex flex-row pl-1">
+				<Blurfade delay={0.4} once>
+					<div class="flex h-11 flex-row pl-1">
 						<a
-							class="hover:scale-110 transition-all"
+							class="transition-all hover:scale-110"
 							href="https://www.linkedin.com/in/michael-holley-791a64228/"
 							target="_blank"
 							rel="noreferrer"
@@ -31,7 +31,7 @@
 							<Icon icon="fa:linkedin-square" class="text-4xl" />
 						</a>
 						<a
-							class="ml-3 hover:scale-110 transition-all"
+							class="ml-3 transition-all hover:scale-110"
 							href="https://github.com/MichaelHolley"
 							target="_blank"
 							rel="noreferrer"
@@ -40,7 +40,7 @@
 							<Icon icon="fa:github" class="text-4xl" />
 						</a>
 						<a
-							class="ml-3 hover:scale-110 transition-all"
+							class="ml-3 transition-all hover:scale-110"
 							href="mailto:michael.philipp.holley@gmail.com"
 							aria-label="GitHub-Profile"
 						>

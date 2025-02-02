@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let title: string;
+	import { cn } from '$lib/utils';
+
+	const { title, class: className }: { title: string; class: string } = $props();
 </script>
 
-<h1 class="text-5xl sm:text-7xl font-bold lowercase {$$props.class}">{title}</h1>
+<h1 class={cn('text-5xl font-bold lowercase sm:text-7xl', className)}>{title}</h1>

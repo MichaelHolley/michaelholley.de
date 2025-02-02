@@ -72,7 +72,7 @@ export const tech: Tech[] = [
 	}
 ];
 
-interface Tech {
+export interface Tech {
 	icon: string;
 	color: string;
 	invertIconColor?: boolean;

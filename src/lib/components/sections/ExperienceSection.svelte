@@ -6,9 +6,9 @@
 <section id="experience" class="bg-white text-black">
 	<div class="container py-8 md:py-16 2xl:px-64">
 		<SectionHeader title="Experience" class="text-center" />
-		<div class="text-lg text-left">
+		<div class="text-left text-lg">
 			<Step period="seit 2022" title="Software Developer" workplace="AraCom IT Services AG">
-				<ul class="list-square list-inside *:py-1">
+				<ul class="list-inside list-square *:py-1">
 					<li>
 						Entwicklung und Optimierung webbasierter Dashboards sowie vielseitiger Softwarelösungen
 						in einem agilen, teamorientierten Umfeld
@@ -29,7 +29,7 @@
 				title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"
 				workplace="AraCom IT Services AG"
 			>
-				<ul class="list-square list-inside *:py-1">
+				<ul class="list-inside list-square *:py-1">
 					<li>
 						<strong>Verkürzte Ausbildung</strong> erfolgreich in nur 2,5 Jahren abgeschlossen, dank herausragender
 						Leistungen und hoher Eigeninitiative

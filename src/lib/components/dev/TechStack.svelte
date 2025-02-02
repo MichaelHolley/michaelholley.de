@@ -1,40 +1,38 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { tech } from '../shared/data/tech';
 	import { cn } from '$lib/utils';
+	import type { Tech } from '$lib/server/tech';
+
+	const { tech, class: className }: { tech: Tech[]; class: string } = $props();
 </script>
 
 <div
 	class={cn(
-		'h-20 z-10 relative overflow-hidden wrapper-mask flex justify-center items-center motion-reduce:hidden',
-		$$props.class
+		'wrapper-mask relative z-10 flex h-20 items-center justify-center overflow-hidden motion-reduce:hidden',
+		className
 	)}
 >
 	{#each tech as t, i}
 		<div
-			class="absolute item"
+			class="item absolute"
 			style={`animation-delay: calc(60s / ${tech.length} * (${tech.length} - ${
 				i + 1
 			}) * -1); left: max(calc(5rem * ${tech.length}), 100%);`}
 		>
 			<div
-				class={cn(
-					'relative flex flex-row justify-center items-center group p-3 rounded-xl text-xl min-w-20 z-20 overflow-hidden transition-all duration-500',
-					'bg-neutral-900 bg-opacity-60 backdrop-blur-lg',
-					`border border-neutral-700/50 hover:border-neutral-700/60`
-				)}
+				class="group relative z-20 flex min-w-20 flex-row items-center justify-center overflow-hidden rounded-xl border border-neutral-700/50 bg-neutral-900 bg-opacity-60 p-3 text-xl backdrop-blur-lg transition-all duration-500 hover:border-neutral-700/60"
 			>
 				<div
 					class={cn(
-						'absolute h-8 w-8 z-20 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-500',
-						`rounded-full opacity-0 group-hover:opacity-60 blur-md`
+						'absolute left-1/2 top-1/2 z-20 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transition-all duration-500',
+						'rounded-full opacity-0 blur-md group-hover:opacity-60'
 					)}
 					style={`background-color: ${t.color};`}
-				/>
+				></div>
 				<Icon
 					icon={t.icon}
 					class={cn(
-						'text-2xl z-30 filter transition-all duration-500',
+						'z-30 text-2xl filter transition-all duration-500',
 						'grayscale-[1] group-hover:grayscale-0',
 						!!t.invertIconColor && `invert`
 					)}

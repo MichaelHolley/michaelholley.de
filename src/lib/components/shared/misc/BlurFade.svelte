@@ -34,7 +34,7 @@
 	let isInView = $state('hidden');
 </script>
 
-<AnimatePresence let:item list={[{ key: id }]}>
+<AnimatePresence list={[{ key: id }]}>
 	<Motion
 		initial="hidden"
 		animate={isInView}
@@ -50,7 +50,7 @@
 		<div
 			use:inview={{ rootMargin: inViewMargin, unobserveOnEnter: once }}
 			use:motion
-			on:inview_change={({ detail }) => {
+			oninview_change={({ detail }) => {
 				isInView = detail.inView ? 'visible' : 'hidden';
 			}}
 			class={cn(className)}

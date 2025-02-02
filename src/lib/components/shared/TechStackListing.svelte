@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex flex-row items-center gap-2 overflow-hidden">
-	{#each icons as icon, i}
+	{#each icons as icon}
 		<Icon {icon} />
 	{/each}
 </div>

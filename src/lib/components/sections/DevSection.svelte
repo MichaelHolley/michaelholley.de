@@ -7,7 +7,9 @@
 </script>
 
 <section id="dev" class="relative">
-	<div class="container grid grid-cols-1 gap-6 py-12 md:py-20 lg:grid-cols-3 lg:gap-12 xl:gap-16">
+	<div
+		class="container grid grid-cols-1 gap-6 py-12 md:py-20 md:pb-12 lg:grid-cols-3 lg:gap-12 xl:gap-16"
+	>
 		<div class="col-span-3 lg:col-span-1">
 			<h2 class="pb-1 text-2xl tracking-widest text-neutral-500">Backend</h2>
 			<p class="leading-7">

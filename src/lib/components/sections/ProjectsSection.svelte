@@ -12,14 +12,14 @@
 		<SectionHeader title="Projekte" class="pb-8" />
 		<div class="flex flex-col items-center justify-center gap-24 md:gap-64">
 			<BentoGridComponent class="grid-cols-1 lg:grid-cols-3">
-				{#each projects as card}
+				{#each projects as p, i}
 					<BentoCardComponent
-						name={card.title}
-						description={card.short}
-						icon={card.icon}
-						href={''}
+						name={p.title}
+						description={p.short}
+						icon={p.icon}
+						href="/projects/{i}"
 						cta={'Read more'}
-						class={card.class}
+						class={p.class}
 					/>
 				{/each}
 			</BentoGridComponent>

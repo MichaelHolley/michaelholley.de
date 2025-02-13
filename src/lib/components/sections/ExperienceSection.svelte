@@ -5,7 +5,7 @@
 
 <section id="experience" class="bg-white text-black">
 	<div class="pt container py-8 md:py-16 md:pt-12 2xl:px-64">
-		<SectionHeader title="Experience" class="text-center" />
+		<SectionHeader title="Experience" class="mb-3 text-center" />
 		<div class="text-left text-lg">
 			<Step period="seit Mai 2023" title="Software Entwickler" workplace="AraCom IT Services AG">
 				<ul class="list-inside list-square *:py-1">
@@ -51,7 +51,7 @@
 				workplace="AraCom IT Services AG"
 			>
 				Verkürzte Ausbildung in 2,5 Jahren mit <strong>Bestnote 1,0</strong> (Berufsschule) und
-				<strong>96 von 100 Punkten</strong> in der IHK-Abschlussprüfung erfolgreich abgeschlossen
+				<strong>96 von 100 Punkten</strong> in der IHK-Abschlussprüfung erfolgreich abgeschlossen.
 			</Step>
 			<Step
 				period="2017 - 2019"

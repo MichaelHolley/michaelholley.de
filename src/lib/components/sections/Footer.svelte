@@ -12,43 +12,45 @@
 				<p class="text-4xl leading-10">Leidenschaft.</p>
 			</div>
 
-			<div
-				class="flex flex-row flex-wrap justify-center gap-x-10 gap-y-3 sm:flex-col sm:items-start sm:gap-x-0"
-			>
-				<a
-					class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-					href="mailto:michael.philipp.holley@gmail.com"
-					aria-label="GitHub-Profile"
+			<div class="flex flex-row justify-center">
+				<div
+					class="flex flex-col items-start justify-center gap-x-10 gap-y-2 sm:gap-x-0 sm:gap-y-3"
 				>
-					<div class="transition-all group-hover:scale-110">
-						<Icon icon="tdesign:mail-filled" class="text-2xl" />
-					</div>
-					Contact me
-				</a>
-				<a
-					class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-					href="https://github.com/MichaelHolley"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="GitHub-Profile"
-				>
-					<div class="transition-all group-hover:scale-110">
-						<Icon icon="fa:github" class="text-2xl" />
-					</div>
-					GitHub
-				</a>
-				<a
-					class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-					href="https://www.linkedin.com/in/michael-holley-791a64228/"
-					target="_blank"
-					rel="noreferrer"
-					aria-label="LinkedIn-Profile"
-				>
-					<div class="transition-all group-hover:scale-110">
-						<Icon icon="fa:linkedin-square" class="text-2xl" />
-					</div>
-					LinkedIn
-				</a>
+					<a
+						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
+						href="mailto:michael.philipp.holley@gmail.com"
+						aria-label="GitHub-Profile"
+					>
+						<div class="transition-all group-hover:scale-110">
+							<Icon icon="tdesign:mail-filled" class="text-2xl" />
+						</div>
+						Contact me
+					</a>
+					<a
+						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
+						href="https://github.com/MichaelHolley"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="GitHub-Profile"
+					>
+						<div class="transition-all group-hover:scale-110">
+							<Icon icon="fa:github" class="text-2xl" />
+						</div>
+						GitHub
+					</a>
+					<a
+						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
+						href="https://www.linkedin.com/in/michael-holley-791a64228/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="LinkedIn-Profile"
+					>
+						<div class="transition-all group-hover:scale-110">
+							<Icon icon="fa:linkedin-square" class="text-2xl" />
+						</div>
+						LinkedIn
+					</a>
+				</div>
 			</div>
 		</div>
 		<p class="text-center text-sm">&copy; {new Date().getFullYear()} Michael Holley</p>

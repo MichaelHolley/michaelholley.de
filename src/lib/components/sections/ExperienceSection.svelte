@@ -61,7 +61,7 @@
 				<p>abgebrochen</p>
 				<ul class="list-inside list-square *:py-1">
 					<li>Erster Kontakt mit Softwareprojekten und anderen IT-Begeisterten</li>
-					<li>Tiefes fachliches Eintauchen in Algorithmen und Datenstrukturen</li>
+					<li>Tiefes, fachliches Einarbeiten in Algorithmen und Datenstrukturen</li>
 				</ul>
 			</Step>
 		</div>

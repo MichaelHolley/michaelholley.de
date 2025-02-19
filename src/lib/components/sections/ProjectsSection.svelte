@@ -5,7 +5,7 @@
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 
-	const { projects }: { projects: Project[] } = $props();
+	const { projects } = $props<{ projects: Project[] }>();
 	let selectedIndex = $state(-1);
 
 	function selectProject(index: number) {

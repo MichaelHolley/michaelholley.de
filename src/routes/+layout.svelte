@@ -3,7 +3,7 @@
 	import type { Snippet } from 'svelte';
 	import '../app.css';
 
-	const { children }: { children: Snippet } = $props();
+	const { children } = $props<{ children: Snippet }>();
 </script>
 
 <main>

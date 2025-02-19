@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Motion, AnimatePresence } from 'svelte-motion';
-	import { inview } from 'svelte-inview';
 	import { cn } from '$lib/utils';
 	import type { Snippet } from 'svelte';
+	import { inview } from 'svelte-inview';
+	import { AnimatePresence, Motion } from 'svelte-motion';
 
 	const {
 		duration = 0.4,
@@ -14,7 +14,7 @@
 		once = false,
 		class: className,
 		children
-	}: {
+	} = $props<{
 		duration?: number;
 		delay?: number;
 		yOffset?: number;
@@ -24,7 +24,7 @@
 		once?: boolean;
 		class?: string;
 		children: Snippet;
-	} = $props();
+	}>();
 
 	let defaultVariants = {
 		hidden: { opacity: 0, y: yOffset, filter: `blur(${blur})` },

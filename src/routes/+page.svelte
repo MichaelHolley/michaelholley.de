@@ -5,7 +5,7 @@
 	import Projects from '$lib/components/sections/ProjectsSection.svelte';
 	import type { PageServerData } from './$types';
 
-	const { data }: { data: PageServerData } = $props();
+	const { data } = $props<{ data: PageServerData }>();
 </script>
 
 <Header />

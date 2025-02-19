@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	const {
-		period,
-		title,
-		workplace,
-		children
-	}: { period: string; title: string; workplace: string; children: Snippet } = $props();
+	const { period, title, workplace, children } = $props<{
+		period: string;
+		title: string;
+		workplace: string;
+		children: Snippet;
+	}>();
 </script>
 
 <div class="relative mx-auto py-4">

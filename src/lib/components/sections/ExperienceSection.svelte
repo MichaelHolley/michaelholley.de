@@ -7,7 +7,7 @@
 	<div class="pt container py-8 md:py-16 md:pt-12 2xl:px-64">
 		<SectionHeader title="Experience" class="mb-3 text-center" />
 		<div class="text-left text-lg">
-			<Step period="seit Mai 2023" title="Software Entwickler" workplace="AraCom IT Services AG">
+			<Step period="seit Mai 2023" title="Software Entwickler" workplace="AraCom IT Services GmbH">
 				<ul class="list-inside list-square *:py-1">
 					<li>
 						Eigenverantwortliche Definition, Abschätzung, Konzeption und Umsetzung von kleinen
@@ -31,7 +31,7 @@
 			<Step
 				period="Jan. 22 - Apr. 2023"
 				title="Junior Software Entwickler"
-				workplace="AraCom IT Services AG"
+				workplace="AraCom IT Services GmbH"
 			>
 				<ul class="list-inside list-square *:py-1">
 					<li>
@@ -48,7 +48,7 @@
 			<Step
 				period="2019 - 2022"
 				title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"
-				workplace="AraCom IT Services AG"
+				workplace="AraCom IT Services GmbH"
 			>
 				Verkürzte Ausbildung in 2,5 Jahren mit <strong>Bestnote 1,0</strong> (Berufsschule) und
 				<strong>96 von 100 Punkten</strong> in der IHK-Abschlussprüfung erfolgreich abgeschlossen.

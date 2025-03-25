@@ -17,10 +17,10 @@
 			</div>
 			<div>
 				<BoxReveal duration={0.8}>
-					<h2 class="mb-2 pl-1 text-xl">FullStack Developer</h2>
+					<span class="pl-1 text-xl">Software Entwickler</span>
 				</BoxReveal>
 				<Blurfade delay={0.4} once>
-					<div class="flex h-11 flex-row pl-1">
+					<div class="mt-2 flex h-11 flex-row pl-1">
 						<a
 							class="transition-all hover:scale-110"
 							href="https://www.linkedin.com/in/michael-holley-791a64228/"

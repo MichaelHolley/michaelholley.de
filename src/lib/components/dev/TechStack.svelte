@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Icon from '@iconify/svelte';
-	import { cn } from '$lib/utils';
 	import type { Tech } from '$lib/server/tech';
+	import { cn } from '$lib/utils';
+	import Icon from '@iconify/svelte';
 
-	const { tech, class: className }: { tech: Tech[]; class: string } = $props();
+	const { tech, class: className } = $props<{ tech: Tech[]; class: string }>();
 </script>
 
 <div

@@ -28,14 +28,14 @@
 								if (e.key == 'Enter') selectProject(i);
 							}}
 						>
-							<h4
+							<h3
 								class="text-center text-2xl font-bold uppercase transition-all duration-200 md:text-start lg:text-3xl xl:text-4xl {i ===
 								selectedIndex
 									? 'text-primary'
 									: 'text-white'}"
 							>
 								{p.title}
-							</h4>
+							</h3>
 						</button>
 					</BlurFade>
 				{/each}
@@ -69,7 +69,9 @@
 						{/if}
 					{/each}
 				{:else}
-					<h3 class="text-center text-xl">Wählen Sie ein Projekt</h3>
+					<div class="flex flex-row justify-center">
+						<span class="text-center text-xl">Wählen Sie ein Projekt</span>
+					</div>
 				{/if}
 			</div>
 		</div>

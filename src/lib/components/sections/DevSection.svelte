@@ -11,7 +11,7 @@
 		class="container grid grid-cols-1 gap-6 py-12 md:py-20 md:pb-12 lg:grid-cols-3 lg:gap-12 xl:gap-16"
 	>
 		<div class="col-span-3 lg:col-span-1">
-			<h2 class="pb-1 text-2xl tracking-widest text-neutral-500">Backend</h2>
+			<h3 class="pb-1 text-2xl tracking-widest text-neutral-500">Backend</h3>
 			<p class="leading-7">
 				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
 				Datenbanken und APIs, um <span class="text-secondary"
@@ -21,7 +21,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<h2 class="pb-1 text-2xl tracking-widest text-neutral-500">Frontend</h2>
+			<h3 class="pb-1 text-2xl tracking-widest text-neutral-500">Frontend</h3>
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
 				gerne mit den <span class="text-secondary">neuesten Technologien und Frameworks</span>, um
@@ -31,7 +31,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<h2 class="pb-1 text-2xl tracking-widest text-neutral-500">DevOps</h2>
+			<h3 class="pb-1 text-2xl tracking-widest text-neutral-500">DevOps</h3>
 			<p class="leading-7">
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
 				faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die

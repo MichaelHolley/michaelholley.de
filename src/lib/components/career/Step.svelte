@@ -15,7 +15,7 @@
 		<span class="text-neutral-300">//</span>
 		<span>{period}</span>
 	</span>
-	<h4 class="text-xl font-bold sm:text-2xl">{title}</h4>
+	<h3 class="text-xl font-bold sm:text-2xl">{title}</h3>
 	<span class="mt-1 block text-lg">
 		{@render children()}
 	</span>

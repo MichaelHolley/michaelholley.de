@@ -24,12 +24,12 @@ export const projects: Project[] = [
 		icon: 'mdi:web'
 	},
 	{
-		id: 'ontrack',
-		title: 'OnTrack',
-		short: 'Web-App zur Verwaltung von täglichen Aktivitäten, ToDos und Ausgaben',
+		id: 'habitkit',
+		title: 'HabitKit',
+		short: 'Tracke und Maintaine deine Hobbys und Tätigkeiten',
 		description: [
-			'Insgesamt ist die OnTrack Web-App ein nützliches Tool für alle, die ihre täglichen Aktivitäten, ToDos und Ausgaben im Auge behalten wollen. Dank der benutzerfreundlichen Oberfläche und der grafischen Darstellung ist es einfach, organisiert zu bleiben.',
-			'Entwickelt mit React und Mantine-Components für das Front-End und einem ASP.NET-Back-End mit Google Sign-In für die Benutzerauthentifizierung sowie MongoDB-Datenbank.'
+			'HabitKit ist eine App, die es dir ermöglicht, deine täglichen Aktivitäten, ToDos und Ausgaben zu verwalten. Mit einer einfachen Benutzeroberfläche und einer grafischen Darstellung kannst du deine Aktivitäten organisieren und sie auf einen Blick ansehen.',
+			'Entwickelt mit React und Mantine-Components für das Front-End und einem ASP.NET-Back-End mit Google Sign-In für die Benutzerauthentifizierung sowie MongoDB-Datenbank. Die App ist Open-Source und kann auf GitHub gefunden werden.'
 		],
 		github: 'https://github.com/MichaelHolley/OnTrack',
 		class: 'col-span-1',
@@ -44,8 +44,17 @@ export const projects: Project[] = [
 			'Mit unserem Projekt haben wir mehrere Ziele erreicht. Erstens haben wir erfolgreich CO2-Daten mit einem Raspberry Pi und einem CO2-Sensor gemessen und gespeichert. Zweitens haben wir eine REST-API erstellt, mit der wir auf die CO2-Daten zugreifen und sie in einer Webanwendung anzeigen konnten. Drittens haben wir eine benutzerfreundliche Webanwendung erstellt, die die CO2-Daten im Zeitverlauf auf optisch ansprechende Weise anzeigt.',
 			'Insgesamt hat unser Projekt unsere Fähigkeiten in den Bereichen Programmierung, Webentwicklung und Datenanalyse unter Beweis gestellt. Außerdem sammelten wir wertvolle Erfahrungen bei der Arbeit im Team und bei der Zusammenarbeit an einem Projekt. Unser zweiter Platz beim Wissenschaftspreis Augsburger Schulen 2021 war ein Beweis für unsere harte Arbeit und unsere Hingabe, welche mit einem Preisgeld von 1000€ belohnt wurde.'
 		],
-		class: 'col-span-1 lg:col-span-2',
+		class: 'col-span-1',
 		icon: 'mdi:trophy'
+	},
+	{
+		id: 'coding-2025',
+		title: 'Daily Coding 2025',
+		short: 'Tägliches Coding',
+		description: [
+			'Mit Beginn des Jahres 2025 setzte ich mir die Aufgabe täglich - im Rahmen der Möglichkeiten - zu Programmieren.'
+		],
+		class: 'col-span-1'
 	}
 ];
 

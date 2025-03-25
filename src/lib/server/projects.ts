@@ -1,5 +1,6 @@
 export const projects: Project[] = [
 	{
+		id: 'loyalit-app',
 		title: 'Treuepunkte App',
 		short:
 			'Leitung und Optimierung einer Bonuspunkte-App für eine führende Lebensmittelkette mit Fokus auf Stabilität, Performance und UX.',
@@ -11,6 +12,7 @@ export const projects: Project[] = [
 		icon: 'mdi:mobile-phone-message'
 	},
 	{
+		id: 'michaelholley-de',
 		title: 'michaelholley.de',
 		short: 'Portfolio-Website',
 		description: [
@@ -22,6 +24,7 @@ export const projects: Project[] = [
 		icon: 'mdi:web'
 	},
 	{
+		id: 'ontrack',
 		title: 'OnTrack',
 		short: 'Web-App zur Verwaltung von täglichen Aktivitäten, ToDos und Ausgaben',
 		description: [
@@ -33,6 +36,7 @@ export const projects: Project[] = [
 		icon: 'mdi:eight-track'
 	},
 	{
+		id: 'science-competition-2021',
 		title: 'Wissenschaftspreis',
 		short:
 			'Projekt zur CO2-Messung mit Raspberry Pi und Visualisierung der Daten in einer Webanwendung.',
@@ -46,6 +50,7 @@ export const projects: Project[] = [
 ];
 
 export interface Project {
+	id: string;
 	title: string;
 	short: string;
 	description: string[];

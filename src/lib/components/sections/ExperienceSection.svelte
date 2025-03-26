@@ -8,7 +8,7 @@
 		<SectionHeader title="Experience" class="mb-3 text-center" />
 		<div class="text-left text-lg">
 			<Step period="seit Mai 2023" title="Software Entwickler" workplace="AraCom IT Services GmbH">
-				<ul class="list-inside list-square *:py-1">
+				<ul class="list-square list-inside *:py-1">
 					<li>
 						Eigenverantwortliche Definition, Abschätzung, Konzeption und Umsetzung von kleinen
 						Softwareprojekten in Kundenauftrag
@@ -33,7 +33,7 @@
 				title="Junior Software Entwickler"
 				workplace="AraCom IT Services GmbH"
 			>
-				<ul class="list-inside list-square *:py-1">
+				<ul class="list-square list-inside *:py-1">
 					<li>
 						Entwicklung und Optimierung vielseitiger Softwarelösungen in einem agilen,
 						teamorientierten Umfeld
@@ -59,7 +59,7 @@
 				workplace="Universität Augsburg"
 			>
 				<p>abgebrochen</p>
-				<ul class="list-inside list-square *:py-1">
+				<ul class="list-square list-inside *:py-1">
 					<li>Erster Kontakt mit Softwareprojekten und anderen IT-Begeisterten</li>
 					<li>Tiefes, fachliches Einarbeiten in Algorithmen und Datenstrukturen</li>
 				</ul>
@@ -70,7 +70,7 @@
 
 <style>
 	.list-square li::marker {
-		color: theme('colors.secondary.DEFAULT');
+		color: var(--color-secondary);
 	}
 
 	.list-square li {

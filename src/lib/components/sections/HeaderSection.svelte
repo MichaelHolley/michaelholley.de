@@ -55,10 +55,6 @@
 
 <style>
 	.header-bg {
-		background-image: linear-gradient(
-			-30deg,
-			theme('colors.primary.DEFAULT') 33%,
-			theme('colors.secondary.DEFAULT') 0%
-		);
+		background-image: linear-gradient(-30deg, var(--color-primary) 33%, var(--color-secondary) 0%);
 	}
 </style>

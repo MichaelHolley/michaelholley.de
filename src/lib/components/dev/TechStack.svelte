@@ -20,11 +20,11 @@
 			}) * -1); left: max(calc(5rem * ${tech.length}), 100%);`}
 		>
 			<div
-				class="group relative z-20 flex min-w-20 flex-row items-center justify-center overflow-hidden rounded-xl border border-neutral-700/50 bg-neutral-900 bg-opacity-60 p-3 text-xl backdrop-blur-lg transition-all duration-500 hover:border-neutral-700/60"
+				class="group bg-opacity-60 relative z-20 flex min-w-20 flex-row items-center justify-center overflow-hidden rounded-xl border border-neutral-700/50 bg-neutral-900 p-3 text-xl backdrop-blur-lg transition-all duration-500 hover:border-neutral-700/60"
 			>
 				<div
 					class={cn(
-						'absolute left-1/2 top-1/2 z-20 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transition-all duration-500',
+						'absolute top-1/2 left-1/2 z-20 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transition-all duration-500',
 						'rounded-full opacity-0 blur-md group-hover:opacity-60'
 					)}
 					style={`background-color: ${t.color};`}
@@ -33,7 +33,7 @@
 					icon={t.icon}
 					class={cn(
 						'z-30 text-2xl filter transition-all duration-500',
-						'grayscale-[1] group-hover:grayscale-0',
+						'grayscale-100 group-hover:grayscale-0',
 						!!t.invertIconColor && `invert`
 					)}
 				/>

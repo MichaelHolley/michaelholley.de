@@ -21,7 +21,7 @@
 				{#each projects as p, i}
 					<BlurFade delay={0.08 * i}>
 						<button
-							class="group mb-1 w-full transition-all hover:scale-[1.03]"
+							class="group mb-1 w-full transition-all hover:scale-[1.03] hover:cursor-pointer"
 							tabindex="0"
 							onclick={() => selectProject(i)}
 							onkeyup={(e) => {
@@ -82,7 +82,7 @@
 	/* Firefox */
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: theme('colors.white') transparent;
+		scrollbar-color: var(--color-white) transparent;
 	}
 
 	/* Chrome, Edge, and Safari */
@@ -95,6 +95,6 @@
 	}
 
 	*::-webkit-scrollbar-thumb {
-		background-color: theme('colors.white');
+		background-color: var(--color-white);
 	}
 </style>

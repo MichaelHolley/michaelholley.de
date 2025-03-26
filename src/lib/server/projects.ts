@@ -49,8 +49,8 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'coding-2025',
-		title: 'Daily Coding 2025',
-		short: 'Tägliches Coding',
+		title: 'Coding 2025',
+		short: 'Daily Coding Challenge 2025',
 		description: [
 			'Mit Beginn des Jahres 2025 setzte ich mir die Aufgabe täglich - im Rahmen der Möglichkeiten - zu Programmieren.'
 		],

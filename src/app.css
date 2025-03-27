@@ -1,12 +1,43 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@theme {
+	--list-style-type-*: initial;
+	--list-style-type-none: none;
+	--list-style-type-disc: disc;
+	--list-style-type-decimal: decimal;
+	--list-style-type-square: square;
+
+	--color-white: #f5f5f5;
+
+	--color-primary: #dd7373;
+	--color-primary-hover: #ff9595;
+	--color-primary-active: #ffbfbf;
+
+	--color-secondary: #51a3a3;
+	--color-secondary-hover: #73c3c3;
+	--color-secondary-active: #95e3e3;
+
+	--color-tertiary: #586f6b;
+	--color-tertiary-hover: #7e8e8a;
+	--color-tertiary-active: #a4ada9;
+}
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 2rem;
+	@media (width >= theme(--breakpoint-sm)) {
+		padding-inline: 3rem;
+	}
+	@media (width >= theme(--breakpoint-lg)) {
+		padding-inline: 4rem;
+	}
+}
 
 html {
-	background-color: theme('colors.black');
+	background-color: var(--color-black);
 }
 
 body {
-	color: theme('colors.white');
+	color: var(--color-white);
 	font-family: 'Raleway', sans-serif;
 }

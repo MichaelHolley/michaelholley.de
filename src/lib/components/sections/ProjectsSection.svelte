@@ -31,7 +31,7 @@
 	/* Firefox */
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: theme('colors.white') transparent;
+		scrollbar-color: var(--color-white) transparent;
 	}
 
 	/* Chrome, Edge, and Safari */
@@ -44,6 +44,6 @@
 	}
 
 	*::-webkit-scrollbar-thumb {
-		background-color: theme('colors.white');
+		background-color: var(--color-white);
 	}
 </style>

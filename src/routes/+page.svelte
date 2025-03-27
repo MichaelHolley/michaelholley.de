@@ -9,6 +9,6 @@
 </script>
 
 <Header />
-<Dev tech={data.tech} />
+<Dev />
 <Experience />
 <Projects projects={data.projects} />

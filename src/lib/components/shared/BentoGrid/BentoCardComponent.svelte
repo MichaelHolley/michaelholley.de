@@ -42,7 +42,7 @@
 			{#if !!icon}
 				<Icon
 					{icon}
-					class="-ml-0.5 text-2xl text-neutral-700 transition-all group-hover:text-neutral-400"
+					class="group-hover:text-secondary -ml-0.5 text-2xl text-neutral-700 transition-all"
 				/>
 			{/if}
 

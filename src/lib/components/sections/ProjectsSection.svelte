@@ -18,7 +18,7 @@
 						description={p.short}
 						icon={p.icon}
 						href="/projects/{p.id}"
-						cta={'Read more'}
+						cta={'Mehr'}
 						class={p.class}
 					/>
 				{/each}

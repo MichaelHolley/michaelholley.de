@@ -29,7 +29,7 @@
 							}}
 						>
 							<h3
-								class="text-center text-2xl font-bold uppercase transition-all duration-200 md:text-start lg:text-3xl xl:text-4xl {i ===
+								class="text-center text-2xl font-bold uppercase transition-all duration-200 text-shadow-sm md:text-start lg:text-3xl xl:text-4xl {i ===
 								selectedIndex
 									? 'text-primary'
 									: 'text-white'}"
@@ -61,7 +61,7 @@
 											rel="noreferrer"
 											aria-label="GitHub-Repository"
 										>
-											<Icon icon="fa:github" style="font-size:2.5rem" />
+											<Icon icon="fa:github" class="text-4xl drop-shadow-md" />
 										</a>
 									{/if}
 								</div>
@@ -70,7 +70,7 @@
 					{/each}
 				{:else}
 					<div class="flex flex-row justify-center">
-						<span class="text-center text-xl">Wählen Sie ein Projekt</span>
+						<span class="text-center text-xl text-shadow-sm">Wählen Sie ein Projekt</span>
 					</div>
 				{/if}
 			</div>

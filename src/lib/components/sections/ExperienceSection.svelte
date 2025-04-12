@@ -50,7 +50,8 @@
 				title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"
 				workplace="AraCom IT Services GmbH"
 			>
-				Verkürzte Ausbildung auf 2,5 Jahre mit der <strong>Bestnote 1,0</strong> (Berufsschule) und
+				Verkürzte Ausbildung auf 2,5 Jahre mit der <strong>Bestnote 1,0</strong> in der Berufsschule
+				und
 				<strong>96 von 100 Punkten</strong> in der IHK-Abschlussprüfung erfolgreich abgeschlossen.
 			</Step>
 			<Step

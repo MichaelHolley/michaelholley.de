@@ -55,9 +55,10 @@ export const projects: Project[] = [
 			'Die App ermöglicht es den Nutzern, individuelle Ziele zu setzen und ihren Fortschritt durch detaillierte Statistiken und Analysen zu visualisieren. Durch diese Funktionen wird eine benutzerfreundliche und motivierende Erfahrung geschaffen, die es den Nutzern ermöglicht, ihre persönlichen Ziele effektiv zu erreichen.​',
 			'Durch die Arbeit an Ascent habe ich nicht nur meine technischen Fähigkeiten erweitert, sondern auch wertvolle Einblicke in die Bedeutung von Nutzerzentrierung und kontinuierlichem Feedback im Entwicklungsprozess gewonnen. Diese Erkenntnisse werden zweifellos in zukünftigen Projekten von großem Nutzen sein.'
 		],
-		github: 'https://github.com/MichaelHolley/OnTrack',
+		github: 'https://github.com/MichaelHolley/Ascent',
 		class: 'col-span-1',
-		icon: 'tabler:chart-line'
+		icon: 'tabler:chart-line',
+		url: 'https://ascent.michaelholley.de'
 	}
 ];
 

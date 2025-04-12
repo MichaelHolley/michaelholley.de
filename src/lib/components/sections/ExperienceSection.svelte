@@ -15,7 +15,7 @@
 					</li>
 					<li>
 						Übernahme der Rolle des Technical Lead Frontend während der Betriebsphase einer
-						innovativen Smartphone-App im Bereich Lebensmittel, einschließlich Verantwortung über
+						innovativen Smartphone-App im Bereich Lebensmittel, einschließlich Verantwortung für
 						Technologie und Team
 					</li>
 					<li>
@@ -23,7 +23,7 @@
 						Stabilität der Software
 					</li>
 					<li>
-						Aktive Mitwirkung bei der Ausbildung, in Tech-Communitys und Förderung von
+						Aktive Mitwirkung an der Ausbildung, in Tech-Communities und Förderung von
 						Nachwuchskräften, inklusive Mentoring und Wissensvermittlung
 					</li>
 				</ul>
@@ -50,7 +50,7 @@
 				title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"
 				workplace="AraCom IT Services GmbH"
 			>
-				Verkürzte Ausbildung in 2,5 Jahren mit <strong>Bestnote 1,0</strong> (Berufsschule) und
+				Verkürzte Ausbildung auf 2,5 Jahre mit der <strong>Bestnote 1,0</strong> (Berufsschule) und
 				<strong>96 von 100 Punkten</strong> in der IHK-Abschlussprüfung erfolgreich abgeschlossen.
 			</Step>
 			<Step

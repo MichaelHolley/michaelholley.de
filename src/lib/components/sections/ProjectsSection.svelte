@@ -21,7 +21,7 @@
 				{#each projects as p, i}
 					<BlurFade delay={0.08 * i}>
 						<button
-							class="group mb-1 w-full transition-all hover:scale-[1.03] hover:cursor-pointer"
+							class="group mb-1 w-full transition-all hover:scale-103 hover:cursor-pointer"
 							tabindex="0"
 							onclick={() => selectProject(i)}
 							onkeyup={(e) => {
@@ -52,7 +52,18 @@
 										</p>
 									{/each}
 								</div>
-								<div class="mt-3 flex flex-row justify-center p-2">
+								{#if project.tech && project.tech.length > 0}
+									<div
+										class="text-md my-4 flex flex-row flex-wrap justify-center gap-3 pr-4 text-neutral-300"
+									>
+										{#each project.tech as tech}
+											<span class="transition-all hover:scale-102 hover:text-white">
+												{tech}
+											</span>
+										{/each}
+									</div>
+								{/if}
+								<div class="flex flex-row justify-center p-2">
 									{#if !!project.github && projects[selectedIndex].github != ''}
 										<a
 											class="transition-all hover:scale-110"

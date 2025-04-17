@@ -1,3 +1,5 @@
+import { tech, type Tech } from './tech';
+
 export const projects: Project[] = [
 	{
 		id: 'loyalit-app',
@@ -9,7 +11,8 @@ export const projects: Project[] = [
 			'Während der Projektlaufzeit waren mein Team und ich in der Lage, die App zur Zufriedenheit des Kunden weiterzuentwickeln, sowie eine erhebliche Verbesserung der Bewertung in den App-Stores zu erreichen. Ich bin stolz darauf, einen Beitrag zu einem so bedeutenden Projekt geleistet zu haben.'
 		],
 		class: 'col-span-1 lg:col-span-2',
-		icon: 'mdi:mobile-phone-message'
+		icon: 'mdi:mobile-phone-message',
+		tech: ['React Native', tech.React, tech.TypeScript, tech.Azure, 'ASP.NET']
 	},
 	{
 		id: 'coding-2025',
@@ -32,7 +35,8 @@ export const projects: Project[] = [
 		],
 		github: 'https://github.com/MichaelHolley/michaelholley.de',
 		class: 'col-span-1',
-		icon: 'mdi:web'
+		icon: 'mdi:web',
+		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.Docker]
 	},
 	{
 		id: 'science-competition-2021',
@@ -43,7 +47,8 @@ export const projects: Project[] = [
 			'Insgesamt hat unser Projekt unsere Fähigkeiten in den Bereichen Programmierung, Webentwicklung und Datenanalyse unter Beweis gestellt. Außerdem sammelten wir wertvolle Erfahrungen bei der Arbeit im Team und bei der Zusammenarbeit an einem Projekt. Unser zweiter Platz beim Wissenschaftspreis Augsburger Schulen 2021 war ein Beweis für unsere harte Arbeit und unsere Hingabe, welche mit einem Preisgeld von 1000€ belohnt wurde.'
 		],
 		class: 'col-span-1',
-		icon: 'mdi:trophy'
+		icon: 'mdi:trophy',
+		tech: ['Raspberry Pi', tech.Python, 'ASP.NET', tech.HTML, tech.TypeScript]
 	},
 	{
 		id: 'ascent',
@@ -58,7 +63,8 @@ export const projects: Project[] = [
 		github: 'https://github.com/MichaelHolley/Ascent',
 		class: 'col-span-1',
 		icon: 'tabler:chart-line',
-		url: 'https://ascent.michaelholley.de'
+		url: 'https://ascent.michaelholley.de',
+		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.Docker]
 	}
 ];
 
@@ -67,6 +73,7 @@ export interface Project {
 	title: string;
 	short: string;
 	description: string[];
+	tech?: (Tech | string)[];
 	github?: string;
 	url?: string;
 	class?: string;

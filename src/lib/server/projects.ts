@@ -57,8 +57,7 @@ export const projects: Project[] = [
 		description: [
 			'Ascent ist eine Habit-Tracking-App, die Nutzern dabei hilft, ihre täglichen Routinen zu überwachen und positive Verhaltensweisen zu etablieren. Die Entwicklung dieser Anwendung hat nicht nur meine technischen Fähigkeiten erweitert, sondern auch meine Kompetenzen im Projektmanagement und in der Problemlösung gestärkt.​',
 			'Während des Entwicklungsprozesses habe ich gelernt, komplexe Anforderungen zu analysieren, effektive Lösungen zu entwerfen und den gesamten Lebenszyklus einer Anwendung zu steuern. Diese Erfahrungen haben mein Verständnis für Softwarearchitektur vertieft und meine Fähigkeit verbessert, Projekte effizient zu planen und umzusetzen.​',
-			'Die App ermöglicht es den Nutzern, individuelle Ziele zu setzen und ihren Fortschritt durch detaillierte Statistiken und Analysen zu visualisieren. Durch diese Funktionen wird eine benutzerfreundliche und motivierende Erfahrung geschaffen, die es den Nutzern ermöglicht, ihre persönlichen Ziele effektiv zu erreichen.​',
-			'Durch die Arbeit an Ascent habe ich nicht nur meine technischen Fähigkeiten erweitert, sondern auch wertvolle Einblicke in die Bedeutung von Nutzerzentrierung und kontinuierlichem Feedback im Entwicklungsprozess gewonnen. Diese Erkenntnisse werden zweifellos in zukünftigen Projekten von großem Nutzen sein.'
+			'Die App ermöglicht es den Nutzern, individuelle Ziele zu setzen und ihren Fortschritt durch detaillierte Statistiken und Analysen zu visualisieren. Durch diese Funktionen wird eine benutzerfreundliche und motivierende Erfahrung geschaffen, die es den Nutzern ermöglicht, ihre persönlichen Ziele effektiv zu erreichen.​'
 		],
 		github: 'https://github.com/MichaelHolley/Ascent',
 		class: 'col-span-1',

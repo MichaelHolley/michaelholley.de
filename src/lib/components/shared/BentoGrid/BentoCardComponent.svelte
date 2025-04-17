@@ -70,8 +70,10 @@
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				class="ml-2 h-4 w-4"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg
+				class="ml-2 h-4 w-4"
 			>
+				<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+			</svg>
 		</a>
 	</div>
 	<div

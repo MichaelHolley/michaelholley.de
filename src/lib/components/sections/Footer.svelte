@@ -6,7 +6,7 @@
 <footer class="relative bg-black">
 	<div class="container space-y-6 pt-8 pb-4 text-white">
 		<div class="flex flex-col justify-center gap-8 sm:flex-row">
-			<div class="space-y-2 text-right">
+			<div class="hidden space-y-2 text-right sm:block">
 				<p class="text-4xl leading-10">Code</p>
 				<p class="text-4xl leading-10">mit</p>
 				<p class="text-4xl leading-10">Leidenschaft.</p>
@@ -19,7 +19,7 @@
 					<a
 						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
 						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="GitHub-Profile"
+						aria-label="Contact me"
 					>
 						<div class="transition-all group-hover:scale-110">
 							<Icon icon="tdesign:mail-filled" class="text-2xl" />

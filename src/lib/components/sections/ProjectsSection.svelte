@@ -1,90 +1,36 @@
 <script lang="ts">
-	import BlurFade from '$lib/components/shared/misc/BlurFade.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import type { Project } from '$lib/server/projects';
-	import { cn } from '$lib/utils';
-	import Icon from '@iconify/svelte';
+	import BentoCardComponent from '../shared/BentoGrid/BentoCardComponent.svelte';
+	import BentoGridComponent from '../shared/BentoGrid/BentoGridComponent.svelte';
 
-	const { projects } = $props<{ projects: Project[] }>();
-	let selectedIndex = $state(-1);
-
-	function selectProject(index: number) {
-		selectedIndex = index;
-	}
+	const { projects }: { projects: Project[] } = $props();
 </script>
 
-<section id="projects" class="bg-tertiary text-white">
+{#snippet backgroundImg(url?: string)}
+	{#if url}
+		<img src={url} alt="background" class="h-full w-full object-cover object-left-top" />
+	{/if}
+{/snippet}
+
+<section id="projects" class="bg-black text-white">
 	<div class="container py-8 md:py-16">
-		<SectionHeader title="Projekte" class="text-center md:text-start" />
-		<div class="mt-6 flex flex-col gap-4 md:flex-row">
-			<div>
+		<SectionHeader title="Projekte" class="pb-8" />
+		<div class="flex flex-col items-center justify-center gap-24 md:gap-64">
+			<BentoGridComponent class="grid-cols-1 lg:grid-cols-3">
 				{#each projects as p, i}
-					<BlurFade delay={0.08 * i}>
-						<button
-							class="group mb-1 w-full transition-all hover:scale-103 hover:cursor-pointer"
-							tabindex="0"
-							onclick={() => selectProject(i)}
-							onkeyup={(e) => {
-								if (e.key == 'Enter') selectProject(i);
-							}}
-						>
-							<h3
-								class="text-center text-2xl font-bold uppercase transition-all duration-200 text-shadow-sm md:text-start lg:text-3xl xl:text-4xl {i ===
-								selectedIndex
-									? 'text-primary'
-									: 'text-white'}"
-							>
-								{p.title}
-							</h3>
-						</button>
-					</BlurFade>
+					<BentoCardComponent
+						name={p.title}
+						description={p.short}
+						icon={p.icon}
+						href="/projects/{p.id}"
+						cta={'Mehr'}
+						class={p.class}
+					>
+						{@render backgroundImg(p.previewImg)}
+					</BentoCardComponent>
 				{/each}
-			</div>
-			<div class={cn('h-[380px] w-full', selectedIndex != -1 ? 'overflow-y-auto pr-1' : '')}>
-				{#if selectedIndex >= 0 && selectedIndex < projects.length}
-					{#each projects as project, index}
-						{#if index === selectedIndex}
-							<div class="flex flex-col">
-								<div class="pr-4 text-lg">
-									{#each project.description as descr, i}
-										<p class={cn(i != 0 ? 'mt-4' : '')}>
-											{descr}
-										</p>
-									{/each}
-								</div>
-								{#if project.tech && project.tech.length > 0}
-									<div
-										class="text-md my-4 flex flex-row flex-wrap justify-center gap-3 pr-4 text-neutral-300"
-									>
-										{#each project.tech as tech}
-											<span class="transition-all hover:scale-102 hover:text-white">
-												{tech}
-											</span>
-										{/each}
-									</div>
-								{/if}
-								<div class="flex flex-row justify-center p-2">
-									{#if !!project.github && projects[selectedIndex].github != ''}
-										<a
-											class="transition-all hover:scale-110"
-											href={project.github}
-											target="_blank"
-											rel="noreferrer"
-											aria-label="GitHub-Repository"
-										>
-											<Icon icon="fa:github" class="text-4xl drop-shadow-md" />
-										</a>
-									{/if}
-								</div>
-							</div>
-						{/if}
-					{/each}
-				{:else}
-					<div class="flex flex-row justify-center">
-						<span class="text-center text-xl text-shadow-sm">Wählen Sie ein Projekt</span>
-					</div>
-				{/if}
-			</div>
+			</BentoGridComponent>
 		</div>
 	</div>
 </section>

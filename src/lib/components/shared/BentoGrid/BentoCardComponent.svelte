@@ -27,9 +27,9 @@
 	class={cn(
 		'group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl',
 		// light styles
-		'bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
+		'[box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]',
 		// dark styles
-		'transform-gpu dark:bg-black dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]',
+		'bg-b[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] transform-gpu [border:1px_solid_rgba(255,255,255,.1)]',
 		className
 	)}
 >
@@ -49,7 +49,7 @@
 				/>
 			{/if}
 
-			<h3 class="font-semibold text-neutral-700 dark:text-neutral-300">
+			<h3 class="font-semibold text-neutral-300">
 				{name}
 			</h3>
 		</div>
@@ -80,6 +80,6 @@
 		</a>
 	</div>
 	<div
-		class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10"
+		class="g pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-neutral-800/10"
 	></div>
 </div>

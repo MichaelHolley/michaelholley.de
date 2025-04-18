@@ -50,7 +50,7 @@
 				</div>
 
 				{#if data.tech}
-					<div class="mt-8 flex flex-row flex-wrap justify-center gap-6">
+					<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-5 gap-y-2">
 						{#each data.tech as t}
 							<div
 								class="group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400"

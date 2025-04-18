@@ -12,7 +12,7 @@ export const projects: Project[] = [
 		],
 		class: 'col-span-1 lg:col-span-2',
 		icon: 'mdi:mobile-phone-message',
-		tech: ['React Native', tech.React, tech.TypeScript, tech.Azure, 'ASP.NET']
+		tech: [tech.React, 'React Native', tech.TypeScript, tech.Azure, 'ASP.NET']
 	},
 	{
 		id: 'coding-2025',
@@ -27,17 +27,20 @@ export const projects: Project[] = [
 		github: 'https://github.com/MichaelHolley'
 	},
 	{
-		id: 'michaelholley-de',
-		title: 'michaelholley.de',
-		short: 'Portfolio-Website',
+		id: 'ascent',
+		title: 'Ascent',
+		short: 'Tracking von Hobbys und Zielen',
 		description: [
-			'Diese Portfolio-Website wurde entwickelt, um Fachwissen und Fähigkeiten als Fullstack-Entwickler ansprechend zu präsentieren. Im Laufe der Zeit entstanden mehrere Versionen mit unterschiedlichen Technologien, um verschiedene Ansätze und Frameworks zu erproben.',
-			'Die aktuelle Umsetzung basiert auf SvelteKit und Tailwind CSS und legt den Fokus auf eine schlanke, performante und interaktive Benutzererfahrung. Moderne Web-Technologien sorgen für eine optimierte User-Experience und hinterlassen einen positiven Eindruck bei potenziellen Kunden und Arbeitgebern.'
+			'Ascent ist eine Habit-Tracking-App, die Nutzern dabei hilft, ihre täglichen Routinen zu überwachen und positive Verhaltensweisen zu etablieren. Die Entwicklung dieser Anwendung hat nicht nur meine technischen Fähigkeiten erweitert, sondern auch meine Kompetenzen im Projektmanagement und in der Problemlösung gestärkt.​',
+			'Während des Entwicklungsprozesses habe ich gelernt, komplexe Anforderungen zu analysieren, effektive Lösungen zu entwerfen und den gesamten Lebenszyklus einer Anwendung zu steuern. Diese Erfahrungen haben mein Verständnis für Softwarearchitektur vertieft und meine Fähigkeit verbessert, Projekte effizient zu planen und umzusetzen.​',
+			'Die App ermöglicht es den Nutzern, individuelle Ziele zu setzen und ihren Fortschritt durch detaillierte Statistiken und Analysen zu visualisieren. Durch diese Funktionen wird eine benutzerfreundliche und motivierende Erfahrung geschaffen, die es den Nutzern ermöglicht, ihre persönlichen Ziele effektiv zu erreichen.​'
 		],
-		github: 'https://github.com/MichaelHolley/michaelholley.de',
+		github: 'https://github.com/MichaelHolley/Ascent',
 		class: 'col-span-1',
-		icon: 'mdi:web',
-		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.Docker]
+		icon: 'tabler:chart-line',
+		url: 'https://ascent.michaelholley.de',
+		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.prisma, tech.Docker],
+		previewImg: '/ascent.png'
 	},
 	{
 		id: 'science-competition-2021',
@@ -49,22 +52,22 @@ export const projects: Project[] = [
 		],
 		class: 'col-span-1',
 		icon: 'mdi:trophy',
-		tech: ['Raspberry Pi', tech.Python, 'ASP.NET', tech.HTML, tech.TypeScript]
+		tech: ['Raspberry Pi', tech.Python, 'ASP.NET', tech.HTML, tech.TypeScript],
+		previewImg: 'co2_app.jpeg'
 	},
 	{
-		id: 'ascent',
-		title: 'Ascent',
-		short: 'Tracke und Maintaine deine Hobbys und Tätigkeiten',
+		id: 'michaelholley-de',
+		title: 'michaelholley.de',
+		short: 'Portfolio-Website',
 		description: [
-			'Ascent ist eine Habit-Tracking-App, die Nutzern dabei hilft, ihre täglichen Routinen zu überwachen und positive Verhaltensweisen zu etablieren. Die Entwicklung dieser Anwendung hat nicht nur meine technischen Fähigkeiten erweitert, sondern auch meine Kompetenzen im Projektmanagement und in der Problemlösung gestärkt.​',
-			'Während des Entwicklungsprozesses habe ich gelernt, komplexe Anforderungen zu analysieren, effektive Lösungen zu entwerfen und den gesamten Lebenszyklus einer Anwendung zu steuern. Diese Erfahrungen haben mein Verständnis für Softwarearchitektur vertieft und meine Fähigkeit verbessert, Projekte effizient zu planen und umzusetzen.​',
-			'Die App ermöglicht es den Nutzern, individuelle Ziele zu setzen und ihren Fortschritt durch detaillierte Statistiken und Analysen zu visualisieren. Durch diese Funktionen wird eine benutzerfreundliche und motivierende Erfahrung geschaffen, die es den Nutzern ermöglicht, ihre persönlichen Ziele effektiv zu erreichen.​'
+			'Diese Portfolio-Website wurde entwickelt, um Fachwissen und Fähigkeiten als Fullstack-Entwickler ansprechend zu präsentieren. Im Laufe der Zeit entstanden mehrere Versionen mit unterschiedlichen Technologien, um verschiedene Ansätze und Frameworks zu erproben.',
+			'Die aktuelle Umsetzung basiert auf SvelteKit und Tailwind CSS und legt den Fokus auf eine schlanke, performante und interaktive Benutzererfahrung. Moderne Web-Technologien sorgen für eine optimierte User-Experience und hinterlassen einen positiven Eindruck bei potenziellen Kunden und Arbeitgebern.'
 		],
-		github: 'https://github.com/MichaelHolley/Ascent',
+		github: 'https://github.com/MichaelHolley/michaelholley.de',
 		class: 'col-span-1',
-		icon: 'tabler:chart-line',
-		url: 'https://ascent.michaelholley.de',
-		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.Docker]
+		icon: 'mdi:web',
+		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.Docker],
+		previewImg: '/michaelholleyde.png'
 	}
 ];
 
@@ -78,4 +81,6 @@ export interface Project {
 	url?: string;
 	class?: string;
 	icon?: string;
+	previewImg?: string;
+	imageUrls?: string[];
 }

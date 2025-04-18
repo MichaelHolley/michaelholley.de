@@ -1,23 +1,24 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
+	import type { Snippet } from 'svelte';
 
 	const {
 		name,
-		background,
 		icon,
 		description,
 		href,
 		cta,
-		class: className
+		class: className,
+		children
 	} = $props<{
 		name: string;
-		background?: any;
 		icon?: string;
 		description: string;
 		href: string;
 		cta: string;
 		class?: string;
+		children?: Snippet;
 	}>();
 </script>
 
@@ -32,17 +33,19 @@
 		className
 	)}
 >
-	<div>
-		<svelte:component this={background} />
+	<div
+		class="h-full w-full brightness-30 saturate-0 group-hover:brightness-50 group-hover:saturate-100"
+	>
+		{@render children()}
 	</div>
 	<div
-		class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10"
+		class="pointer-events-none absolute bottom-0 z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10"
 	>
 		<div class="flex flex-row items-center gap-1 text-xl">
 			{#if !!icon}
 				<Icon
 					{icon}
-					class="group-hover:text-secondary -ml-0.5 text-2xl text-neutral-700 transition-all"
+					class="-ml-0.5 text-2xl text-neutral-700 transition-all group-hover:text-neutral-400"
 				/>
 			{/if}
 

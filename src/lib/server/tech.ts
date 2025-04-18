@@ -91,6 +91,11 @@ export const tech = {
 		icon: 'lineicons:azure',
 		color: colors.sky[500],
 		name: 'Azure'
+	},
+	prisma: {
+		icon: 'lineicons:prisma',
+		color: colors.white,
+		name: 'Prisma'
 	}
 };
 

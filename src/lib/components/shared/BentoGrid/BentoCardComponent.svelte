@@ -22,8 +22,9 @@
 	}>();
 </script>
 
-<div
+<a
 	id={name}
+	{href}
 	class={cn(
 		'group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl',
 		// light styles
@@ -61,7 +62,7 @@
 			'pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100'
 		)}
 	>
-		<a {href} class="pointer-events-auto flex items-center justify-center">
+		<span class="pointer-events-auto flex items-center justify-center">
 			{cta}
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -77,9 +78,9 @@
 			>
 				<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
 			</svg>
-		</a>
+		</span>
 	</div>
 	<div
 		class="g pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-neutral-800/10"
 	></div>
-</div>
+</a>

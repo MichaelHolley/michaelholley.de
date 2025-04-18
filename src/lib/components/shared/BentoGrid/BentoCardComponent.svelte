@@ -34,7 +34,7 @@
 	)}
 >
 	<div
-		class="h-full w-full brightness-30 saturate-0 group-hover:brightness-50 group-hover:saturate-100"
+		class="h-full w-full brightness-30 saturate-0 transition-all duration-300 group-hover:brightness-50 group-hover:saturate-100"
 	>
 		{@render children()}
 	</div>

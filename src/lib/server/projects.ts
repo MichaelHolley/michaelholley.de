@@ -23,7 +23,8 @@ export const projects: Project[] = [
 			'Im Rahmen dieser Challenge entstehen verschiedene Projekte, darunter die App Ascent, die Portfolio-Website, Tshopper und weitere Anwendungen. Diese dienen nicht nur zur praktischen Umsetzung neuer Ideen, sondern auch zur Erprobung moderner Technologien und zur gezielten Weiterentwicklung technischer Fähigkeiten.'
 		],
 		class: 'col-span-1',
-		icon: 'tabler:code'
+		icon: 'tabler:code',
+		github: 'https://github.com/MichaelHolley'
 	},
 	{
 		id: 'michaelholley-de',

@@ -65,6 +65,9 @@ importers:
       svelte-motion:
         specifier: ^0.12.2
         version: 0.12.2(svelte@5.19.6)
+      svelte-render-scan:
+        specifier: ^1.1.0
+        version: 1.1.0(svelte@5.19.6)
       tailwind-merge:
         specifier: ^3.0.1
         version: 3.0.1
@@ -1375,6 +1378,11 @@ packages:
     peerDependencies:
       svelte: '>=3.35.0 || ^4.0.0 || ^5.0.0 || ^5.0.0-next.0'
 
+  svelte-render-scan@1.1.0:
+    resolution: {integrity: sha512-9S73wEtcnn9Hn0HsOSufm+AC+3Es2rMXoWMEWk6Fa3w3yORBg6khOSsZ8+kj/rY4BJRZTyjuFQBytFPGC8YHGQ==}
+    peerDependencies:
+      svelte: ^5.0.0
+
   svelte@5.19.6:
     resolution: {integrity: sha512-6ydekB3qyqUal+UhfMjmVOjRGtxysR8vuiMhi2nwuBtPJWnctVlsGspjVFB05qmR+TXI1emuqtZt81c0XiFleA==}
     engines: {node: '>=18'}
@@ -2632,6 +2640,10 @@ snapshots:
       style-value-types: 5.1.2
       svelte: 5.19.6
       tslib: 2.8.1
+
+  svelte-render-scan@1.1.0(svelte@5.19.6):
+    dependencies:
+      svelte: 5.19.6
 
   svelte@5.19.6:
     dependencies:

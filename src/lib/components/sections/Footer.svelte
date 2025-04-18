@@ -19,7 +19,7 @@
 					<a
 						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
 						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="GitHub-Profile"
+						aria-label="Contact me"
 					>
 						<div class="transition-all group-hover:scale-110">
 							<Icon icon="tdesign:mail-filled" class="text-2xl" />

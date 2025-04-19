@@ -6,12 +6,6 @@
 	const { projects }: { projects: Project[] } = $props();
 </script>
 
-{#snippet backgroundImg(url?: string)}
-	{#if url}
-		<img src={url} alt="background" class="h-full w-full object-cover object-left-top" />
-	{/if}
-{/snippet}
-
 <section id="projects" class="bg-black text-white">
 	<div class="container py-8 md:py-16">
 		<SectionHeader title="Projekte" class="pb-8" />

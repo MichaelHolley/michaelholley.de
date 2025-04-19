@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import type { Snippet } from 'svelte';
 
 	const {
 		id,

@@ -11,7 +11,7 @@
 		cta,
 		icon,
 		class: className,
-		children
+		backgroundImgUrl
 	} = $props<{
 		id: string;
 		name: string;
@@ -20,7 +20,7 @@
 		cta: string;
 		icon?: string;
 		class?: string;
-		children?: Snippet;
+		backgroundImgUrl?: string;
 	}>();
 </script>
 
@@ -36,11 +36,17 @@
 		className
 	)}
 >
-	<div
-		class="h-full w-full brightness-30 saturate-0 transition-all duration-300 group-hover:brightness-50 group-hover:saturate-100"
-	>
-		{@render children()}
-	</div>
+	{#if !!backgroundImgUrl}
+		<div
+			class="h-full w-full brightness-30 saturate-0 transition-all duration-300 group-hover:brightness-50 group-hover:saturate-100"
+		>
+			<img
+				src={backgroundImgUrl}
+				alt="background"
+				class="h-full w-full object-cover object-left-top"
+			/>
+		</div>
+	{/if}
 	<div
 		class="pointer-events-none absolute bottom-0 z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10"
 	>

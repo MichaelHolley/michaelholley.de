@@ -26,9 +26,8 @@
 						href="/projects/{p.id}"
 						cta={'Mehr'}
 						class={p.class}
-					>
-						{@render backgroundImg(p.previewImg)}
-					</BentoCardComponent>
+						backgroundImgUrl={p.previewImg}
+					/>
 				{/each}
 			</div>
 		</div>

@@ -59,7 +59,7 @@
 				{name}
 			</h3>
 		</div>
-		<p class="max-w-lg text-neutral-400">{description}</p>
+		<p class="max-w-lg text-neutral-400 group-hover:text-neutral-300">{description}</p>
 	</div>
 
 	<div
@@ -74,6 +74,6 @@
 	</div>
 
 	<div
-		class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-neutral-800/10"
+		class="pointer-events-none absolute inset-0 transform-gpu bg-transparent transition-all duration-300 group-hover:bg-black/50 group-hover:mask-t-to-40%"
 	></div>
 </a>

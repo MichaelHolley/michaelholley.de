@@ -4,26 +4,28 @@
 	import type { Snippet } from 'svelte';
 
 	const {
+		id,
 		name,
-		icon,
-		description,
 		href,
+		description,
 		cta,
+		icon,
 		class: className,
 		children
 	} = $props<{
+		id: string;
 		name: string;
-		icon?: string;
-		description: string;
 		href: string;
+		description: string;
 		cta: string;
+		icon?: string;
 		class?: string;
 		children?: Snippet;
 	}>();
 </script>
 
 <a
-	id={name}
+	{id}
 	{href}
 	class={cn(
 		'group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl',

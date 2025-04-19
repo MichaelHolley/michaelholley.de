@@ -2,7 +2,7 @@ import { tech, type Tech } from './tech';
 
 export const projects: Project[] = [
 	{
-		id: 'loyalit-app',
+		id: 'loyality-app',
 		title: 'Treuepunkte App',
 		short:
 			'Leitung und Optimierung einer Bonuspunkte-App für eine führende Lebensmittelkette mit Fokus auf Stabilität, Performance und UX.',

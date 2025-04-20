@@ -1,11 +1,14 @@
 <script lang="ts">
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
+	import DevHeaderComponent from '../dev/DevHeaderComponent.svelte';
+
+	const { tech } = $props<{ tech: Tech[] }>();
 </script>
 
 <section id="dev" class="relative">
 	<div class="container grid grid-cols-1 gap-6 py-12 md:py-20 lg:grid-cols-3 lg:gap-12 xl:gap-16">
 		<div class="col-span-3 lg:col-span-1">
-			<h3 class="pb-1 text-2xl tracking-widest text-neutral-500">Backend</h3>
+			<DevHeaderComponent header="Backend" tech={[tech.dotnet, tech.Java]} />
 			<p class="leading-7">
 				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
 				Datenbanken und APIs, um <span class="text-secondary"
@@ -15,7 +18,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<h3 class="pb-1 text-2xl tracking-widest text-neutral-500">Frontend</h3>
+			<DevHeaderComponent header="Frontend" tech={[tech.Vue, tech.TypeScript, tech.tailwindcss]} />
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
 				gerne mit den <span class="text-secondary">neuesten Technologien und Frameworks</span>, um
@@ -25,7 +28,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<h3 class="pb-1 text-2xl tracking-widest text-neutral-500">DevOps</h3>
+			<DevHeaderComponent header="DevOps" tech={[tech.Docker, tech.GitLab]} />
 			<p class="leading-7">
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
 				faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die

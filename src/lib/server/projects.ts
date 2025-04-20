@@ -12,7 +12,7 @@ export const projects: Project[] = [
 		],
 		class: 'col-span-1 lg:col-span-2',
 		icon: 'mdi:mobile-phone-message',
-		tech: [tech.React, 'React Native', tech.TypeScript, tech.Azure, 'ASP.NET']
+		tech: [tech.React, 'React Native', tech.TypeScript, tech.Azure, tech.aspnet]
 	},
 	{
 		id: 'coding-2025',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
 		],
 		class: 'col-span-1',
 		icon: 'mdi:trophy',
-		tech: ['Raspberry Pi', tech.Python, 'ASP.NET', tech.HTML, tech.TypeScript],
+		tech: ['Raspberry Pi', tech.Python, tech.aspnet, tech.HTML, tech.TypeScript],
 		previewImg: 'co2_app.webp'
 	},
 	{

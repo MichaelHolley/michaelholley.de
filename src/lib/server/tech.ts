@@ -2,9 +2,14 @@ import colors from 'tailwindcss/colors';
 
 export const tech = {
 	dotnet: {
-		icon: 'devicon:dot-net',
+		icon: 'logos:dotnet',
 		color: colors.indigo[600],
 		name: '.NET'
+	},
+	aspnet: {
+		icon: 'logos:dotnet',
+		color: colors.indigo[600],
+		name: 'ASP.NET'
 	},
 	Java: {
 		icon: 'devicon:java',
@@ -41,16 +46,6 @@ export const tech = {
 		color: colors.emerald[400],
 		name: 'Vue'
 	},
-	CSS: {
-		icon: 'devicon:css3',
-		color: colors.sky[400],
-		name: 'CSS'
-	},
-	nodejs: {
-		icon: 'devicon:nodejs',
-		color: colors.green[600],
-		name: 'Node.js'
-	},
 	Python: {
 		icon: 'devicon:python',
 		color: colors.yellow[300],
@@ -71,16 +66,6 @@ export const tech = {
 		invertIconColor: true,
 		color: colors.white,
 		name: 'GitHub'
-	},
-	MongoDB: {
-		icon: 'devicon:mongodb',
-		color: colors.green[600],
-		name: 'MongoDB'
-	},
-	MySQL: {
-		icon: 'devicon:mysql',
-		color: colors.sky[800],
-		name: 'MySQL'
 	},
 	Git: {
 		icon: 'devicon:git',

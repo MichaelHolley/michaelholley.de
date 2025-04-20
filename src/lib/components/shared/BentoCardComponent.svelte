@@ -34,7 +34,7 @@
 >
 	{#if !!backgroundImgUrl}
 		<div
-			class="h-full w-full brightness-30 saturate-0 transition-all duration-300 group-hover:brightness-50 group-hover:saturate-100"
+			class="h-full w-full brightness-30 saturate-0 transition-all duration-300 group-hover:brightness-70 group-hover:saturate-100"
 		>
 			<img
 				src={backgroundImgUrl}
@@ -55,11 +55,13 @@
 				/>
 			{/if}
 
-			<h3 class="font-semibold text-neutral-300">
+			<h3 class="font-semibold text-white text-shadow-2xs">
 				{name}
 			</h3>
 		</div>
-		<p class="max-w-lg text-neutral-400 group-hover:text-neutral-300">{description}</p>
+		<p class="max-w-lg text-neutral-400 text-shadow-2xs group-hover:text-white">
+			{description}
+		</p>
 	</div>
 
 	<div
@@ -67,13 +69,13 @@
 			'pointer-events-none absolute bottom-0 z-10 flex translate-y-10 transform-gpu p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100'
 		)}
 	>
-		<span class="pointer-events-none flex items-center">
+		<span class="pointer-events-none flex items-center text-shadow-2xs">
 			{cta}
-			<Icon icon="ic:baseline-arrow-forward" />
+			<Icon icon="ic:baseline-arrow-forward" class="drop-shadow-sm" />
 		</span>
 	</div>
 
 	<div
-		class="pointer-events-none absolute inset-0 transform-gpu bg-transparent transition-all duration-300 group-hover:bg-black/50 group-hover:mask-t-to-40%"
+		class="pointer-events-none absolute inset-0 transform-gpu bg-transparent transition-all duration-300 group-hover:bg-black/60 group-hover:mask-t-from-20% group-hover:mask-t-to-60%"
 	></div>
 </a>

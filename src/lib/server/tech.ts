@@ -62,8 +62,7 @@ export const tech = {
 		name: 'Docker'
 	},
 	GitHub: {
-		icon: 'devicon:github',
-		invertIconColor: true,
+		icon: 'fa:github',
 		color: colors.white,
 		name: 'GitHub'
 	},
@@ -87,6 +86,5 @@ export const tech = {
 export interface Tech {
 	icon: string;
 	color: string;
-	invertIconColor?: boolean;
 	name: string;
 }

@@ -8,11 +8,12 @@
 <div class="flex flex-row justify-start gap-6 pb-1">
 	<h3 class="text-2xl tracking-widest text-neutral-500">{header}</h3>
 	{#if !!tech}
-		<div
-			class="flex flex-row items-center gap-2 *:saturate-0 *:transition-all *:duration-300 *:hover:saturate-100"
-		>
+		<div class="flex flex-row items-center gap-2">
 			{#each tech as t}
-				<Icon icon={t.icon} class="text-xl" />
+				<Icon
+					icon={t.icon}
+					class="text-xl saturate-0 transition-all duration-300 hover:saturate-100"
+				/>
 			{/each}
 		</div>
 	{/if}

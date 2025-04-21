@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
+	import type { Tech } from '$lib/server/tech';
 	import DevHeaderComponent from '../dev/DevHeaderComponent.svelte';
 
 	const { tech } = $props<{ tech: Tech[] }>();
@@ -18,7 +19,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<DevHeaderComponent header="Frontend" tech={[tech.Vue, tech.TypeScript, tech.tailwindcss]} />
+			<DevHeaderComponent header="Frontend" tech={[tech.Vue, tech.Svelte, tech.tailwindcss]} />
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
 				gerne mit den <span class="text-secondary">neuesten Technologien und Frameworks</span>, um
@@ -28,7 +29,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<DevHeaderComponent header="DevOps" tech={[tech.Docker, tech.GitLab]} />
+			<DevHeaderComponent header="DevOps" tech={[tech.Docker, tech.GitLab, tech.GitHub]} />
 			<p class="leading-7">
 				DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
 				faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die

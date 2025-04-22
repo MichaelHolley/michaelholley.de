@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
+	--breakpoint-xs: 480px;
+
 	--list-style-type-*: initial;
 	--list-style-type-none: none;
 	--list-style-type-disc: disc;

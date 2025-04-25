@@ -25,7 +25,7 @@ export const projects: Project[] = [
 		class: 'col-span-1',
 		icon: 'tabler:code',
 		github: 'https://github.com/MichaelHolley',
-		previewImg: 'github_profile.webp'
+		previewImg: '/project/github_profile.webp'
 	},
 	{
 		id: 'ascent',
@@ -41,7 +41,7 @@ export const projects: Project[] = [
 		icon: 'tabler:chart-line',
 		url: 'https://ascent.michaelholley.de',
 		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.prisma, tech.Docker],
-		previewImg: '/ascent.webp'
+		previewImg: '/project/ascent.webp'
 	},
 	{
 		id: 'science-competition-2021',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
 		class: 'col-span-1',
 		icon: 'mdi:trophy',
 		tech: ['Raspberry Pi', tech.Python, tech.aspnet, tech.HTML, tech.TypeScript],
-		previewImg: 'co2_app.webp'
+		previewImg: '/project/co2_app.webp'
 	},
 	{
 		id: 'michaelholley-de',
@@ -68,7 +68,7 @@ export const projects: Project[] = [
 		class: 'col-span-1',
 		icon: 'mdi:web',
 		tech: [tech.Svelte, tech.tailwindcss, tech.TypeScript, tech.Docker],
-		previewImg: '/michaelholleyde.webp'
+		previewImg: '/project/michaelholleyde.webp'
 	}
 ];
 

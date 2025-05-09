@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@plugin "tailwindcss-motion";
+
 @theme {
 	--breakpoint-xs: 480px;
 

@@ -1,5 +1,4 @@
 <script>
-	import Blurfade from '$lib/components/shared/misc/BlurFade.svelte';
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
 </script>
@@ -19,35 +18,35 @@
 				<BoxReveal duration={0.8}>
 					<span class="pl-1 text-xl text-shadow-sm">Software Entwickler</span>
 				</BoxReveal>
-				<Blurfade delay={0.4} once>
-					<div class="mt-2 flex h-11 flex-row pl-1">
-						<a
-							class="transition-all hover:scale-110"
-							href="https://www.linkedin.com/in/michael-holley-791a64228/"
-							target="_blank"
-							rel="noreferrer"
-							aria-label="LinkedIn-Profile"
-						>
-							<Icon icon="fa:linkedin-square" class="text-4xl drop-shadow-md" />
-						</a>
-						<a
-							class="ml-3 transition-all hover:scale-110"
-							href="https://github.com/MichaelHolley"
-							target="_blank"
-							rel="noreferrer"
-							aria-label="GitHub-Profile"
-						>
-							<Icon icon="fa:github" class="text-4xl drop-shadow-md" />
-						</a>
-						<a
-							class="ml-3 transition-all hover:scale-110"
-							href="mailto:michael.philipp.holley@gmail.com"
-							aria-label="GitHub-Profile"
-						>
-							<Icon icon="tdesign:mail-filled" class="text-4xl drop-shadow-md" />
-						</a>
-					</div>
-				</Blurfade>
+				<div
+					class="*motion-opacity-in-0 *:motion-translate-y-in-75 *:motion-blur-in-md mt-2 flex h-11 flex-row pl-1"
+				>
+					<a
+						class="motion-delay-50 transition-all hover:scale-110"
+						href="https://www.linkedin.com/in/michael-holley-791a64228/"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="LinkedIn-Profile"
+					>
+						<Icon icon="fa:linkedin-square" class="text-4xl drop-shadow-md" />
+					</a>
+					<a
+						class="motion-delay-150 ml-3 transition-all hover:scale-110"
+						href="https://github.com/MichaelHolley"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="GitHub-Profile"
+					>
+						<Icon icon="fa:github" class="text-4xl drop-shadow-md" />
+					</a>
+					<a
+						class="motion-delay-250 ml-3 transition-all hover:scale-110"
+						href="mailto:michael.philipp.holley@gmail.com"
+						aria-label="GitHub-Profile"
+					>
+						<Icon icon="tdesign:mail-filled" class="text-4xl drop-shadow-md" />
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

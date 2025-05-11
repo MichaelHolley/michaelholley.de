@@ -1,14 +1,9 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import type { PageServerData } from './$types';
+	import { toggleSerifFont, useSerifFont } from '$lib/stores/serifFontStore';
 
 	const { data }: { data: PageServerData } = $props();
-
-	let serifFont = $state(false);
-
-	const toggleSerifFont = () => {
-		serifFont = !serifFont;
-	};
 </script>
 
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
@@ -20,13 +15,13 @@
 					Zurück
 				</a>
 				<button
-					class="{!serifFont
+					class="{!$useSerifFont
 						? 'serif-font'
 						: ''} flex flex-row items-center gap-1 hover:cursor-pointer"
 					onclick={toggleSerifFont}
-					title="Change to {!serifFont ? 'Serif' : 'Default'} font"
+					title="Change to {!$useSerifFont ? 'Serif' : 'Default'} font"
 				>
-					<Icon icon={serifFont ? 'bi:file-font-fill' : 'bi:file-font'} />
+					<Icon icon={$useSerifFont ? 'bi:file-font-fill' : 'bi:file-font'} />
 					Font</button
 				>
 			</div>
@@ -64,7 +59,7 @@
 				</div>
 			</div>
 			<div>
-				<div class={serifFont ? 'serif-font' : ''}>
+				<div class={$useSerifFont ? 'serif-font' : ''}>
 					{#each data.description as p}
 						<p class="mt-4 text-lg">{p}</p>
 					{/each}

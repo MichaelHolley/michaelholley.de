@@ -15,14 +15,11 @@
 					Zurück
 				</a>
 				<button
-					class="{!$useSerifFont
-						? 'serif-font'
-						: ''} flex flex-row items-center gap-1 hover:cursor-pointer"
+					class="{!$useSerifFont ? 'serif-font' : ''} size-8 rounded-sm border hover:cursor-pointer"
 					onclick={toggleSerifFont}
 					title="Change to {!$useSerifFont ? 'Serif' : 'Default'} font"
 				>
-					<Icon icon={$useSerifFont ? 'bi:file-font-fill' : 'bi:file-font'} />
-					Font</button
+					Aa</button
 				>
 			</div>
 

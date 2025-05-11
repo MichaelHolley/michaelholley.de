@@ -45,3 +45,7 @@ body {
 	color: var(--color-white);
 	font-family: 'Raleway', sans-serif;
 }
+
+.serif-font {
+	font-family: Georgia, 'Times New Roman', serif;
+}

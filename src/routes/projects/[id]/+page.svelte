@@ -91,10 +91,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.serif-font {
-		font-family: Georgia, 'Times New Roman', serif;
-		font-weight: 100;
-	}
-</style>

@@ -3,19 +3,40 @@
 	import type { PageServerData } from './$types';
 
 	const { data }: { data: PageServerData } = $props();
+
+	let serifFont = $state(false);
+
+	const toggleSerifFont = () => {
+		serifFont = !serifFont;
+	};
 </script>
 
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
 	<div class="container min-h-screen py-10">
 		<div class="max-w-5xl">
-			<a href="/" class=" flex flex-row items-center gap-1">
-				<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
-				Zurück
-			</a>
+			<div class="flex flex-row justify-between">
+				<a href="/" class=" flex flex-row items-center gap-1">
+					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
+					Zurück
+				</a>
+				<button
+					class="{!serifFont
+						? 'serif-font'
+						: ''} flex flex-row items-center gap-1 hover:cursor-pointer"
+					onclick={toggleSerifFont}
+					title="Change to {!serifFont ? 'Serif' : 'Default'} font"
+				>
+					<Icon icon={serifFont ? 'bi:file-font-fill' : 'bi:file-font'} />
+					Font</button
+				>
+			</div>
+
 			<div class="my-8 flex flex-row flex-wrap items-end justify-between gap-4">
 				<h1 class="text-4xl font-bold break-all lg:mt-20">{data.title}</h1>
 
-				<div class="flex flex-row items-center gap-3">
+				<div
+					class="*:motion-blur-in-md *:motion-opacity-in-0 *:motion-delay-50 flex flex-row items-center gap-3"
+				>
 					{#if data.url}
 						<a
 							href={data.url}
@@ -43,7 +64,7 @@
 				</div>
 			</div>
 			<div>
-				<div>
+				<div class={serifFont ? 'serif-font' : ''}>
 					{#each data.description as p}
 						<p class="mt-4 text-lg">{p}</p>
 					{/each}
@@ -75,3 +96,10 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.serif-font {
+		font-family: Georgia, 'Times New Roman', serif;
+		font-weight: 100;
+	}
+</style>

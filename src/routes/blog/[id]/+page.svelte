@@ -5,5 +5,5 @@
 </script>
 
 <ContentPageComponent>
-	<MarkdownComponent {content} />
+	<MarkdownComponent {content} class="my-8" />
 </ContentPageComponent>

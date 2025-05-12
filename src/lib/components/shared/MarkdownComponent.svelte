@@ -10,6 +10,8 @@
 	const htmlContent = marked(content);
 </script>
 
-<article class="{$useSerifFont ? 'serif-font' : ''} prose dark:prose-invert {className}">
+<article
+	class="{$useSerifFont ? 'serif-font' : ''} prose dark:prose-invert prose-stone {className}"
+>
 	{@html htmlContent}
 </article>

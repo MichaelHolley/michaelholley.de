@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { useSerifFont } from '$lib/stores/serifFontStore';
 	import { marked } from 'marked';
+	import { onMount } from 'svelte';
 
 	const { content, class: className } = $props<{
 		content: string;
 		class?: string;
 	}>();
 
-	const htmlContent = marked(content);
+	let htmlContent = $state();
+
+	onMount(() => {
+		htmlContent = marked(content);
+	});
 </script>
 
-<article
-	class="{$useSerifFont ? 'serif-font' : ''} prose dark:prose-invert prose-stone {className}"
->
-	{@html htmlContent}
-</article>
+{@html htmlContent}

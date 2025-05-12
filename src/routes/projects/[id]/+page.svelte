@@ -7,7 +7,7 @@
 	const { data }: { data: PageServerData } = $props();
 </script>
 
-<ContentPageComponent>
+<ContentPageComponent slideLeft>
 	<div class="my-8 flex flex-row flex-wrap items-end justify-between gap-4">
 		<h1 class="text-4xl font-bold break-all lg:mt-20">{data.title}</h1>
 		<div

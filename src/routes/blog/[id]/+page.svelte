@@ -13,7 +13,6 @@
 				: ''} prose dark:prose-invert prose-neutral dark:prose-pre:bg-neutral-900"
 		>
 			<MarkdownComponent {content} />
-			<p class="mt-8 text-center">written by <strong>Michael Holley</strong></p>
 		</article>
 	</div>
 </ContentPageComponent>

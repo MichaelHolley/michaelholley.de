@@ -7,8 +7,18 @@ export const load: PageServerLoad = async () => {
 		projects,
 		tech,
 		blogs: [
-			{ title: 'Test tile 1', description: 'Test description 1', id: 1 },
-			{ title: 'Test tile 1', description: 'Test description 1', id: 2 }
+			{
+				title: 'Test tile 1',
+				description:
+					'Test description 1 Test description 1 Test description 1 Test description 1 Test description 1 Test description 1 ',
+				id: 1
+			},
+			{
+				title: 'Test tile 1',
+				description:
+					'Test description 1 Test description 1 Test description 1 Test description 1 Test description 1 ',
+				id: 2
+			}
 		]
 	};
 };

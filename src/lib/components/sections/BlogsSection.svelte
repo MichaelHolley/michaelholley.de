@@ -1,7 +1,8 @@
 <script lang="ts">
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+	import type { Blog } from '$lib/server/blogs';
 
-	const { blogs }: { blogs: any[] } = $props();
+	const { blogs }: { blogs: Blog[] } = $props();
 </script>
 
 {#if blogs.length}

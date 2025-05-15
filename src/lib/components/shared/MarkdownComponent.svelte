@@ -2,9 +2,8 @@
 	import { marked } from 'marked';
 	import { onMount } from 'svelte';
 
-	const { content, class: className } = $props<{
+	const { content } = $props<{
 		content: string;
-		class?: string;
 	}>();
 
 	let htmlContent = $state();

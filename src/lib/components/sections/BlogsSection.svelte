@@ -12,7 +12,7 @@
 			<div class="ml-1 flex flex-col items-center gap-4">
 				{#each blogs as b}
 					<a
-						href="/blog/{b.id}"
+						href="/blogs/{b.id}"
 						class="hover:border-primary min-h-16 max-w-152 border-l-4 border-white/50 py-1 pl-4 transition-all duration-300"
 					>
 						<p class="mb-2 font-bold">{b.title}</p>

@@ -4,7 +4,7 @@
 	import Icon from '@iconify/svelte';
 	import type { PageServerData } from './$types';
 
-	const { data }: { data: PageServerData } = $props();
+	const { data } = $props<{ data: PageServerData }>();
 </script>
 
 <ContentPageComponent slideLeft>

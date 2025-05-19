@@ -13,4 +13,6 @@
 <Dev tech={data.tech} />
 <Experience />
 <Projects projects={data.projects} />
-<Blogs blogs={data.blogs} />
+{#if data.blogs?.length}
+	<Blogs blogs={data.blogs} />
+{/if}

@@ -2,7 +2,7 @@
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
 	import { useSerifFont } from '$lib/stores/serifFontStore';
-	import type { PageServerData } from '../../blog/[id]/$types';
+	import type { PageServerData } from './$types';
 
 	const { data } = $props<{ data: PageServerData }>();
 </script>

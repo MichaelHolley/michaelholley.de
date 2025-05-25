@@ -6,17 +6,15 @@
 </script>
 
 {#if blogs.length}
-	<section id="blogs" class="bg-tertiary text-white">
+	<section id="blog" class="bg-tertiary text-white">
 		<div class="container py-8 md:py-16">
-			<SectionHeader title="blogs" class="pb-8 text-center" />
+			<SectionHeader title="blog" class="pb-8 text-center" />
 			<div class="ml-1 flex flex-col items-center gap-4">
 				{#each blogs as b}
-					<a
-						href="/blogs/{b.id}"
-						class="hover:border-primary min-h-16 max-w-152 border-l-4 border-white/50 py-1 pl-4 transition-all duration-300"
-					>
-						<p class="mb-2 font-bold">{b.title}</p>
-						<p class="text-white/70">{b.description}</p>
+					<a href="/blogs/{b.id}" class="group min-h-16 max-w-152 py-1">
+						<span class="group-hover:text-secondary mb-2 font-bold">{b.title}</span>
+						<p class="text-white/40">{b.tags?.join(', ')}</p>
+						<p class="text-white/80">{b.description}</p>
 					</a>
 				{/each}
 			</div>

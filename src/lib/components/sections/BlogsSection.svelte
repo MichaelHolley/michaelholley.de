@@ -9,12 +9,12 @@
 	<section id="blog" class="bg-tertiary text-white">
 		<div class="container py-8 md:py-16">
 			<SectionHeader title="blog" class="pb-8 text-center" />
-			<div class="ml-1 flex flex-col items-center gap-6">
+			<div class="flex flex-col items-center gap-7">
 				{#each blogs as b}
 					<a href="/blogs/{b.id}" class="group min-h-16 max-w-152 py-1">
-						<span class="group-hover:text-secondary mb-2 text-xl font-bold tracking-wide"
-							>{b.title}</span
-						>
+						<div class="mb-2 text-xl font-bold tracking-wide transition-all group-hover:pl-1">
+							{b.title}
+						</div>
 						<div class="flex flex-row justify-between text-sm text-white/40">
 							<p>{b.tags?.join(', ')}</p>
 							<p>{b.released}</p>

@@ -16,10 +16,10 @@
 							>{b.title}</span
 						>
 						<div class="flex flex-row justify-between text-sm text-white/40">
-							<p>{b.tags?.join(', ')}</p>
+							<p>{b.tags?.join(' • ')}</p>
 							<p>{b.released}</p>
 						</div>
-						<p class="text-white/80">{b.description}</p>
+						<p class="mt-2 text-white/80">{b.description}</p>
 					</a>
 				{/each}
 			</div>

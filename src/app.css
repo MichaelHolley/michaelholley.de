@@ -50,3 +50,23 @@ body {
 .serif-font {
 	font-family: Georgia, 'Times New Roman', serif;
 }
+
+.prose {
+	/* Sets the color for inline <code> tags */
+	--tw-prose-code: var(--color-secondary);
+
+	--tw-prose-pre-bg: var(--color-neutral-200);
+	--tw-prose-pre-code: var(--tw-prose-body);
+}
+
+@media (prefers-color-scheme: dark) {
+	.prose {
+		--tw-prose-pre-bg: var(--color-neutral-900);
+		--tw-prose-pre-code: var(--tw-prose-body);
+	}
+}
+
+.prose code:not(pre code)::before,
+.prose code:not(pre code)::after {
+	content: none;
+}

@@ -9,11 +9,7 @@
 
 <ContentPageComponent>
 	<div class="flex flex-row justify-center">
-		<article
-			class="my-8 {$useSerifFont
-				? 'serif-font'
-				: ''} prose dark:prose-invert prose-neutral dark:prose-pre:bg-neutral-900"
-		>
+		<article class="my-8 {$useSerifFont ? 'serif-font' : ''} prose dark:prose-invert prose-neutral">
 			<MarkdownComponent content={data.blog} />
 		</article>
 	</div>

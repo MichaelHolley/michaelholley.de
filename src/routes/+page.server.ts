@@ -8,6 +8,8 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	try {
+		console.log(`Requesting ${env.STRAPI_URL}/blogs - with: ${env.STRAPI_TOKEN.substring(0, 5)}`);
+
 		const res = await fetch(`${env.STRAPI_URL}/blogs`, {
 			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }
 		});

@@ -12,6 +12,7 @@ export const load = async ({ params }: { params: { id: string } }) => {
 
 		return { blog };
 	} catch (e) {
+		console.error(e);
 		throw error(500, `Internal Server Error: ${e}`);
 	}
 };

@@ -20,6 +20,7 @@ export const load: PageServerLoad = async () => {
 			blogs
 		};
 	} catch (e) {
+		console.error(e);
 		throw error(500, `Internal Server Error: ${e}`);
 	}
 };

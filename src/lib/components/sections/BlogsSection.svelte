@@ -11,7 +11,7 @@
 			<SectionHeader title="blog" class="pb-8 text-center" />
 			<div class="ml-1 flex flex-col items-center gap-6">
 				{#each blogs as b}
-					<a href="/blogs/{b.id}" class="group min-h-16 max-w-152 py-1">
+					<a href="/blogs/{b.documentId}" class="group min-h-16 max-w-152 py-1">
 						<span class="group-hover:text-secondary mb-2 text-xl font-bold tracking-wide"
 							>{b.title}</span
 						>

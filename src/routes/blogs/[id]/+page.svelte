@@ -14,7 +14,7 @@
 				? 'serif-font'
 				: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
 		>
-			<MarkdownComponent content={data.blog} />
+			<MarkdownComponent content={data.blog.content} />
 		</article>
 	</div>
 </ContentPageComponent>

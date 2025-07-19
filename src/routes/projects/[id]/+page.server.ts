@@ -1,10 +1,10 @@
 import { projects } from '$lib/server/projects.js';
-import { redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }: { params: { id: string } }) => {
 	const project = projects.find((p) => p.id === params.id);
 
-	if (!project) redirect(308, '/');
+	if (!project) throw error(404, 'Not found');
 
 	return project;
 };

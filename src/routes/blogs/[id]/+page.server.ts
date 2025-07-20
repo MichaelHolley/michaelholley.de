@@ -12,6 +12,8 @@ export const load = async ({ params }: { params: { id: string } }) => {
 			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }
 		});
 
+		console.log(res);
+
 		const { data: blog } = (await res.json()) as { data: Blog };
 
 		return { blog };

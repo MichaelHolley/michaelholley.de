@@ -14,6 +14,8 @@ export const load: PageServerLoad = async () => {
 			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }
 		});
 
+		console.log(res);
+
 		const { data: blogs } = (await res.json()) as { data: Blog[] };
 
 		return {

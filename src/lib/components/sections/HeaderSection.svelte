@@ -53,7 +53,31 @@
 </section>
 
 <style>
+	@property --p {
+		syntax: '<percentage>';
+		inherits: false;
+		initial-value: 0%;
+	}
+
+	@property --angle {
+		syntax: '<angle>';
+		inherits: false;
+		initial-value: 0deg;
+	}
+
+	@keyframes animate-gradient {
+		to {
+			--p: 33%;
+			--angle: -30deg;
+		}
+	}
+
 	.header-bg {
-		background-image: linear-gradient(-30deg, var(--color-primary) 33%, var(--color-secondary) 0%);
+		background-image: linear-gradient(
+			var(--angle),
+			var(--color-primary) var(--p),
+			var(--color-secondary) 0%
+		);
+		animation: animate-gradient 0.55s ease-out forwards;
 	}
 </style>

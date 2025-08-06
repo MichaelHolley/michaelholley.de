@@ -5,7 +5,7 @@
 
 <section id="experience" class="bg-white text-black">
 	<div class="container py-8 md:py-16 md:pt-12 2xl:px-64">
-		<SectionHeader title="Experience" class="mb-3 text-center" />
+		<SectionHeader title="Experience" class="pb-8 text-center" />
 		<div class="text-left text-lg">
 			<Step period="seit Mai 2023" title="Software Entwickler" workplace="AraCom IT Services GmbH">
 				<ul class="list-square list-inside *:py-1">

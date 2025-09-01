@@ -18,9 +18,7 @@
 				<BoxReveal duration={0.8}>
 					<span class="pl-1 text-xl text-shadow-sm">Software Entwickler</span>
 				</BoxReveal>
-				<div
-					class="*motion-opacity-in-0 *:motion-translate-y-in-75 *:motion-blur-in-md mt-2 flex h-11 flex-row pl-1"
-				>
+				<div class="*:motion-translate-y-in-75 *:motion-blur-in-md mt-2 flex h-11 flex-row pl-1">
 					<a
 						class="motion-delay-50 transition-all hover:scale-110"
 						href="https://www.linkedin.com/in/michael-holley-791a64228/"

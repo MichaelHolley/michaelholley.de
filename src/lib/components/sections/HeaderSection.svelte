@@ -78,6 +78,6 @@
 			var(--color-primary) var(--p),
 			var(--color-secondary) 0%
 		);
-		animation: animate-gradient 0.55s ease-out forwards;
+		animation: animate-gradient 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 	}
 </style>

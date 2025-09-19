@@ -8,9 +8,9 @@
 </script>
 
 <ContentPageComponent>
-	<div class="flex flex-row justify-center">
+	<div class="my-8 flex flex-row justify-center">
 		<article
-			class="my-8 {$useSerifFont
+			class="{$useSerifFont
 				? 'serif-font'
 				: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
 		>

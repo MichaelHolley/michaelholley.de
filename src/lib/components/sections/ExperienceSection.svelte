@@ -7,8 +7,10 @@
 	<div class="container py-8 md:py-16 md:pt-12 2xl:px-64">
 		<SectionHeader title="Experience" class="pb-8 text-center" />
 		<div class="text-left text-lg">
-			<Step period="seit Okt. 2025" title="Software Engineer" workplace="Peerigon">
-				<p>Loading...</p>
+			<Step period="Okt. 2025" title="Software Engineer" workplace="Peerigon GmbH">
+				<ul class="list-square list-inside *:py-1">
+					<li>Cutting Edge Softwareentwicklung mit JavaScript, TypeScript und Node.js</li>
+				</ul>
 			</Step>
 			<Step
 				period="Mai 2023 - Sept. 2025"

@@ -12,11 +12,13 @@
 			<div class="ml-1 flex flex-col items-center gap-6">
 				{#each blogs as b}
 					<a href="/blogs/{b.documentId}" class="group min-h-16 max-w-152 py-1">
-						<span class="group-hover:text-secondary mb-2 text-xl font-bold tracking-wide"
-							>{b.title}</span
+						<div
+							class="mb-2 text-xl font-bold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
 						>
+							{b.title}
+						</div>
 						<div class="flex flex-row justify-between text-sm text-white/40">
-							<p>{b.tags?.join(' • ')}</p>
+							<p>{b.tags?.join(' • ').toLowerCase()}</p>
 							<p>{b.released}</p>
 						</div>
 						<p class="mt-2 text-white/80">{b.description}</p>

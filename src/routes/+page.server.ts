@@ -18,7 +18,7 @@ export const load: PageServerLoad = async () => {
 			};
 		}
 
-		console.log('No cached data - Fetching from Strapi...');
+		console.log('No cached data (blogs) - Fetching from Strapi...');
 
 		const res = await fetch(`${env.STRAPI_URL}/blogs`, {
 			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }

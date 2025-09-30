@@ -1,14 +1,24 @@
 import { error } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import type { Blog } from '$lib/server/blogs';
+import { cache } from '$lib/server/cache';
 
 export const load = async ({ params }: { params: { id: string } }) => {
 	try {
+		const cachedBlog = cache.get<Blog>(`blog-${params.id}`);
+		if (cachedBlog) {
+			return { blog: cachedBlog };
+		}
+
+		console.log('No cached data - Fetching from Strapi...');
+
 		const res = await fetch(`${env.STRAPI_URL}/blogs/${params.id}`, {
 			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }
 		});
 
 		const { data: blog } = (await res.json()) as { data: Blog };
+
+		cache.set(`blog-${params.id}`, blog);
 
 		return { blog };
 	} catch (e) {

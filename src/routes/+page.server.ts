@@ -1,4 +1,5 @@
 import { env } from '$env/dynamic/private';
+import { cache } from '$lib/server/cache';
 import type { Blog } from '$lib/server/blogs';
 import { projects } from '$lib/server/projects';
 import { tech } from '$lib/server/tech';
@@ -8,11 +9,24 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	try {
+		const cachedBlogs = cache.get<Blog[]>('blogs');
+		if (cachedBlogs) {
+			return {
+				projects,
+				tech,
+				blogs: cachedBlogs
+			};
+		}
+
+		console.log('No cached data - Fetching from Strapi...');
+
 		const res = await fetch(`${env.STRAPI_URL}/blogs`, {
 			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }
 		});
 
 		const { data: blogs } = (await res.json()) as { data: Blog[] };
+
+		cache.set('blogs', blogs);
 
 		return {
 			projects,

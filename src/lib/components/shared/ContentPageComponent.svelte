@@ -3,15 +3,15 @@
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
 
-	const { children, slideLeft } = $props<{
+	const { children, centeredContent } = $props<{
 		children: Snippet;
-		slideLeft?: boolean;
+		centeredContent?: boolean;
 	}>();
 </script>
 
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
 	<div class="container min-h-screen py-10">
-		<div class={slideLeft ? 'max-w-5xl' : ''}>
+		<div>
 			<div class="flex flex-row justify-between">
 				<a href="/" class=" flex flex-row items-center gap-1">
 					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
@@ -26,7 +26,11 @@
 				>
 			</div>
 
-			{@render children()}
+			<div class="flex flex-row justify-center">
+				<div class={centeredContent ? 'max-w-5xl' : ''}>
+					{@render children()}
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -23,6 +23,8 @@
 		"@sveltejs/vite-plugin-svelte": "^5.1.1",
 		"@tailwindcss/postcss": "^4.1.13",
 		"@tailwindcss/typography": "^0.5.19",
+		"@types/better-sqlite3": "^7.6.13",
+		"better-sqlite3": "^12.4.1",
 		"clsx": "^2.1.1",
 		"eslint": "^9.36.0",
 		"eslint-config-prettier": "^10.1.8",

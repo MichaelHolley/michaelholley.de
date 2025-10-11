@@ -1,7 +1,7 @@
 <script lang="ts">
+	import DevHeaderComponent from '$lib/components/dev/DevHeaderComponent.svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 	import type { Tech } from '$lib/server/tech';
-	import DevHeaderComponent from '../dev/DevHeaderComponent.svelte';
 
 	const { tech } = $props<{ tech: Tech[] }>();
 </script>

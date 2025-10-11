@@ -12,7 +12,8 @@ export const projects: Project[] = [
 		],
 		class: 'col-span-1 lg:col-span-2',
 		icon: 'mdi:mobile-phone-message',
-		tech: [tech.React, 'React Native', tech.TypeScript, tech.Azure, tech.aspnet]
+		tech: [tech.React, 'React Native', tech.TypeScript, tech.Azure, tech.aspnet],
+		previewImg: '/project/loyality_app.webp'
 	},
 	{
 		id: 'coding-2025',

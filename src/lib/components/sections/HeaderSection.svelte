@@ -40,7 +40,7 @@
 					<a
 						class="motion-delay-250 ml-3 transition-all hover:scale-110"
 						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="GitHub-Profile"
+						aria-label="Contact me via Mail"
 					>
 						<Icon icon="tdesign:mail-filled" class="text-4xl drop-shadow-md" />
 					</a>

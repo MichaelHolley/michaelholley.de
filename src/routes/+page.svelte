@@ -4,9 +4,8 @@
 	import Experience from '$lib/components/sections/ExperienceSection.svelte';
 	import Header from '$lib/components/sections/HeaderSection.svelte';
 	import Projects from '$lib/components/sections/ProjectsSection.svelte';
-	import type { PageServerData } from './$types';
 
-	const { data } = $props<{ data: PageServerData }>();
+	const { data } = $props();
 </script>
 
 <Header />

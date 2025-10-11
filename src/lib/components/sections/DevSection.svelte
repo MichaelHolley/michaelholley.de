@@ -1,9 +1,9 @@
 <script lang="ts">
 	import DevHeaderComponent from '$lib/components/dev/DevHeaderComponent.svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
-	import type { Tech } from '$lib/server/tech';
+	import type { TechMap } from '$lib/server/tech';
 
-	const { tech } = $props<{ tech: Tech[] }>();
+	const { tech } = $props<{ tech: TechMap }>();
 </script>
 
 <section id="dev" class="relative">

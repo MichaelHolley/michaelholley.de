@@ -2,9 +2,8 @@
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import { useSerifFont } from '$lib/stores/serifFontStore';
 	import Icon from '@iconify/svelte';
-	import type { PageServerData } from './$types';
 
-	const { data } = $props<{ data: PageServerData }>();
+	const { data } = $props();
 </script>
 
 <ContentPageComponent centeredContent>

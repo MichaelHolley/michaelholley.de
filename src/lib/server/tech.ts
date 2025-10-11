@@ -1,6 +1,6 @@
 import colors from 'tailwindcss/colors';
 
-export const tech = {
+export const tech: TechMap = {
 	dotnet: {
 		icon: 'logos:dotnet',
 		color: colors.indigo[600],
@@ -87,4 +87,8 @@ export interface Tech {
 	icon: string;
 	color: string;
 	name: string;
+}
+
+export interface TechMap {
+	[key: string]: Tech;
 }

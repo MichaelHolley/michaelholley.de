@@ -11,7 +11,11 @@
 			<SectionHeader title="blog" class="pb-8 text-center" />
 			<div class="ml-1 flex flex-col items-center gap-6">
 				{#each blogs as b}
-					<a href="/blogs/{b.documentId}" class="group min-h-16 max-w-152 py-1">
+					<a
+						href="/blogs/{b.documentId}"
+						class="group min-h-16 max-w-152 py-1"
+						data-sveltekit-preload-data="tap"
+					>
 						<div
 							class="mb-2 text-xl font-bold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
 						>

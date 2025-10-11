@@ -6,9 +6,23 @@
 	const { data } = $props();
 </script>
 
-<ContentPageComponent centeredContent>
+{#snippet heroImage()}
+	{#if data.previewImg}
+		<div class="relative h-[20vh] overflow-hidden sm:h-[25vh]">
+			<img
+				src={data.previewImg}
+				alt={data.title}
+				class="motion-blur-in-md motion-opacity-in-0 h-full w-full rounded-xl object-cover object-center"
+			/>
+		</div>
+	{/if}
+{/snippet}
+
+<ContentPageComponent centeredContent {heroImage}>
 	<div class="my-8 flex flex-row flex-wrap items-end justify-between gap-4">
-		<h1 class="text-4xl font-bold break-all lg:mt-20">{data.title}</h1>
+		<h1 class="text-4xl font-bold break-all {data.previewImg ? 'lg:mt-6' : 'lg:mt-20'}">
+			{data.title}
+		</h1>
 		<div
 			class="*:motion-blur-in-md *:motion-opacity-in-0 *:motion-delay-50 flex flex-row items-center gap-3"
 		>

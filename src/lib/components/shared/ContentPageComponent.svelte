@@ -3,9 +3,10 @@
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
 
-	const { children, centeredContent } = $props<{
+	const { children, centeredContent, heroImage } = $props<{
 		children: Snippet;
 		centeredContent?: boolean;
+		heroImage?: Snippet;
 	}>();
 
 	const serifFont = serifStore;
@@ -31,6 +32,12 @@
 					Aa</button
 				>
 			</div>
+
+			{#if heroImage}
+				<div class="mt-6">
+					{@render heroImage()}
+				</div>
+			{/if}
 
 			<div class="flex flex-row justify-center">
 				<div class={centeredContent ? 'max-w-5xl' : ''}>

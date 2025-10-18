@@ -11,9 +11,7 @@ export const load = async ({ params }: { params: { id: string } }) => {
 		}
 
 		console.log(`No cached data (blog-id: ${params.id}) - Fetching from Strapi...`);
-		const res = await fetch(`${env.STRAPI_URL}/blogs/${params.id}`, {
-			headers: { Authorization: `Bearer ${env.STRAPI_TOKEN}` }
-		});
+		const res = await fetch(`${env.STRAPI_URL}/blogs/${params.id}`);
 
 		if (!res.ok) {
 			throw new Error(

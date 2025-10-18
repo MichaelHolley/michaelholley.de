@@ -16,7 +16,9 @@ export const load = async ({ params }: { params: { id: string } }) => {
 		});
 
 		if (!res.ok) {
-			throw new Error(`Failed to fetch blog ${params.id}: ${res.status} ${res.statusText}`);
+			throw new Error(
+				`Failed to fetch blog ${params.id}: ${res.status} ${res.statusText} (${await res.text()})`
+			);
 		}
 
 		const { data: blog } = (await res.json()) as { data: Blog };

@@ -25,7 +25,9 @@ export const load: PageServerLoad = async () => {
 		});
 
 		if (!res.ok) {
-			throw new Error(`Failed to fetch blogs: ${res.status} ${res.statusText}`);
+			throw new Error(
+				`Failed to fetch blogs: ${res.status} ${res.statusText} (${await res.text()})`
+			);
 		}
 
 		const { data: blogs } = (await res.json()) as { data: Blog[] };

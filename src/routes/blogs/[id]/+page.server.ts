@@ -3,7 +3,7 @@ import type { Blog } from '$lib/server/blogs';
 import { cache } from '$lib/server/cache';
 
 export const load = async ({ params }: { params: { id: string } }) => {
-	const cachedBlog = cache.get<Blog>(`blog-${params.id}`);
+	let cachedBlog = cache.get<Blog>(`blog-${params.id}`);
 	try {
 		if (cachedBlog) {
 			console.log(`Using cached data (blog-id: ${params.id})`);
@@ -27,6 +27,7 @@ export const load = async ({ params }: { params: { id: string } }) => {
 	} catch (e) {
 		console.error('Error fetching blog:', e);
 
+		cachedBlog = cache.getIgnoreInvalidation<Blog>(`blog-${params.id}`);
 		return { blog: cachedBlog || null };
 	}
 };

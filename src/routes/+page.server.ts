@@ -7,7 +7,7 @@ import { tech } from '$lib/server/tech';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const cachedBlogs = cache.get<Blog[]>('blogs');
+	let cachedBlogs = cache.get<Blog[]>('blogs');
 
 	try {
 		if (cachedBlogs) {
@@ -39,6 +39,8 @@ export const load: PageServerLoad = async () => {
 		};
 	} catch (e) {
 		console.error('Error fetching blogs:', e);
+
+		cachedBlogs = cache.getIgnoreInvalidation<Blog[]>('blogs');
 
 		return {
 			projects,

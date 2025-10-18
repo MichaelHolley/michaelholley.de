@@ -16,6 +16,15 @@ class Cache {
 	set<T>(key: string, data: T) {
 		this.cache[key] = { data, timestamp: Date.now() };
 	}
+
+	getIgnoreInvalidation<T>(key: string): T | null {
+		const item = this.cache[key];
+		if (item) {
+			return item.data as T;
+		}
+
+		return null;
+	}
 }
 
 export const cache = new Cache();

@@ -12,7 +12,7 @@
 			<div class="ml-1 flex flex-col items-center gap-6">
 				{#each blogs as b}
 					<a
-						href="/blogs/{b.documentId}"
+						href="/blogs/{b.id}"
 						class="group min-h-16 max-w-152 py-1"
 						data-sveltekit-preload-data="tap"
 					>

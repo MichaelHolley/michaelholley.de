@@ -14,7 +14,7 @@
 					? 'serif-font'
 					: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
 			>
-				<MarkdownComponent content={data.blog.content} />
+				<MarkdownComponent content={data.blog} />
 			</article>
 		{:else}
 			<p>Unable to load blog content.</p>

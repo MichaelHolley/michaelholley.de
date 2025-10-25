@@ -1,33 +1,4 @@
-import { env } from '$env/dynamic/private';
-import type { Blog } from '$lib/server/blogs';
-import { cache } from '$lib/server/cache';
-
 export const load = async ({ params }: { params: { id: string } }) => {
-	let cachedBlog = cache.get<Blog>(`blog-${params.id}`);
-	try {
-		if (cachedBlog) {
-			console.log(`Using cached data (blog-id: ${params.id})`);
-			return { blog: cachedBlog };
-		}
-
-		console.log(`No cached data (blog-id: ${params.id}) - Fetching from Strapi...`);
-		const res = await fetch(`${env.STRAPI_URL}/blogs/${params.id}`);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch blog ${params.id}: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const { data: blog } = (await res.json()) as { data: Blog };
-
-		cache.set(`blog-${params.id}`, blog);
-
-		return { blog };
-	} catch (e) {
-		console.error('Error fetching blog:', e);
-
-		cachedBlog = cache.getIgnoreInvalidation<Blog>(`blog-${params.id}`);
-		return { blog: cachedBlog || null };
-	}
+	const blog = await import(`$lib/markdown/blog/${params.id}.md?raw`);
+	return { blog: blog.default as string };
 };

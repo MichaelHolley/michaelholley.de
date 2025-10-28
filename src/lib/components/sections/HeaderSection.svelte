@@ -1,9 +1,24 @@
-<script>
+<script lang="ts">
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
+	import { Spring } from 'svelte/motion';
+
+	let transitionX = new Spring(66, {
+		stiffness: 0.02,
+		damping: 0.3
+	});
+
+	const handleMouseMove = (event: MouseEvent) => {
+		const mouseX = event.clientX;
+		const relativeX = (mouseX / window.innerWidth) * 100;
+
+		transitionX.set(relativeX);
+	};
 </script>
 
-<section class="header-bg">
+<svelte:window on:mousemove={handleMouseMove} />
+
+<section class="header-bg" style="--mouse-x: {transitionX.current}%;">
 	<div class="container py-20 pb-16">
 		<div class="flex flex-col justify-center">
 			<div class="text-shadow-md">
@@ -51,31 +66,17 @@
 </section>
 
 <style>
-	@property --p {
+	@property --mouse-x {
 		syntax: '<percentage>';
 		inherits: false;
-		initial-value: 0%;
-	}
-
-	@property --angle {
-		syntax: '<angle>';
-		inherits: false;
-		initial-value: 0deg;
-	}
-
-	@keyframes animate-gradient {
-		to {
-			--p: 33%;
-			--angle: -30deg;
-		}
+		initial-value: 66%;
 	}
 
 	.header-bg {
 		background-image: linear-gradient(
-			var(--angle),
-			var(--color-primary) var(--p),
-			var(--color-secondary) 0%
+			-30deg,
+			var(--color-primary) calc(100% - var(--mouse-x)),
+			var(--color-secondary) 10%
 		);
-		animation: animate-gradient 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 	}
 </style>

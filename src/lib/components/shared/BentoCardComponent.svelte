@@ -28,7 +28,7 @@
 	{href}
 	class={cn(
 		'group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl',
-		'transform-gpu border-1 border-black/10 bg-black [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
+		'transform-gpu border border-black/10 bg-black [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
 		className
 	)}
 >
@@ -39,7 +39,7 @@
 			<img
 				src={backgroundImgUrl}
 				alt="background"
-				class="h-full w-full object-cover object-left-top"
+				class="h-full w-full object-cover object-top-left transition-all duration-300 group-hover:scale-103"
 			/>
 		</div>
 	{/if}

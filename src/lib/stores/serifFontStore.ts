@@ -1,7 +1,6 @@
-import { writable } from 'svelte/store';
+import { PersistedState } from 'runed';
 
-export const useSerifFont = writable(false);
-
-export function toggleSerifFont() {
-	useSerifFont.update((v) => !v);
-}
+export const serifStore = new PersistedState<boolean>('useSerifFont', false, {
+	syncTabs: false,
+	storage: 'session'
+});

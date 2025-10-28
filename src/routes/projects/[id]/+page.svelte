@@ -1,9 +1,11 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import { useSerifFont } from '$lib/stores/serifFontStore';
+	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import Icon from '@iconify/svelte';
 
 	const { data } = $props();
+
+	const serifFont = serifStore;
 </script>
 
 <ContentPageComponent centeredContent>
@@ -39,7 +41,7 @@
 		</div>
 	</div>
 	<div>
-		<div class={$useSerifFont ? 'serif-font' : ''}>
+		<div class={serifFont.current ? 'serif-font' : ''}>
 			{#each data.description as p}
 				<p class="mt-4 text-lg">{p}</p>
 			{/each}

@@ -1,16 +1,18 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
-	import { useSerifFont } from '$lib/stores/serifFontStore';
+	import { serifStore } from '$lib/stores/serifFontStore.js';
 
 	const { data } = $props();
+
+	const serifFont = serifStore;
 </script>
 
 <ContentPageComponent>
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}
 			<article
-				class="{$useSerifFont
+				class="{serifFont.current
 					? 'serif-font'
 					: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
 			>

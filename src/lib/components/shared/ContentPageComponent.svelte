@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { toggleSerifFont, useSerifFont } from '$lib/stores/serifFontStore';
+	import { serifStore } from '$lib/stores/serifFontStore';
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
 
@@ -7,6 +7,8 @@
 		children: Snippet;
 		centeredContent?: boolean;
 	}>();
+
+	const serifFont = serifStore;
 </script>
 
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
@@ -18,9 +20,13 @@
 					Zurück
 				</a>
 				<button
-					class="{!$useSerifFont ? 'serif-font' : ''} size-8 rounded-sm border hover:cursor-pointer"
-					onclick={toggleSerifFont}
-					title="Change to {!$useSerifFont ? 'Serif' : 'Default'} font"
+					class="{!serifFont.current
+						? 'serif-font'
+						: ''} size-8 rounded-sm border hover:cursor-pointer"
+					onclick={() => {
+						serifFont.current = !serifFont.current;
+					}}
+					title="Change to {!serifFont.current ? 'Serif' : 'Default'} font"
 				>
 					Aa</button
 				>

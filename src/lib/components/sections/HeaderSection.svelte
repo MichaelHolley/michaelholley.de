@@ -1,16 +1,30 @@
 <script lang="ts">
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
 	import { Spring } from 'svelte/motion';
 
-	let transitionX = new Spring(66, {
-		stiffness: 0.02,
+	const leftBorder = 35;
+	const rightBorder = 80;
+
+	let transitionX = new Spring(100, {
+		stiffness: 0.01,
 		damping: 0.3
+	});
+
+	onMount(() => {
+		transitionX.set(66);
 	});
 
 	const handleMouseMove = (event: MouseEvent) => {
 		const mouseX = event.clientX;
-		const relativeX = (mouseX / window.innerWidth) * 100;
+		let relativeX = (mouseX / window.innerWidth) * 100;
+
+		if (relativeX < leftBorder) {
+			relativeX = leftBorder;
+		} else if (relativeX > rightBorder) {
+			relativeX = rightBorder;
+		}
 
 		transitionX.set(relativeX);
 	};
@@ -69,7 +83,7 @@
 	@property --mouse-x {
 		syntax: '<percentage>';
 		inherits: false;
-		initial-value: 66%;
+		initial-value: 100%;
 	}
 
 	.header-bg {

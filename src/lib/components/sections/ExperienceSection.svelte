@@ -9,7 +9,11 @@
 		<div class="text-left text-lg">
 			<Step period="Okt. 2025" title="Software Engineer" workplace="Peerigon GmbH">
 				<ul class="list-square list-inside *:py-1">
-					<li>Cutting Edge Softwareentwicklung mit JavaScript, TypeScript und Node.js</li>
+					<li>Cutting Edge Softwareentwicklung mit JavaScript Techstack</li>
+					<li>
+						Entwicklung einer modernen Webanwendung zur Ausbildungsplanung im Sektor Pflege mit Vue,
+						TypeScript, GraphQL und Express
+					</li>
 				</ul>
 			</Step>
 			<Step

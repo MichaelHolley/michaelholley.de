@@ -90,7 +90,7 @@
 		background-image: linear-gradient(
 			-30deg,
 			var(--color-primary) calc(100% - var(--mouse-x)),
-			var(--color-secondary) 10%
+			var(--color-secondary) 0%
 		);
 	}
 </style>

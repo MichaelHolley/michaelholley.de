@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Blogs from '$lib/components/sections/BlogsSection.svelte';
+	import ContactMe from '$lib/components/sections/ContactMe.svelte';
 	import Dev from '$lib/components/sections/DevSection.svelte';
 	import Experience from '$lib/components/sections/ExperienceSection.svelte';
 	import Header from '$lib/components/sections/HeaderSection.svelte';
@@ -15,3 +16,4 @@
 {#if data.blogs?.length}
 	<Blogs blogs={data.blogs} />
 {/if}
+<ContactMe />

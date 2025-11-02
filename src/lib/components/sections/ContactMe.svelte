@@ -11,11 +11,13 @@
 <section id="contact" class="bg-white text-black">
 	<div class="container py-8 md:py-16 md:pt-12 2xl:px-64">
 		<div class="flex flex-row gap-2">
-			<SectionHeader title="Contact" class="pb-8 text-center" />
+			<div style="writing-mode: vertical-rl;">
+				<SectionHeader title="Contact" />
+			</div>
 			<div class="grow">
 				<form method="POST" action="?/sendContactInformation" class=" *:mb-4" use:enhance>
 					<div>
-						<label class="mb-2 block text-sm font-bold" for="name">name</label>
+						<label for="name">name</label>
 						<TextInputComponent
 							id="name"
 							name="name"
@@ -25,7 +27,7 @@
 						/>
 					</div>
 					<div>
-						<label class="mb-2 block text-sm font-bold" for="mail">mail</label>
+						<label for="mail">mail</label>
 						<TextInputComponent
 							id="mail"
 							name="mail"
@@ -36,7 +38,7 @@
 						/>
 					</div>
 					<div>
-						<label class="mb-2 block text-sm font-bold" for="message">message</label>
+						<label for="message">message</label>
 						<TextInputComponent
 							id="message"
 							name="message"
@@ -58,3 +60,11 @@
 		</div>
 	</div>
 </section>
+
+<style lang="postcss">
+	@reference "tailwindcss";
+
+	label {
+		@apply mb-1 block text-sm font-bold text-neutral-500;
+	}
+</style>

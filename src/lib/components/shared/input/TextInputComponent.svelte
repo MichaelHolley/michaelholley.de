@@ -25,7 +25,7 @@
 		{name}
 		{placeholder}
 		{required}
-		class={`border-b border-neutral-300 focus:outline-none active:outline-none ${className} w-full px-1`}
+		class={`border-b border-neutral-300 focus:outline-none active:outline-none ${className} w-full`}
 	/>
 {:else}
 	<textarea

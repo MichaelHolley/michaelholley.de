@@ -9,7 +9,7 @@
 	<section id="blog" class="bg-tertiary text-white">
 		<div class="container py-8 md:py-16">
 			<SectionHeader title="blog" class="pb-8 text-center" />
-			<div class="ml-1 flex flex-col items-center gap-6">
+			<div class="flex flex-col items-center gap-6">
 				{#each blogs as b}
 					<a
 						href="/blogs/{b.id}"

@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import TextInputComponent from '../shared/input/TextInputComponent.svelte';
 
 	let nameInput = $state('');
-	let emailInput = $state('');
+	let mailInput = $state('');
 	let messageInput = $state('');
 </script>
 
@@ -12,7 +13,7 @@
 		<div class="flex flex-row gap-2">
 			<SectionHeader title="Contact" class="pb-8 text-center" />
 			<div class="grow">
-				<form method="POST" action="?/sendContactInformation" class=" *:mb-4">
+				<form method="POST" action="?/sendContactInformation" class=" *:mb-4" use:enhance>
 					<div>
 						<label class="mb-2 block text-sm font-bold" for="name">name</label>
 						<TextInputComponent
@@ -24,14 +25,14 @@
 						/>
 					</div>
 					<div>
-						<label class="mb-2 block text-sm font-bold" for="email">email</label>
+						<label class="mb-2 block text-sm font-bold" for="mail">mail</label>
 						<TextInputComponent
-							id="email"
-							name="email"
+							id="mail"
+							name="mail"
 							type="email"
 							required
-							bind:value={emailInput}
-							placeholder="enter your email"
+							bind:value={mailInput}
+							placeholder="enter your mail"
 						/>
 					</div>
 					<div>

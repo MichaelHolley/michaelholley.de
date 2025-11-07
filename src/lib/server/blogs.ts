@@ -12,7 +12,7 @@ export const blogs: Blog[] = [
 		title: 'Web-Apps installieren',
 		description:
 			'Verwandeln Sie Ihre Webanwendung in ein natives App-Erlebnis. Dieser Leitfaden zeigt Ihnen Schritt für Schritt, wie Sie möglichst einfach mit nur einer Datei Ihre Web-App installieren können.',
-		released: '2025-07-18',
+		released: '18. Juli 2025',
 		tags: ['web', 'mobile', 'app']
 	}
 ];

@@ -17,6 +17,10 @@
 					: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
 			>
 				<MarkdownComponent content={data.blog} />
+				<p class="pt-10 text-center text-xs">
+					This article was written by a human author and reviewed using AI tools for language
+					accuracy and translation consistency.
+				</p>
 			</article>
 		{:else}
 			<p>Unable to load blog content.</p>

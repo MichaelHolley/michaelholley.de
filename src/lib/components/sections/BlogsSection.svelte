@@ -16,14 +16,16 @@
 						class="group min-h-16 max-w-152 py-1"
 						data-sveltekit-preload-data="tap"
 					>
+						<div class="flex flex-row justify-start gap-3 text-sm text-white/50">
+							<p>{b.released}</p>
+							<p>|</p>
+							<p>{b.tags?.join(' • ').toLowerCase()}</p>
+						</div>
+
 						<div
-							class="mb-2 text-xl font-bold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
+							class="mt-2 text-2xl font-extrabold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
 						>
 							{b.title}
-						</div>
-						<div class="flex flex-row justify-between text-sm text-white/40">
-							<p>{b.tags?.join(' • ').toLowerCase()}</p>
-							<p>{b.released}</p>
 						</div>
 						<p class="mt-2 text-white/80">{b.description}</p>
 					</a>

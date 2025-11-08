@@ -31,7 +31,7 @@
 		{required}
 		class={cn(
 			`w-full border-b border-neutral-300 placeholder:text-xs`,
-			'focus:outline-none active:outline-none',
+			'focus:border-black focus:outline-none active:outline-none',
 			className
 		)}
 	/>
@@ -44,7 +44,7 @@
 		{required}
 		class={cn(
 			`w-full bg-neutral-300/35 p-1 placeholder:pt-1 placeholder:text-xs`,
-			'focus:outline-none active:outline-none',
+			'focus:border-b focus:border-black focus:outline-none active:outline-none',
 			className
 		)}
 		{rows}

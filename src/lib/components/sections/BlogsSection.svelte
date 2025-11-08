@@ -16,7 +16,7 @@
 						class="group min-h-16 max-w-152 py-1"
 						data-sveltekit-preload-data="tap"
 					>
-						<div class="flex flex-row justify-start gap-4 text-sm text-white/50">
+						<div class="flex flex-row justify-start gap-3 text-sm text-white/50">
 							<p>{b.released}</p>
 							<p>|</p>
 							<p>{b.tags?.join(' • ').toLowerCase()}</p>

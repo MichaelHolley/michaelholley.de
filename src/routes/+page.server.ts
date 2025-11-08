@@ -1,10 +1,10 @@
-import { N8N_PASSWORD, N8N_USERNAME, N8N_WEBHOOK_URL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import { blogs } from '$lib/server/blogs';
 import { projects } from '$lib/server/projects';
 import { tech } from '$lib/server/tech';
+import { fail } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
 import type { Actions, PageServerLoad } from './$types';
-import { fail } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async () => {
 	return {
@@ -22,11 +22,11 @@ export const actions = {
 		const message = formData.get('message');
 
 		try {
-			await fetch(N8N_WEBHOOK_URL as string, {
+			await fetch(env.N8N_WEBHOOK_URL as string, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Basic ${Buffer.from(`${N8N_USERNAME}:${N8N_PASSWORD}`).toString('base64')}`,
+					Authorization: `Basic ${Buffer.from(`${env.N8N_USERNAME}:${env.N8N_PASSWORD}`).toString('base64')}`,
 					'request-start-time': new Date().toISOString()
 				},
 				body: JSON.stringify({

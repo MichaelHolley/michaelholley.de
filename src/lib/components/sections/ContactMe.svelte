@@ -15,8 +15,13 @@
 				<SectionHeader title="Contact" />
 			</div>
 			<div class="grow">
-				<form method="POST" action="?/sendContactInformation" class=" *:mb-4" use:enhance>
-					<div>
+				<form
+					method="POST"
+					action="?/sendContactInformation"
+					class="grid grid-cols-2 gap-4"
+					use:enhance
+				>
+					<div class="col-span-2 lg:col-span-1">
 						<label for="name">name</label>
 						<TextInputComponent
 							id="name"
@@ -26,7 +31,7 @@
 							placeholder="enter your first- and lastname"
 						/>
 					</div>
-					<div>
+					<div class="col-span-2 lg:col-span-1">
 						<label for="mail">mail</label>
 						<TextInputComponent
 							id="mail"
@@ -37,7 +42,7 @@
 							placeholder="enter your mail"
 						/>
 					</div>
-					<div>
+					<div class="col-span-2">
 						<label for="message">message</label>
 						<TextInputComponent
 							id="message"
@@ -45,12 +50,14 @@
 							bind:value={messageInput}
 							required
 							type="textarea"
+							rows={4}
+							placeholder="enter your message here and describe your inquiry"
 						/>
 					</div>
-					<div>
+					<div class="col-span-2">
 						<button
 							type="submit"
-							class="mt-4 rounded bg-black px-4 py-2 font-bold text-white hover:bg-gray-800"
+							class="float-end rounded bg-black px-5 py-2 font-bold text-white hover:bg-black/80"
 						>
 							Send
 						</button>

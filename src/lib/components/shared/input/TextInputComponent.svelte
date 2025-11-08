@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { cn } from '$lib/utils';
+
 	let {
 		value = $bindable(''),
 		id,
@@ -6,7 +8,8 @@
 		type = 'text',
 		placeholder = '',
 		required = false,
-		class: className
+		class: className,
+		rows
 	} = $props<{
 		id: string;
 		name: string;
@@ -14,6 +17,7 @@
 		type?: 'text' | 'email' | 'textarea';
 		placeholder?: string;
 		required?: boolean;
+		rows?: number;
 	}>();
 </script>
 
@@ -25,7 +29,11 @@
 		{name}
 		{placeholder}
 		{required}
-		class={`border-b border-neutral-300 focus:outline-none active:outline-none ${className} w-full`}
+		class={cn(
+			`w-full border-b border-neutral-300 placeholder:text-xs`,
+			'focus:outline-none active:outline-none',
+			className
+		)}
 	/>
 {:else}
 	<textarea
@@ -34,14 +42,12 @@
 		{name}
 		{placeholder}
 		{required}
-		class={`bg-neutral-200 focus:outline-none active:outline-none ${className} w-full p-1`}
+		class={cn(
+			`w-full bg-neutral-300/35 p-1 placeholder:pt-1 placeholder:text-xs`,
+			'focus:outline-none active:outline-none',
+			className
+		)}
+		{rows}
 	>
 	</textarea>
 {/if}
-
-<style>
-	textarea::placeholder,
-	input::placeholder {
-		font-size: 0.7rem;
-	}
-</style>

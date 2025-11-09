@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
+	import { TextareaAutosize } from 'runed';
 
 	let {
 		value = $bindable(''),
@@ -8,8 +9,7 @@
 		type = 'text',
 		placeholder = '',
 		required = false,
-		class: className,
-		rows
+		class: className
 	} = $props<{
 		id: string;
 		name: string;
@@ -17,8 +17,15 @@
 		type?: 'text' | 'email' | 'textarea';
 		placeholder?: string;
 		required?: boolean;
-		rows?: number;
 	}>();
+
+	let textareaEl = $state<HTMLTextAreaElement>(null!);
+
+	new TextareaAutosize({
+		element: () => textareaEl,
+		input: () => value,
+		styleProp: 'minHeight'
+	});
 </script>
 
 {#if type !== 'textarea'}
@@ -37,17 +44,18 @@
 	/>
 {:else}
 	<textarea
+		bind:this={textareaEl}
 		bind:value
 		{id}
 		{name}
 		{placeholder}
 		{required}
+		rows={4}
 		class={cn(
 			`w-full bg-neutral-300/35 p-1 placeholder:pt-1 placeholder:text-xs`,
 			'focus:border-b focus:border-black focus:outline-none active:outline-none',
 			className
 		)}
-		{rows}
 	>
 	</textarea>
 {/if}

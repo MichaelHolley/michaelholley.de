@@ -50,7 +50,6 @@
 							bind:value={messageInput}
 							required
 							type="textarea"
-							rows={4}
 							placeholder="enter your message here and describe your inquiry"
 						/>
 					</div>

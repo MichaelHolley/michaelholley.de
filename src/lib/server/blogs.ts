@@ -1,18 +1,10 @@
 export interface Blog {
-	id: string;
+	id: number;
+	documentId: string;
 	title: string;
 	description: string;
+	content?: string;
 	released: string;
-	tags?: string[];
+	tags: string[];
+	slug: string;
 }
-
-export const blogs: Blog[] = [
-	{
-		id: 'install-web-app',
-		title: 'Web-Apps installieren',
-		description:
-			'Verwandeln Sie Ihre Webanwendung in ein natives App-Erlebnis. Dieser Leitfaden zeigt Ihnen Schritt für Schritt, wie Sie möglichst einfach mit nur einer Datei Ihre Web-App installieren können.',
-		released: '18. Juli 2025',
-		tags: ['web', 'mobile', 'app']
-	}
-];

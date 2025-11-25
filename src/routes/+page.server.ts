@@ -7,6 +7,16 @@ import { fail } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
 import type { Actions, PageServerLoad } from './$types';
 
+const selectFields = [
+	'id',
+	'documentId',
+	'title',
+	'slug',
+	'description',
+	'released',
+	'tags'
+] as const satisfies readonly (keyof Blog)[];
+
 export const load: PageServerLoad = async () => {
 	let cachedBlogs = cache.get<Blog[]>('blogs');
 
@@ -21,9 +31,9 @@ export const load: PageServerLoad = async () => {
 		}
 
 		console.log('No cached data (blogs) - Fetching from Strapi...');
-		const res = await fetch(
-			`${env.STRAPI_URL}/blogs?fields[0]=id&fields[1]=documentId&fields[2]=title&fields[3]=slug&fields[4]=description&fields[5]=released&fields[6]=tags`
-		);
+
+		const strapiUrl = `${env.STRAPI_URL}/blogs?${selectFields.map((field, index) => `fields[${index}]=${field}`).join('&')}`;
+		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {
 			throw new Error(
@@ -32,6 +42,8 @@ export const load: PageServerLoad = async () => {
 		}
 
 		const filterResult = (await res.json()) as { data: Blog[] };
+
+		console.log(strapiUrl, filterResult);
 
 		cache.set('blogs', filterResult.data);
 

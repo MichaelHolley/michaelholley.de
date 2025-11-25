@@ -62,6 +62,6 @@
 		cx={10}
 		cy={10}
 		cr={1}
-		class="[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)] "
+		class="mask-[linear-gradient(to_bottom_left,white,transparent,transparent)]"
 	/>
 </footer>

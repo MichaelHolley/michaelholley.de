@@ -44,6 +44,6 @@
 		cx={10}
 		cy={10}
 		cr={1}
-		class="[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
+		class="mask-[linear-gradient(to_top_right,white,transparent,transparent)]"
 	/>
 </section>

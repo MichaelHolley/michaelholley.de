@@ -1,5 +1,19 @@
 import { tech, type Tech } from './tech';
 
+export interface Project {
+	id: string;
+	title: string;
+	short: string;
+	description: string[];
+	tech?: (Tech | string)[];
+	github?: string;
+	url?: string;
+	class?: string;
+	icon?: string;
+	previewImg?: string;
+	imageUrls?: string[];
+}
+
 export const projects: Project[] = [
 	{
 		id: 'loyality-app',
@@ -72,17 +86,3 @@ export const projects: Project[] = [
 		previewImg: '/project/michaelholleyde.webp'
 	}
 ];
-
-export interface Project {
-	id: string;
-	title: string;
-	short: string;
-	description: string[];
-	tech?: (Tech | string)[];
-	github?: string;
-	url?: string;
-	class?: string;
-	icon?: string;
-	previewImg?: string;
-	imageUrls?: string[];
-}

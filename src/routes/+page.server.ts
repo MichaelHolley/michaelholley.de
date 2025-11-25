@@ -21,7 +21,9 @@ export const load: PageServerLoad = async () => {
 		}
 
 		console.log('No cached data (blogs) - Fetching from Strapi...');
-		const res = await fetch(`${env.STRAPI_URL}/blogs`);
+		const res = await fetch(
+			`${env.STRAPI_URL}/blogs?fields[0]=id&fields[1]=documentId&fields[2]=title&fields[3]=slug&fields[4]=description&fields[5]=released&fields[6]=tags`
+		);
 
 		if (!res.ok) {
 			throw new Error(
@@ -29,14 +31,14 @@ export const load: PageServerLoad = async () => {
 			);
 		}
 
-		const { data: blogs } = (await res.json()) as { data: Blog[] };
+		const filterResult = (await res.json()) as { data: Blog[] };
 
-		cache.set('blogs', blogs);
+		cache.set('blogs', filterResult.data);
 
 		return {
 			projects,
 			tech,
-			blogs
+			blogs: filterResult.data
 		};
 	} catch (e) {
 		console.error('Error fetching blogs:', e);

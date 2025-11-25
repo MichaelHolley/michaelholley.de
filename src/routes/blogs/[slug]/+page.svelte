@@ -16,7 +16,7 @@
 					? 'serif-font'
 					: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
 			>
-				<MarkdownComponent content={data.blog.content} />
+				<MarkdownComponent content={data.blog.content!} />
 				<p class="pt-10 text-center text-xs">
 					This article was written by a human author and reviewed using AI tools for language
 					accuracy and translation consistency.

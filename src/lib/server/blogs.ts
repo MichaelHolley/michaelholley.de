@@ -3,7 +3,7 @@ export interface Blog {
 	documentId: string;
 	title: string;
 	description: string;
-	content: string;
+	content?: string;
 	released: string;
 	tags: string[];
 	slug: string;

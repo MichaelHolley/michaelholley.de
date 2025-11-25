@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { Tech } from '$lib/server/tech';
-	import { cn } from '$lib/utils';
+	import type { TechItem } from '$lib/server/types';
 	import Icon from '@iconify/svelte';
 
-	const { header, tech } = $props<{ header: string; tech?: Tech[] }>();
+	const { header, tech }: { header: string; tech?: TechItem[] } = $props();
 </script>
 
 <div class="flex flex-row justify-start gap-6 pb-1">

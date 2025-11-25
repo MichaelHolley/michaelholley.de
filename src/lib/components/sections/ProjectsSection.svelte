@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
-	import type { Project } from '$lib/server/projects';
 	import BentoCardComponent from '$lib/components/shared/BentoCardComponent.svelte';
+	import type { Project } from '$lib/server/types';
 
 	const { projects }: { projects: Project[] } = $props();
 </script>

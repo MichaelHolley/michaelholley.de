@@ -10,14 +10,15 @@
 		placeholder = '',
 		required = false,
 		class: className
-	} = $props<{
+	}: {
 		id: string;
 		name: string;
 		value: string;
 		type?: 'text' | 'email' | 'textarea';
 		placeholder?: string;
 		required?: boolean;
-	}>();
+		class?: string;
+	} = $props();
 
 	let textareaEl = $state<HTMLTextAreaElement>(null!);
 

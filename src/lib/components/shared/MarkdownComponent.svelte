@@ -2,9 +2,11 @@
 	import { marked } from 'marked';
 	import { onMount } from 'svelte';
 
-	const { content } = $props<{
+	const {
+		content
+	}: {
 		content: string;
-	}>();
+	} = $props();
 
 	let htmlContent = $state();
 

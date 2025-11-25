@@ -1,5 +1,5 @@
 import { env } from '$env/dynamic/private';
-import type { Blog } from '$lib/server/blogs';
+import type { Blog } from '$lib/server/types';
 import { cache } from '$lib/server/cache';
 
 export const load = async ({ params }: { params: { slug: string } }) => {

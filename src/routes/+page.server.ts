@@ -1,8 +1,8 @@
 import { env } from '$env/dynamic/private';
 import { cache } from '$lib/server/cache';
-import type { Blog } from '$lib/server/blogs';
+import type { Blog } from '$lib/server/types';
 import { projects } from '$lib/server/projects';
-import { tech } from '$lib/server/tech';
+import { tech } from '$lib/tech-icons';
 import { fail } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
 import type { Actions, PageServerLoad } from './$types';

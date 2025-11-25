@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
-	import type { Blog } from '$lib/server/blogs';
+	import type { Blog } from '$lib/server/types';
 
 	const { blogs }: { blogs: Blog[] } = $props();
 </script>
@@ -17,9 +17,15 @@
 						data-sveltekit-preload-data="tap"
 					>
 						<div class="flex flex-row justify-start gap-3 text-sm text-white/50">
-							<p>{b.released}</p>
+							<p>
+								{new Date(b.released).toLocaleDateString(undefined, {
+									month: 'short',
+									day: 'numeric',
+									year: 'numeric'
+								})}
+							</p>
 							<p>|</p>
-							<p>{b.tags?.join(' • ').toLowerCase()}</p>
+							<p>{b.tags.join(' • ').toLowerCase()}</p>
 						</div>
 
 						<div

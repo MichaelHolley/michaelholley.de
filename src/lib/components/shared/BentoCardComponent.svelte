@@ -11,7 +11,7 @@
 		icon,
 		class: className,
 		backgroundImgUrl
-	} = $props<{
+	}: {
 		id: string;
 		name: string;
 		href: string;
@@ -20,7 +20,7 @@
 		icon?: string;
 		class?: string;
 		backgroundImgUrl?: string;
-	}>();
+	} = $props();
 </script>
 
 <a

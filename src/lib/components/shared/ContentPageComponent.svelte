@@ -3,10 +3,13 @@
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
 
-	const { children, centeredContent } = $props<{
+	const {
+		children,
+		centeredContent
+	}: {
 		children: Snippet;
 		centeredContent?: boolean;
-	}>();
+	} = $props();
 
 	const serifFont = serifStore;
 </script>

@@ -1,6 +1,9 @@
 import colors from 'tailwindcss/colors';
+import type { TechItem } from './server/types';
 
-export const tech: TechMap = {
+export type TechMap = Record<TechKey, TechItem>;
+
+export const tech = {
 	dotnet: {
 		icon: 'logos:dotnet',
 		color: colors.indigo[600],
@@ -81,14 +84,6 @@ export const tech: TechMap = {
 		color: colors.white,
 		name: 'Prisma'
 	}
-};
+} as const;
 
-export interface Tech {
-	icon: string;
-	color: string;
-	name: string;
-}
-
-export interface TechMap {
-	[key: string]: Tech;
-}
+type TechKey = keyof typeof tech;

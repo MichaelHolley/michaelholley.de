@@ -9,7 +9,7 @@
 		boxColor = colors.white,
 		duration = 0.5,
 		children
-	} = $props<{ width?: string; boxColor?: string; duration?: number; children: Snippet }>();
+	}: { width?: string; boxColor?: string; duration?: number; children: Snippet } = $props();
 
 	//   Animation Controls
 	let mainControls = useAnimation();

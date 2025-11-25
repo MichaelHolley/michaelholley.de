@@ -5,7 +5,7 @@
 	import { RenderScan } from 'svelte-render-scan';
 	import '../app.css';
 
-	const { children } = $props<{ children: Snippet }>();
+	const { children }: { children: Snippet } = $props();
 </script>
 
 {#if dev}

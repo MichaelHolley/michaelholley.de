@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 
-	const { icons } = $props<{ icons: string[] }>();
+	const { icons }: { icons: string[] } = $props();
 </script>
 
 <div class="flex flex-row items-center gap-2 overflow-hidden">

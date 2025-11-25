@@ -11,7 +11,7 @@
 		cr = 1,
 		fillColor = 'rgb(163 163 163 / 0.8)',
 		class: className
-	} = $props<{
+	}: {
 		width?: string | number;
 		height?: string | number;
 		x?: number;
@@ -21,7 +21,7 @@
 		cr?: number;
 		fillColor?: string;
 		class?: string;
-	}>();
+	} = $props();
 
 	let id = crypto.randomUUID().toString().slice(0, 10); // generating a unique ID for Components
 </script>

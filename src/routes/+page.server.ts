@@ -43,8 +43,6 @@ export const load: PageServerLoad = async () => {
 
 		const filterResult = (await res.json()) as { data: Blog[] };
 
-		console.log(strapiUrl, filterResult);
-
 		cache.set('blogs', filterResult.data);
 
 		return {

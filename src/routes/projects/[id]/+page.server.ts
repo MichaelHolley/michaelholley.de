@@ -1,10 +1,10 @@
-import { projects } from '$lib/server/projects.js';
+import { fetchProjectBySlug } from '$lib/server/services/strapi.service';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }: { params: { id: string } }) => {
-	const project = projects.find((p) => p.id === params.id);
+	const project = await fetchProjectBySlug(params.id);
 
 	if (!project) throw error(404, 'Not found');
 
-	return project;
+	return { project };
 };

@@ -1,13 +1,12 @@
 import { env } from '$env/dynamic/private';
-import { projects } from '$lib/server/projects';
-import { fetchBlogs } from '$lib/server/services/strapi.service';
+import { fetchBlogs, fetchProjects } from '$lib/server/services/strapi.service';
 import { tech } from '$lib/tech-icons';
 import { fail } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const blogs = await fetchBlogs();
+	const [blogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
 
 	return {
 		projects,

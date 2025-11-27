@@ -13,14 +13,14 @@
 			<div class="grid w-full auto-rows-[20rem] grid-cols-1 gap-4 lg:grid-cols-3">
 				{#each projects as p}
 					<BentoCardComponent
-						id={p.id}
+						id={p.documentId}
 						name={p.title}
-						description={p.short}
-						icon={p.icon}
-						href="/projects/{p.id}"
+						description={p.description}
+						icon={p.iconIdentifier}
+						href="/projects/{p.slug}"
 						cta={'Mehr'}
-						class={p.class}
-						backgroundImgUrl={p.previewImg}
+						class="col-span-1"
+						backgroundImgUrl={p.thumbnail.formats.small.url}
 					/>
 				{/each}
 			</div>

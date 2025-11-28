@@ -3,6 +3,7 @@
 	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
 	import { serifStore } from '$lib/stores/serifFontStore';
 	import { getTech, tech } from '$lib/tech-icons';
+	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 
 	const { data } = $props();
@@ -44,9 +45,7 @@
 	</div>
 	<div>
 		<article
-				class="{serifFont.current
-					? 'serif-font'
-					: ''} prose max-w-5xl dark:prose-invert prose-neutral"
+				class={cn("prose max-w-5xl dark:prose-invert prose-neutral", serifFont.current && "serif-font")}
 			>
 			<MarkdownComponent content={data.project.content} />
 		</article>

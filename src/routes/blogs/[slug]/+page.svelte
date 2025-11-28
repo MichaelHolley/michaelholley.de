@@ -2,6 +2,7 @@
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
+	import { cn } from '$lib/utils';
 
 	const { data } = $props();
 
@@ -12,9 +13,7 @@
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}
 			<article
-				class="{serifFont.current
-					? 'serif-font'
-					: ''} prose prose-sm sm:prose-base dark:prose-invert prose-neutral"
+				class={cn("prose prose-sm sm:prose-base dark:prose-invert prose-neutral", serifFont.current && "serif-font")}
 			>
 				<MarkdownComponent content={data.blog.content!} />
 				<p class="pt-10 text-center text-xs">

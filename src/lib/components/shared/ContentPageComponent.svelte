@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { serifStore } from '$lib/stores/serifFontStore';
+	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
 
@@ -23,9 +24,7 @@
 					Zurück
 				</a>
 				<button
-					class="{!serifFont.current
-						? 'serif-font'
-						: ''} size-8 rounded-sm border hover:cursor-pointer"
+					class={cn("size-8 rounded-sm border hover:cursor-pointer", !serifFont.current && "serif-font" )}
 					onclick={() => {
 						serifFont.current = !serifFont.current;
 					}}

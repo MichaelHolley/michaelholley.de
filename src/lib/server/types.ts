@@ -23,8 +23,8 @@ export interface Project {
 	description: string;
 	iconIdentifier: string;
 	content: string;
-	url: null;
-	github_ref: null;
+	url: string;
+	github_ref: string;
 	tech: string[];
 	thumbnail: Thumbnail;
 }
@@ -51,7 +51,7 @@ export interface ImageFormat {
 	hash: string;
 	ext: string;
 	mime: string;
-	path: null;
+	path: string;
 	width: number;
 	height: number;
 	size: number;

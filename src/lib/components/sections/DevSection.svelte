@@ -9,7 +9,7 @@
 <section id="dev" class="relative">
 	<div class="container grid grid-cols-1 gap-6 py-12 md:py-20 lg:grid-cols-3 lg:gap-12 xl:gap-16">
 		<div class="col-span-3 lg:col-span-1">
-			<DevHeaderComponent header="Backend" tech={[tech.dotnet, tech.Java]} />
+			<DevHeaderComponent header="Backend" tech={[tech[".NET"], tech.Java]} />
 			<p class="leading-7">
 				Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit
 				Datenbanken und APIs, um <span class="text-secondary"
@@ -19,7 +19,7 @@
 			</p>
 		</div>
 		<div class="col-span-3 lg:col-span-1">
-			<DevHeaderComponent header="Frontend" tech={[tech.Vue, tech.Svelte, tech.tailwindcss]} />
+			<DevHeaderComponent header="Frontend" tech={[tech.Vue, tech.Svelte, tech["Tailwind CSS"]]} />
 			<p class="leading-7">
 				Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich
 				gerne mit den <span class="text-secondary">neuesten Technologien und Frameworks</span>, um

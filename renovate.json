@@ -1,12 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "includePaths": ["package.json"],
-  "schedule": ["* 0-3 * * 5"],
+  "extends": [
+    "config:recommended"
+  ],
+  "includePaths": [
+    "package.json"
+  ],
+  "schedule": [
+    "* 0-3 * * 5"
+  ],
   "automerge": false,
+  "labels": [
+    "renovate"
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false
     }
   ]

@@ -10,7 +10,7 @@
 
 	let htmlContent = $state();
 
-	onMount(() => {		
+	onMount(() => {
 		htmlContent = marked(content);
 	});
 </script>

@@ -57,20 +57,17 @@
 					<div
 						class="group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400"
 					>
-						{#if !!t && t in tech}
+						{#if !!t}
 							{@const tIcon = getTech(t)}
 								{#if !!tIcon}
 									<Icon icon={tIcon.icon} class="text-neutral-400 " style="color: {tIcon.color};" />
-									<span
+									
+								{/if}
+								<span
 										class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
 									>
-										{#if typeof t === 'string'}
-											{t}
-										{:else}
-											{tIcon.name}
-										{/if}
-									</span>
-								{/if}
+										{t}
+								</span>
 						{/if}
 					</div>
 				{/each}

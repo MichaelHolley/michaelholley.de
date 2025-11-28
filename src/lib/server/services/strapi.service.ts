@@ -20,7 +20,8 @@ const projectSelectFields = [
 	'description',
 	'iconIdentifier',
 	'url',
-	'github_ref'
+	'github_ref',
+	'highlight'
 ] as const satisfies readonly (keyof Project)[];
 
 /**

@@ -1,7 +1,8 @@
 <script lang="ts">
-	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import BentoCardComponent from '$lib/components/shared/BentoCardComponent.svelte';
+	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import type { Project } from '$lib/server/types';
+	import { cn } from '$lib/utils';
 
 	const { projects }: { projects: Project[] } = $props();
 </script>
@@ -19,7 +20,7 @@
 						icon={p.iconIdentifier}
 						href="/projects/{p.slug}"
 						cta={'Mehr'}
-						class="col-span-1"
+						class={cn("col-span-1", p.highlight && "col-span-2")}
 						backgroundImgUrl={p.thumbnail.formats.small.url}
 					/>
 				{/each}

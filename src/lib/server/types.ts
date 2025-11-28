@@ -27,6 +27,7 @@ export interface Project {
 	github_ref: string;
 	tech: string[];
 	thumbnail: Thumbnail;
+	highlight: boolean;
 }
 
 export interface Thumbnail {

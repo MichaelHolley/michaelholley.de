@@ -9,7 +9,7 @@ export const load: PageServerLoad = async () => {
 	const [blogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
 
 	return {
-		projects,
+		projects: projects.sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0)),
 		tech,
 		blogs
 	};

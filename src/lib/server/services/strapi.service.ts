@@ -51,14 +51,15 @@ function normalizeImageUrl(image: ImageFormat, baseUrl: string): ImageFormat {
  */
 function normalizeThumbnail(thumbnail: Thumbnail): Thumbnail {
 	const baseUrl = getStrapiBaseUrl();
+
 	return {
 		...thumbnail,
 		url: thumbnail.url.startsWith('http') ? thumbnail.url : `${baseUrl}${thumbnail.url}`,
 		formats: {
-			thumbnail: normalizeImageUrl(thumbnail.formats.thumbnail, baseUrl),
-			medium: normalizeImageUrl(thumbnail.formats.medium, baseUrl),
-			large: normalizeImageUrl(thumbnail.formats.large, baseUrl),
-			small: normalizeImageUrl(thumbnail.formats.small, baseUrl)
+			thumbnail:  thumbnail.formats?.thumbnail ? normalizeImageUrl(thumbnail.formats.thumbnail, baseUrl) : undefined,
+			medium: thumbnail.formats?.medium ? normalizeImageUrl(thumbnail.formats.medium, baseUrl) : undefined,
+			large: thumbnail.formats?.large ? normalizeImageUrl(thumbnail.formats.large, baseUrl) : undefined,
+			small: thumbnail.formats?.small ? normalizeImageUrl(thumbnail.formats.small, baseUrl) : undefined
 		}
 	};
 }
@@ -68,10 +69,10 @@ function normalizeThumbnail(thumbnail: Thumbnail): Thumbnail {
  * @param project - Project object from Strapi
  * @returns Project with absolute thumbnail URLs
  */
-function normalizeProject(project: Project): Project {
+function normalizeProject(project: Project): Project {	
 	return {
 		...project,
-		thumbnail: normalizeThumbnail(project.thumbnail)
+		thumbnail: project.thumbnail ? normalizeThumbnail(project.thumbnail) : undefined
 	};
 }
 

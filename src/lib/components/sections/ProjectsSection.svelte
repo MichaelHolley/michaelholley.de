@@ -5,6 +5,14 @@
 	import { cn } from '$lib/utils';
 
 	const { projects }: { projects: Project[] } = $props();
+
+	const thumbnailUrl = (project: Project): string | undefined => {		
+		if(project.thumbnail?.formats?.small) {
+			return project.thumbnail.formats.small.url;
+		}
+
+		return project.thumbnail?.url;
+	};
 </script>
 
 <section id="projects" class="bg-black text-white">
@@ -21,7 +29,7 @@
 						href="/projects/{p.slug}"
 						cta={'Mehr'}
 						class={cn("col-span-1", p.highlight && "col-span-2")}
-						backgroundImgUrl={p.thumbnail.formats.small.url}
+						backgroundImgUrl={thumbnailUrl(p)}
 					/>
 				{/each}
 			</div>

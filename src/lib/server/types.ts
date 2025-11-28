@@ -26,7 +26,7 @@ export interface Project {
 	url: string;
 	github_ref: string;
 	tech: string[];
-	thumbnail: Thumbnail;
+	thumbnail?: Thumbnail;
 	highlight: boolean;
 }
 
@@ -36,15 +36,15 @@ export interface Thumbnail {
 	name: string;
 	alternativeText: string;
 	caption: string;
-	formats: Formats;
+	formats?: Formats;
 	url: string;
 }
 
 export interface Formats {
-	thumbnail: ImageFormat;
-	medium: ImageFormat;
-	large: ImageFormat;
-	small: ImageFormat;
+	thumbnail?: ImageFormat;
+	medium?: ImageFormat;
+	large?: ImageFormat;
+	small?: ImageFormat;
 }
 
 export interface ImageFormat {

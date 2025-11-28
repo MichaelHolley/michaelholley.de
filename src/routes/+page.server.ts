@@ -1,66 +1,19 @@
 import { env } from '$env/dynamic/private';
-import { cache } from '$lib/server/cache';
-import type { Blog } from '$lib/server/types';
-import { projects } from '$lib/server/projects';
+import { fetchBlogs, fetchProjects } from '$lib/server/services/strapi.service';
 import { tech } from '$lib/tech-icons';
 import { fail } from '@sveltejs/kit';
 import { Buffer } from 'buffer';
 import type { Actions, PageServerLoad } from './$types';
 
-const selectFields = [
-	'id',
-	'documentId',
-	'title',
-	'slug',
-	'description',
-	'released',
-	'tags'
-] as const satisfies readonly (keyof Blog)[];
-
 export const load: PageServerLoad = async () => {
-	let cachedBlogs = cache.get<Blog[]>('blogs');
+	const [blogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
+	const sortedProjects = projects.sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0));
 
-	try {
-		if (cachedBlogs) {
-			console.log('Using cached data (blogs)');
-			return {
-				projects,
-				tech,
-				blogs: cachedBlogs
-			};
-		}
-
-		console.log('No cached data (blogs) - Fetching from Strapi...');
-
-		const strapiUrl = `${env.STRAPI_URL}/blogs?${selectFields.map((field, index) => `fields[${index}]=${field}`).join('&')}`;
-		const res = await fetch(strapiUrl);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch blogs: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const filterResult = (await res.json()) as { data: Blog[] };
-
-		cache.set('blogs', filterResult.data);
-
-		return {
-			projects,
-			tech,
-			blogs: filterResult.data
-		};
-	} catch (e) {
-		console.error('Error fetching blogs:', e);
-
-		cachedBlogs = cache.getIgnoreInvalidation<Blog[]>('blogs');
-
-		return {
-			projects,
-			tech,
-			blogs: cachedBlogs || []
-		};
-	}
+	return {
+		projects: sortedProjects,
+		tech,
+		blogs
+	};
 };
 
 export const actions = {

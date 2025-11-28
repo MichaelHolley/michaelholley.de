@@ -1,6 +1,9 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import { serifStore } from '$lib/stores/serifFontStore.js';
+	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
+	import { serifStore } from '$lib/stores/serifFontStore';
+	import { getTech, tech } from '$lib/tech-icons';
+	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 
 	const { data } = $props();
@@ -8,15 +11,15 @@
 	const serifFont = serifStore;
 </script>
 
-<ContentPageComponent centeredContent>
+<ContentPageComponent>
 	<div class="my-8 flex flex-row flex-wrap items-end justify-between gap-4">
-		<h1 class="text-4xl font-bold break-all lg:mt-20">{data.title}</h1>
+		<h1 class="text-4xl font-bold break-all lg:mt-20">{data.project.title}</h1>
 		<div
 			class="*:motion-blur-in-md *:motion-opacity-in-0 *:motion-delay-50 flex flex-row items-center gap-3"
 		>
-			{#if data.url}
+			{#if data.project.url}
 				<a
-					href={data.url}
+					href={data.project.url}
 					target="_blank"
 					class="group flex flex-row items-center gap-1"
 					aria-label="Open URL"
@@ -26,9 +29,9 @@
 					</div>
 				</a>
 			{/if}
-			{#if data.github}
+			{#if data.project.github_ref}
 				<a
-					href={data.github}
+					href={data.project.github_ref}
 					target="_blank"
 					class="group flex flex-row items-center gap-1"
 					aria-label="GitHub Repository"
@@ -41,30 +44,30 @@
 		</div>
 	</div>
 	<div>
-		<div class={serifFont.current ? 'serif-font' : ''}>
-			{#each data.description as p}
-				<p class="mt-4 text-lg">{p}</p>
-			{/each}
-		</div>
+		<article
+				class={cn("prose max-w-5xl dark:prose-invert prose-neutral", serifFont.current && "serif-font")}
+			>
+			<MarkdownComponent content={data.project.content} />
+		</article>
 
-		{#if data.tech}
+		{#if data.project.tech}
 			<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-5 gap-y-2">
-				{#each data.tech as t}
+				{#each data.project.tech as t}
 					<div
 						class="group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400"
 					>
-						{#if typeof t === 'object'}
-							<Icon icon={t.icon} class="text-neutral-400 " style="color: {t.color};" />
+						{#if !!t}
+							{@const tIcon = getTech(t)}
+								{#if !!tIcon}
+									<Icon icon={tIcon.icon} class="text-neutral-400 " style="color: {tIcon.color};" />
+									
+								{/if}
+								<span
+										class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
+									>
+										{t}
+								</span>
 						{/if}
-						<span
-							class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
-						>
-							{#if typeof t === 'string'}
-								{t}
-							{:else}
-								{t.name}
-							{/if}
-						</span>
 					</div>
 				{/each}
 			</div>

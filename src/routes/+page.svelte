@@ -11,7 +11,9 @@
 <Header />
 <Dev tech={data.tech} />
 <Experience />
-<Projects projects={data.projects} />
-{#if data.blogs?.length}
+{#if data.projects.length}
+	<Projects projects={data.projects} />
+{/if}
+{#if data.blogs.length}
 	<Blogs blogs={data.blogs} />
 {/if}

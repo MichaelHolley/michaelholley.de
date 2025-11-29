@@ -31,6 +31,7 @@
 		'transform-gpu border border-black/10 bg-black [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
 		className
 	)}
+	data-sveltekit-preload-data="tap"
 >
 	{#if !!backgroundImgUrl}
 		<div

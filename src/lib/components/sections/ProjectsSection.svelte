@@ -28,7 +28,7 @@
 						icon={p.iconIdentifier}
 						href="/projects/{p.slug}"
 						cta={'Mehr'}
-						class={cn("col-span-1", p.highlight && "col-span-2")}
+						class={cn("col-span-1", p.highlight && "lg:col-span-2")}
 						backgroundImgUrl={thumbnailUrl(p)}
 					/>
 				{/each}

@@ -1,61 +1,88 @@
-export interface Blog {
-	id: number;
-	documentId: string;
-	title: string;
-	description: string;
-	content?: string;
-	released: string;
-	tags: string[];
-	slug: string;
-}
+import { z } from 'zod';
 
-export type TechItem = {
-	icon: string;
-	color: string;
-	name: string;
-};
+// ImageFormat
+export type ImageFormat = z.infer<typeof ImageFormatSchema>;
+export const ImageFormatSchema = z.object({
+	name: z.string(),
+	hash: z.string(),
+	ext: z.string(),
+	mime: z.string(),
+	path: z.string(),
+	width: z.number(),
+	height: z.number(),
+	size: z.number(),
+	sizeInBytes: z.number(),
+	url: z.string()
+});
 
-export interface Project {
-	id: number;
-	documentId: string;
-	title: string;
-	slug: string;
-	description: string;
-	iconIdentifier: string;
-	content: string;
-	url: string;
-	github_ref: string;
-	tech: string[];
-	thumbnail?: Thumbnail;
-	highlight: boolean;
-}
+// Formats
+export type Formats = z.infer<typeof FormatsSchema>;
+export const FormatsSchema = z.object({
+	thumbnail: ImageFormatSchema.optional(),
+	medium: ImageFormatSchema.optional(),
+	large: ImageFormatSchema.optional(),
+	small: ImageFormatSchema.optional()
+});
 
-export interface Thumbnail {
-	id: number;
-	documentId: string;
-	name: string;
-	alternativeText: string;
-	caption: string;
-	formats?: Formats;
-	url: string;
-}
+// Thumbnail
+export type Thumbnail = z.infer<typeof ThumbnailSchema>;
+export const ThumbnailSchema = z.object({
+	id: z.number(),
+	documentId: z.string(),
+	name: z.string(),
+	alternativeText: z.string(),
+	caption: z.string(),
+	formats: FormatsSchema.optional(),
+	url: z.string()
+});
 
-export interface Formats {
-	thumbnail?: ImageFormat;
-	medium?: ImageFormat;
-	large?: ImageFormat;
-	small?: ImageFormat;
-}
+// Icon
+export type Icon = z.infer<typeof IconSchema>;
+export const IconSchema = z.object({
+	iconIdentifier: z.string()
+});
 
-export interface ImageFormat {
-	name: string;
-	hash: string;
-	ext: string;
-	mime: string;
-	path: string;
-	width: number;
-	height: number;
-	size: number;
-	sizeInBytes: number;
-	url: string;
-}
+// Tech
+export type Tech = z.infer<typeof TechSchema>;
+export const TechSchema = z.object({
+	techLabel: z.string(),
+	iconIdentifier: z.string().optional()
+});
+
+// Blog
+export type Blog = z.infer<typeof BlogSchema>;
+export const BlogSchema = z.object({
+	id: z.number(),
+	documentId: z.string(),
+	title: z.string(),
+	description: z.string(),
+	content: z.string().optional(),
+	released: z.string(),
+	tags: z.array(z.string()),
+	slug: z.string()
+});
+
+// Project
+export type Project = z.infer<typeof ProjectSchema>;
+export const ProjectSchema = z.object({
+	id: z.number(),
+	documentId: z.string(),
+	title: z.string(),
+	slug: z.string(),
+	description: z.string(),
+	content: z.string().optional(),
+	url: z.string().optional(),
+	github_ref: z.string().optional(),
+	thumbnail: ThumbnailSchema.optional(),
+	highlight: z.boolean().optional(),
+	projectIcon: IconSchema.optional(),
+	tech: z.array(TechSchema).optional()
+});
+
+// TechItem
+export type TechItem = z.infer<typeof TechItemSchema>;
+export const TechItemSchema = z.object({
+	icon: z.string(),
+	color: z.string(),
+	name: z.string()
+});

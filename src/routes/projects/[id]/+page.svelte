@@ -2,7 +2,6 @@
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
 	import { serifStore } from '$lib/stores/serifFontStore';
-	import { getTech, tech } from '$lib/tech-icons';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 
@@ -45,29 +44,28 @@
 	</div>
 	<div>
 		<article
-				class={cn("prose max-w-5xl dark:prose-invert prose-neutral", serifFont.current && "serif-font")}
-			>
-			<MarkdownComponent content={data.project.content} />
+			class={cn(
+				'prose dark:prose-invert prose-neutral max-w-5xl',
+				serifFont.current && 'serif-font'
+			)}
+		>
+			<MarkdownComponent content={data.project.content!} />
 		</article>
 
 		{#if data.project.tech}
 			<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-5 gap-y-2">
-				{#each data.project.tech as t}
+				{#each data.project.tech as t (t.techLabel)}
 					<div
 						class="group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400"
 					>
-						{#if !!t}
-							{@const tIcon = getTech(t)}
-								{#if !!tIcon}
-									<Icon icon={tIcon.icon} class="text-neutral-400 " style="color: {tIcon.color};" />
-									
-								{/if}
-								<span
-										class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
-									>
-										{t}
-								</span>
+						{#if !!t.iconIdentifier}
+							<Icon icon={t.iconIdentifier} class="text-neutral-400 " />
 						{/if}
+						<span
+							class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
+						>
+							{t.techLabel}
+						</span>
 					</div>
 				{/each}
 			</div>

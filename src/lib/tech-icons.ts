@@ -4,12 +4,12 @@ import type { TechItem } from './server/types';
 export type TechMap = Record<TechKey, TechItem>;
 
 export const tech = {
-	".NET": {
+	'.NET': {
 		icon: 'logos:dotnet',
 		color: colors.indigo[600],
 		name: '.NET'
 	},
-	"ASP.NET": {
+	'ASP.NET': {
 		icon: 'logos:dotnet',
 		color: colors.indigo[600],
 		name: 'ASP.NET'
@@ -29,7 +29,7 @@ export const tech = {
 		color: colors.sky[600],
 		name: 'TypeScript'
 	},
-	"Tailwind CSS": {
+	'Tailwind CSS': {
 		icon: 'devicon:tailwindcss',
 		color: colors.sky[400],
 		name: 'Tailwind CSS'

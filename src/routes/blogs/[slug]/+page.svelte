@@ -13,7 +13,10 @@
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}
 			<article
-				class={cn("prose prose-sm sm:prose-base dark:prose-invert prose-neutral", serifFont.current && "serif-font")}
+				class={cn(
+					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
+					serifFont.current && 'serif-font'
+				)}
 			>
 				<MarkdownComponent content={data.blog.content!} />
 				<p class="pt-10 text-center text-xs">

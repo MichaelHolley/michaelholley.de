@@ -6,8 +6,8 @@
 
 	const { projects }: { projects: Project[] } = $props();
 
-	const thumbnailUrl = (project: Project): string | undefined => {		
-		if(project.thumbnail?.formats?.small) {
+	const thumbnailUrl = (project: Project): string | undefined => {
+		if (project.thumbnail?.formats?.small) {
 			return project.thumbnail.formats.small.url;
 		}
 
@@ -25,10 +25,10 @@
 						id={p.documentId}
 						name={p.title}
 						description={p.description}
-						icon={p.iconIdentifier}
+						icon={p.projectIcon?.iconIdentifier}
 						href="/projects/{p.slug}"
 						cta={'Mehr'}
-						class={cn("col-span-1", p.highlight && "lg:col-span-2")}
+						class={cn('col-span-1', p.highlight && 'lg:col-span-2')}
 						backgroundImgUrl={thumbnailUrl(p)}
 					/>
 				{/each}

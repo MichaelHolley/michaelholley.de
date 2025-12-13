@@ -21,13 +21,13 @@ export interface Project {
 	title: string;
 	slug: string;
 	description: string;
-	iconIdentifier: string;
-	content: string;
-	url: string;
-	github_ref: string;
-	tech: string[];
+	content?: string;
+	url?: string;
+	github_ref?: string;
 	thumbnail?: Thumbnail;
-	highlight: boolean;
+	highlight?: boolean;
+	projectIcon?: Icon;
+	tech?: Tech[];
 }
 
 export interface Thumbnail {
@@ -58,4 +58,12 @@ export interface ImageFormat {
 	size: number;
 	sizeInBytes: number;
 	url: string;
+}
+
+export interface Icon {
+	iconIdentifier: string;
+}
+
+export interface Tech extends Icon {
+	techLabel: string;
 }

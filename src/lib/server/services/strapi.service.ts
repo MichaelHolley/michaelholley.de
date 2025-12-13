@@ -1,6 +1,7 @@
 import { env } from '$env/dynamic/private';
 import { cache } from '$lib/server/cache';
 import type { Blog, ImageFormat, Project, Thumbnail } from '$lib/server/types';
+import { buildStrapiUrl } from '$lib/server/services/util/strapi-url-builder';
 
 const blogSelectFields = [
 	'id',
@@ -18,10 +19,15 @@ const projectSelectFields = [
 	'title',
 	'slug',
 	'description',
-	'iconIdentifier',
 	'url',
 	'github_ref',
 	'highlight'
+] as const satisfies readonly (keyof Project)[];
+
+const projectPopulateFields = [
+	'thumbnail',
+	'projectIcon',
+	'tech'
 ] as const satisfies readonly (keyof Project)[];
 
 /**
@@ -29,7 +35,7 @@ const projectSelectFields = [
  */
 function getStrapiBaseUrl(): string {
 	const strapiUrl = env.STRAPI_URL ?? '';
-	return strapiUrl.replace("/api", "");
+	return strapiUrl.replace('/api', '');
 }
 
 /**
@@ -100,7 +106,7 @@ export async function fetchBlogs(): Promise<Blog[]> {
 
 		console.log('No cached data (blogs) - Fetching from Strapi...');
 
-		const strapiUrl = `${env.STRAPI_URL!}/blogs?${blogSelectFields.map((field, index) => `fields[${index}]=${field}`).join('&')}`;
+		const strapiUrl = buildStrapiUrl('blogs').fields(blogSelectFields).build();
 		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {
@@ -138,7 +144,8 @@ export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
 		}
 
 		console.log(`No cached data (blog-slug: ${slug}) - Fetching from Strapi...`);
-		const res = await fetch(`${env.STRAPI_URL!}/blogs?filters[slug][$eq]=${slug}`);
+		const strapiUrl = buildStrapiUrl('blogs').filter('slug', '$eq', slug).build();
+		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {
 			throw new Error(
@@ -180,7 +187,10 @@ export async function fetchProjects(): Promise<Project[]> {
 
 		console.log('No cached data (projects) - Fetching from Strapi...');
 
-		const strapiUrl = `${env.STRAPI_URL!}/projects?${projectSelectFields.map((field, index) => `fields[${index}]=${field}`).join('&')}&populate=thumbnail`;
+		const strapiUrl = buildStrapiUrl('projects')
+			.fields(projectSelectFields)
+			.populate(projectPopulateFields)
+			.build();
 		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {
@@ -220,9 +230,11 @@ export async function fetchProjectBySlug(slug: string): Promise<Project | null> 
 		}
 
 		console.log(`No cached data (project-slug: ${slug}) - Fetching from Strapi...`);
-		const res = await fetch(
-			`${env.STRAPI_URL!}/projects?filters[slug][$eq]=${slug}&populate=thumbnail`
-		);
+		const strapiUrl = buildStrapiUrl('projects')
+			.filter('slug', '$eq', slug)
+			.populate(projectPopulateFields)
+			.build();
+		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {
 			throw new Error(

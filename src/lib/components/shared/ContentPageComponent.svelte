@@ -24,7 +24,10 @@
 					Zurück
 				</a>
 				<button
-					class={cn("size-8 rounded-sm border hover:cursor-pointer", !serifFont.current && "serif-font" )}
+					class={cn(
+						'size-8 rounded-sm border hover:cursor-pointer',
+						!serifFont.current && 'serif-font'
+					)}
 					onclick={() => {
 						serifFont.current = !serifFont.current;
 					}}

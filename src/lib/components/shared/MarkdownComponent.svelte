@@ -15,4 +15,7 @@
 	});
 </script>
 
+<!-- XSS risk accepted: Content comes from trusted Strapi CMS backend with proper authentication -->
+<!-- eslint-disable svelte/no-at-html-tags -->
 {@html htmlContent}
+<!-- eslint-enable svelte/no-at-html-tags -->

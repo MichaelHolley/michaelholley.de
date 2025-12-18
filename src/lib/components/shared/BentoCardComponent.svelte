@@ -56,7 +56,7 @@
 				/>
 			{/if}
 
-			<h3 class="font-semibold text-white text-shadow-2xs">
+			<h3 class="font-bold text-white text-shadow-2xs">
 				{name}
 			</h3>
 		</div>

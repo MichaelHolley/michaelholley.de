@@ -29,7 +29,7 @@
 						</div>
 
 						<div
-							class="mt-2 text-2xl font-extrabold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
+							class="mt-2 text-2xl font-semibold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
 						>
 							{b.title}
 						</div>

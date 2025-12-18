@@ -26,7 +26,7 @@
 				<button
 					class={cn(
 						'size-8 rounded-sm border hover:cursor-pointer',
-						!serifFont.current && 'serif-font'
+						!serifFont.current && 'font-serif'
 					)}
 					onclick={() => {
 						serifFont.current = !serifFont.current;

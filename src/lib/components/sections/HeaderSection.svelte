@@ -35,7 +35,7 @@
 <section class="header-bg" style="--mouse-x: {transitionX.current}%;">
 	<div class="container py-20 pb-16">
 		<div class="flex flex-col justify-center">
-			<div class="text-shadow-md">
+			<div class="text-shadow-md **:tracking-tight">
 				<BoxReveal duration={0.6}>
 					<h1 class="text-5xl font-extrabold sm:text-7xl">Michael</h1>
 				</BoxReveal>

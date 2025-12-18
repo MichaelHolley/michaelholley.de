@@ -46,7 +46,7 @@
 		<article
 			class={cn(
 				'prose dark:prose-invert prose-neutral max-w-5xl',
-				serifFont.current && 'serif-font'
+				serifFont.current && 'font-serif'
 			)}
 		>
 			<MarkdownComponent content={data.project.content!} />

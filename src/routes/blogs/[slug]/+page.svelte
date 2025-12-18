@@ -15,7 +15,7 @@
 			<article
 				class={cn(
 					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
-					serifFont.current && 'serif-font'
+					serifFont.current && 'font-serif'
 				)}
 			>
 				<MarkdownComponent content={data.blog.content!} />

@@ -4,4 +4,8 @@
 	const { title, class: className }: { title: string; class?: string } = $props();
 </script>
 
-<h2 class={cn('text-5xl font-bold lowercase text-shadow-md sm:text-7xl', className)}>{title}</h2>
+<h2
+	class={cn('text-5xl font-bold tracking-tighter lowercase text-shadow-md sm:text-7xl', className)}
+>
+	{title}
+</h2>

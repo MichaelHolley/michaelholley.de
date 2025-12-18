@@ -25,6 +25,13 @@
 	--color-tertiary: #586f6b;
 	--color-tertiary-hover: #7e8e8a;
 	--color-tertiary-active: #a4ada9;
+
+	--font-weight-bold: 500;
+	--font-weight-semibold: 550;
+	--font-weight-extrabold: 600;
+
+	--font-raleway: 'Raleway', sans-serif;
+	--font-serif: Georgia, 'Times New Roman', serif;
 }
 
 @utility container {
@@ -42,29 +49,15 @@ html {
 	background-color: var(--color-black);
 }
 
-body {
-	color: var(--color-white);
-	font-family: 'Raleway', sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
-	@apply tracking-wide;
-}
-
-.font-bold {
-	font-weight: 500;
-}
-
-.font-semibold {
-	font-weight: 550;
-}
-
-.font-extrabold {
-	font-weight: 600;
-}
-
-.serif-font {
-	font-family: Georgia, 'Times New Roman', serif;
+@layer base {
+	body {
+		font-family: var(--font-raleway);
+		color: var(--color-white);
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+		@apply tracking-wide;
+	}
 }
 
 .prose {

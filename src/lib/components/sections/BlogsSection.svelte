@@ -28,9 +28,7 @@
 							<p>{b.tags.join(' • ').toLowerCase()}</p>
 						</div>
 
-						<div
-							class="mt-2 text-2xl font-semibold tracking-wide transition-all ease-in-out group-hover:pl-1.5"
-						>
+						<div class="mt-2 text-2xl font-semibold transition-all ease-in-out group-hover:pl-1.5">
 							{b.title}
 						</div>
 						<p class="mt-2 text-white/80">{b.description}</p>

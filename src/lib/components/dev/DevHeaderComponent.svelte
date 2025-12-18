@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex flex-row justify-start gap-6 pb-1">
-	<h3 class="text-2xl tracking-widest text-neutral-500">{header}</h3>
+	<h3 class="text-2xl tracking-wider text-neutral-500">{header}</h3>
 	{#if !!tech}
 		<div class="flex flex-row items-center gap-2">
 			{#each tech as t (t.name)}

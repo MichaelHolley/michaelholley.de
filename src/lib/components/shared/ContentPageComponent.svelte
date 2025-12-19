@@ -19,10 +19,14 @@
 	<div class="container min-h-screen py-10">
 		<div>
 			<div class="flex flex-row justify-between">
-				<a href="/" class=" flex flex-row items-center gap-1">
+				<button
+					type="button"
+					onclick={() => history.back()}
+					class=" flex flex-row items-center gap-1 hover:cursor-pointer"
+				>
 					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
 					Zurück
-				</a>
+				</button>
 				<button
 					class={cn(
 						'size-8 rounded-sm border hover:cursor-pointer',

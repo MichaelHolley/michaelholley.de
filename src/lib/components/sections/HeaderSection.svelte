@@ -1,5 +1,6 @@
 <script lang="ts">
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
+	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 	import { Spring } from 'svelte/motion';
@@ -47,9 +48,14 @@
 				<BoxReveal duration={0.8}>
 					<span class="pl-1 text-xl text-shadow-sm">Software Entwickler</span>
 				</BoxReveal>
-				<div class="*:motion-translate-y-in-75 *:motion-blur-in-md mt-2 flex h-11 flex-row pl-1">
+				<div
+					class={cn(
+						'mt-2 flex h-11 flex-row pl-1',
+						'*:motion-translate-y-in-75 *:motion-blur-in-md'
+					)}
+				>
 					<a
-						class="motion-delay-50 transition-all hover:scale-110"
+						class={cn('transition-all hover:scale-110', 'motion-delay-50')}
 						href="https://www.linkedin.com/in/michael-holley-791a64228/"
 						target="_blank"
 						rel="noreferrer"
@@ -58,7 +64,7 @@
 						<Icon icon="fa:linkedin-square" class="text-4xl drop-shadow-md" />
 					</a>
 					<a
-						class="motion-delay-150 ml-3 transition-all hover:scale-110"
+						class={cn('ml-3 transition-all hover:scale-110', 'motion-delay-150')}
 						href="https://github.com/MichaelHolley"
 						target="_blank"
 						rel="noreferrer"
@@ -67,7 +73,7 @@
 						<Icon icon="fa:github" class="text-4xl drop-shadow-md" />
 					</a>
 					<a
-						class="motion-delay-250 ml-3 transition-all hover:scale-110"
+						class={cn('ml-3 transition-all hover:scale-110', 'motion-delay-250')}
 						href="mailto:michael.philipp.holley@gmail.com"
 						aria-label="Contact me via Mail"
 					>

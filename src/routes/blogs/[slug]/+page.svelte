@@ -21,7 +21,8 @@
 				</h1>
 				<article
 					class={cn(
-						'prose prose-sm sm:prose-base dark:prose-invert prose-neutral motion-preset-slide-up-sm motion-delay-50 motion-duration-500',
+						'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
+						'motion-preset-slide-up-sm motion-delay-50 motion-duration-500',
 						serifFont.current && 'font-serif'
 					)}
 				>

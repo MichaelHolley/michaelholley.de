@@ -18,9 +18,7 @@
 		>
 			{data.project.title}
 		</h1>
-		<div
-			class="*:motion-blur-in-md *:motion-opacity-in-0 *:motion-delay-50 flex flex-row items-center gap-3"
-		>
+		<div class="*:motion-blur-in-md *:motion-delay-50 flex flex-row items-center gap-3">
 			{#if data.project.url}
 				<a
 					href={data.project.url}
@@ -61,10 +59,12 @@
 			<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-5 gap-y-2">
 				{#each data.project.tech as t (t.techLabel)}
 					<div
-						class="group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400"
+						class="group *:motion-blur-in-md *:motion-delay-50 flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400"
 					>
 						{#if !!t.iconIdentifier}
-							<Icon icon={t.iconIdentifier} class="text-neutral-400 " />
+							<div class="size-4">
+								<Icon icon={t.iconIdentifier} class="text-neutral-400" />
+							</div>
 						{/if}
 						<span
 							class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"

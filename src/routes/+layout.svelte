@@ -4,8 +4,20 @@
 	import type { Snippet } from 'svelte';
 	import { RenderScan } from 'svelte-render-scan';
 	import '../app.css';
+	import { onNavigate } from '$app/navigation';
 
 	const { children }: { children: Snippet } = $props();
+
+	onNavigate((navigate) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigate.complete;
+			});
+		});
+	});
 </script>
 
 {#if dev}

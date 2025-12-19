@@ -30,6 +30,7 @@
 						cta={'Mehr'}
 						class={cn('col-span-1', p.highlight && 'lg:col-span-2')}
 						backgroundImgUrl={thumbnailUrl(p)}
+						viewTransitionHeadingName={'heading-project-' + p.slug}
 					/>
 				{/each}
 			</div>

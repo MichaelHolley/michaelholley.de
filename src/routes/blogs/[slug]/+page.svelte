@@ -12,18 +12,26 @@
 <ContentPageComponent>
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}
-			<article
-				class={cn(
-					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
-					serifFont.current && 'font-serif'
-				)}
-			>
-				<MarkdownComponent content={data.blog.content!} />
-				<p class="pt-10 text-center text-xs">
-					This article was written by a human author and reviewed using AI tools for language
-					accuracy and translation consistency.
-				</p>
-			</article>
+			<div>
+				<h1
+					class="mb-8 text-4xl font-extrabold tracking-tight break-all"
+					style:view-transition-name="heading-blog-{data.blog.slug}"
+				>
+					{data.blog.title}
+				</h1>
+				<article
+					class={cn(
+						'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
+						serifFont.current && 'font-serif'
+					)}
+				>
+					<MarkdownComponent content={data.blog.content!} />
+					<p class="pt-10 text-center text-xs">
+						This article was written by a human author and reviewed using AI tools for language
+						accuracy and translation consistency.
+					</p>
+				</article>
+			</div>
 		{:else}
 			<p>Unable to load blog content.</p>
 		{/if}

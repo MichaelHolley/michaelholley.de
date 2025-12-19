@@ -12,7 +12,7 @@
 
 <ContentPageComponent>
 	<div class="my-8 flex flex-row flex-wrap items-end justify-between gap-4">
-		<h1 class="text-4xl font-bold break-all lg:mt-20">{data.project.title}</h1>
+		<h1 class="text-4xl font-bold tracking-tight break-all lg:mt-20">{data.project.title}</h1>
 		<div
 			class="*:motion-blur-in-md *:motion-opacity-in-0 *:motion-delay-50 flex flex-row items-center gap-3"
 		>

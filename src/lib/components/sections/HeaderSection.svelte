@@ -35,12 +35,12 @@
 <section class="header-bg" style="--mouse-x: {transitionX.current}%;">
 	<div class="container py-20 pb-16">
 		<div class="flex flex-col justify-center">
-			<div class="text-shadow-md **:tracking-tight">
+			<div class="text-shadow-md">
 				<BoxReveal duration={0.6}>
-					<h1 class="text-5xl font-extrabold sm:text-7xl">Michael</h1>
+					<h1 class="text-5xl font-extrabold tracking-tight sm:text-7xl">Michael</h1>
 				</BoxReveal>
 				<BoxReveal duration={0.4}>
-					<h1 class="pb-4 text-5xl font-extrabold sm:text-7xl">Holley</h1>
+					<h1 class="pb-4 text-5xl font-extrabold tracking-tight sm:text-7xl">Holley</h1>
 				</BoxReveal>
 			</div>
 			<div>

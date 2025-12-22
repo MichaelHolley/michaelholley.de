@@ -63,7 +63,7 @@
 							'group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400',
 							'motion-blur-in-md motion-delay-50'
 						)}
-						style:--motion-delay={(i + 1) * 75 + 'ms'}
+						style:--motion-delay={i * 75 + 'ms'}
 					>
 						{#if !!t.iconIdentifier}
 							<div class="size-4">

@@ -18,7 +18,7 @@
 		>
 			{data.project.title}
 		</h1>
-		<div class={cn('flex flex-row items-center gap-3', '*:motion-blur-in-md *:motion-delay-50')}>
+		<div class="flex flex-row items-center gap-3">
 			{#if data.project.url}
 				<a
 					href={data.project.url}
@@ -60,10 +60,8 @@
 				{#each data.project.tech as t, i (t.techLabel)}
 					<div
 						class={cn(
-							'group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400',
-							'motion-blur-in-md motion-delay-50'
+							'group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400'
 						)}
-						style:--motion-delay={i * 75 + 'ms'}
 					>
 						{#if !!t.iconIdentifier}
 							<div class="size-4">

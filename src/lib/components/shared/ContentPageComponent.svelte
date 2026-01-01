@@ -30,8 +30,8 @@
 	});
 
 	const buttonVariant = cn(
-		'text-neutral-400 hover:text-neutral-500',
-		'dark:text-neutral-700 hover:dark:text-neutral-600'
+		'text-neutral-400 hover:text-neutral-500 transition-all',
+		'dark:text-neutral-600 hover:dark:text-neutral-500'
 	);
 </script>
 

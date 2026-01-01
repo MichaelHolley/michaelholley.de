@@ -56,20 +56,18 @@
 		</article>
 
 		{#if data.project.tech}
-			<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-5 gap-y-2">
+			<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-6 gap-y-2">
 				{#each data.project.tech as t, i (t.techLabel)}
 					<div
 						class={cn(
-							'group flex flex-row items-center gap-1 text-neutral-600 dark:text-neutral-400'
+							'group flex flex-row items-center gap-1.5 text-neutral-600 dark:text-neutral-400'
 						)}
 					>
 						{#if !!t.iconIdentifier}
-							<div class="size-4">
-								<Icon icon={t.iconIdentifier} class="text-neutral-400" />
-							</div>
+							<Icon icon={t.iconIdentifier} class="size-4 text-neutral-400" />
 						{/if}
 						<span
-							class="transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
+							class="text-sm transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"
 						>
 							{t.techLabel}
 						</span>

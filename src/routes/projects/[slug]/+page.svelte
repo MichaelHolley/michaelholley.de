@@ -57,7 +57,7 @@
 
 		{#if data.project.tech}
 			<div class="mt-8 flex flex-row flex-wrap justify-center gap-x-6 gap-y-2">
-				{#each data.project.tech as t, i (t.techLabel)}
+				{#each data.project.tech as t (t.techLabel)}
 					<div
 						class={cn(
 							'group flex flex-row items-center gap-1.5 text-neutral-600 dark:text-neutral-400'

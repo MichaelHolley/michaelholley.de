@@ -13,7 +13,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "npm run test:unit -- --run",
+		"knip": "knip"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.1",
@@ -31,6 +32,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^2.46.1",
 		"globals": "^15.15.0",
+		"knip": "^5.80.0",
 		"marked": "^15.0.12",
 		"playwright": "^1.57.0",
 		"prettier": "^3.7.4",

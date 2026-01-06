@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 // ImageFormat
 export type ImageFormat = z.infer<typeof ImageFormatSchema>;
-export const ImageFormatSchema = z.object({
+const ImageFormatSchema = z.object({
 	name: z.string(),
 	hash: z.string(),
 	ext: z.string(),
@@ -17,7 +17,7 @@ export const ImageFormatSchema = z.object({
 
 // Formats
 export type Formats = z.infer<typeof FormatsSchema>;
-export const FormatsSchema = z.object({
+const FormatsSchema = z.object({
 	thumbnail: ImageFormatSchema.optional(),
 	medium: ImageFormatSchema.optional(),
 	large: ImageFormatSchema.optional(),
@@ -26,7 +26,7 @@ export const FormatsSchema = z.object({
 
 // Thumbnail
 export type Thumbnail = z.infer<typeof ThumbnailSchema>;
-export const ThumbnailSchema = z.object({
+const ThumbnailSchema = z.object({
 	id: z.number(),
 	documentId: z.string(),
 	name: z.string(),
@@ -38,13 +38,13 @@ export const ThumbnailSchema = z.object({
 
 // Icon
 export type Icon = z.infer<typeof IconSchema>;
-export const IconSchema = z.object({
+const IconSchema = z.object({
 	iconIdentifier: z.string()
 });
 
 // Tech
 export type Tech = z.infer<typeof TechSchema>;
-export const TechSchema = z.object({
+const TechSchema = z.object({
 	techLabel: z.string(),
 	iconIdentifier: z.string().optional()
 });

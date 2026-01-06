@@ -86,8 +86,4 @@ export const tech = {
 	}
 } as const;
 
-export function getTech(key: string): TechItem | undefined {
-	return tech[key as TechKey];
-}
-
 type TechKey = keyof typeof tech;

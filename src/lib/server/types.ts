@@ -49,6 +49,12 @@ const TechSchema = z.object({
 	iconIdentifier: z.string().optional()
 });
 
+export type Tag = z.infer<typeof TagSchema>;
+export const TagSchema = z.object({
+	id: z.number(),
+	value: z.string()
+});
+
 // Blog
 export type Blog = z.infer<typeof BlogSchema>;
 export const BlogSchema = z.object({
@@ -58,7 +64,7 @@ export const BlogSchema = z.object({
 	description: z.string(),
 	content: z.string().optional(),
 	released: z.string(),
-	tags: z.array(z.string()),
+	tags: z.array(TagSchema).optional(),
 	slug: z.string()
 });
 

@@ -25,16 +25,21 @@
 								})}
 							</p>
 							<p>|</p>
-							<p>{b.tags.join(' • ').toLowerCase()}</p>
+							<p>
+								{b.tags
+									?.map((tag) => tag.value)
+									.join(' • ')
+									.toLowerCase()}
+							</p>
 						</div>
 
 						<div
-							class="mt-2 text-2xl font-semibold transition-all ease-in-out group-hover:pl-1.5"
+							class="mt-0.5 text-2xl font-semibold transition-all ease-in-out group-hover:pl-1.5"
 							style:view-transition-name="heading-blog-{b.slug}"
 						>
 							{b.title}
 						</div>
-						<p class="mt-2 leading-7 text-white/80">{b.description}</p>
+						<p class="mt-1.5 leading-7 text-white/80">{b.description}</p>
 					</a>
 				{/each}
 			</div>

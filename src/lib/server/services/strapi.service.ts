@@ -9,9 +9,10 @@ const blogSelectFields = [
 	'title',
 	'slug',
 	'description',
-	'released',
-	'tags'
+	'released'
 ] as const satisfies readonly (keyof Blog)[];
+
+const blogPopulateFields = ['tags'] as const satisfies readonly (keyof Blog)[];
 
 const projectSelectFields = [
 	'id',
@@ -106,7 +107,10 @@ export async function fetchBlogs(): Promise<Blog[]> {
 
 		console.log('No cached data (blogs) - Fetching from Strapi...');
 
-		const strapiUrl = buildStrapiUrl('blogs').fields(blogSelectFields).build();
+		const strapiUrl = buildStrapiUrl('blogs')
+			.fields(blogSelectFields)
+			.populate(blogPopulateFields)
+			.build();
 		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {
@@ -144,7 +148,10 @@ export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
 		}
 
 		console.log(`No cached data (blog-slug: ${slug}) - Fetching from Strapi...`);
-		const strapiUrl = buildStrapiUrl('blogs').filter('slug', '$eq', slug).build();
+		const strapiUrl = buildStrapiUrl('blogs')
+			.filter('slug', '$eq', slug)
+			.populate(blogPopulateFields)
+			.build();
 		const res = await fetch(strapiUrl);
 
 		if (!res.ok) {

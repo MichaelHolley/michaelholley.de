@@ -74,6 +74,45 @@ describe('buildStrapiUrl', () => {
 		});
 	});
 
+	describe('populateAll method', () => {
+		it('should add populate=* to the URL', () => {
+			const url = buildStrapiUrl('blogs').populateAll().build();
+			expect(url).toBe('https://api.example.com/blogs?populate=*');
+		});
+
+		it('should work with fields method', () => {
+			const url = buildStrapiUrl('blogs').fields(['title', 'slug']).populateAll().build();
+			expect(url).toBe('https://api.example.com/blogs?fields[0]=title&fields[1]=slug&populate=*');
+		});
+
+		it('should work with filter method', () => {
+			const url = buildStrapiUrl('blogs').populateAll().filter('published', '$eq', true).build();
+			expect(url).toBe('https://api.example.com/blogs?populate=*&filters[published][$eq]=true');
+		});
+
+		it('should override previous populate() call', () => {
+			const url = buildStrapiUrl('blogs').populate(['author', 'thumbnail']).populateAll().build();
+			expect(url).toBe('https://api.example.com/blogs?populate=*');
+		});
+
+		it('should be overridden by subsequent populate() call', () => {
+			const url = buildStrapiUrl('blogs').populateAll().populate(['author', 'thumbnail']).build();
+			expect(url).toBe('https://api.example.com/blogs?populate[0]=author&populate[1]=thumbnail');
+		});
+
+		it('should work in complex chaining scenarios', () => {
+			const url = buildStrapiUrl('projects')
+				.fields(['title', 'slug', 'description'])
+				.populateAll()
+				.filter('published', '$eq', true)
+				.filter('featured', '$eq', true)
+				.build();
+			expect(url).toBe(
+				'https://api.example.com/projects?fields[0]=title&fields[1]=slug&fields[2]=description&populate=*&filters[published][$eq]=true&filters[featured][$eq]=true'
+			);
+		});
+	});
+
 	describe('filter method', () => {
 		it('should add a filter with string value', () => {
 			const url = buildStrapiUrl('blogs').filter('slug', '$eq', 'my-blog-post').build();
@@ -212,6 +251,17 @@ describe('buildStrapiUrl', () => {
 				.build();
 			expect(url).toBe(
 				'https://api.example.com/projects?fields[0]=title&fields[1]=slug&fields[2]=shortDescription&populate[0]=thumbnail&populate[1]=techStack'
+			);
+		});
+
+		it('should build URL with populateAll for fetching complete data', () => {
+			const url = buildStrapiUrl('blogs')
+				.fields(['title', 'slug', 'content'])
+				.populateAll()
+				.filter('slug', '$eq', 'my-post')
+				.build();
+			expect(url).toBe(
+				'https://api.example.com/blogs?fields[0]=title&fields[1]=slug&fields[2]=content&populate=*&filters[slug][$eq]=my-post'
 			);
 		});
 	});

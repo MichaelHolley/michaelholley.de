@@ -46,7 +46,7 @@ const IconSchema = z.object({
 export type Tech = z.infer<typeof TechSchema>;
 const TechSchema = z.object({
 	techLabel: z.string(),
-	iconIdentifier: z.string().optional()
+	icon: IconSchema.optional()
 });
 
 export type Tag = z.infer<typeof TagSchema>;

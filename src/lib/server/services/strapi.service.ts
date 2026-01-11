@@ -25,11 +25,7 @@ const projectSelectFields = [
 	'highlight'
 ] as const satisfies readonly (keyof Project)[];
 
-const projectPopulateFields = [
-	'thumbnail',
-	'projectIcon',
-	'tech'
-] as const satisfies readonly (keyof Project)[];
+const projectPopulateFields: string[] = ['thumbnail', 'projectIcon', 'tech.icon'];
 
 /**
  * Gets the base URL for Strapi (without /api suffix)

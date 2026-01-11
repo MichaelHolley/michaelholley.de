@@ -14,6 +14,7 @@ class StrapiUrlBuilder {
 	private fieldParams: string[] = [];
 	private populateParams: string[] = [];
 	private filterParams: string[] = [];
+	private populateAllFlag = false;
 
 	constructor(endpoint: string) {
 		this.endpoint = endpoint;
@@ -34,6 +35,16 @@ class StrapiUrlBuilder {
 	 */
 	populate(relations: readonly string[] | string[]): this {
 		this.populateParams = relations.map((field, index) => `populate[${index}]=${field}`);
+		this.populateAllFlag = false;
+		return this;
+	}
+
+	/**
+	 * Populate all relations using populate=*
+	 */
+	populateAll(): this {
+		this.populateAllFlag = true;
+		this.populateParams = [];
 		return this;
 	}
 
@@ -54,7 +65,8 @@ class StrapiUrlBuilder {
 	 */
 	build(): string {
 		const baseUrl = env.STRAPI_URL;
-		const allParams = [...this.fieldParams, ...this.populateParams, ...this.filterParams];
+		const populateParam = this.populateAllFlag ? ['populate=*'] : this.populateParams;
+		const allParams = [...this.fieldParams, ...populateParam, ...this.filterParams];
 		const queryString = allParams.length > 0 ? `?${allParams.join('&')}` : '';
 		return `${baseUrl}/${this.endpoint}${queryString}`;
 	}
@@ -68,6 +80,11 @@ class StrapiUrlBuilder {
  * const url = buildStrapiUrl('projects')
  *   .fields(['title', 'slug'])
  *   .populate(['thumbnail', 'tech'])
+ *   .build();
+ * @example
+ * // Populate all relations
+ * const url = buildStrapiUrl('projects')
+ *   .populateAll()
  *   .build();
  */
 export function buildStrapiUrl(endpoint: string): StrapiUrlBuilder {

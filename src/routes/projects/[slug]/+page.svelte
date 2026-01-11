@@ -63,8 +63,8 @@
 							'group flex flex-row items-center gap-1.5 text-neutral-600 dark:text-neutral-400'
 						)}
 					>
-						{#if !!t.iconIdentifier}
-							<Icon icon={t.iconIdentifier} class="size-4 text-neutral-400" />
+						{#if !!t.icon?.iconIdentifier}
+							<Icon icon={t.icon.iconIdentifier} class="size-4 text-neutral-400" />
 						{/if}
 						<span
 							class="text-sm transition-all duration-300 group-hover:text-black group-hover:dark:text-neutral-100"

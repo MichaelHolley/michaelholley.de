@@ -9,6 +9,13 @@
 	const serifFont = serifStore;
 </script>
 
+<svelte:head>
+	<title>{data.blog?.title}</title>
+	<meta property="og:title" content={data.blog?.title} />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://michaelholley.de/blogs/{data.blog?.slug}" />
+</svelte:head>
+
 <ContentPageComponent>
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}

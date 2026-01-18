@@ -1,6 +1,8 @@
 import { fetchBlogBySlug } from '$lib/server/services/strapi.service';
 import { marked } from 'marked';
 
+export const ssr = true;
+
 export const load = async ({ params }: { params: { slug: string } }) => {
 	const blog = await fetchBlogBySlug(params.slug);
 

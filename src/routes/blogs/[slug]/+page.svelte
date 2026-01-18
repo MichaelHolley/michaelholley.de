@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
 
@@ -11,8 +10,10 @@
 
 <svelte:head>
 	<title>{data.blog?.title}</title>
+	<meta name="description" content={data.blog?.description} />
 	<meta property="og:title" content={data.blog?.title} />
 	<meta property="og:type" content="article" />
+	<meta property="og:description" content={data.blog?.description} />
 	<meta property="og:url" content="https://michaelholley.de/blogs/{data.blog?.slug}" />
 </svelte:head>
 
@@ -33,7 +34,7 @@
 						serifFont.current && 'font-serif'
 					)}
 				>
-					<MarkdownComponent content={data.blog.content!} />
+					{@html data.blog.content}
 					<p class="pt-10 text-center text-xs">
 						This article was written by a human author and reviewed using AI tools for language
 						accuracy and translation consistency.

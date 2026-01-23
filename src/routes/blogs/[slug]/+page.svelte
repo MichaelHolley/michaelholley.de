@@ -34,7 +34,9 @@
 						serifFont.current && 'font-serif'
 					)}
 				>
+					<!-- eslint-disable svelte/no-at-html-tags -->
 					{@html data.blog.content}
+					<!-- eslint-enable svelte/no-at-html-tags -->
 					<p class="pt-10 text-center text-xs">
 						This article was written by a human author and reviewed using AI tools for language
 						accuracy and translation consistency.

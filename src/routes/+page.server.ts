@@ -7,12 +7,16 @@ import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	const [blogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
+
+	const sortedBlogs = blogs.sort(
+		(a, b) => new Date(b.released).getTime() - new Date(a.released).getTime()
+	);
 	const sortedProjects = projects.sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0));
 
 	return {
 		projects: sortedProjects,
 		tech,
-		blogs
+		blogs: sortedBlogs
 	};
 };
 

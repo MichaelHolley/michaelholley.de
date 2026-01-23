@@ -1,7 +1,9 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
+	import { formatDisplayDate } from '$lib/components/shared/formatDisplayDate.js';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
+	import { da } from 'zod/locales';
 
 	const { data } = $props();
 
@@ -21,6 +23,21 @@
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}
 			<div>
+				<div
+					class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40"
+					style:view-transition-name="blog-{data.blog.id}-info"
+				>
+					<p>
+						{formatDisplayDate(data.blog.released)}
+					</p>
+					<p>|</p>
+					<p>
+						{data.blog.tags
+							?.map((tag) => tag.value)
+							.join(' • ')
+							.toLowerCase()}
+					</p>
+				</div>
 				<h1
 					class="mb-8 text-4xl font-extrabold tracking-tight break-all"
 					style:view-transition-name="heading-blog-{data.blog.slug}"

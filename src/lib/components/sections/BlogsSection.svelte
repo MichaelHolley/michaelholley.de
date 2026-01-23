@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import type { Blog } from '$lib/server/types';
+	import { formatDisplayDate } from '../shared/formatDisplayDate';
 
 	const { blogs }: { blogs: Blog[] } = $props();
 </script>
@@ -16,13 +17,12 @@
 						class="group min-h-16 max-w-152 py-1"
 						data-sveltekit-preload-data="tap"
 					>
-						<div class="flex flex-row justify-start gap-3 text-sm text-white/50">
+						<div
+							class="flex flex-row justify-start gap-3 text-sm text-white/40"
+							style:view-transition-name="blog-{b.id}-info"
+						>
 							<p>
-								{new Date(b.released).toLocaleDateString(undefined, {
-									month: 'short',
-									day: 'numeric',
-									year: 'numeric'
-								})}
+								{formatDisplayDate(b.released)}
 							</p>
 							<p>|</p>
 							<p>
@@ -39,7 +39,7 @@
 						>
 							{b.title}
 						</div>
-						<p class="mt-1.5 leading-7 text-white/80">{b.description}</p>
+						<p class="mt-1.5 leading-7 text-white/70">{b.description}</p>
 					</a>
 				{/each}
 			</div>

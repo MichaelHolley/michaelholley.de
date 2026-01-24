@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { afterNavigate } from '$app/navigation';
 	import { serifStore } from '$lib/stores/serifFontStore';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 	import { ScrollState } from 'runed';
 	import { type Snippet } from 'svelte';
-	import { browser } from '$app/environment';
 
 	const {
 		children,
@@ -14,6 +15,7 @@
 		centeredContent?: boolean;
 	} = $props();
 
+	let hasInternalHistory = $state(false);
 	const serifFont = serifStore;
 
 	let el = $state<Window | undefined>();
@@ -33,20 +35,29 @@
 		'text-neutral-400 hover:text-neutral-500 transition-all',
 		'dark:text-neutral-600 hover:dark:text-neutral-500'
 	);
+
+	afterNavigate(({ from }) => {
+		if (from) {
+			hasInternalHistory = true;
+		}
+	});
+
+	function handleBack(e: MouseEvent) {
+		if (hasInternalHistory) {
+			e.preventDefault();
+			history.back();
+		}
+	}
 </script>
 
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
 	<div class="container min-h-screen py-10">
 		<div>
 			<div class="flex flex-row justify-between">
-				<button
-					type="button"
-					onclick={() => history.back()}
-					class=" flex flex-row items-center gap-1 hover:cursor-pointer"
-				>
+				<a href="/" onclick={handleBack} class=" flex flex-row items-center gap-1">
 					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
 					Zurück
-				</button>
+				</a>
 				<button
 					class={cn(
 						'size-8 rounded-sm border transition-all hover:cursor-pointer',

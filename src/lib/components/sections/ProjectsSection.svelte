@@ -3,16 +3,9 @@
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import type { Project } from '$lib/server/types';
 	import { cn } from '$lib/utils';
+	import { getThumbnailImageUrl } from '../shared/getThumbnailImageUrl';
 
 	const { projects }: { projects: Project[] } = $props();
-
-	const thumbnailUrl = (project: Project): string | undefined => {
-		if (project.thumbnail?.formats?.small) {
-			return project.thumbnail.formats.small.url;
-		}
-
-		return project.thumbnail?.url;
-	};
 </script>
 
 <section id="projects" class="bg-black text-white">
@@ -29,7 +22,7 @@
 						href="/projects/{p.slug}"
 						cta={'Mehr'}
 						class={cn('col-span-1', p.highlight && 'lg:col-span-2')}
-						backgroundImgUrl={thumbnailUrl(p)}
+						backgroundImgUrl={getThumbnailImageUrl(p.teaserImage)}
 						viewTransitionHeadingName={'heading-project-' + p.slug}
 					/>
 				{/each}

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import { formatDisplayDate } from '$lib/components/shared/formatDisplayDate.js';
+	import { getThumbnailImageUrl } from '$lib/components/shared/getThumbnailImageUrl';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
-	import { da } from 'zod/locales';
 
 	const { data } = $props();
 
@@ -51,6 +51,9 @@
 						serifFont.current && 'font-serif'
 					)}
 				>
+					{#if data.blog.teaserImage}
+						<img src={data.blog.teaserImage?.url} alt={data.blog.title} class="w-full" />
+					{/if}
 					<!-- eslint-disable svelte/no-at-html-tags -->
 					{@html data.blog.content}
 					<!-- eslint-enable svelte/no-at-html-tags -->

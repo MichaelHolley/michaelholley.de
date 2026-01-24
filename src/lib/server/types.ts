@@ -24,9 +24,9 @@ const FormatsSchema = z.object({
 	small: ImageFormatSchema.optional()
 });
 
-// Thumbnail
-export type Thumbnail = z.infer<typeof ThumbnailSchema>;
-const ThumbnailSchema = z.object({
+// Image
+export type Image = z.infer<typeof ImageSchema>;
+const ImageSchema = z.object({
 	id: z.number(),
 	documentId: z.string(),
 	name: z.string(),
@@ -65,7 +65,8 @@ export const BlogSchema = z.object({
 	content: z.string().optional(),
 	released: z.string(),
 	tags: z.array(TagSchema).optional(),
-	slug: z.string()
+	slug: z.string(),
+	teaserImage: ImageSchema.optional()
 });
 
 // Project
@@ -79,7 +80,7 @@ export const ProjectSchema = z.object({
 	content: z.string().optional(),
 	url: z.string().optional(),
 	github_ref: z.string().optional(),
-	thumbnail: ThumbnailSchema.optional(),
+	teaserImage: ImageSchema.optional(),
 	highlight: z.boolean().optional(),
 	projectIcon: IconSchema.optional(),
 	tech: z.array(TechSchema).optional()

@@ -5,7 +5,7 @@ import { env } from '$env/dynamic/private';
  * @example
  * const url = buildStrapiUrl('blogs')
  *   .fields(['title', 'slug', 'description'])
- *   .populate(['author', 'thumbnail'])
+ *   .populate(['author', 'teaserImage'])
  *   .filter('slug', '$eq', 'my-blog-post')
  *   .build();
  */
@@ -79,7 +79,7 @@ class StrapiUrlBuilder {
  * @example
  * const url = buildStrapiUrl('projects')
  *   .fields(['title', 'slug'])
- *   .populate(['thumbnail', 'tech'])
+ *   .populate(['teaserImage', 'tech'])
  *   .build();
  * @example
  * // Populate all relations

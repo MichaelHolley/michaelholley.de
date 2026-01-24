@@ -1,6 +1,6 @@
 import { env } from '$env/dynamic/private';
 import { cache } from '$lib/server/cache';
-import type { Blog, ImageFormat, Project, Thumbnail } from '$lib/server/types';
+import type { Blog, ImageFormat, Project, Image } from '$lib/server/types';
 import { buildStrapiUrl } from '$lib/server/services/util/strapi-url-builder';
 
 const blogSelectFields = [
@@ -12,7 +12,7 @@ const blogSelectFields = [
 	'released'
 ] as const satisfies readonly (keyof Blog)[];
 
-const blogPopulateFields = ['tags'] as const satisfies readonly (keyof Blog)[];
+const blogPopulateFields = ['tags', 'teaserImage'] as const satisfies readonly (keyof Blog)[];
 
 const projectSelectFields = [
 	'id',
@@ -25,7 +25,7 @@ const projectSelectFields = [
 	'highlight'
 ] as const satisfies readonly (keyof Project)[];
 
-const projectPopulateFields: string[] = ['thumbnail', 'projectIcon', 'tech.icon'];
+const projectPopulateFields: string[] = ['teaserImage', 'projectIcon', 'tech.icon'];
 
 /**
  * Gets the base URL for Strapi (without /api suffix)
@@ -49,42 +49,43 @@ function normalizeImageUrl(image: ImageFormat, baseUrl: string): ImageFormat {
 }
 
 /**
- * Normalizes all URLs in a thumbnail object to be absolute
- * @param thumbnail - Thumbnail object from Strapi
- * @returns Thumbnail with absolute URLs
+ * Normalizes all URLs in a teaserImage object to be absolute
+ * @param teaserImage - TeaserImage object from Strapi
+ * @returns TeaserImage with absolute URLs
  */
-function normalizeThumbnail(thumbnail: Thumbnail): Thumbnail {
+function normalizeImage(image: Image): Image {
 	const baseUrl = getStrapiBaseUrl();
 
 	return {
-		...thumbnail,
-		url: thumbnail.url.startsWith('http') ? thumbnail.url : `${baseUrl}${thumbnail.url}`,
+		...image,
+		url: image.url.startsWith('http') ? image.url : `${baseUrl}${image.url}`,
 		formats: {
-			thumbnail: thumbnail.formats?.thumbnail
-				? normalizeImageUrl(thumbnail.formats.thumbnail, baseUrl)
+			thumbnail: image.formats?.thumbnail
+				? normalizeImageUrl(image.formats.thumbnail, baseUrl)
 				: undefined,
-			medium: thumbnail.formats?.medium
-				? normalizeImageUrl(thumbnail.formats.medium, baseUrl)
-				: undefined,
-			large: thumbnail.formats?.large
-				? normalizeImageUrl(thumbnail.formats.large, baseUrl)
-				: undefined,
-			small: thumbnail.formats?.small
-				? normalizeImageUrl(thumbnail.formats.small, baseUrl)
-				: undefined
+			medium: image.formats?.medium ? normalizeImageUrl(image.formats.medium, baseUrl) : undefined,
+			large: image.formats?.large ? normalizeImageUrl(image.formats.large, baseUrl) : undefined,
+			small: image.formats?.small ? normalizeImageUrl(image.formats.small, baseUrl) : undefined
 		}
 	};
 }
 
 /**
- * Normalizes a project's thumbnail URLs to be absolute
+ * Normalizes a project's teaserImage URLs to be absolute
  * @param project - Project object from Strapi
- * @returns Project with absolute thumbnail URLs
+ * @returns Project with absolute teaserImage URLs
  */
 function normalizeProject(project: Project): Project {
 	return {
 		...project,
-		thumbnail: project.thumbnail ? normalizeThumbnail(project.thumbnail) : undefined
+		teaserImage: project.teaserImage ? normalizeImage(project.teaserImage) : undefined
+	};
+}
+
+function normalizeBlog(blog: Blog): Blog {
+	return {
+		...blog,
+		teaserImage: blog.teaserImage ? normalizeImage(blog.teaserImage) : undefined
 	};
 }
 
@@ -116,10 +117,11 @@ export async function fetchBlogs(): Promise<Blog[]> {
 		}
 
 		const filterResult = (await res.json()) as { data: Blog[] };
+		const normalizedBlogs = filterResult.data.map(normalizeBlog);
 
-		cache.set('blogs', filterResult.data);
+		cache.set('blogs', normalizedBlogs);
 
-		return filterResult.data;
+		return normalizedBlogs;
 	} catch (e) {
 		console.error('Error fetching blogs:', e);
 
@@ -163,10 +165,11 @@ export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
 		}
 
 		const blog = filterResult[0] as Blog;
+		const normalizedBlog = normalizeBlog(blog);
 
-		cache.set(`blog-${slug}`, blog);
+		cache.set(`blog-${slug}`, normalizedBlog);
 
-		return blog;
+		return normalizedBlog;
 	} catch (e) {
 		console.error('Error fetching blog:', e);
 
@@ -252,7 +255,6 @@ export async function fetchProjectBySlug(slug: string): Promise<Project | null> 
 		}
 
 		const project = filterResult[0] as Project;
-
 		const normalizedProject = normalizeProject(project);
 
 		cache.set(`project-${slug}`, normalizedProject);

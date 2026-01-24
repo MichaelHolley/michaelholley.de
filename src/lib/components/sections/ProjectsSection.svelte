@@ -3,7 +3,7 @@
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import type { Project } from '$lib/server/types';
 	import { cn } from '$lib/utils';
-	import { getThumbnailImageUrl } from '../shared/getThumbnailImageUrl';
+	import { getThumbnailImageUrl } from '../shared/util/getThumbnailImageUrl';
 
 	const { projects }: { projects: Project[] } = $props();
 </script>

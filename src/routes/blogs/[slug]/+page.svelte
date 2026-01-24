@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import { formatDisplayDate } from '$lib/components/shared/formatDisplayDate.js';
-	import { getThumbnailImageUrl } from '$lib/components/shared/getThumbnailImageUrl';
+	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
 
@@ -23,10 +22,7 @@
 	<div class="my-8 flex flex-row justify-center">
 		{#if data.blog}
 			<div>
-				<div
-					class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40"
-					style:view-transition-name="blog-{data.blog.id}-info"
-				>
+				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40">
 					<p>
 						{formatDisplayDate(data.blog.released)}
 					</p>
@@ -38,25 +34,28 @@
 							.toLowerCase()}
 					</p>
 				</div>
-				<h1
-					class="mb-8 text-4xl font-extrabold tracking-tight break-all"
-					style:view-transition-name="heading-blog-{data.blog.slug}"
-				>
+				<h1 class="mb-8 text-4xl font-extrabold tracking-tight break-all">
 					{data.blog.title}
 				</h1>
 				<article
 					class={cn(
 						'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
-						'motion-preset-slide-up-sm motion-delay-50 motion-duration-500',
 						serifFont.current && 'font-serif'
 					)}
 				>
 					{#if data.blog.teaserImage}
-						<img src={data.blog.teaserImage?.url} alt={data.blog.title} class="w-full" />
+						<img
+							src={data.blog.teaserImage?.url}
+							alt={data.blog.title}
+							class="w-full"
+							style:view-transition-name={`blog-image-${data.blog.id}`}
+						/>
 					{/if}
-					<!-- eslint-disable svelte/no-at-html-tags -->
-					{@html data.blog.content}
-					<!-- eslint-enable svelte/no-at-html-tags -->
+					<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
+						<!-- eslint-disable svelte/no-at-html-tags -->
+						{@html data.blog.content}
+						<!-- eslint-enable svelte/no-at-html-tags -->
+					</div>
 					<p class="pt-10 text-center text-xs">
 						This article was written by a human author and reviewed using AI tools for language
 						accuracy and translation consistency.

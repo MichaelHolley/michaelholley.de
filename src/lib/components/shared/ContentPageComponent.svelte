@@ -33,20 +33,23 @@
 		'text-neutral-400 hover:text-neutral-500 transition-all',
 		'dark:text-neutral-600 hover:dark:text-neutral-500'
 	);
+
+	function handleBack(e: MouseEvent) {
+		if (browser && document.referrer.startsWith(window.location.origin)) {
+			e.preventDefault();
+			history.back();
+		}
+	}
 </script>
 
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
 	<div class="container min-h-screen py-10">
 		<div>
 			<div class="flex flex-row justify-between">
-				<button
-					type="button"
-					onclick={() => history.back()}
-					class=" flex flex-row items-center gap-1 hover:cursor-pointer"
-				>
+				<a href="/" onclick={handleBack} class=" flex flex-row items-center gap-1">
 					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
 					Zurück
-				</button>
+				</a>
 				<button
 					class={cn(
 						'size-8 rounded-sm border transition-all hover:cursor-pointer',

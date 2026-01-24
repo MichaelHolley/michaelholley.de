@@ -10,8 +10,8 @@
 
 	let htmlContent = $state();
 
-	onMount(() => {
-		htmlContent = marked(content);
+	onMount(async () => {
+		htmlContent = await marked(content);
 	});
 </script>
 

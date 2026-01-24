@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { afterNavigate } from '$app/navigation';
 	import { serifStore } from '$lib/stores/serifFontStore';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 	import { ScrollState } from 'runed';
 	import { type Snippet } from 'svelte';
-	import { browser } from '$app/environment';
 
 	const {
 		children,
@@ -14,6 +15,7 @@
 		centeredContent?: boolean;
 	} = $props();
 
+	let hasInternalHistory = $state(false);
 	const serifFont = serifStore;
 
 	let el = $state<Window | undefined>();
@@ -34,8 +36,14 @@
 		'dark:text-neutral-600 hover:dark:text-neutral-500'
 	);
 
+	afterNavigate(({ from }) => {
+		if (from) {
+			hasInternalHistory = true;
+		}
+	});
+
 	function handleBack(e: MouseEvent) {
-		if (browser && document.referrer.startsWith(window.location.origin)) {
+		if (hasInternalHistory) {
 			e.preventDefault();
 			history.back();
 		}

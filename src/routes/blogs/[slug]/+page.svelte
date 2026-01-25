@@ -21,7 +21,7 @@
 
 <ContentPageComponent>
 	{#if data.blog}
-		<div>
+		<div class="mt-4">
 			<article
 				class={cn(
 					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto',

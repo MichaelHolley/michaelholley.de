@@ -73,11 +73,7 @@
 				>
 			</div>
 
-			<div class="flex flex-row justify-center">
-				<div class={centeredContent ? 'max-w-5xl' : ''}>
-					{@render children()}
-				</div>
-			</div>
+			{@render children()}
 		</div>
 
 		{#if scroll.y > 90}

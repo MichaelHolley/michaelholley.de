@@ -30,7 +30,7 @@
 				)}
 			>
 				<div
-					class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40"
+					class="flex flex-row justify-center gap-3 text-sm text-white/40"
 					style:view-transition-name="blog-{data.blog.id}-info"
 				>
 					<p>
@@ -45,7 +45,7 @@
 					</p>
 				</div>
 				<h1
-					class="mb-8 text-4xl font-extrabold tracking-tight break-all"
+					class="text-center text-4xl font-extrabold tracking-tight"
 					style:view-transition-name="heading-blog-{data.blog.slug}"
 				>
 					{data.blog.title}

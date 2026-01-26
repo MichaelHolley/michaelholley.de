@@ -25,14 +25,10 @@
 			<article
 				class={cn(
 					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto',
-					'motion-preset-slide-up-sm motion-delay-50 motion-duration-500',
 					serifFont.current && 'font-serif'
 				)}
 			>
-				<div
-					class="flex flex-row justify-center gap-3 text-sm text-white/40"
-					style:view-transition-name="blog-{data.blog.id}-info"
-				>
+				<div class="flex flex-row justify-center gap-3 text-sm text-white/40">
 					<p>
 						{formatDisplayDate(data.blog.released)}
 					</p>
@@ -44,18 +40,17 @@
 							.toLowerCase()}
 					</p>
 				</div>
-				<h1
-					class="text-center text-4xl font-extrabold tracking-tight"
-					style:view-transition-name="heading-blog-{data.blog.slug}"
-				>
+				<h1 class="text-center text-4xl font-extrabold tracking-tight">
 					{data.blog.title}
 				</h1>
 				{#if data.blog.teaserImage}
 					<img src={data.blog.teaserImage?.url} alt={data.blog.title} class="w-full" />
 				{/if}
-				<!-- eslint-disable svelte/no-at-html-tags -->
-				{@html data.blog.content}
-				<!-- eslint-enable svelte/no-at-html-tags -->
+				<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
+					<!-- eslint-disable svelte/no-at-html-tags -->
+					{@html data.blog.content}
+					<!-- eslint-enable svelte/no-at-html-tags -->
+				</div>
 				<p class="pt-10 text-center text-xs">
 					This article was written by a human author and reviewed using AI tools for language
 					accuracy and translation consistency.

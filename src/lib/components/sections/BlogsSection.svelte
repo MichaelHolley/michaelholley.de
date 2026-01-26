@@ -17,10 +17,7 @@
 						class="group min-h-16 max-w-152 py-1"
 						data-sveltekit-preload-data="tap"
 					>
-						<div
-							class="flex flex-row justify-start gap-3 text-sm text-white/40"
-							style:view-transition-name="blog-{b.id}-info"
-						>
+						<div class="flex flex-row justify-start gap-3 text-sm text-white/40">
 							<p>
 								{formatDisplayDate(b.released)}
 							</p>
@@ -35,7 +32,6 @@
 
 						<div
 							class="mt-0.5 text-2xl font-semibold transition-all ease-in-out group-hover:pl-1.5"
-							style:view-transition-name="heading-blog-{b.slug}"
 						>
 							{b.title}
 						</div>

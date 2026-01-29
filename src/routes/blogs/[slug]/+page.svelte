@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getBlobBySlug } from '$lib/api/blogs.remote';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
+	import TagComponent from '$lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
@@ -25,16 +26,14 @@
 		<div class="my-8 flex flex-row justify-center">
 			<div>
 				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40">
-					<p>
+					<div>
 						{formatDisplayDate(blog.released)}
-					</p>
-					<p>|</p>
-					<p>
-						{blog.tags
-							?.map((tag) => tag.value)
-							.join(' • ')
-							.toLowerCase()}
-					</p>
+					</div>
+					<div class="mt-1 flex flex-row gap-1">
+						{#each blog.tags as tag (tag.id)}
+							<TagComponent value={tag.value} />
+						{/each}
+					</div>
 				</div>
 				<h1 class="mb-8 text-4xl font-extrabold tracking-tight break-all">
 					{blog.title}

@@ -14,7 +14,7 @@
 			<SectionHeader title="blog" class="pb-8 text-center" />
 			<div class="flex flex-row justify-center">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-					{#each blogs as b}
+					{#each blogs as b (b.id)}
 						<a
 							href="/blogs/{b.slug}"
 							class="group min-h-16 max-w-72 bg-white text-black transition-all hover:scale-102"
@@ -29,12 +29,12 @@
 								/>
 							</div>
 							<div class="p-4">
-								<div class="text-black/50">
-									<p class="text-xs">
+								<div>
+									<p class="text-xs text-neutral-400">
 										{formatDisplayDate(b.released)}
 									</p>
-									<div class="mt-0.5">
-										{#each b.tags as tag}
+									<div class="mt-1 flex flex-row gap-1.5">
+										{#each b.tags as tag (tag.id)}
 											<TagComponent value={tag.value} />
 										{/each}
 									</div>

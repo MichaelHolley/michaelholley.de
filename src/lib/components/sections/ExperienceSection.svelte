@@ -42,7 +42,7 @@
 				</ul>
 			</Step>
 			<Step
-				period="Jan. 22 - Apr. 2023"
+				period="Jan. 2022 - Apr. 2023"
 				title="Junior Software Entwickler"
 				workplace="AraCom IT Services GmbH"
 			>

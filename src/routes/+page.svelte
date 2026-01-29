@@ -4,16 +4,26 @@
 	import Experience from '$lib/components/sections/ExperienceSection.svelte';
 	import Header from '$lib/components/sections/HeaderSection.svelte';
 	import Projects from '$lib/components/sections/ProjectsSection.svelte';
-
-	const { data } = $props();
 </script>
 
+<svelte:head>
+	<title>Michael Holley</title>
+	<meta
+		name="description"
+		content="FullStack Developer mit Leidenschaft für innovative Weblösungen. Schau rein!"
+	/>
+	<meta property="og:title" content="Michael Holley" />
+	<meta property="og:type" content="website" />
+	<meta
+		property="og:description"
+		content="FullStack Developer mit Leidenschaft für innovative Weblösungen. Schau rein!"
+	/>
+	<meta property="og:image" content="/MichaelHolleyBanner.webp" />
+	<meta property="og:url" content="https://michaelholley.de" />
+</svelte:head>
+
 <Header />
-<Dev tech={data.tech} />
+<Dev />
 <Experience />
-{#if data.projects.length}
-	<Projects projects={data.projects} />
-{/if}
-{#if data.blogs.length}
-	<Blogs blogs={data.blogs} />
-{/if}
+<Projects />
+<Blogs />

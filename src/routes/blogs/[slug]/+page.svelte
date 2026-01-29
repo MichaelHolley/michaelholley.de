@@ -1,41 +1,43 @@
 <script lang="ts">
+	import { getBlobBySlug } from '$lib/api/blogs.remote';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
 
-	const { data } = $props();
+	const { params } = $props();
+	const { blog } = await getBlobBySlug(params.slug);
 
 	const serifFont = serifStore;
 </script>
 
 <svelte:head>
-	<title>{data.blog?.title}</title>
-	<meta name="description" content={data.blog?.description} />
-	<meta property="og:title" content={data.blog?.title} />
+	<title>{blog?.title}</title>
+	<meta name="description" content={blog?.description} />
+	<meta property="og:title" content={blog?.title} />
 	<meta property="og:type" content="article" />
-	<meta property="og:description" content={data.blog?.description} />
-	<meta property="og:url" content="https://michaelholley.de/blogs/{data.blog?.slug}" />
+	<meta property="og:description" content={blog?.description} />
+	<meta property="og:url" content="https://michaelholley.de/blogs/{blog?.slug}" />
 </svelte:head>
 
 <ContentPageComponent>
-	<div class="my-8 flex flex-row justify-center">
-		{#if data.blog}
+	{#if blog}
+		<div class="my-8 flex flex-row justify-center">
 			<div>
 				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40">
 					<p>
-						{formatDisplayDate(data.blog.released)}
+						{formatDisplayDate(blog.released)}
 					</p>
 					<p>|</p>
 					<p>
-						{data.blog.tags
+						{blog.tags
 							?.map((tag) => tag.value)
 							.join(' • ')
 							.toLowerCase()}
 					</p>
 				</div>
 				<h1 class="mb-8 text-4xl font-extrabold tracking-tight break-all">
-					{data.blog.title}
+					{blog.title}
 				</h1>
 				<article
 					class={cn(
@@ -43,17 +45,17 @@
 						serifFont.current && 'font-serif'
 					)}
 				>
-					{#if data.blog.teaserImage}
+					{#if blog.teaserImage}
 						<img
-							src={data.blog.teaserImage?.url}
-							alt={data.blog.title}
+							src={blog.teaserImage?.url}
+							alt={blog.title}
 							class="w-full"
-							style:view-transition-name={`blog-image-${data.blog.id}`}
+							style:view-transition-name={`blog-image-${blog.id}`}
 						/>
 					{/if}
 					<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
 						<!-- eslint-disable svelte/no-at-html-tags -->
-						{@html data.blog.content}
+						{@html blog.content}
 						<!-- eslint-enable svelte/no-at-html-tags -->
 					</div>
 					<p class="pt-10 text-center text-xs">
@@ -62,8 +64,8 @@
 					</p>
 				</article>
 			</div>
-		{:else}
-			<p>Unable to load blog content.</p>
-		{/if}
-	</div>
+		</div>
+	{:else}
+		<p>Unable to load blog content.</p>
+	{/if}
 </ContentPageComponent>

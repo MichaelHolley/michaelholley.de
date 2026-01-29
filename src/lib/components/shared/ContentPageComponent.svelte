@@ -8,11 +8,9 @@
 	import { type Snippet } from 'svelte';
 
 	const {
-		children,
-		centeredContent
+		children
 	}: {
 		children: Snippet;
-		centeredContent?: boolean;
 	} = $props();
 
 	let hasInternalHistory = $state(false);
@@ -73,11 +71,7 @@
 				>
 			</div>
 
-			<div class="flex flex-row justify-center">
-				<div class={centeredContent ? 'max-w-5xl' : ''}>
-					{@render children()}
-				</div>
-			</div>
+			{@render children()}
 		</div>
 
 		{#if scroll.y > 90}

@@ -12,7 +12,7 @@
 			{#each tech as t (t.name)}
 				<Icon
 					icon={t.icon}
-					class={'size-5 opacity-70 saturate-0 transition-all duration-300 hover:rotate-8 hover:opacity-100 hover:saturate-100'}
+					class="size-5 opacity-70 saturate-0 transition-all duration-300 hover:rotate-8 hover:opacity-100 hover:saturate-100"
 				/>
 			{/each}
 		</div>

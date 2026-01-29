@@ -8,11 +8,9 @@
 	import { type Snippet } from 'svelte';
 
 	const {
-		children,
-		centeredContent
+		children
 	}: {
 		children: Snippet;
-		centeredContent?: boolean;
 	} = $props();
 
 	let hasInternalHistory = $state(false);

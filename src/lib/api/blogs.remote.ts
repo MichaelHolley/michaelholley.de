@@ -1,6 +1,6 @@
 import { query } from '$app/server';
 import { renderer } from '$lib/components/shared/util/markedRenderer';
-import { fetchBlogBySlug } from '$lib/server/services/strapi.service';
+import { fetchBlogBySlug, fetchBlogs } from '$lib/server/services/strapi.service';
 import { marked } from 'marked';
 import z from 'zod';
 
@@ -14,4 +14,13 @@ export const getBlobBySlug = query(z.string(), async (slug: string) => {
 	}
 
 	return { blog };
+});
+
+export const getBlogs = query(async () => {
+	const blogs = await fetchBlogs();
+	const sortedBlogs = blogs.sort(
+		(a, b) => new Date(b.released).getTime() - new Date(a.released).getTime()
+	);
+
+	return { blogs: sortedBlogs };
 });

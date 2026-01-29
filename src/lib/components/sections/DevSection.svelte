@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { getTech } from '$lib/api/common.remote';
 	import DevHeaderComponent from '$lib/components/dev/DevHeaderComponent.svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
-	import type { TechMap } from '$lib/tech-icons';
 
-	const { tech }: { tech: TechMap } = $props();
+	const tech = await getTech();
 </script>
 
 <section id="dev" class="relative">

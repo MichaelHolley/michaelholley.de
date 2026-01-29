@@ -1,12 +1,12 @@
 <script lang="ts">
+	import { getBlogs } from '$lib/api/blogs.remote';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
-	import type { Blog } from '$lib/server/types';
 	import { formatDisplayDate } from '../shared/formatDisplayDate';
 
-	const { blogs }: { blogs: Blog[] } = $props();
+	const { blogs } = await getBlogs();
 </script>
 
-{#if blogs.length}
+{#if blogs && blogs.length > 0}
 	<section id="blog" class="bg-tertiary text-white">
 		<div class="container py-8 md:py-16">
 			<SectionHeader title="blog" class="pb-8 text-center" />

@@ -5,10 +5,17 @@
 	"schedule": ["* 0-3 * * 5"],
 	"automerge": false,
 	"labels": ["renovate"],
+	"minimumReleaseAge": "3 days",
+	"rangeStrategy": "bump",
 	"packageRules": [
-		{
-			"matchUpdateTypes": ["major"],
-			"enabled": false
-		}
+	{
+	  "matchUpdateTypes": ["major"],
+	  "enabled": false
+	},
+	{
+	  "matchDepTypes": ["devDependencies"],
+	  "matchUpdateTypes": ["patch", "minor"],
+	  "groupName": "devDependencies (non-major)"
+	}
 	]
 }

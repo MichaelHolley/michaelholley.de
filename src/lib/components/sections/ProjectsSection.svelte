@@ -3,7 +3,7 @@
 	import BentoCardComponent from '$lib/components/shared/BentoCardComponent.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import { cn } from '$lib/utils';
-	import { getThumbnailImageUrl } from '../shared/getThumbnailImageUrl';
+	import { getThumbnailImageUrl } from '../shared/util/getThumbnailImageUrl';
 
 	const { projects } = await getProjects();
 </script>

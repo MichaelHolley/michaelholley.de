@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { getBlobBySlug } from '$lib/api/blogs.remote';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import { formatDisplayDate } from '$lib/components/shared/formatDisplayDate.js';
+	import TagComponent from '$lib/components/shared/TagComponent.svelte';
+	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
 
@@ -29,23 +30,29 @@
 					serifFont.current && 'font-serif'
 				)}
 			>
-				<div class="flex flex-row justify-center gap-3 text-sm text-white/40">
-					<p>
-						{formatDisplayDate(blog.released)}
-					</p>
-					<p>|</p>
-					<p>
-						{blog.tags
-							?.map((tag) => tag.value)
-							.join(' • ')
-							.toLowerCase()}
-					</p>
+				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
+					<div class="flex flex-row items-center">
+						<span class="mr-5">{formatDisplayDate(blog.released)}</span>
+						<div class="flex flex-row items-center gap-1.5">
+							{#each blog.tags as tag (tag.id)}
+								<TagComponent
+									value={tag.value}
+									class="dark:border-neutral-600 dark:text-neutral-400"
+								/>
+							{/each}
+						</div>
+					</div>
 				</div>
-				<h1 class="text-center text-4xl font-extrabold tracking-tight">
+				<h1 class="text-4xl font-extrabold tracking-tight">
 					{blog.title}
 				</h1>
 				{#if blog.teaserImage}
-					<img src={blog.teaserImage?.url} alt={blog.title} class="w-full" />
+					<img
+						src={blog.teaserImage?.url}
+						alt={blog.title}
+						class="w-full"
+						style:view-transition-name={`blog-image-${blog.id}`}
+					/>
 				{/if}
 				<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
 					<!-- eslint-disable svelte/no-at-html-tags -->

@@ -21,7 +21,7 @@
 			<span class="xs:block hidden text-neutral-300">&#x2022;</span>
 		</div>
 		<div>
-			<span class="xs:text-base flex text-right text-sm">{period}</span>
+			<span class="xs:text-base flex text-right text-sm text-neutral-400">{period}</span>
 		</div>
 	</div>
 	<h3 class="text-xl font-bold tracking-tight sm:text-2xl">{title}</h3>

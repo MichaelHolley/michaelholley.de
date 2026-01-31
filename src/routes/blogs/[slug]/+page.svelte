@@ -25,14 +25,17 @@
 	{#if blog}
 		<div class="my-8 flex flex-row justify-center">
 			<div>
-				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-white/40">
-					<div>
-						{formatDisplayDate(blog.released)}
-					</div>
-					<div class="mt-1 flex flex-row gap-1">
-						{#each blog.tags as tag (tag.id)}
-							<TagComponent value={tag.value} />
-						{/each}
+				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
+					<div class="flex flex-row items-center">
+						<span class="mr-6">{formatDisplayDate(blog.released)}</span>
+						<div class="flex flex-row items-center gap-1.5">
+							{#each blog.tags as tag (tag.id)}
+								<TagComponent
+									value={tag.value}
+									class="dark:border-neutral-600 dark:text-neutral-400"
+								/>
+							{/each}
+						</div>
 					</div>
 				</div>
 				<h1 class="mb-8 text-4xl font-extrabold tracking-tight break-all">

@@ -23,11 +23,16 @@
 
 <ContentPageComponent>
 	{#if blog}
-		<div class="my-8 flex flex-row justify-center">
-			<div>
+		<div class="mt-4">
+			<article
+				class={cn(
+					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto',
+					serifFont.current && 'font-serif'
+				)}
+			>
 				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
 					<div class="flex flex-row items-center">
-						<span class="mr-6">{formatDisplayDate(blog.released)}</span>
+						<span class="mr-5">{formatDisplayDate(blog.released)}</span>
 						<div class="flex flex-row items-center gap-1.5">
 							{#each blog.tags as tag (tag.id)}
 								<TagComponent
@@ -38,36 +43,29 @@
 						</div>
 					</div>
 				</div>
-				<h1 class="mb-8 text-4xl font-extrabold tracking-tight break-all">
+				<h1 class="text-4xl font-extrabold tracking-tight">
 					{blog.title}
 				</h1>
-				<article
-					class={cn(
-						'prose prose-sm sm:prose-base dark:prose-invert prose-neutral',
-						serifFont.current && 'font-serif'
-					)}
-				>
-					{#if blog.teaserImage}
-						<img
-							src={blog.teaserImage?.url}
-							alt={blog.title}
-							class="w-full"
-							style:view-transition-name={`blog-image-${blog.id}`}
-						/>
-					{/if}
-					<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
-						<!-- eslint-disable svelte/no-at-html-tags -->
-						{@html blog.content}
-						<!-- eslint-enable svelte/no-at-html-tags -->
-					</div>
-					<p class="pt-10 text-center text-xs">
-						This article was written by a human author and reviewed using AI tools for language
-						accuracy and translation consistency.
-					</p>
-				</article>
-			</div>
+				{#if blog.teaserImage}
+					<img
+						src={blog.teaserImage?.url}
+						alt={blog.title}
+						class="w-full"
+						style:view-transition-name={`blog-image-${blog.id}`}
+					/>
+				{/if}
+				<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
+					<!-- eslint-disable svelte/no-at-html-tags -->
+					{@html blog.content}
+					<!-- eslint-enable svelte/no-at-html-tags -->
+				</div>
+				<p class="pt-10 text-center text-xs">
+					This article was written by a human author and reviewed using AI tools for language
+					accuracy and translation consistency.
+				</p>
+			</article>
 		</div>
 	{:else}
-		<p>Unable to load blog content.</p>
+		<p class="mt-8 text-center">Unable to load blog content.</p>
 	{/if}
 </ContentPageComponent>

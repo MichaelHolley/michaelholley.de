@@ -4,8 +4,8 @@
 	const { header, icons }: { header: string; icons?: string[] } = $props();
 </script>
 
-<div class="flex flex-row justify-start gap-4 pb-1">
-	<h3 class="text-2xl text-neutral-500">{header}</h3>
+<div class="flex flex-row justify-start gap-4 pb-2.5">
+	<h3 class="text-xl font-bold text-neutral-500">{header}</h3>
 	{#if !!icons}
 		<div class="flex flex-row items-center gap-1">
 			{#each icons as icon}

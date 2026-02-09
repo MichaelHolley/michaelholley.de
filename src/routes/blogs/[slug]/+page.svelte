@@ -31,7 +31,7 @@
 				)}
 			>
 				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
-					<div class="flex flex-row items-center">
+					<div class="flex flex-row items-center font-normal">
 						<span class="mr-5">{formatDisplayDate(blog.released)}</span>
 						<div class="flex flex-row items-center gap-1.5">
 							{#each blog.tags as tag (tag.id)}

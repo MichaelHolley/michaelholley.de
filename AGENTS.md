@@ -17,6 +17,11 @@
 - `pnpm test` - Run all tests once
 - `pnpm test:unit` - Run tests in watch mode
 
+## Tooling
+
+- **Documentation**: Use `context7` mcp tools when you need to search documentation for libraries or frameworks.
+- **Markdown**: Use `marked` for markdown parsing. When using it, ensure you use the custom renderer from `$lib/components/shared/util/markedRenderer` to ensure links are handled correctly (e.g., `target="_blank"`).
+
 ## Git & Commits
 
 - **Conventional Commits**: Use `feat`, `fix`, `chore`, `test`, or `refactor` types (e.g., `feat: add search docs tool`)
@@ -30,7 +35,3 @@
 - **Styling**: Use `cn()` utility from `$lib/utils` to merge Tailwind classes
 - **Naming**: PascalCase for components, camelCase for variables/functions
 - **Icons**: Use `@iconify/svelte` for all icons
-
----
-
-When you need to search docs, use `context7` tools.

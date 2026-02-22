@@ -4,7 +4,7 @@
 	import { serifStore } from '$lib/stores/serifFontStore';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import { ScrollState } from 'runed';
+	import { IsInViewport, ScrollState } from 'runed';
 	import { type Snippet } from 'svelte';
 
 	const {
@@ -16,18 +16,8 @@
 	let hasInternalHistory = $state(false);
 	const serifFont = serifStore;
 
-	let el = $state<Window | undefined>();
-
-	const scroll = new ScrollState({
-		element: () => el,
-		behavior: 'smooth'
-	});
-
-	$effect(() => {
-		if (browser) {
-			el = window;
-		}
-	});
+	let headerNode = $state<HTMLElement>()!;
+	const headerInViewport = new IsInViewport(() => headerNode);
 
 	const buttonVariant = cn(
 		'text-neutral-400 hover:text-neutral-500 transition-all',
@@ -51,7 +41,7 @@
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
 	<div class="container min-h-screen py-10">
 		<div>
-			<div class="flex flex-row justify-between">
+			<div class="flex flex-row justify-between gap-2" bind:this={headerNode}>
 				<a href="/" onclick={handleBack} class=" flex flex-row items-center gap-1">
 					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
 					Zurück
@@ -74,14 +64,14 @@
 			{@render children()}
 		</div>
 
-		{#if scroll.y > 90}
+		{#if headerInViewport.current === false}
 			<div class="motion-translate-y-in-150 fixed bottom-3 left-3 z-40">
 				<button
 					class={cn(
 						'flex size-12 items-center justify-center transition-all hover:cursor-pointer',
 						buttonVariant
 					)}
-					onclick={() => scroll.scrollToTop()}
+					onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 				>
 					<Icon icon="ic:baseline-arrow-back" class="rotate-90 text-2xl" />
 				</button>

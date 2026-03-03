@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { afterNavigate } from '$app/navigation';
 	import { serifStore } from '$lib/stores/serifFontStore';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import { IsInViewport, ScrollState } from 'runed';
+	import { IsInViewport } from 'runed';
 	import { type Snippet } from 'svelte';
 
 	const {

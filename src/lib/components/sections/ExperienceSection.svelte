@@ -14,6 +14,10 @@
 						Entwicklung einer modernen Webanwendung zur Ausbildungsplanung im Sektor Pflege mit Vue,
 						TypeScript, GraphQL und Express
 					</li>
+					<li>
+						Migration komplexer redaktioneller Inhalte in ein modernes CMS inklusive Mapping,
+						Transformation und Qualitätssicherung
+					</li>
 				</ul>
 			</Step>
 			<Step

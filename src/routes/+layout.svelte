@@ -23,6 +23,7 @@
 
 <svelte:head>
 	<link rel="canonical" href={`${page.url.origin}${page.url.pathname}`} />
+	<meta property="og:url" content={`${page.url.origin}${page.url.pathname}`} />
 </svelte:head>
 
 {#if dev}

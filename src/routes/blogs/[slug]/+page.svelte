@@ -18,7 +18,6 @@
 	<meta property="og:title" content={blog?.title} />
 	<meta property="og:type" content="article" />
 	<meta property="og:description" content={blog?.description} />
-	<meta property="og:url" content="https://michaelholley.de/blogs/{blog?.slug}" />
 </svelte:head>
 
 <ContentPageComponent>

@@ -13,11 +13,23 @@
 </script>
 
 <svelte:head>
-	<title>{blog?.title}</title>
+	<title>Michael Holley | {blog?.title}</title>
 	<meta name="description" content={blog?.description} />
 	<meta property="og:title" content={blog?.title} />
 	<meta property="og:type" content="article" />
 	<meta property="og:description" content={blog?.description} />
+	<meta property="article:published_time" content={blog?.released} />
+	<meta property="article:author" content="Michael Holley" />
+	<meta name="twitter:card" content={blog?.teaserImage ? 'summary_large_image' : 'summary'} />
+	<meta name="twitter:title" content={blog?.title} />
+	<meta name="twitter:description" content={blog?.description} />
+	{#if blog?.teaserImage}
+		<meta property="og:image" content={blog.teaserImage.url} />
+		<meta name="twitter:image" content={blog.teaserImage.url} />
+	{/if}
+	{#each blog?.tags ?? [] as tag (tag.id)}
+		<meta property="article:tag" content={tag.value} />
+	{/each}
 </svelte:head>
 
 <ContentPageComponent>

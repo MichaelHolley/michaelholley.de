@@ -12,6 +12,21 @@
 	const serifFont = serifStore;
 </script>
 
+<svelte:head>
+	<title>Michael Holley | {project?.title}</title>
+	<meta name="description" content={project?.description} />
+	<meta property="og:title" content={project?.title} />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content={project?.description} />
+	<meta name="twitter:card" content={project?.teaserImage ? 'summary_large_image' : 'summary'} />
+	<meta name="twitter:title" content={project?.title} />
+	<meta name="twitter:description" content={project?.description} />
+	{#if project?.teaserImage}
+		<meta property="og:image" content={project.teaserImage.url} />
+		<meta name="twitter:image" content={project.teaserImage.url} />
+	{/if}
+</svelte:head>
+
 <ContentPageComponent>
 	{#if project}
 		<div class="my-8 flex flex-row flex-wrap items-end justify-between gap-4">

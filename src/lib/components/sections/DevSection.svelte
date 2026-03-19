@@ -1,9 +1,11 @@
 <script lang="ts">
 	import DevHeaderComponent from '$lib/components/dev/DevHeaderComponent.svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
+	import SectionHeader from '../shared/SectionHeader.svelte';
 </script>
 
 <section id="dev" class="relative">
+	<SectionHeader title="Dev" class="hidden pb-8 text-center" />
 	<div class="container grid grid-cols-1 gap-6 py-12 md:py-20 lg:grid-cols-3 lg:gap-12 xl:gap-16">
 		<div class="col-span-3 lg:col-span-1">
 			<DevHeaderComponent header="Backend" icons={['logos:dotnet', 'devicon:java']} />

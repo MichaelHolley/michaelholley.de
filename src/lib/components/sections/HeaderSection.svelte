@@ -37,14 +37,12 @@
 	<div class="container py-20 pb-16">
 		<div class="flex flex-col justify-center">
 			<div class="text-shadow-md">
-				<BoxReveal duration={0.6}>
-					<h1 class="text-5xl font-extrabold tracking-tight sm:text-7xl">Michael</h1>
-				</BoxReveal>
-				<BoxReveal duration={0.4}>
-					<h1 class="pb-4 text-5xl font-extrabold tracking-tight sm:text-7xl">Holley</h1>
-				</BoxReveal>
+				<h1 class="text-5xl font-extrabold tracking-tight *:block sm:text-7xl">
+					<span>Michael</span>
+					<span>Holley</span>
+				</h1>
 			</div>
-			<div>
+			<div class="pt-2">
 				<BoxReveal duration={0.8}>
 					<span class="pl-1 text-xl text-shadow-sm">Software Entwickler</span>
 				</BoxReveal>

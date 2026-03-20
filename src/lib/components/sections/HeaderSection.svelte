@@ -43,7 +43,7 @@
 				</h1>
 			</div>
 			<div class="pt-2">
-				<BoxReveal duration={0.8}>
+				<BoxReveal duration={0.6}>
 					<span class="pl-1 text-xl text-shadow-sm">Software Entwickler</span>
 				</BoxReveal>
 				<div

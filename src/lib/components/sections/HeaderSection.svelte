@@ -44,7 +44,7 @@
 			</div>
 			<div class="pt-2">
 				<BoxReveal duration={0.6}>
-					<span class="pl-1 text-xl text-shadow-sm">Software Entwickler</span>
+					<span class="pl-1 text-xl text-shadow-sm">Software Engineer</span>
 				</BoxReveal>
 				<div
 					class={cn(

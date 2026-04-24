@@ -27,8 +27,7 @@
 			>
 				<ul class="list-square list-inside *:py-1">
 					<li>
-						Eigenverantwortliche Definition, Abschätzung, Konzeption und Umsetzung von kleinen
-						Softwareprojekten in Kundenauftrag
+						Eigenverantwortliche Definition, Abschätzung, Konzeption und Umsetzung von Softwareprojekten in Kundenauftrag
 					</li>
 					<li>
 						Übernahme der Rolle des Technical Lead Frontend während der Betriebsphase einer

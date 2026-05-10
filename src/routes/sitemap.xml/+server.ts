@@ -5,9 +5,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const origin = url.origin;
 	const [blogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
 
-	const staticUrls = [
-		{ loc: `${origin}/`, priority: '1.0' }
-	];
+	const staticUrls = [{ loc: `${origin}/`, priority: '1.0' }];
 
 	const blogUrls = blogs.map((blog) => ({
 		loc: `${origin}/blogs/${blog.slug}`,

@@ -1,7 +1,7 @@
 # ---- Base ----
 FROM node:24-alpine AS base
 WORKDIR /app
-RUN npm install -g pnpm
+RUN npm install -g pnpm@9
 
 # ---- Dependencies ----
 FROM base AS dependencies

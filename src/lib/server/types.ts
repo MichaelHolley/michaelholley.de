@@ -93,3 +93,29 @@ export const TechItemSchema = z.object({
 	color: z.string(),
 	name: z.string()
 });
+
+// ExperienceWorkItem
+export type ExperienceWorkItem = z.infer<typeof ExperienceWorkItemSchema>;
+export const ExperienceWorkItemSchema = z.object({
+	id: z.number(),
+	WorkEntry: z.string()
+});
+
+// ExperienceStep
+export type ExperienceStep = z.infer<typeof ExperienceStepSchema>;
+export const ExperienceStepSchema = z.object({
+	id: z.number(),
+	Employer: z.string().optional(),
+	Timeframe: z.string(),
+	Role: z.string(),
+	FreeText: z.string().optional(),
+	Work: z.array(ExperienceWorkItemSchema).optional()
+});
+
+// ExperienceSection
+export type ExperienceSectionData = z.infer<typeof ExperienceSectionDataSchema>;
+export const ExperienceSectionDataSchema = z.object({
+	id: z.number(),
+	documentId: z.string(),
+	Steps: z.array(ExperienceStepSchema)
+});

@@ -1,90 +1,34 @@
 <script lang="ts">
+	import { getExperienceSection } from '$lib/api/experience-section.remote';
 	import Step from '$lib/components/career/Step.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+
+	const { experienceSection } = await getExperienceSection();
 </script>
 
-<section id="experience" class="bg-white text-black">
-	<div class="container py-8 md:py-16 md:pt-12 2xl:px-64">
-		<SectionHeader title="Experience" class="pb-8 text-center" />
-		<div class="text-left text-lg">
-			<Step period="Okt. 2025" title="Software Engineer" workplace="Peerigon GmbH">
-				<ul class="list-square list-inside *:py-1">
-					<li>Cutting Edge Softwareentwicklung mit JavaScript Techstack</li>
-					<li>
-						Entwicklung einer modernen Webanwendung zur Ausbildungsplanung im Sektor Pflege mit Vue,
-						TypeScript, GraphQL und Express
-					</li>
-					<li>
-						Migration komplexer redaktioneller Inhalte in ein modernes CMS inklusive Mapping,
-						Transformation und Qualitätssicherung
-					</li>
-				</ul>
-			</Step>
-			<Step
-				period="Mai 2023 - Sept. 2025"
-				title="Software Entwickler"
-				workplace="AraCom IT Services GmbH"
-			>
-				<ul class="list-square list-inside *:py-1">
-					<li>
-						Eigenverantwortliche Definition, Abschätzung, Konzeption und Umsetzung von
-						Softwareprojekten in Kundenauftrag
-					</li>
-					<li>
-						Übernahme der Rolle des Technical Lead Frontend während der Betriebsphase einer
-						innovativen Smartphone-App im Bereich Lebensmittel, einschließlich Verantwortung für
-						Technologie und Team
-					</li>
-					<li>
-						Optimierung von Build- und Deployment-Prozessen zur Erhöhung der Effizienz und
-						Stabilität der Software
-					</li>
-					<li>
-						Aktive Mitwirkung an der Ausbildung, in Tech-Communities und Förderung von
-						Nachwuchskräften, inklusive Mentoring und Wissensvermittlung
-					</li>
-				</ul>
-			</Step>
-			<Step
-				period="Jan. 2022 - Apr. 2023"
-				title="Junior Software Entwickler"
-				workplace="AraCom IT Services GmbH"
-			>
-				<ul class="list-square list-inside *:py-1">
-					<li>
-						Entwicklung und Optimierung vielseitiger Softwarelösungen in einem agilen,
-						teamorientierten Umfeld
-					</li>
-					<li>Eigenständige Bearbeitung von Aufgaben einschließlich proaktiver Problemlösung</li>
-					<li>
-						Kontinuierliche Weiterbildung und Sammeln an Erfahrung in neuen Technologien, Best
-						Practices und Software-Architekturmustern
-					</li>
-				</ul>
-			</Step>
-			<Step
-				period="2019 - 2022"
-				title="Ausbildung: Fachinformatiker für Anwendungsentwicklung"
-				workplace="AraCom IT Services GmbH"
-			>
-				Verkürzte Ausbildung auf 2,5 Jahre mit der <strong>Bestnote 1,0</strong> in der Berufsschule
-				und
-				<strong>96 von 100 Punkten</strong> in der IHK-Abschlussprüfung erfolgreich abgeschlossen.
-			</Step>
-			<Step
-				period="2017 - 2019"
-				title="Studium: Informatik und Multimedia"
-				workplace="Universität Augsburg"
-			>
-				<p>abgebrochen</p>
-				<ul class="list-square list-inside *:py-1">
-					<li>Erster Kontakt mit Softwareprojekten und anderen IT-Begeisterten</li>
-					<li>Tiefes, fachliches Einarbeiten in Algorithmen und Datenstrukturen</li>
-				</ul>
-			</Step>
+{#if experienceSection && experienceSection.Steps.length > 0}
+	<section id="experience" class="bg-white text-black">
+		<div class="container py-8 md:py-16 md:pt-12 2xl:px-64">
+			<SectionHeader title="Experience" class="pb-8 text-center" />
+			<div class="text-left text-lg">
+				{#each experienceSection.Steps as step (step.id)}
+					<Step period={step.Timeframe} title={step.Role} workplace={step.Employer ?? ''}>
+						{#if step.FreeText}
+							<p>{@html step.FreeText}</p>
+						{/if}
+						{#if step.Work && step.Work.length > 0}
+							<ul class="list-square list-inside *:py-1">
+								{#each step.Work as item (item.id)}
+									<li>{item.WorkEntry}</li>
+								{/each}
+							</ul>
+						{/if}
+					</Step>
+				{/each}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+{/if}
 
 <style>
 	.list-square li::marker {

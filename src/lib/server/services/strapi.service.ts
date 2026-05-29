@@ -1,6 +1,6 @@
 import { env } from '$env/dynamic/private';
 import { cache } from '$lib/server/cache';
-import type { Blog, ImageFormat, Project, Image } from '$lib/server/types';
+import type { Blog, ExperienceSectionData, ImageFormat, Project, Image } from '$lib/server/types';
 import { buildStrapiUrl } from '$lib/server/services/util/strapi-url-builder';
 
 const blogSelectFields = [
@@ -218,6 +218,38 @@ export async function fetchProjects(): Promise<Project[]> {
 		cachedProjects = cache.getIgnoreInvalidation<Project[]>('projects');
 
 		return cachedProjects || [];
+	}
+}
+
+export async function fetchExperienceSection(): Promise<ExperienceSectionData | null> {
+	let cached = cache.get<ExperienceSectionData>('experience-section');
+
+	try {
+		if (cached) {
+			console.log('Using cached data (experience-section)');
+			return cached;
+		}
+
+		console.log('No cached data (experience-section) - Fetching from Strapi...');
+
+		const strapiUrl = buildStrapiUrl('experience-section')
+			.populate(['Steps', 'Steps.Work'])
+			.build();
+		const res = await fetch(strapiUrl);
+
+		if (!res.ok) {
+			throw new Error(
+				`Failed to fetch experience-section: ${res.status} ${res.statusText} (${await res.text()})`
+			);
+		}
+
+		const result = (await res.json()) as { data: ExperienceSectionData };
+		cache.set('experience-section', result.data);
+		return result.data;
+	} catch (e) {
+		console.error('Error fetching experience-section:', e);
+		cached = cache.getIgnoreInvalidation<ExperienceSectionData>('experience-section');
+		return cached || null;
 	}
 }
 

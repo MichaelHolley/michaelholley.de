@@ -14,7 +14,7 @@
 				{#each experienceSection.Steps as step (step.id)}
 					<Step period={step.Timeframe} title={step.Role} workplace={step.Employer ?? ''}>
 						{#if step.FreeText}
-							<p>{@html step.FreeText}</p>
+							<p>{step.FreeText}</p>
 						{/if}
 						{#if step.Work && step.Work.length > 0}
 							<ul class="list-square list-inside *:py-1">

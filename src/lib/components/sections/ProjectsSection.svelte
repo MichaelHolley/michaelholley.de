@@ -11,7 +11,7 @@
 {#if projects && projects.length > 0}
 	<section id="projects" class="bg-black text-white">
 		<div class="container py-8 md:py-16">
-			<SectionHeader title="Projekte" class="pb-8" />
+			<SectionHeader title="Projekte" class="pb-8 text-center lg:text-left" />
 			<div class="flex flex-col items-center justify-center gap-24 md:gap-64">
 				<div class="grid w-full auto-rows-[20rem] grid-cols-1 gap-4 lg:grid-cols-3">
 					{#each projects as p (p.id)}

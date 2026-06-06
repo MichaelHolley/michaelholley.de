@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/private';
+import { getStrapiUrl } from './get-strapi-url';
 
 /**
  * Chainable URL builder for constructing Strapi API URLs with fields and populate
@@ -64,11 +64,11 @@ class StrapiUrlBuilder {
 	 * @returns Complete Strapi API URL with all parameters
 	 */
 	build(): string {
-		const baseUrl = env.STRAPI_URL;
+		const strapiApiUrl = getStrapiUrl();
 		const populateParam = this.populateAllFlag ? ['populate=*'] : this.populateParams;
 		const allParams = [...this.fieldParams, ...populateParam, ...this.filterParams];
 		const queryString = allParams.length > 0 ? `?${allParams.join('&')}` : '';
-		return `${baseUrl}/${this.endpoint}${queryString}`;
+		return `${strapiApiUrl}/${this.endpoint}${queryString}`;
 	}
 }
 

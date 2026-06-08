@@ -46,8 +46,9 @@
 					Zurück
 				</a>
 				<button
+					type="button"
 					class={cn(
-						'size-8 rounded-sm border transition-all hover:cursor-pointer',
+						'size-8 rounded-sm border transition-all',
 						!serifFont.current && 'font-serif',
 						buttonVariant
 					)}
@@ -55,6 +56,8 @@
 						serifFont.current = !serifFont.current;
 					}}
 					title="Change to {!serifFont.current ? 'Serif' : 'Default'} font"
+					aria-label="Toggle serif font"
+					aria-pressed={serifFont.current}
 				>
 					Aa</button
 				>
@@ -66,13 +69,12 @@
 		{#if headerInViewport.current === false}
 			<div class="motion-translate-y-in-150 fixed bottom-3 left-3 z-40">
 				<button
-					class={cn(
-						'flex size-12 items-center justify-center transition-all hover:cursor-pointer',
-						buttonVariant
-					)}
+					type="button"
+					class={cn('flex size-12 items-center justify-center transition-all', buttonVariant)}
 					onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+					aria-label="Scroll to top"
 				>
-					<Icon icon="ic:baseline-arrow-back" class="rotate-90 text-2xl" />
+					<Icon icon="ic:baseline-arrow-back" class="rotate-90 text-2xl" aria-hidden="true" />
 				</button>
 			</div>
 		{/if}

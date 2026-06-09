@@ -48,7 +48,7 @@
 				<button
 					type="button"
 					class={cn(
-						'size-8 rounded-sm border transition-all',
+						'size-8 rounded-sm border transition-all active:scale-[.98]',
 						!serifFont.current && 'font-serif',
 						buttonVariant
 					)}
@@ -70,7 +70,10 @@
 			<div class="motion-translate-y-in-150 fixed bottom-3 left-3 z-40">
 				<button
 					type="button"
-					class={cn('flex size-12 items-center justify-center transition-all', buttonVariant)}
+					class={cn(
+						'flex size-12 items-center justify-center transition-all active:scale-95',
+						buttonVariant
+					)}
 					onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 					aria-label="Scroll to top"
 				>

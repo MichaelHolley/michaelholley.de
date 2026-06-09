@@ -31,6 +31,7 @@
 	class={cn(
 		'group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl',
 		'transform-gpu border border-black/10 bg-black [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]',
+		'transition-all active:scale-[.98]',
 		className
 	)}
 	data-sveltekit-preload-data="tap"

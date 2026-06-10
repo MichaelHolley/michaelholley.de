@@ -17,7 +17,7 @@
 					{#each blogs as b (b.id)}
 						<a
 							href="/blogs/{b.slug}"
-							class="group min-h-16 max-w-72 bg-white text-black transition-all hover:scale-102"
+							class="group min-h-16 max-w-72 bg-white text-black transition-all hover:scale-101 active:scale-99"
 							data-sveltekit-preload-data="tap"
 						>
 							<div class="flex h-40 flex-row justify-center">

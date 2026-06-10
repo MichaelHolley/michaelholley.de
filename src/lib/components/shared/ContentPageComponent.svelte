@@ -48,7 +48,7 @@
 				<button
 					type="button"
 					class={cn(
-						'size-8 rounded-sm border transition-all active:scale-[.98]',
+						'size-8 rounded-sm border transition-all active:scale-98',
 						!serifFont.current && 'font-serif',
 						buttonVariant
 					)}

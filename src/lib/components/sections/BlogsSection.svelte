@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { getBlogs } from '$lib/api/blogs.remote';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
-	import TagComponent from '../shared/TagComponent.svelte';
-	import { formatDisplayDate } from '../shared/util/formatDisplayDate';
-	import { getThumbnailImageUrl } from '../shared/util/getThumbnailImageUrl';
+	import BlogCardComponent from '../shared/BlogCardComponent.svelte';
 
 	const { blogs } = await getBlogs();
 </script>
@@ -15,36 +13,7 @@
 			<div class="flex flex-row justify-center">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 					{#each blogs as b (b.id)}
-						<a
-							href="/blogs/{b.slug}"
-							class="group min-h-16 max-w-72 bg-white text-black transition-all hover:scale-101 active:scale-99"
-							data-sveltekit-preload-data="tap"
-						>
-							<div class="flex h-40 flex-row justify-center">
-								<img
-									src={getThumbnailImageUrl(b.teaserImage)}
-									alt={b.title}
-									class=" h-full w-full object-cover object-center"
-									style:view-transition-name={`blog-image-${b.id}`}
-								/>
-							</div>
-							<div class="p-4">
-								<div>
-									<p class="text-xs text-neutral-400">
-										{formatDisplayDate(b.released)}
-									</p>
-									<div class="mt-1 flex flex-row gap-1.5">
-										{#each b.tags as tag (tag.id)}
-											<TagComponent value={tag.value} />
-										{/each}
-									</div>
-								</div>
-								<div class="mt-1 text-lg font-semibold tracking-tight">
-									{b.title}
-								</div>
-								<p class="mt-1 text-sm leading-5 text-black/70">{b.description}</p>
-							</div>
-						</a>
+						<BlogCardComponent blog={b} />
 					{/each}
 				</div>
 			</div>

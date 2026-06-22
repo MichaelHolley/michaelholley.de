@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # ---- npm (pnpm) ----
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
@@ -14,7 +15,6 @@ updates:
       - 'dependencies'
     commit-message:
       prefix: 'chore'
-      prefix-development: 'chore'
       include: 'scope'
     ignore:
       - dependency-name: '*'
@@ -26,3 +26,44 @@ updates:
         update-types:
           - 'minor'
           - 'patch'
+
+  # ---- GitHub Actions ----
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'friday'
+      time: '00:00'
+      timezone: 'Etc/UTC'
+    cooldown:
+      default-days: 3
+    labels:
+      - 'dependencies'
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+
+  # ---- Docker base image ----
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'friday'
+      time: '00:00'
+      timezone: 'Etc/UTC'
+    cooldown:
+      default-days: 3
+    labels:
+      - 'dependencies'
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+    ignore:
+      # keep Node major in lockstep with CI's node-version: 24 (bump manually)
+      - dependency-name: 'node'
+        update-types:
+          - 'version-update:semver-major'

@@ -33,7 +33,6 @@
 			<div class="flex flex-col gap-4 lg:hidden">
 				{#each projects as p (p.id)}
 					<ProjectCardMobileComponent
-						id={p.documentId}
 						name={p.title}
 						description={p.description}
 						icon={p.projectIcon?.iconIdentifier}

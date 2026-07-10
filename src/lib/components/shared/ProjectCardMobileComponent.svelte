@@ -2,7 +2,6 @@
 	import Icon from '@iconify/svelte';
 
 	const {
-		id,
 		name,
 		href,
 		description,
@@ -10,7 +9,6 @@
 		icon,
 		backgroundImgUrl
 	}: {
-		id: string;
 		name: string;
 		href: string;
 		description: string;
@@ -21,7 +19,6 @@
 </script>
 
 <a
-	{id}
 	{href}
 	class="group flex w-full transform-gpu flex-row items-stretch overflow-hidden rounded-xl border border-white/10 bg-black transition-all active:scale-98"
 	data-sveltekit-preload-data="tap"
@@ -30,7 +27,7 @@
 		<div class="aspect-[4/3] w-32 shrink-0 self-center overflow-hidden">
 			<img
 				src={backgroundImgUrl}
-				alt="background"
+				alt={name}
 				class="h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-103"
 			/>
 		</div>

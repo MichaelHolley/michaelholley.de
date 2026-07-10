@@ -30,10 +30,7 @@
 <ContentPageComponent>
 	{#if project}
 		<header class="mt-10 lg:mt-20">
-			<h1
-				class="text-5xl font-bold tracking-tight lg:text-6xl"
-				style:view-transition-name="heading-project-{project.slug}"
-			>
+			<h1 class="text-5xl font-bold tracking-tight lg:text-6xl">
 				{project.title}
 			</h1>
 
@@ -79,7 +76,7 @@
 			{/if}
 		</header>
 
-		<div class="motion-opacity-in-0 motion-duration-700 motion-delay-350 mt-8">
+		<div class="motion-opacity-in-0 motion-duration-700 motion-delay-200 mt-8">
 			<article
 				class={cn(
 					'prose dark:prose-invert prose-neutral max-w-none',

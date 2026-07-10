@@ -62,7 +62,6 @@
 						src={blog.teaserImage?.url}
 						alt={blog.title}
 						class="w-full"
-						style:view-transition-name={`blog-image-${blog.id}`}
 					/>
 				{/if}
 				<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">

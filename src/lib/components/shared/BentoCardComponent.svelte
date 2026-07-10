@@ -8,7 +8,6 @@
 		href,
 		description,
 		cta,
-		viewTransitionHeadingName,
 		icon,
 		class: className,
 		backgroundImgUrl
@@ -18,7 +17,6 @@
 		href: string;
 		description: string;
 		cta: string;
-		viewTransitionHeadingName?: string;
 		icon?: string;
 		class?: string;
 		backgroundImgUrl?: string;
@@ -59,10 +57,7 @@
 				/>
 			{/if}
 
-			<h3
-				class="font-bold text-white text-shadow-2xs"
-				style:view-transition-name={viewTransitionHeadingName}
-			>
+			<h3 class="font-bold text-white text-shadow-2xs">
 				{name}
 			</h3>
 		</div>

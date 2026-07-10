@@ -17,7 +17,6 @@
 			src={getThumbnailImageUrl(blog.teaserImage)}
 			alt={blog.title}
 			class="h-full w-full transform-gpu object-cover object-center transition-transform duration-500 group-hover:scale-105"
-			style:view-transition-name={`blog-image-${blog.id}`}
 		/>
 		<div
 			class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"

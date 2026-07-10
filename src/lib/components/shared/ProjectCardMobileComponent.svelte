@@ -24,7 +24,7 @@
 	data-sveltekit-preload-data="tap"
 >
 	{#if !!backgroundImgUrl}
-		<div class="aspect-[4/3] w-32 shrink-0 self-center overflow-hidden">
+		<div class="w-44 shrink-0 self-stretch overflow-hidden">
 			<img
 				src={backgroundImgUrl}
 				alt={name}

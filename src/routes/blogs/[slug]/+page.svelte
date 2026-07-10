@@ -7,7 +7,7 @@
 	import { cn } from '$lib/utils';
 
 	const { params } = $props();
-	const { blog } = await getBlobBySlug(params.slug);
+	const { blog } = $derived(await getBlobBySlug(params.slug));
 
 	const serifFont = serifStore;
 </script>
@@ -58,11 +58,7 @@
 					{blog.title}
 				</h1>
 				{#if blog.teaserImage}
-					<img
-						src={blog.teaserImage?.url}
-						alt={blog.title}
-						class="w-full"
-					/>
+					<img src={blog.teaserImage?.url} alt={blog.title} class="w-full" />
 				{/if}
 				<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
 					<!-- eslint-disable svelte/no-at-html-tags -->

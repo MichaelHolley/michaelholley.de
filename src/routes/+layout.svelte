@@ -7,7 +7,6 @@
 	import '../app.css';
 
 	const { children }: { children: Snippet } = $props();
-
 </script>
 
 <svelte:head>

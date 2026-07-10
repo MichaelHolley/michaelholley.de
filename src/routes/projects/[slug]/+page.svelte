@@ -7,7 +7,7 @@
 	import Icon from '@iconify/svelte';
 
 	const { params } = $props();
-	const { project } = await getProjectBySlug(params.slug);
+	const { project } = $derived(await getProjectBySlug(params.slug));
 
 	const serifFont = serifStore;
 </script>

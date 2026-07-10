@@ -7,7 +7,7 @@
 	import { cn } from '$lib/utils';
 
 	const { params } = $props();
-	const { blog } = await getBlobBySlug(params.slug);
+	const { blog } = $derived(await getBlobBySlug(params.slug));
 
 	const serifFont = serifStore;
 </script>

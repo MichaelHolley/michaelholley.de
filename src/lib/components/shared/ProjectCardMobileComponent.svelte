@@ -24,12 +24,11 @@
 	data-sveltekit-preload-data="tap"
 >
 	{#if !!backgroundImgUrl}
-		<div class="w-44 shrink-0 self-stretch overflow-hidden">
-			<img
-				src={backgroundImgUrl}
-				alt={name}
-				class="h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-103"
-			/>
+		<div class="relative w-44 shrink-0 self-stretch overflow-hidden">
+			<div
+				class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-103"
+				style:background-image={`url(${backgroundImgUrl})`}
+			></div>
 		</div>
 	{/if}
 

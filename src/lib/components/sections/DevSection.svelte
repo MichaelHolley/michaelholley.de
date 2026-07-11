@@ -4,10 +4,9 @@
 	import type { Snippet } from 'svelte';
 	import SectionHeader from '../shared/SectionHeader.svelte';
 
-	const area = (title: string, icons: string[], accent: string, delay: string, body: Snippet) => ({
+	const area = (title: string, icons: string[], delay: string, body: Snippet) => ({
 		title,
 		icons,
-		accent,
 		delay,
 		body
 	});
@@ -16,18 +15,13 @@
 <section id="dev" class="relative overflow-hidden bg-black text-white">
 	<SectionHeader title="Dev" class="hidden pb-8 text-center" />
 	<div class="container flex flex-col py-6 md:py-10">
-		{#each [area('Backend', ['logos:dotnet', 'devicon:java'], 'var(--color-primary)', 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'var(--color-secondary)', 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'var(--color-tertiary)', 'motion-delay-200', devops)] as c (c.title)}
+		{#each [area('Backend', ['logos:dotnet', 'devicon:java'], 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'motion-delay-200', devops)] as c (c.title)}
 			<article
-				style="--accent: {c.accent};"
 				class="group motion-translate-y-in-50 motion-blur-in-md relative grid grid-cols-1 gap-x-8 gap-y-6 border-t border-white/10 py-7 first:border-t-0 md:py-9 lg:grid-cols-12 {c.delay}"
 			>
 				<div class="lg:col-span-5 xl:col-span-4">
 					<h3 class="text-3xl font-bold text-white md:text-4xl">{c.title}</h3>
-					<!-- accent underline that widens on hover -->
-					<div
-						class="mt-3 h-1 w-10 rounded-full bg-[var(--accent)] transition-all duration-500 ease-out group-hover:w-16"
-					></div>
-					<div class="mt-4 flex flex-row items-center gap-2.5">
+					<div class="mt-3 flex flex-row items-center gap-2.5">
 						{#each c.icons as icon, i (i)}
 							<Icon
 								{icon}

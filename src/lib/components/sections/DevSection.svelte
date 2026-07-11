@@ -15,11 +15,11 @@
 
 <section id="dev" class="relative overflow-hidden bg-black text-white">
 	<SectionHeader title="Dev" class="hidden pb-8 text-center" />
-	<div class="container flex flex-col py-12 md:py-20">
+	<div class="container flex flex-col py-6 md:py-10">
 		{#each [area('Backend', ['logos:dotnet', 'devicon:java'], 'var(--color-primary)', 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'var(--color-secondary)', 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'var(--color-tertiary)', 'motion-delay-200', devops)] as c (c.title)}
 			<article
 				style="--accent: {c.accent};"
-				class="group motion-translate-y-in-50 motion-blur-in-md relative grid grid-cols-1 gap-x-8 gap-y-6 border-t border-white/10 py-10 md:py-14 lg:grid-cols-12 {c.delay}"
+				class="group motion-translate-y-in-50 motion-blur-in-md relative grid grid-cols-1 gap-x-8 gap-y-6 border-t border-white/10 py-7 first:border-t-0 md:py-9 lg:grid-cols-12 {c.delay}"
 			>
 				<div class="lg:col-span-5 xl:col-span-4">
 					<h3 class="text-3xl font-bold text-white md:text-4xl">{c.title}</h3>
@@ -56,28 +56,29 @@
 
 {#snippet backend()}
 	<p>
-		Als Backend-Entwickler fasziniert mich die Logik hinter den Kulissen. Die Arbeit mit Datenbanken
-		und APIs, um <span class="text-secondary">leistungsstarke und skalierbare Anwendungen</span> zu bauen,
-		ist für mich pure Leidenschaft. Ich liebe es, effiziente Lösungen zu entwickeln und komplexe Probleme
-		zu lösen.
+		Am Backend reizt mich die Logik hinter der Anwendung: Datenmodellierung, REST-APIs und eine
+		Architektur, aus der <span class="text-secondary"
+			>leistungsstarke und skalierbare Anwendungen</span
+		> entstehen. Am liebsten arbeite ich mich in komplexe Probleme ein und entwickle daraus effiziente,
+		sauber strukturierte Lösungen.
 	</p>
 {/snippet}
 
 {#snippet frontend()}
 	<p>
-		Die Frontend-Entwicklung ist für mich eine spannende Herausforderung. Ich beschäftige mich gerne
-		mit den <span class="text-secondary">neuesten Technologien und Frameworks</span>, um performante
-		und skalierbare Webanwendungen zu bauen. Die Freiheit, meine
-		<span class="text-secondary">Kreativität</span> auszuleben und gleichzeitig technisch anspruchsvolle
-		Probleme zu lösen, begeistert mich.
+		Im Frontend arbeite ich gern mit den
+		<span class="text-secondary">neuesten Technologien und Frameworks</span> und lege Wert auf
+		performante, skalierbare Web-Anwendungen. Reaktive UIs, eine saubere Komponenten-Architektur und
+		durchdachte UX geben mir den Raum, <span class="text-secondary">Kreativität</span> und technische
+		Präzision zu verbinden.
 	</p>
 {/snippet}
 
 {#snippet devops()}
 	<p>
-		DevOps vereint für mich das Beste aus beiden Welten: Entwicklung und Betrieb. Ich finde es
-		faszinierend, Prozesse zu <span class="text-secondary">automatisieren</span> und die
-		Zusammenarbeit zwischen Entwicklern und Operations-Teams zu optimieren. Durch DevOps können wir
-		<span class="text-secondary">schnellere und zuverlässigere</span> Software-Releases ermöglichen.
+		DevOps verbindet für mich Entwicklung und Betrieb. Ich
+		<span class="text-secondary">automatisiere</span> Prozesse über CI/CD-Pipelines und
+		Containerisierung und verzahne die Zusammenarbeit von Entwicklung und Operations. So lassen sich
+		Releases <span class="text-secondary">schneller und zuverlässiger</span> ausliefern.
 	</p>
 {/snippet}

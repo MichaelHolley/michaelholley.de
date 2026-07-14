@@ -58,10 +58,5 @@
 	"dependencies": {
 		"runed": "^0.37.1",
 		"zod": "^4.4.3"
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
 	}
 }

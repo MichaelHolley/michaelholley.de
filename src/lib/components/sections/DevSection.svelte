@@ -14,29 +14,48 @@
 
 <section id="dev" class="relative overflow-hidden bg-black text-white">
 	<SectionHeader title="Dev" class="hidden pb-8 text-center" />
-	<div class="container flex flex-col py-6 md:py-10">
-		{#each [area('Backend', ['logos:dotnet', 'devicon:java'], 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'motion-delay-200', devops)] as c (c.title)}
-			<article
-				class="group motion-translate-y-in-50 motion-blur-in-md relative grid grid-cols-1 gap-x-8 gap-y-6 border-t border-white/10 py-7 first:border-t-0 md:py-9 lg:grid-cols-12 {c.delay}"
-			>
-				<div class="lg:col-span-5 xl:col-span-4">
-					<h3 class="text-3xl font-bold text-white md:text-4xl">{c.title}</h3>
-					<div class="mt-3 flex flex-row items-center gap-2.5">
-						{#each c.icons as icon, i (i)}
-							<Icon
-								{icon}
-								class="size-6 opacity-60 saturate-0 transition-all duration-300 group-hover:opacity-100 group-hover:saturate-100 hover:-translate-y-0.5 hover:rotate-6"
-								aria-hidden="true"
-							/>
-						{/each}
+	<div class="container py-6 md:py-10">
+		<ul class="flex flex-col divide-y divide-white/10 border-y border-white/10">
+			{#each [area('Backend', ['logos:dotnet', 'devicon:java'], 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'motion-delay-200', devops)] as c, i (c.title)}
+				<li
+					class="group motion-translate-y-in-50 motion-blur-in-md relative overflow-hidden {c.delay}"
+				>
+					<div
+						class="flex flex-col items-start justify-between gap-2 py-8 transition-colors duration-300 md:flex-row md:items-center md:py-10"
+					>
+						<div class="flex items-baseline gap-4 md:gap-6">
+							<span class="font-mono text-sm text-neutral-600"
+								>{String(i + 1).padStart(2, '0')}</span
+							>
+							<h3
+								class="group-hover:text-secondary text-5xl font-black tracking-tighter uppercase transition-colors duration-300 sm:text-7xl md:text-8xl"
+							>
+								{c.title}
+							</h3>
+						</div>
+						<div class="flex gap-3 pl-10 md:pl-0">
+							{#each c.icons as icon, j (j)}
+								<Icon
+									{icon}
+									class="size-6 text-neutral-600 transition-colors duration-300 group-hover:text-white"
+									aria-hidden="true"
+								/>
+							{/each}
+						</div>
 					</div>
-				</div>
 
-				<div class="text-lg leading-8 text-neutral-300 lg:col-span-7 xl:col-span-8">
-					{@render c.body()}
-				</div>
-			</article>
-		{/each}
+					<div
+						class="grid grid-rows-[0fr] pb-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:pb-8"
+					>
+						<div
+							class="max-w-2xl overflow-hidden pl-10 text-lg leading-8 text-neutral-400 md:pl-16"
+						>
+							{@render c.body()}
+						</div>
+					</div>
+				</li>
+			{/each}
+		</ul>
 	</div>
 	<DotPattern
 		width={20}

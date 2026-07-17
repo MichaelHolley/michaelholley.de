@@ -2,14 +2,15 @@
 
 ## Tech Stack
 
-- **Framework**: SvelteKit 2 with Svelte 5 (runes mode)
-- **Package Manager**: pnpm (v9.15.9)
+- **Framework**: SvelteKit with Runes Mode and Remote-Functions
+- **Package Manager**: pnpm
 - **Styling**: Tailwind CSS v4 with tailwind-merge for dynamic classes
 - **TypeScript**: Strict mode enabled
 
 ## Commands
 
 - `pnpm dev` - Start dev server
+- `pnpm dev:prod` - Start dev server with content fed via CMS (PROD)
 - `pnpm build` - Production build
 - `pnpm check` - Type checking with svelte-check
 - `pnpm lint` - Run prettier + eslint checks
@@ -19,7 +20,6 @@
 
 ## Tooling
 
-- **Documentation**: Use `context7` mcp tools when you need to search documentation for libraries or frameworks.
 - **Markdown**: Use `marked` for markdown parsing. When using it, ensure you use the custom renderer from `$lib/components/shared/util/markedRenderer` to ensure links are handled correctly (e.g., `target="_blank"`).
 
 ## Git & Commits
@@ -28,7 +28,7 @@
 
 ## Code Style
 
-- **Formatting**: Prettier with tabs, single quotes, 100 char width, no trailing commas
+- **Formatting**: Prettier with tabs, single quotes
 - **Imports**: Use `$lib` alias for internal imports, group by external/internal
 - **Components**: Use Svelte 5 runes (`$props()`, `$state()`, `$derived()`)
 - **Props**: Destructure with `$props<Type>()`, use TypeScript interfaces

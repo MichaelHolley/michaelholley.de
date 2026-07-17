@@ -48,15 +48,7 @@
 							</div>
 							<div class="flex items-center gap-3 pl-10 md:pl-0">
 								{#each c.icons as icon, j (j)}
-									<Icon
-										{icon}
-										class="size-6 transition-colors duration-300 group-hover:text-white {openTitles[
-											c.title
-										]
-											? 'text-white'
-											: 'text-neutral-600'}"
-										aria-hidden="true"
-									/>
+									<Icon {icon} class="size-6" aria-hidden="true" />
 								{/each}
 								<Icon
 									icon="ic:baseline-expand-more"

@@ -10,6 +10,9 @@
 		delay,
 		body
 	});
+
+	let openTitles = $state<Record<string, boolean>>({});
+	const toggle = (title: string) => (openTitles[title] = !openTitles[title]);
 </script>
 
 <section id="dev" class="relative overflow-hidden bg-black text-white">
@@ -20,32 +23,56 @@
 				<li
 					class="group motion-translate-y-in-50 motion-blur-in-md relative overflow-hidden {c.delay}"
 				>
-					<div
-						class="flex flex-col items-start justify-between gap-2 py-8 transition-colors duration-300 md:flex-row md:items-center md:py-10"
+					<button
+						type="button"
+						class="flex w-full cursor-pointer flex-col items-start justify-between gap-2 py-8 text-left transition-colors duration-300 md:flex-row md:items-center md:py-10"
+						aria-expanded={!!openTitles[c.title]}
+						onclick={() => toggle(c.title)}
 					>
 						<div class="flex items-baseline gap-4 md:gap-6">
 							<span class="font-mono text-sm text-neutral-600"
 								>{String(i + 1).padStart(2, '0')}</span
 							>
 							<h3
-								class="group-hover:text-secondary text-5xl font-black tracking-tighter uppercase transition-colors duration-300 sm:text-7xl md:text-8xl"
+								class="group-hover:text-secondary text-5xl font-black tracking-tighter uppercase transition-colors duration-300 sm:text-7xl md:text-8xl {openTitles[
+									c.title
+								]
+									? 'text-secondary'
+									: ''}"
 							>
 								{c.title}
 							</h3>
 						</div>
-						<div class="flex gap-3 pl-10 md:pl-0">
+						<div class="flex items-center gap-3 pl-10 md:pl-0">
 							{#each c.icons as icon, j (j)}
 								<Icon
 									{icon}
-									class="size-6 text-neutral-600 transition-colors duration-300 group-hover:text-white"
+									class="size-6 transition-colors duration-300 group-hover:text-white {openTitles[
+										c.title
+									]
+										? 'text-white'
+										: 'text-neutral-600'}"
 									aria-hidden="true"
 								/>
 							{/each}
+							<Icon
+								icon="ic:baseline-expand-more"
+								class="size-5 text-neutral-600 transition-transform duration-300 {openTitles[
+									c.title
+								]
+									? 'rotate-180'
+									: ''}"
+								aria-hidden="true"
+							/>
 						</div>
-					</div>
+					</button>
 
 					<div
-						class="grid grid-rows-[0fr] pb-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:pb-8"
+						class="grid transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:pb-8 {openTitles[
+							c.title
+						]
+							? 'grid-rows-[1fr] pb-8'
+							: 'grid-rows-[0fr] pb-0'}"
 					>
 						<div
 							class="max-w-2xl overflow-hidden pl-10 text-lg leading-8 text-neutral-400 md:pl-16"

@@ -9,8 +9,8 @@
 
 ## Commands
 
-- `pnpm dev` - Start dev server
-- `pnpm dev:prod` - Start dev server with content fed via CMS (PROD)
+- `pnpm dev` - Start dev server (requires local running CMS)
+- `pnpm dev:prod` - Start dev server with content fed via Prod-CMS (best for local development)
 - `pnpm build` - Production build
 - `pnpm check` - Type checking with svelte-check
 - `pnpm lint` - Run prettier + eslint checks

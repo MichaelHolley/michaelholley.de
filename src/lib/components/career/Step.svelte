@@ -1,31 +1,41 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import type { ExperienceWorkItem } from '$lib/server/types';
 
 	const {
 		period,
 		title,
 		workplace,
-		children
+		freeText,
+		items
 	}: {
 		period: string;
 		title: string;
 		workplace: string;
-		children: Snippet;
+		freeText?: string;
+		items?: ExperienceWorkItem[];
 	} = $props();
 </script>
 
-<div class="relative mx-auto py-4">
-	<div class="xs:flex-row xs:gap-2 flex flex-col justify-start text-base text-neutral-500">
-		<div class="flex flex-row justify-start gap-2">
-			<span>{workplace}</span>
-			<span class="xs:block hidden text-neutral-300">&#47;&#47;</span>
-		</div>
-		<div>
-			<span class="xs:text-base flex text-right">{period}</span>
-		</div>
+<article class="grid gap-x-10 gap-y-2 py-8 md:grid-cols-[1fr_2.2fr]">
+	<header>
+		<p class="text-secondary text-xs font-semibold tracking-widest uppercase">{workplace}</p>
+		<p class="mt-2 text-base text-neutral-500 italic">{period}</p>
+	</header>
+	<div>
+		<h3 class="text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
+			{title}
+		</h3>
+		{#if freeText}
+			<p class="mt-4 max-w-[62ch] text-lg leading-8 text-neutral-700">{freeText}</p>
+		{/if}
+		{#if items?.length}
+			<ul class="mt-5 max-w-[62ch] space-y-1 text-lg leading-8 text-neutral-700">
+				{#each items as item (item.id)}
+					<li class="marker:text-secondary list-square ml-5 list-outside">
+						{item.WorkEntry}
+					</li>
+				{/each}
+			</ul>
+		{/if}
 	</div>
-	<h3 class="text-xl font-bold tracking-tight sm:text-2xl">{title}</h3>
-	<span class="mt-1 block text-lg">
-		{@render children()}
-	</span>
-</div>
+</article>

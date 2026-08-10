@@ -54,7 +54,7 @@ html {
 	body {
 		color: var(--color-white);
 		font-optical-sizing: auto;
-		font-weight: 400;
+		font-weight: 450;
 		font-style: normal;
 		@apply tracking-wide;
 		@apply font-normal;

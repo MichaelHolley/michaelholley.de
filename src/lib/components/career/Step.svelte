@@ -31,7 +31,7 @@
 			<p class="mt-4 max-w-[62ch] text-lg leading-8 text-neutral-700">{freeText}</p>
 		{/if}
 		{#if items?.length}
-			<ul class="mt-5 max-w-[62ch] space-y-1 text-lg leading-8 text-neutral-700">
+			<ul class="mt-4 max-w-[62ch] space-y-1 text-lg leading-8 text-neutral-700">
 				{#each items as item (item.id)}
 					<li class="marker:text-secondary list-square ml-5 list-outside">
 						{item.WorkEntry}

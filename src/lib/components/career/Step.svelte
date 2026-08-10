@@ -18,7 +18,7 @@
 
 <article class="grid gap-x-10 gap-y-2 py-8 md:grid-cols-[1fr_2.2fr]">
 	<header>
-		<p class="text-secondary text-sm font-extrabold tracking-widest uppercase">
+		<p class="text-secondary pt-2 text-sm font-extrabold tracking-widest uppercase">
 			{workplace}
 		</p>
 		<p class="mt-2 text-sm text-neutral-500 italic">{period}</p>

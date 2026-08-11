@@ -16,7 +16,7 @@
 	} = $props();
 </script>
 
-<article class="grid gap-x-10 gap-y-2 py-8 md:grid-cols-[1fr_2.2fr]">
+<article class="grid gap-x-10 gap-y-2 py-8 md:grid-cols-[1fr_3fr]">
 	<header>
 		<p class="text-secondary pt-2 text-sm font-extrabold tracking-widest uppercase">
 			{workplace}

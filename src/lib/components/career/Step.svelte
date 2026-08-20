@@ -24,7 +24,7 @@
 		<p class="mt-2 text-sm text-neutral-500">{period}</p>
 	</header>
 	<div>
-		<h3 class="text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
+		<h3 class="text-3xl leading-tight font-semibold tracking-tight text-balance">
 			{title}
 		</h3>
 		{#if freeText}

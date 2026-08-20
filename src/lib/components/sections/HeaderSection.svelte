@@ -1,39 +1,14 @@
 <script lang="ts">
 	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
+	import Grainient from '$lib/components/shared/misc/Grainient.svelte';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
-	import { onMount } from 'svelte';
-	import { Spring } from 'svelte/motion';
-
-	const leftBorder = 35;
-	const rightBorder = 80;
-
-	let transitionX = new Spring(100, {
-		stiffness: 0.01,
-		damping: 0.3
-	});
-
-	onMount(() => {
-		transitionX.set(66);
-	});
-
-	const handleMouseMove = (event: MouseEvent) => {
-		const mouseX = event.clientX;
-		let relativeX = (mouseX / window.innerWidth) * 100;
-
-		if (relativeX < leftBorder) {
-			relativeX = leftBorder;
-		} else if (relativeX > rightBorder) {
-			relativeX = rightBorder;
-		}
-
-		transitionX.set(relativeX);
-	};
 </script>
 
-<svelte:window on:mousemove={handleMouseMove} />
-
-<section class="header-bg" style="--mouse-x: {transitionX.current}%;">
+<section class="relative isolate overflow-hidden">
+	<div class="absolute inset-0 -z-10 w-full" aria-hidden="true">
+		<Grainient color1="#dd7373" color3="#000" color2="#51a3a3" zoom={0.85} />
+	</div>
 	<div class="container py-20 pb-16">
 		<div class="flex flex-col justify-center">
 			<div class="text-shadow-md">
@@ -82,19 +57,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	@property --mouse-x {
-		syntax: '<percentage>';
-		inherits: false;
-		initial-value: 100%;
-	}
-
-	.header-bg {
-		background-image: linear-gradient(
-			-30deg,
-			var(--color-primary) calc(100% - var(--mouse-x)),
-			var(--color-secondary) 0%
-		);
-	}
-</style>

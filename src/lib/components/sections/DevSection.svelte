@@ -37,7 +37,7 @@
 									>{String(i + 1).padStart(2, '0')}</span
 								>
 								<h3
-									class="group-hover:text-secondary text-5xl font-black tracking-tighter uppercase transition-colors duration-300 sm:text-7xl {openTitles[
+									class="group-hover:text-secondary text-5xl font-black tracking-tighter uppercase transition-colors duration-300 sm:text-6xl {openTitles[
 										c.title
 									]
 										? 'text-secondary'

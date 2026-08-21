@@ -7,7 +7,7 @@
 
 <section class="relative isolate overflow-hidden">
 	<div class="absolute inset-0 -z-10 w-full" aria-hidden="true">
-		<Grainient color1="#dd7373" color3="#000" color2="#51a3a3" zoom={0.85} />
+		<Grainient color1="#dd7373" color3="#000" color2="#51a3a3" zoom={1.0} />
 	</div>
 	<div class="container pt-32 pb-22">
 		<div class="flex flex-col items-center justify-center text-center">

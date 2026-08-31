@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Michael Holley | {blog?.title}</title>
+	<title>{blog?.title} | Michael Holley</title>
 	<meta name="description" content={blog?.description} />
 	<meta property="og:title" content={blog?.title} />
 	<meta property="og:type" content="article" />

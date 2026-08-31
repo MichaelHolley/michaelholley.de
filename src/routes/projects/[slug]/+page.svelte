@@ -113,7 +113,5 @@
 				</div>
 			</div>
 		{/if}
-	{:else}
-		<p class="mt-16 text-center text-neutral-500">Unable to load project content.</p>
 	{/if}
 </ContentPageComponent>

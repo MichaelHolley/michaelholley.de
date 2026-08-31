@@ -71,7 +71,5 @@
 				</p>
 			</article>
 		</div>
-	{:else}
-		<p class="mt-8 text-center">Unable to load blog content.</p>
 	{/if}
 </ContentPageComponent>

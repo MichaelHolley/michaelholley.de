@@ -137,7 +137,7 @@ export async function fetchBlogs(): Promise<Blog[]> {
  * @returns Blog object or null if not found
  */
 export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
-	let cachedBlog = cache.get<Blog>(`blog-${slug}`);
+	const cachedBlog = cache.get<Blog>(`blog-${slug}`);
 
 	try {
 		if (cachedBlog) {
@@ -158,13 +158,12 @@ export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
 			);
 		}
 
-		const filterResult = ((await res.json()) as { data: Blog[] }).data;
+		const blog = ((await res.json()) as { data: Blog[] }).data[0];
 
-		if (filterResult.length !== 1) {
-			throw new Error(`Blog with slug ${slug} not found or multiple entries exist.`);
+		if (!blog) {
+			return null;
 		}
 
-		const blog = filterResult[0] as Blog;
 		const normalizedBlog = normalizeBlog(blog);
 
 		cache.set(`blog-${slug}`, normalizedBlog);
@@ -173,8 +172,13 @@ export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
 	} catch (e) {
 		console.error('Error fetching blog:', e);
 
-		cachedBlog = cache.getIgnoreInvalidation<Blog>(`blog-${slug}`);
-		return cachedBlog || null;
+		const staleBlog = cache.getIgnoreInvalidation<Blog>(`blog-${slug}`);
+		if (staleBlog) {
+			return staleBlog;
+		}
+
+		// Only an absent slug may return null - a Strapi outage must not be served as a 404
+		throw e;
 	}
 }
 

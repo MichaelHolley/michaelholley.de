@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getBlobBySlug } from '$lib/api/blogs.remote';
+	import { getBlogBySlug } from '$lib/api/blogs.remote';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import TagComponent from '$lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
@@ -7,13 +7,13 @@
 	import { cn } from '$lib/utils';
 
 	const { params } = $props();
-	const { blog } = $derived(await getBlobBySlug(params.slug));
+	const { blog } = $derived(await getBlogBySlug(params.slug));
 
 	const serifFont = serifStore;
 </script>
 
 <svelte:head>
-	<title>{blog?.title} | Michael Holley</title>
+	<title>{blog.title} | Michael Holley</title>
 	<meta name="description" content={blog?.description} />
 	<meta property="og:title" content={blog?.title} />
 	<meta property="og:type" content="article" />

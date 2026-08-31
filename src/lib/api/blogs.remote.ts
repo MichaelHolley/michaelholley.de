@@ -5,7 +5,7 @@ import { fetchBlogBySlug, fetchBlogs } from '$lib/server/services/strapi.service
 import { marked } from 'marked';
 import z from 'zod';
 
-export const getBlobBySlug = query(z.string(), async (slug: string) => {
+export const getBlogBySlug = query(z.string(), async (slug: string) => {
 	const blog = await fetchBlogBySlug(slug);
 
 	if (!blog) {

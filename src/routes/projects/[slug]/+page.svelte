@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { getProjectBySlug } from '$lib/api/projects.remote.js';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import MarkdownComponent from '$lib/components/shared/MarkdownComponent.svelte';
 	import { serifStore } from '$lib/stores/serifFontStore';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
@@ -82,7 +81,9 @@
 				serifFont.current && 'font-serif'
 			)}
 		>
-			<MarkdownComponent content={project.content!} />
+			<!-- eslint-disable svelte/no-at-html-tags -->
+			{@html project.content}
+			<!-- eslint-enable svelte/no-at-html-tags -->
 		</article>
 	</div>
 

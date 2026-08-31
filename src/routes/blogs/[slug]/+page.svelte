@@ -14,62 +14,60 @@
 
 <svelte:head>
 	<title>{blog.title} | Michael Holley</title>
-	<meta name="description" content={blog?.description} />
-	<meta property="og:title" content={blog?.title} />
+	<meta name="description" content={blog.description} />
+	<meta property="og:title" content={blog.title} />
 	<meta property="og:type" content="article" />
-	<meta property="og:description" content={blog?.description} />
-	<meta property="article:published_time" content={blog?.released} />
+	<meta property="og:description" content={blog.description} />
+	<meta property="article:published_time" content={blog.released} />
 	<meta property="article:author" content="Michael Holley" />
-	<meta name="twitter:card" content={blog?.teaserImage ? 'summary_large_image' : 'summary'} />
-	<meta name="twitter:title" content={blog?.title} />
-	<meta name="twitter:description" content={blog?.description} />
-	{#if blog?.teaserImage}
+	<meta name="twitter:card" content={blog.teaserImage ? 'summary_large_image' : 'summary'} />
+	<meta name="twitter:title" content={blog.title} />
+	<meta name="twitter:description" content={blog.description} />
+	{#if blog.teaserImage}
 		<meta property="og:image" content={blog.teaserImage.url} />
 		<meta name="twitter:image" content={blog.teaserImage.url} />
 	{/if}
-	{#each blog?.tags ?? [] as tag (tag.id)}
+	{#each blog.tags ?? [] as tag (tag.id)}
 		<meta property="article:tag" content={tag.value} />
 	{/each}
 </svelte:head>
 
 <ContentPageComponent>
-	{#if blog}
-		<div class="mt-4">
-			<article
-				class={cn(
-					'prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto',
-					serifFont.current && 'font-serif'
-				)}
-			>
-				<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
-					<div class="flex flex-row items-center font-normal">
-						<span class="mr-5">{formatDisplayDate(blog.released)}</span>
-						<div class="flex flex-row items-center gap-1.5">
-							{#each blog.tags as tag (tag.id)}
-								<TagComponent
-									value={tag.value}
-									class="dark:border-neutral-600 dark:text-neutral-400"
-								/>
-							{/each}
-						</div>
+	<div class="mt-4">
+		<article
+			class={cn(
+				'prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto',
+				serifFont.current && 'font-serif'
+			)}
+		>
+			<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
+				<div class="flex flex-row items-center font-normal">
+					<span class="mr-5">{formatDisplayDate(blog.released)}</span>
+					<div class="flex flex-row items-center gap-1.5">
+						{#each blog.tags as tag (tag.id)}
+							<TagComponent
+								value={tag.value}
+								class="dark:border-neutral-600 dark:text-neutral-400"
+							/>
+						{/each}
 					</div>
 				</div>
-				<h1 class="text-4xl font-extrabold tracking-tight">
-					{blog.title}
-				</h1>
-				{#if blog.teaserImage}
-					<img src={blog.teaserImage?.url} alt={blog.title} class="w-full" />
-				{/if}
-				<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
-					<!-- eslint-disable svelte/no-at-html-tags -->
-					{@html blog.content}
-					<!-- eslint-enable svelte/no-at-html-tags -->
-				</div>
-				<p class="pt-10 text-center text-xs">
-					This article was written by a human author and reviewed using AI tools for language
-					accuracy and translation consistency.
-				</p>
-			</article>
-		</div>
-	{/if}
+			</div>
+			<h1 class="text-4xl font-extrabold tracking-tight">
+				{blog.title}
+			</h1>
+			{#if blog.teaserImage}
+				<img src={blog.teaserImage?.url} alt={blog.title} class="w-full" />
+			{/if}
+			<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
+				<!-- eslint-disable svelte/no-at-html-tags -->
+				{@html blog.content}
+				<!-- eslint-enable svelte/no-at-html-tags -->
+			</div>
+			<p class="pt-10 text-center text-xs">
+				This article was written by a human author and reviewed using AI tools for language accuracy
+				and translation consistency.
+			</p>
+		</article>
+	</div>
 </ContentPageComponent>

@@ -31,7 +31,6 @@
 
 		<header class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 			<h1 class="text-5xl font-bold tracking-tighter lowercase text-shadow-md sm:text-7xl">blog</h1>
-			<p class="max-w-sm leading-relaxed text-neutral-400">{description}</p>
 		</header>
 
 		{#if blogs.length > 0}
@@ -77,20 +76,6 @@
 					</li>
 				{/each}
 			</ul>
-		{:else}
-			<div class="mt-12 border-t border-white/15 py-16">
-				<p class="max-w-md leading-relaxed text-neutral-400">
-					Noch kein Artikel veröffentlicht. Der erste ist in Arbeit — bis dahin gibt es auf der
-					Startseite mehr über meine Arbeit zu lesen.
-				</p>
-				<a
-					href="/"
-					class="text-secondary mt-4 inline-flex flex-row items-center gap-1 underline-offset-4 hover:underline"
-				>
-					Zur Startseite
-					<Icon icon="ic:baseline-arrow-back" class="rotate-180" />
-				</a>
-			</div>
 		{/if}
 	</div>
 </section>

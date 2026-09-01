@@ -24,9 +24,9 @@
 	</div>
 	<div class="flex flex-1 flex-col p-4">
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xs text-neutral-400">
+			<time datetime={blog.released} class="text-xs text-neutral-400">
 				{formatDisplayDate(blog.released)}
-			</p>
+			</time>
 			<div class="flex flex-row gap-1.5">
 				{#each blog.tags ?? [] as tag (tag.id)}
 					<TagComponent value={tag.value} />

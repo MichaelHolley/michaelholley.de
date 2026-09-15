@@ -41,7 +41,7 @@
 			<img
 				src={backgroundImgUrl}
 				alt="background"
-				class="h-full w-full object-cover object-top-left transition-all duration-300 group-hover:scale-103"
+				class="h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-103"
 			/>
 		</div>
 	{/if}

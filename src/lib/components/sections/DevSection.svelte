@@ -22,7 +22,7 @@
 			class="relative z-10 rounded-3xl border border-white/10 bg-black/50 px-6 shadow-2xl backdrop-blur-md sm:px-10"
 		>
 			<ul class="flex flex-col divide-y divide-white/10">
-				{#each [area('Backend', ['logos:dotnet', 'devicon:java'], 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'motion-delay-200', devops)] as c, i (c.title)}
+				{#each [area('Backend', ['logos:graphql', 'logos:dotnet', 'devicon:java'], 'motion-delay-0', backend), area('Frontend', ['devicon:vuejs', 'devicon:svelte', 'devicon:tailwindcss'], 'motion-delay-100', frontend), area('DevOps', ['devicon:docker', 'devicon:gitlab', 'fa:github'], 'motion-delay-200', devops)] as c, i (c.title)}
 					<li
 						class="group motion-translate-y-in-50 motion-blur-in-md relative overflow-hidden {c.delay}"
 					>

@@ -16,6 +16,10 @@ Overall, my intention was to build a portfolio website that showcased my skills 
 
 `pnpm build`
 
+## Analytics
+
+See [Analytics documentation](docs/analytics.md).
+
 ## Strapi
 
 I am using [strapi](https://strapi.io/) as a CMS to feed content, which can be setup locally and configred via the `env` file arguments.

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track } from '$lib/analytics/umami';
 	import Icon from '@iconify/svelte';
 
 	const {
@@ -22,6 +23,7 @@
 	{href}
 	class="group flex w-full transform-gpu flex-row items-stretch overflow-hidden rounded-xl border border-white/10 bg-black transition-all active:scale-98"
 	data-sveltekit-preload-data="tap"
+	onclick={() => track('project-open', { project: name })}
 >
 	{#if !!backgroundImgUrl}
 		<div class="relative w-44 shrink-0 self-stretch overflow-hidden">

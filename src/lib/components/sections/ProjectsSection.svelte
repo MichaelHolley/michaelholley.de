@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track, trackOnce } from '$lib/analytics/umami';
 	import { getProjects } from '$lib/api/projects.remote';
 	import BentoCardComponent from '$lib/components/shared/BentoCardComponent.svelte';
 	import ProjectCardMobileComponent from '$lib/components/shared/ProjectCardMobileComponent.svelte';
@@ -10,7 +11,11 @@
 </script>
 
 {#if projects && projects.length > 0}
-	<section id="projects" class="bg-black text-white">
+	<section
+		id="projects"
+		class="bg-black text-white"
+		use:trackOnce={() => track('section-view', { section: 'projects' })}
+	>
 		<div class="container py-8 md:py-16">
 			<SectionHeader title="Projekte" class="pb-8 text-center lg:text-left" />
 			<div class="hidden flex-col items-center justify-center gap-24 md:gap-64 lg:flex">

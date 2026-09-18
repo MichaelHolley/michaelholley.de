@@ -21,6 +21,7 @@
 ## Tooling
 
 - **Markdown**: Use `marked` for markdown parsing. When using it, ensure you use the custom renderer from `$lib/components/shared/util/markedRenderer` to ensure links are handled correctly (e.g., `target="_blank"`).
+- **Analytics**: When adding or expanding user-facing features, extend Umami tracking for the new interactions and keep the event types in `src/lib/analytics/umami.ts` up to date.
 
 ## Git & Commits
 

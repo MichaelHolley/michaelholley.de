@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track } from '$lib/analytics/umami';
 	import type { Blog } from '$lib/server/types';
 	import TagComponent from './TagComponent.svelte';
 	import { formatDisplayDate } from './util/formatDisplayDate';
@@ -11,6 +12,7 @@
 	href="/blogs/{blog.slug}"
 	class="group flex max-w-72 transform-gpu flex-col overflow-hidden border border-black/5 bg-white text-black shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:translate-y-0 active:scale-99"
 	data-sveltekit-preload-data="tap"
+	onclick={() => track('blog-open', { blog: blog.slug, location: 'blogs-section' })}
 >
 	<div class="relative h-40 overflow-hidden">
 		<img

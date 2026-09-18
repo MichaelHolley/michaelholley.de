@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track } from '$lib/analytics/umami';
 	import { cn } from '$lib/utils';
 	import Icon from '@iconify/svelte';
 
@@ -33,6 +34,7 @@
 		className
 	)}
 	data-sveltekit-preload-data="tap"
+	onclick={() => track('project-open', { project: name })}
 >
 	{#if !!backgroundImgUrl}
 		<div

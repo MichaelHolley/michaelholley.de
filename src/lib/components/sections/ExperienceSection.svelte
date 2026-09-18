@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track, trackOnce } from '$lib/analytics/umami';
 	import { getExperienceSection } from '$lib/api/experience-section.remote';
 	import Step from '$lib/components/career/Step.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
@@ -7,7 +8,11 @@
 </script>
 
 {#if experienceSection && experienceSection.Steps.length > 0}
-	<section id="experience" class="bg-white text-black">
+	<section
+		id="experience"
+		class="bg-white text-black"
+		use:trackOnce={() => track('section-view', { section: 'experience' })}
+	>
 		<div class="container py-8 md:py-16 md:pt-12 2xl:px-64">
 			<SectionHeader title="Experience" class="pb-8 text-center" />
 			{#each experienceSection.Steps as step (step.id)}

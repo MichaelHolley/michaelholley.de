@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track, trackOnce } from '$lib/analytics/umami';
 	import { getBlogBySlug } from '$lib/api/blogs.remote';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import TagComponent from '$lib/components/shared/TagComponent.svelte';
@@ -64,7 +65,10 @@
 				{@html blog.content}
 				<!-- eslint-enable svelte/no-at-html-tags -->
 			</div>
-			<p class="pt-10 text-center text-xs">
+			<p
+				class="pt-10 text-center text-xs"
+				use:trackOnce={() => track('article-read', { blog: blog.slug })}
+			>
 				This article was written by a human author and reviewed using AI tools for language accuracy
 				and translation consistency.
 			</p>

@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { track } from '$lib/analytics/umami';
 	import Icon from '@iconify/svelte';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 </script>
@@ -20,6 +21,7 @@
 						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
 						href="mailto:michael.philipp.holley@gmail.com"
 						aria-label="Contact me via Mail"
+						onclick={() => track('contact-click', { location: 'footer' })}
 					>
 						<div class="transition-all group-hover:scale-110">
 							<Icon icon="tdesign:mail-filled" class="text-2xl" />
@@ -32,6 +34,7 @@
 						target="_blank"
 						rel="noreferrer"
 						aria-label="GitHub-Profile"
+						onclick={() => track('social-click', { network: 'github', location: 'footer' })}
 					>
 						<div class="transition-all group-hover:scale-110">
 							<Icon icon="fa:github" class="text-2xl" />
@@ -44,6 +47,7 @@
 						target="_blank"
 						rel="noreferrer"
 						aria-label="LinkedIn-Profile"
+						onclick={() => track('social-click', { network: 'linkedin', location: 'footer' })}
 					>
 						<div class="transition-all group-hover:scale-110">
 							<Icon icon="fa:linkedin-square" class="text-2xl" />

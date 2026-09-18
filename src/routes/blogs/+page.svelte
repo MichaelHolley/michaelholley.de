@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track } from '$lib/analytics/umami';
 	import { getBlogs } from '$lib/api/blogs.remote';
 	import TagComponent from '$lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate';
@@ -41,6 +42,7 @@
 							href="/blogs/{b.slug}"
 							class="focus-visible:outline-secondary group grid grid-cols-[1fr] items-start gap-x-8 gap-y-3 border-b border-white/15 py-8 transition-colors hover:bg-white/[0.03] focus-visible:outline-2 focus-visible:-outline-offset-2 sm:grid-cols-[8rem_1fr_9rem]"
 							data-sveltekit-preload-data="tap"
+							onclick={() => track('blog-open', { blog: b.slug, location: 'blogs-index' })}
 						>
 							<time
 								datetime={b.released}

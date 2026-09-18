@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track, trackOnce } from '$lib/analytics/umami';
 	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
@@ -15,7 +16,11 @@
 	const toggle = (title: string) => (openTitles[title] = !openTitles[title]);
 </script>
 
-<section id="dev" class="relative overflow-hidden bg-black text-white">
+<section
+	id="dev"
+	class="relative overflow-hidden bg-black text-white"
+	use:trackOnce={() => track('section-view', { section: 'dev' })}
+>
 	<SectionHeader title="Dev" class="hidden pb-8 text-center" />
 	<div class="container py-6 md:py-10">
 		<div

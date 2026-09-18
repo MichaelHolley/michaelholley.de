@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track } from '$lib/analytics/umami';
 	import { getProjectBySlug } from '$lib/api/projects.remote.js';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import { serifStore } from '$lib/stores/serifFontStore';
@@ -48,6 +49,7 @@
 						target="_blank"
 						class="group hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary inline-flex items-center gap-2 rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-600 transition-all duration-200 dark:border-neutral-700 dark:text-neutral-400"
 						aria-label="Open URL"
+						onclick={() => track('project-link-click', { project: project.title, target: 'demo' })}
 					>
 						<Icon
 							icon="bi:globe"
@@ -62,6 +64,8 @@
 						target="_blank"
 						class="group inline-flex items-center gap-2 rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-600 transition-all duration-200 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-200"
 						aria-label="GitHub Repository"
+						onclick={() =>
+							track('project-link-click', { project: project.title, target: 'github' })}
 					>
 						<Icon
 							icon="fa:github"

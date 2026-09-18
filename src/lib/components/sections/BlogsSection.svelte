@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { track, trackOnce } from '$lib/analytics/umami';
 	import { getBlogs } from '$lib/api/blogs.remote';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
 	import Icon from '@iconify/svelte';
@@ -8,7 +9,11 @@
 </script>
 
 {#if blogs && blogs.length > 0}
-	<section id="blog" class="bg-tertiary">
+	<section
+		id="blog"
+		class="bg-tertiary"
+		use:trackOnce={() => track('section-view', { section: 'blog' })}
+	>
 		<div class="container py-8 md:py-16">
 			<SectionHeader title="blog" class="pb-8 text-center" />
 			<div class="flex flex-row justify-center">
@@ -22,6 +27,7 @@
 				<a
 					href="/blogs"
 					class="group flex flex-row items-center gap-1 underline-offset-4 transition-all hover:underline"
+					onclick={() => track('blog-index-open', { location: 'blogs-section' })}
 				>
 					Alle Artikel
 					<Icon

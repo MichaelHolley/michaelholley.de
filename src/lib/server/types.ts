@@ -81,7 +81,7 @@ export const ProjectSchema = z.object({
 	url: z.string().optional(),
 	github_ref: z.string().optional(),
 	teaserImage: ImageSchema.optional(),
-	highlight: z.boolean().optional(),
+	position: z.number().int().min(1),
 	projectIcon: IconSchema.optional(),
 	tech: z.array(TechSchema).optional()
 });

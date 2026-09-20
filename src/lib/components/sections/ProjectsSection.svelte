@@ -4,7 +4,6 @@
 	import BentoCardComponent from '$lib/components/shared/BentoCardComponent.svelte';
 	import ProjectCardMobileComponent from '$lib/components/shared/ProjectCardMobileComponent.svelte';
 	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
-	import { cn } from '$lib/utils';
 	import { getThumbnailImageUrl } from '../shared/util/getThumbnailImageUrl';
 
 	const { projects } = await getProjects();
@@ -28,7 +27,7 @@
 							icon={p.projectIcon?.iconIdentifier}
 							href="/projects/{p.slug}"
 							cta="Mehr"
-							class={cn('col-span-1', p.highlight && 'lg:col-span-2')}
+							class="col-span-1"
 							backgroundImgUrl={getThumbnailImageUrl(p.teaserImage)}
 						/>
 					{/each}

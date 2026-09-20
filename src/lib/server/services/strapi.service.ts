@@ -22,7 +22,7 @@ const projectSelectFields = [
 	'description',
 	'url',
 	'github_ref',
-	'highlight'
+	'position'
 ] as const satisfies readonly (keyof Project)[];
 
 const projectPopulateFields: string[] = ['teaserImage', 'projectIcon', 'tech.icon'];

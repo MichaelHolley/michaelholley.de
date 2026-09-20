@@ -23,7 +23,7 @@ export const getProjectBySlug = query(z.string(), async (slug: string) => {
 
 export const getProjects = query(async () => {
 	const projects = await fetchProjects();
-	const sortedProjects = projects.sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0));
+	const sortedProjects = projects.sort((a, b) => a.position - b.position);
 
 	return { projects: sortedProjects };
 });

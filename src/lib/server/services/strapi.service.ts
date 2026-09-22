@@ -9,7 +9,10 @@ const blogSelectFields = [
 	'title',
 	'slug',
 	'description',
-	'released'
+	'released',
+	'isExternal',
+	'externalUrl',
+	'externalSource'
 ] as const satisfies readonly (keyof Blog)[];
 
 const blogPopulateFields = ['tags', 'teaserImage'] as const satisfies readonly (keyof Blog)[];

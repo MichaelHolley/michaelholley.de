@@ -66,7 +66,10 @@ export const BlogSchema = z.object({
 	released: z.string(),
 	tags: z.array(TagSchema).optional(),
 	slug: z.string(),
-	teaserImage: ImageSchema.optional()
+	teaserImage: ImageSchema.optional(),
+	isExternal: z.boolean().optional(),
+	externalUrl: z.string().optional(),
+	externalSource: z.string().optional()
 });
 
 // Project

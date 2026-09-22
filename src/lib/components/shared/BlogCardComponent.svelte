@@ -37,15 +37,17 @@
 		{/if}
 	</div>
 	<div class="flex flex-1 flex-col p-4">
-		<div class="flex flex-row items-center justify-between gap-2">
+		<div class="flex flex-col items-start gap-2">
 			<time datetime={blog.released} class="text-xs text-neutral-400">
 				{formatDisplayDate(blog.released)}
 			</time>
-			<div class="flex flex-row gap-1.5">
-				{#each blog.tags ?? [] as tag (tag.id)}
-					<TagComponent value={tag.value} />
-				{/each}
-			</div>
+			{#if blog.tags?.length}
+				<div class="flex flex-row flex-wrap gap-1.5">
+					{#each blog.tags as tag (tag.id)}
+						<TagComponent value={tag.value} class="whitespace-nowrap" />
+					{/each}
+				</div>
+			{/if}
 		</div>
 		<h3
 			class="group-hover:text-primary mt-2 text-lg font-semibold tracking-tight transition-colors"

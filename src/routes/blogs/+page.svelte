@@ -39,10 +39,17 @@
 				{#each blogs as b (b.id)}
 					<li>
 						<a
-							href="/blogs/{b.slug}"
+							href={b.isExternal ? b.externalUrl : `/blogs/${b.slug}`}
+							target={b.isExternal ? '_blank' : undefined}
+							rel={b.isExternal ? 'noopener noreferrer' : undefined}
 							class="focus-visible:outline-secondary group grid grid-cols-[1fr] items-start gap-x-8 gap-y-3 border-b border-white/15 py-8 transition-colors hover:bg-white/[0.03] focus-visible:outline-2 focus-visible:-outline-offset-2 sm:grid-cols-[8rem_1fr_9rem]"
 							data-sveltekit-preload-data="tap"
-							onclick={() => track('blog-open', { blog: b.slug, location: 'blogs-index' })}
+							onclick={() =>
+								track('blog-open', {
+									blog: b.slug,
+									location: 'blogs-index',
+									external: b.isExternal
+								})}
 						>
 							<time
 								datetime={b.released}
@@ -52,11 +59,21 @@
 							</time>
 
 							<div class="flex flex-col gap-2">
-								<h2
-									class="group-hover:text-primary text-2xl font-semibold tracking-tight text-balance transition-colors sm:text-3xl"
-								>
-									{b.title}
-								</h2>
+								<div class="flex flex-row flex-wrap items-center gap-2">
+									<h2
+										class="group-hover:text-primary text-2xl font-semibold tracking-tight text-balance transition-colors sm:text-3xl"
+									>
+										{b.title}
+									</h2>
+									{#if b.isExternal}
+										<span
+											class="flex flex-row items-center gap-1 border border-neutral-600 px-1.5 py-0.5 text-xs text-neutral-400"
+										>
+											<Icon icon="ic:baseline-open-in-new" class="size-3.5" />
+											{b.externalSource ? `Extern · ${b.externalSource}` : 'Extern'}
+										</span>
+									{/if}
+								</div>
 								<p class="max-w-prose leading-relaxed text-neutral-400">{b.description}</p>
 								{#if b.tags?.length}
 									<div class="mt-1 flex flex-row flex-wrap gap-1.5">

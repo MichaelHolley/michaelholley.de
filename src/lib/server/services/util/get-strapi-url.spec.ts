@@ -3,9 +3,9 @@ import { getStrapiUrl } from './get-strapi-url';
 
 let mockEnv: Record<string, string | undefined> = {};
 
-vi.mock('$env/dynamic/private', () => ({
-	get env() {
-		return mockEnv;
+vi.mock('$app/env/private', () => ({
+	get STRAPI_URL() {
+		return mockEnv.STRAPI_URL;
 	}
 }));
 

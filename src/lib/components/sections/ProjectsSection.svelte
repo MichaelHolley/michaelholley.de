@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { track, trackOnce } from '$lib/analytics/umami';
-	import { getProjects } from '$lib/api/projects.remote';
-	import BentoCardComponent from '$lib/components/shared/BentoCardComponent.svelte';
-	import ProjectCardMobileComponent from '$lib/components/shared/ProjectCardMobileComponent.svelte';
-	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+	import { track, trackOnce } from '#lib/analytics/umami.js';
+	import { getProjects } from '#lib/api/projects.remote.js';
+	import BentoCardComponent from '#lib/components/shared/BentoCardComponent.svelte';
+	import ProjectCardMobileComponent from '#lib/components/shared/ProjectCardMobileComponent.svelte';
+	import SectionHeader from '#lib/components/shared/SectionHeader.svelte';
 	import { getThumbnailImageUrl } from '../shared/util/getThumbnailImageUrl';
 
 	const { projects } = await getProjects();

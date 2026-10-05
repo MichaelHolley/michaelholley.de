@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { track, trackOnce } from '$lib/analytics/umami';
-	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
+	import { track, trackOnce } from '#lib/analytics/umami.js';
+	import DotPattern from '#lib/components/shared/misc/DotPattern.svelte';
 	import Icon from '@iconify/svelte';
 	import type { Snippet } from 'svelte';
 	import SectionHeader from '../shared/SectionHeader.svelte';

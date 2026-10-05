@@ -2,10 +2,8 @@ import { describe, it, expect, vi } from 'vitest';
 import { buildStrapiUrl } from './strapi-url-builder';
 
 // Mock the env module
-vi.mock('$env/dynamic/private', () => ({
-	env: {
-		STRAPI_URL: 'https://api.example.com'
-	}
+vi.mock('$app/env/private', () => ({
+	STRAPI_URL: 'https://api.example.com'
 }));
 
 describe('buildStrapiUrl', () => {

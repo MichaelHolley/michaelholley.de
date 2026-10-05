@@ -1,7 +1,13 @@
-import { cache } from '$lib/server/cache';
-import { getStrapiUrl } from '$lib/server/services/util/get-strapi-url';
-import { buildStrapiUrl } from '$lib/server/services/util/strapi-url-builder';
-import type { Blog, ExperienceSectionData, Image, ImageFormat, Project } from '$lib/server/types';
+import { cache } from '#lib/server/cache.js';
+import { getStrapiUrl } from '#lib/server/services/util/get-strapi-url.js';
+import { buildStrapiUrl } from '#lib/server/services/util/strapi-url-builder.js';
+import type {
+	Blog,
+	ExperienceSectionData,
+	Image,
+	ImageFormat,
+	Project
+} from '#lib/server/types.js';
 
 const blogSelectFields = [
 	'id',

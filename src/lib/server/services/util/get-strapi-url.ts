@@ -1,7 +1,7 @@
-import { env } from '$env/dynamic/private';
+import { STRAPI_URL } from '$app/env/private';
 
 export function getStrapiUrl() {
-	const url = env.STRAPI_URL;
+	const url = STRAPI_URL;
 	if (!url) {
 		throw new Error('STRAPI_URL is not set. Check your .env file (see .env.example).');
 	}

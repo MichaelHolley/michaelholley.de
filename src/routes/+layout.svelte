@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { dev } from '$app/environment';
+	import { dev } from '$app/env';
 	import { page } from '$app/state';
-	import Footer from '$lib/components/sections/Footer.svelte';
+	import Footer from '#lib/components/sections/Footer.svelte';
 	import type { Snippet } from 'svelte';
 	import { RenderScan } from 'svelte-render-scan';
 	import '../app.css';

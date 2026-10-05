@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
+	import { track } from '#lib/analytics/umami.js';
 	import Icon from '@iconify/svelte';
-	import DotPattern from '$lib/components/shared/misc/DotPattern.svelte';
+	import DotPattern from '#lib/components/shared/misc/DotPattern.svelte';
 </script>
 
 <footer class="relative bg-black">

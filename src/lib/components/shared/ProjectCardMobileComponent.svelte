@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
+	import { track } from '#lib/analytics/umami.js';
 	import Icon from '@iconify/svelte';
 
 	const {

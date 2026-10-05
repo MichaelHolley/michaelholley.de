@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
-	import BoxReveal from '$lib/components/shared/misc/BoxReveal.svelte';
-	import Grainient from '$lib/components/shared/misc/Grainient.svelte';
-	import { cn } from '$lib/utils';
+	import { track } from '#lib/analytics/umami.js';
+	import BoxReveal from '#lib/components/shared/misc/BoxReveal.svelte';
+	import Grainient from '#lib/components/shared/misc/Grainient.svelte';
+	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
 </script>
 

@@ -1,9 +1,8 @@
-import { env } from '$env/dynamic/private';
+import { CACHE_INVALIDATION_TIME_IN_SECONDS } from '$app/env/private';
 
 class Cache {
 	private cache: { [key: string]: { data: unknown; timestamp: number } } = {};
-	private cacheInvalidationTimeInSeconds =
-		Number(env.CACHE_INVALIDATION_TIME_IN_SECONDS) || 60 * 10;
+	private cacheInvalidationTimeInSeconds = Number(CACHE_INVALIDATION_TIME_IN_SECONDS) || 60 * 10;
 
 	get<T>(key: string): T | null {
 		const item = this.cache[key];

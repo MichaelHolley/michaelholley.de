@@ -155,3 +155,6 @@ jobs:
 
       - name: Run build
         run: pnpm build
+        env:
+          # SvelteKit validates env vars at build time; the real value is only read at runtime
+          STRAPI_URL: http://localhost:1337/api

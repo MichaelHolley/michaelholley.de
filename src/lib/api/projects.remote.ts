@@ -1,7 +1,7 @@
 import { query } from '$app/server';
 import { error } from '@sveltejs/kit';
-import { renderer } from '$lib/components/shared/util/markedRenderer';
-import { fetchProjectBySlug, fetchProjects } from '$lib/server/services/strapi.service';
+import { renderer } from '#lib/components/shared/util/markedRenderer.js';
+import { fetchProjectBySlug, fetchProjects } from '#lib/server/services/strapi.service.js';
 import { marked } from 'marked';
 import z from 'zod';
 

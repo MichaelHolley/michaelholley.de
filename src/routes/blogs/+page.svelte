@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
-	import { getBlogs } from '$lib/api/blogs.remote';
-	import TagComponent from '$lib/components/shared/TagComponent.svelte';
-	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate';
-	import { getThumbnailImageUrl } from '$lib/components/shared/util/getThumbnailImageUrl';
+	import { track } from '#lib/analytics/umami.js';
+	import { getBlogs } from '#lib/api/blogs.remote.js';
+	import TagComponent from '#lib/components/shared/TagComponent.svelte';
+	import { formatDisplayDate } from '#lib/components/shared/util/formatDisplayDate.js';
+	import { getThumbnailImageUrl } from '#lib/components/shared/util/getThumbnailImageUrl.js';
 	import Icon from '@iconify/svelte';
 
 	const description =

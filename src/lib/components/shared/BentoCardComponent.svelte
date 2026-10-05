@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
-	import { cn } from '$lib/utils';
+	import { track } from '#lib/analytics/umami.js';
+	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
 
 	const {

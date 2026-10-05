@@ -1,5 +1,5 @@
+import { STRAPI_URL } from '$app/env/private';
 import { cache } from '#lib/server/cache.js';
-import { getStrapiUrl } from '#lib/server/services/util/get-strapi-url.js';
 import { buildStrapiUrl } from '#lib/server/services/util/strapi-url-builder.js';
 import type {
 	Blog,
@@ -40,8 +40,7 @@ const projectPopulateFields: string[] = ['teaserImage', 'projectIcon', 'tech.ico
  * Gets the base URL for Strapi (without /api suffix)
  */
 function getStrapiBaseUrl(): string {
-	const strapiUrl = getStrapiUrl();
-	return strapiUrl.replace('/api', '');
+	return STRAPI_URL.replace('/api', '');
 }
 
 /**

@@ -3,7 +3,7 @@ import { cache } from './cache';
 
 // Mock the env module
 vi.mock('$app/env/private', () => ({
-	CACHE_INVALIDATION_TIME_IN_SECONDS: '60'
+	CACHE_INVALIDATION_TIME_IN_SECONDS: 60
 }));
 
 describe('Cache', () => {

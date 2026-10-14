@@ -30,7 +30,7 @@
 						href="https://www.linkedin.com/in/michael-holley-791a64228/"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="LinkedIn-Profile"
+						aria-label="LinkedIn-Profil"
 						onclick={() => track('social-click', { network: 'linkedin', location: 'header' })}
 					>
 						<Icon icon="fa:linkedin-square" class="text-4xl drop-shadow-md" />
@@ -40,7 +40,7 @@
 						href="https://github.com/MichaelHolley"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="GitHub-Profile"
+						aria-label="GitHub-Profil"
 						onclick={() => track('social-click', { network: 'github', location: 'header' })}
 					>
 						<Icon icon="fa:github" class="text-4xl drop-shadow-md" />

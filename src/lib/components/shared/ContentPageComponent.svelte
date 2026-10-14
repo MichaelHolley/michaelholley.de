@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { serifStore } from '$lib/stores/serifFontStore';
-	import { cn } from '$lib/utils';
+	import { serifStore } from '#lib/stores/serifFontStore.js';
+	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
 	import { IsInViewport } from 'runed';
 	import { type Snippet } from 'svelte';
@@ -22,8 +22,9 @@
 		'text-neutral-400 hover:text-neutral-500 transition-all',
 		'dark:text-neutral-600 hover:dark:text-neutral-500'
 	);
+	afterNavigate(({ from, shallow }) => {
+		if (shallow) return;
 
-	afterNavigate(({ from }) => {
 		if (from) {
 			hasInternalHistory = true;
 		}

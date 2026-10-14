@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { track, trackOnce } from '$lib/analytics/umami';
-	import { getExperienceSection } from '$lib/api/experience-section.remote';
-	import Step from '$lib/components/career/Step.svelte';
-	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+	import { track, trackOnce } from '#lib/analytics/umami.js';
+	import { getExperienceSection } from '#lib/api/experience-section.remote.js';
+	import Step from '#lib/components/career/Step.svelte';
+	import SectionHeader from '#lib/components/shared/SectionHeader.svelte';
 
 	const { experienceSection } = await getExperienceSection();
 </script>

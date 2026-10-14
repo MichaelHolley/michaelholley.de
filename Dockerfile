@@ -11,7 +11,8 @@ RUN pnpm install --frozen-lockfile
 # ---- Build ----
 FROM dependencies AS build
 COPY . .
-RUN pnpm build
+# SvelteKit validates env vars at build time; the real value is only read at runtime
+RUN STRAPI_URL=http://localhost:1337/api pnpm build
 
 # ---- Production Dependencies ----
 FROM base AS prod-dependencies

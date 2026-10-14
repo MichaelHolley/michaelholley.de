@@ -2,10 +2,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { cache } from './cache';
 
 // Mock the env module
-vi.mock('$env/dynamic/private', () => ({
-	env: {
-		CACHE_INVALIDATION_TIME_IN_SECONDS: '60'
-	}
+vi.mock('$app/env/private', () => ({
+	CACHE_INVALIDATION_TIME_IN_SECONDS: 60
 }));
 
 describe('Cache', () => {

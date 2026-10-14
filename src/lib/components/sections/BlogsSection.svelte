@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { track, trackOnce } from '$lib/analytics/umami';
-	import { getBlogs } from '$lib/api/blogs.remote';
-	import SectionHeader from '$lib/components/shared/SectionHeader.svelte';
+	import { track, trackOnce } from '#lib/analytics/umami.js';
+	import { getBlogs } from '#lib/api/blogs.remote.js';
+	import SectionHeader from '#lib/components/shared/SectionHeader.svelte';
 	import Icon from '@iconify/svelte';
 	import BlogCardComponent from '../shared/BlogCardComponent.svelte';
 

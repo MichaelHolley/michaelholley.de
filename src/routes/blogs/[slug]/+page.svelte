@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { track, trackOnce } from '$lib/analytics/umami';
-	import { getBlogBySlug } from '$lib/api/blogs.remote';
-	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import TagComponent from '$lib/components/shared/TagComponent.svelte';
-	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
-	import { jsonLdScript } from '$lib/seo/jsonLd';
-	import { serifStore } from '$lib/stores/serifFontStore.js';
-	import { cn } from '$lib/utils';
+	import { track, trackOnce } from '#lib/analytics/umami.js';
+	import { getBlogBySlug } from '#lib/api/blogs.remote.js';
+	import ContentPageComponent from '#lib/components/shared/ContentPageComponent.svelte';
+	import TagComponent from '#lib/components/shared/TagComponent.svelte';
+	import { formatDisplayDate } from '#lib/components/shared/util/formatDisplayDate.js';
+	import { jsonLdScript } from '#lib/seo/jsonLd.js';
+	import { serifStore } from '#lib/stores/serifFontStore.js';
+	import { cn } from '#lib/utils.js';
 
 	const { params } = $props();
 	const { blog } = $derived(await getBlogBySlug(params.slug));

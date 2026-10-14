@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ExperienceWorkItem } from '$lib/server/types';
+	import type { ExperienceWorkItem } from '#lib/server/types.js';
 
 	const {
 		period,

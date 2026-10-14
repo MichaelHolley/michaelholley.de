@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
-	import { getProjectBySlug } from '$lib/api/projects.remote.js';
-	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
-	import { serifStore } from '$lib/stores/serifFontStore';
-	import { cn } from '$lib/utils';
+	import { track } from '#lib/analytics/umami.js';
+	import { getProjectBySlug } from '#lib/api/projects.remote.js';
+	import ContentPageComponent from '#lib/components/shared/ContentPageComponent.svelte';
+	import { serifStore } from '#lib/stores/serifFontStore.js';
+	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
 
 	const { params } = $props();

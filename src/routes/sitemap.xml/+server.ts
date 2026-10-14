@@ -1,4 +1,4 @@
-import { fetchBlogs, fetchProjects } from '$lib/server/services/strapi.service';
+import { fetchBlogs, fetchProjects } from '#lib/server/services/strapi.service.js';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async ({ url }) => {

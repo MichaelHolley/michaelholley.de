@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { track } from '$lib/analytics/umami';
-	import type { Blog } from '$lib/server/types';
+	import { track } from '#lib/analytics/umami.js';
+	import type { Blog } from '#lib/server/types.js';
 	import Icon from '@iconify/svelte';
 	import TagComponent from './TagComponent.svelte';
 	import { formatDisplayDate } from './util/formatDisplayDate';

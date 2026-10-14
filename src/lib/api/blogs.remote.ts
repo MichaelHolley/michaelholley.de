@@ -1,5 +1,5 @@
 import { query } from '$app/server';
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import { renderer } from '#lib/components/shared/util/markedRenderer.js';
 import { fetchBlogBySlug, fetchBlogs } from '#lib/server/services/strapi.service.js';
 import { marked } from 'marked';
@@ -10,6 +10,10 @@ export const getBlogBySlug = query(z.string(), async (slug: string) => {
 
 	if (!blog) {
 		error(404, 'Blog post not found');
+	}
+
+	if (blog.isExternal && blog.externalUrl) {
+		redirect(301, blog.externalUrl, { external: true });
 	}
 
 	// Convert markdown to HTML on the server

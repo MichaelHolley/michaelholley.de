@@ -12,6 +12,8 @@
 <svelte:head>
 	<link rel="canonical" href={`${page.url.origin}${page.url.pathname}`} />
 	<meta property="og:url" content={`${page.url.origin}${page.url.pathname}`} />
+	<meta property="og:site_name" content="Michael Holley" />
+	<meta property="og:locale" content="de_DE" />
 </svelte:head>
 
 {#if dev}

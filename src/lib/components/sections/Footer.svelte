@@ -20,7 +20,7 @@
 					<a
 						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
 						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="Contact me via Mail"
+						aria-label="Per E-Mail kontaktieren"
 						onclick={() => track('contact-click', { location: 'footer' })}
 					>
 						<div class="transition-all group-hover:scale-110">
@@ -33,7 +33,7 @@
 						href="https://github.com/MichaelHolley"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="GitHub-Profile"
+						aria-label="GitHub-Profil"
 						onclick={() => track('social-click', { network: 'github', location: 'footer' })}
 					>
 						<div class="transition-all group-hover:scale-110">
@@ -46,7 +46,7 @@
 						href="https://www.linkedin.com/in/michael-holley-791a64228/"
 						target="_blank"
 						rel="noreferrer"
-						aria-label="LinkedIn-Profile"
+						aria-label="LinkedIn-Profil"
 						onclick={() => track('social-click', { network: 'linkedin', location: 'footer' })}
 					>
 						<div class="transition-all group-hover:scale-110">

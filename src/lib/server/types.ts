@@ -64,6 +64,7 @@ export const BlogSchema = z.object({
 	description: z.string(),
 	content: z.string().optional(),
 	released: z.string(),
+	updatedAt: z.string(),
 	tags: z.array(TagSchema).optional(),
 	slug: z.string(),
 	teaserImage: ImageSchema.optional(),

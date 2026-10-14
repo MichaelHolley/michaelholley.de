@@ -21,7 +21,8 @@
 	<div class="relative h-40 overflow-hidden">
 		<img
 			src={getThumbnailImageUrl(blog.teaserImage)}
-			alt={blog.title}
+			alt={blog.teaserImage?.alternativeText || blog.title}
+			loading="lazy"
 			class="h-full w-full transform-gpu object-cover object-center transition-transform duration-500 group-hover:scale-105"
 		/>
 		<div

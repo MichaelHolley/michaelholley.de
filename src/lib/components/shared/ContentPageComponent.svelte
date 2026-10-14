@@ -56,8 +56,8 @@
 					onclick={() => {
 						serifFont.current = !serifFont.current;
 					}}
-					title="Change to {!serifFont.current ? 'Serif' : 'Default'} font"
-					aria-label="Toggle serif font"
+					title="Zu {!serifFont.current ? 'Serifen' : 'Standard'}-Schrift wechseln"
+					aria-label="Serifenschrift umschalten"
 					aria-pressed={serifFont.current}
 				>
 					Aa</button
@@ -76,7 +76,7 @@
 						buttonVariant
 					)}
 					onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-					aria-label="Scroll to top"
+					aria-label="Nach oben scrollen"
 				>
 					<Icon icon="ic:baseline-arrow-back" class="rotate-90 text-2xl" aria-hidden="true" />
 				</button>

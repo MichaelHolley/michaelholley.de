@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { track } from '#lib/analytics/umami.js';
 	import { getBlogs } from '#lib/api/blogs.remote.js';
 	import TagComponent from '#lib/components/shared/TagComponent.svelte';
@@ -18,6 +19,8 @@
 	<meta property="og:title" content="Blog | Michael Holley" />
 	<meta property="og:type" content="website" />
 	<meta property="og:description" content={description} />
+	<meta property="og:image" content={`${page.url.origin}/MichaelHolleyBanner.png`} />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <section class="min-h-svh bg-black text-white">
@@ -87,7 +90,8 @@
 							{#if b.teaserImage}
 								<img
 									src={getThumbnailImageUrl(b.teaserImage)}
-									alt=""
+									alt={b.teaserImage.alternativeText || b.title}
+									loading="lazy"
 									class="hidden h-24 w-full object-cover object-center opacity-70 transition-opacity duration-300 group-hover:opacity-100 sm:block"
 								/>
 							{/if}

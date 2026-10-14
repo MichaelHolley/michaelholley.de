@@ -48,7 +48,7 @@
 						href={project.url}
 						target="_blank"
 						class="group hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary inline-flex items-center gap-2 rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-600 transition-all duration-200 dark:border-neutral-700 dark:text-neutral-400"
-						aria-label="Open URL"
+						aria-label="Live-Demo öffnen"
 						onclick={() => track('project-link-click', { project: project.title, target: 'demo' })}
 					>
 						<Icon

@@ -50,7 +50,7 @@
 	<meta property="og:image" content={`${origin}/MichaelHolleyBanner.png`} />
 	<meta property="og:image:width" content="593" />
 	<meta property="og:image:height" content="329" />
-	<meta property="og:image:alt" content="Michael Holley – Software Entwickler" />
+	<meta property="og:image:alt" content="Michael Holley – Software Engineer" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html structuredData}

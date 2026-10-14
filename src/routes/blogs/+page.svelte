@@ -90,7 +90,8 @@
 							{#if b.teaserImage}
 								<img
 									src={getThumbnailImageUrl(b.teaserImage)}
-									alt=""
+									alt={b.teaserImage.alternativeText || b.title}
+									loading="lazy"
 									class="hidden h-24 w-full object-cover object-center opacity-70 transition-opacity duration-300 group-hover:opacity-100 sm:block"
 								/>
 							{/if}

@@ -42,7 +42,8 @@
 		>
 			<img
 				src={backgroundImgUrl}
-				alt="background"
+				alt={name}
+				loading="lazy"
 				class="h-full w-full object-cover object-center transition-all duration-300 group-hover:scale-103"
 			/>
 		</div>

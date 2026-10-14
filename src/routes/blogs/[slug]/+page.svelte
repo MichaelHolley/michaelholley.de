@@ -20,6 +20,7 @@
 			headline: blog.title,
 			description: blog.description,
 			datePublished: blog.released,
+			dateModified: blog.updatedAt,
 			inLanguage: 'de',
 			url: `${page.url.origin}${page.url.pathname}`,
 			mainEntityOfPage: `${page.url.origin}${page.url.pathname}`,
@@ -38,6 +39,7 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:description" content={blog.description} />
 	<meta property="article:published_time" content={blog.released} />
+	<meta property="article:modified_time" content={blog.updatedAt} />
 	<meta property="article:author" content="Michael Holley" />
 	<meta name="twitter:card" content={blog.teaserImage ? 'summary_large_image' : 'summary'} />
 	<meta name="twitter:title" content={blog.title} />

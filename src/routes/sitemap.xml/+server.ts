@@ -7,7 +7,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const blogs = allBlogs.filter((blog) => !blog.isExternal);
 
 	const newestBlogDate = blogs
-		.map((blog) => blog.released.split('T')[0])
+		.map((blog) => blog.updatedAt.split('T')[0])
 		.sort()
 		.at(-1);
 
@@ -18,7 +18,7 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	const blogUrls = blogs.map((blog) => ({
 		loc: `${origin}/blogs/${blog.slug}`,
-		lastmod: blog.released.split('T')[0],
+		lastmod: blog.updatedAt.split('T')[0],
 		priority: '0.8'
 	}));
 

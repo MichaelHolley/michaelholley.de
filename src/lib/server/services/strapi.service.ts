@@ -16,6 +16,7 @@ const blogSelectFields = [
 	'slug',
 	'description',
 	'released',
+	'updatedAt',
 	'isExternal',
 	'externalUrl',
 	'externalSource'

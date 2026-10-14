@@ -48,7 +48,7 @@
 					<a
 						class={cn('transition-all hover:scale-110', 'motion-delay-250')}
 						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="Contact me via Mail"
+						aria-label="Per E-Mail kontaktieren"
 						onclick={() => track('contact-click', { location: 'header' })}
 					>
 						<Icon icon="tdesign:mail-filled" class="text-4xl drop-shadow-md" />

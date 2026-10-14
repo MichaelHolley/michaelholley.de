@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { track, trackOnce } from '$lib/analytics/umami';
 	import { getBlogBySlug } from '$lib/api/blogs.remote';
 	import ContentPageComponent from '$lib/components/shared/ContentPageComponent.svelte';
 	import TagComponent from '$lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '$lib/components/shared/util/formatDisplayDate.js';
+	import { jsonLdScript } from '$lib/seo/jsonLd';
 	import { serifStore } from '$lib/stores/serifFontStore.js';
 	import { cn } from '$lib/utils';
 
@@ -11,6 +13,22 @@
 	const { blog } = $derived(await getBlogBySlug(params.slug));
 
 	const serifFont = serifStore;
+
+	const structuredData = $derived(
+		jsonLdScript({
+			'@type': 'BlogPosting',
+			headline: blog.title,
+			description: blog.description,
+			datePublished: blog.released,
+			inLanguage: 'de',
+			url: `${page.url.origin}${page.url.pathname}`,
+			mainEntityOfPage: `${page.url.origin}${page.url.pathname}`,
+			...(blog.teaserImage && { image: blog.teaserImage.url }),
+			...(blog.tags?.length && { keywords: blog.tags.map((tag) => tag.value) }),
+			author: { '@type': 'Person', '@id': `${page.url.origin}/#person`, name: 'Michael Holley' },
+			isPartOf: { '@id': `${page.url.origin}/#website` }
+		})
+	);
 </script>
 
 <svelte:head>
@@ -31,6 +49,8 @@
 	{#each blog.tags ?? [] as tag (tag.id)}
 		<meta property="article:tag" content={tag.value} />
 	{/each}
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html structuredData}
 </svelte:head>
 
 <ContentPageComponent>
@@ -58,7 +78,11 @@
 				{blog.title}
 			</h1>
 			{#if blog.teaserImage}
-				<img src={blog.teaserImage?.url} alt={blog.title} class="w-full" />
+				<img
+					src={blog.teaserImage.url}
+					alt={blog.teaserImage.alternativeText || blog.title}
+					class="w-full"
+				/>
 			{/if}
 			<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
 				<!-- eslint-disable svelte/no-at-html-tags -->
@@ -69,8 +93,8 @@
 				class="pt-10 text-center text-xs"
 				use:trackOnce={() => track('article-read', { blog: blog.slug })}
 			>
-				This article was written by a human author and reviewed using AI tools for language accuracy
-				and translation consistency.
+				Dieser Artikel wurde von einem Menschen geschrieben und mit KI-Werkzeugen auf sprachliche
+				Korrektheit und Übersetzungskonsistenz geprüft.
 			</p>
 		</article>
 	</div>

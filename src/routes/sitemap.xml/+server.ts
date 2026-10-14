@@ -3,7 +3,8 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async ({ url }) => {
 	const origin = url.origin;
-	const [blogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
+	const [allBlogs, projects] = await Promise.all([fetchBlogs(), fetchProjects()]);
+	const blogs = allBlogs.filter((blog) => !blog.isExternal);
 
 	const newestBlogDate = blogs
 		.map((blog) => blog.released.split('T')[0])

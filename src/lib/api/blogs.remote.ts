@@ -13,7 +13,7 @@ export const getBlogBySlug = query(z.string(), async (slug: string) => {
 	}
 
 	if (blog.isExternal && blog.externalUrl) {
-		redirect(301, blog.externalUrl);
+		redirect(301, blog.externalUrl, { external: true });
 	}
 
 	// Convert markdown to HTML on the server

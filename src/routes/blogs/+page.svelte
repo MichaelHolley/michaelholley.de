@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { track } from '#lib/analytics/umami.js';
 	import { getBlogs } from '#lib/api/blogs.remote.js';
+	import ArrowLink from '#lib/components/shared/ArrowLink.svelte';
 	import TagComponent from '#lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '#lib/components/shared/util/formatDisplayDate.js';
 	import { getThumbnailImageUrl } from '#lib/components/shared/util/getThumbnailImageUrl.js';
@@ -25,13 +26,7 @@
 
 <section class="min-h-svh bg-black text-white">
 	<div class="container py-8 md:py-16">
-		<a
-			href="/"
-			class="focus-visible:outline-secondary inline-flex flex-row items-center gap-1 focus-visible:outline-2 focus-visible:outline-offset-4"
-		>
-			<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
-			Zurück
-		</a>
+		<ArrowLink href="/" direction="back">Zurück</ArrowLink>
 
 		<header class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 			<h1 class="text-5xl font-bold tracking-tighter lowercase text-shadow-md sm:text-7xl">blog</h1>

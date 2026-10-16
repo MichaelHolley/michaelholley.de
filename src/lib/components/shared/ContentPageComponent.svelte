@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
 	import { serifStore } from '#lib/stores/serifFontStore.js';
+	import ArrowLink from '#lib/components/shared/ArrowLink.svelte';
 	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
 	import { IsInViewport } from 'runed';
@@ -42,10 +43,7 @@
 	<div class="container min-h-screen py-10">
 		<div>
 			<div class="flex flex-row justify-between gap-2" bind:this={headerNode}>
-				<a href="/" onclick={handleBack} class=" flex flex-row items-center gap-1">
-					<Icon icon="ic:baseline-arrow-back" class="text-secondary" />
-					Zurück
-				</a>
+				<ArrowLink href="/" direction="back" onclick={handleBack}>Zurück</ArrowLink>
 				<button
 					type="button"
 					class={cn(

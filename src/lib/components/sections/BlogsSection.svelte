@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { track, trackOnce } from '#lib/analytics/umami.js';
 	import { getBlogs } from '#lib/api/blogs.remote.js';
+	import ArrowLink from '#lib/components/shared/ArrowLink.svelte';
 	import SectionHeader from '#lib/components/shared/SectionHeader.svelte';
-	import Icon from '@iconify/svelte';
 	import BlogCardComponent from '../shared/BlogCardComponent.svelte';
 
 	const { blogs } = await getBlogs();
@@ -24,17 +24,14 @@
 				</div>
 			</div>
 			<div class="flex flex-row justify-center pt-8">
-				<a
+				<ArrowLink
 					href="/blogs"
-					class="group flex flex-row items-center gap-1 underline-offset-4 transition-all hover:underline"
+					direction="forward"
+					iconClass="text-current"
 					onclick={() => track('blog-index-open', { location: 'blogs-section' })}
 				>
 					Alle Artikel
-					<Icon
-						icon="ic:baseline-arrow-back"
-						class="rotate-180 transition-transform group-hover:translate-x-0.5"
-					/>
-				</a>
+				</ArrowLink>
 			</div>
 		</div>
 	</section>

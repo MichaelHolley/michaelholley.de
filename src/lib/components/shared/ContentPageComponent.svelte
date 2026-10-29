@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { serifStore } from '#lib/stores/serifFontStore.js';
 	import ArrowLink from '#lib/components/shared/ArrowLink.svelte';
 	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
@@ -14,7 +13,6 @@
 	} = $props();
 
 	let hasInternalHistory = $state(false);
-	const serifFont = serifStore;
 
 	let headerNode = $state<HTMLElement>()!;
 	const headerInViewport = new IsInViewport(() => headerNode);
@@ -42,24 +40,8 @@
 <div class="bg-white text-black dark:bg-transparent dark:text-white">
 	<div class="container min-h-screen py-10">
 		<div>
-			<div class="flex flex-row justify-between gap-2" bind:this={headerNode}>
+			<div class="flex" bind:this={headerNode}>
 				<ArrowLink href="/" direction="back" onclick={handleBack}>Zurück</ArrowLink>
-				<button
-					type="button"
-					class={cn(
-						'size-8 rounded-sm border transition-all active:scale-98',
-						!serifFont.current && 'font-serif',
-						buttonVariant
-					)}
-					onclick={() => {
-						serifFont.current = !serifFont.current;
-					}}
-					title="Zu {!serifFont.current ? 'Serifen' : 'Standard'}-Schrift wechseln"
-					aria-label="Serifenschrift umschalten"
-					aria-pressed={serifFont.current}
-				>
-					Aa</button
-				>
 			</div>
 
 			{@render children()}

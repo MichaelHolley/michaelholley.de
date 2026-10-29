@@ -6,13 +6,9 @@
 	import TagComponent from '#lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '#lib/components/shared/util/formatDisplayDate.js';
 	import { jsonLdScript } from '#lib/seo/jsonLd.js';
-	import { serifStore } from '#lib/stores/serifFontStore.js';
-	import { cn } from '#lib/utils.js';
 
 	const { params } = $props();
 	const { blog } = $derived(await getBlogBySlug(params.slug));
-
-	const serifFont = serifStore;
 
 	const structuredData = $derived(
 		jsonLdScript({
@@ -57,12 +53,7 @@
 
 <ContentPageComponent>
 	<div class="mt-4">
-		<article
-			class={cn(
-				'prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto',
-				serifFont.current && 'font-serif'
-			)}
-		>
+		<article class="prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto">
 			<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
 				<div class="flex flex-row items-center font-normal">
 					<time datetime={blog.released} class="mr-5">{formatDisplayDate(blog.released)}</time>

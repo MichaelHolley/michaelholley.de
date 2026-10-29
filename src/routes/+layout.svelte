@@ -4,6 +4,8 @@
 	import Footer from '#lib/components/sections/Footer.svelte';
 	import type { Snippet } from 'svelte';
 	import { RenderScan } from 'svelte-render-scan';
+	import '@fontsource-variable/inter';
+	import '@fontsource-variable/raleway';
 	import '../app.css';
 
 	const { children }: { children: Snippet } = $props();

@@ -26,12 +26,12 @@
 	--color-tertiary-hover: #7e8e8a;
 	--color-tertiary-active: #a4ada9;
 
-	--font-weight-bold: 500;
 	--font-weight-semibold: 550;
-	--font-weight-extrabold: 600;
+	--font-weight-bold: 600;
+	--font-weight-extrabold: 650;
 
-	--font-raleway: 'Raleway', sans-serif;
-	--font-normal: 'Raleway', sans-serif;
+	--font-sans: 'Inter Variable', sans-serif;
+	--font-heading: 'Raleway Variable', sans-serif;
 	--font-serif: Georgia, 'Times New Roman', serif;
 }
 
@@ -54,10 +54,13 @@ html {
 	body {
 		color: var(--color-white);
 		font-optical-sizing: auto;
-		font-weight: 450;
 		font-style: normal;
-		@apply tracking-wide;
-		@apply font-normal;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: var(--font-heading);
 	}
 }
 

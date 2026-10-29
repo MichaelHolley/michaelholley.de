@@ -2,14 +2,10 @@
 	import { track } from '#lib/analytics/umami.js';
 	import { getProjectBySlug } from '#lib/api/projects.remote.js';
 	import ContentPageComponent from '#lib/components/shared/ContentPageComponent.svelte';
-	import { serifStore } from '#lib/stores/serifFontStore.js';
-	import { cn } from '#lib/utils.js';
 	import Icon from '@iconify/svelte';
 
 	const { params } = $props();
 	const { project } = $derived(await getProjectBySlug(params.slug));
-
-	const serifFont = serifStore;
 </script>
 
 <svelte:head>
@@ -79,12 +75,7 @@
 	</header>
 
 	<div class="motion-opacity-in-0 motion-duration-700 motion-delay-200 mt-8">
-		<article
-			class={cn(
-				'prose dark:prose-invert prose-neutral max-w-none',
-				serifFont.current && 'font-serif'
-			)}
-		>
+		<article class="prose dark:prose-invert prose-neutral max-w-none">
 			<!-- eslint-disable svelte/no-at-html-tags -->
 			{@html project.content}
 			<!-- eslint-enable svelte/no-at-html-tags -->

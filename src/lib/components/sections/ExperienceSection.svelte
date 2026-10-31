@@ -21,10 +21,7 @@
 			<ol class="mt-8 space-y-[clamp(4.5rem,8vw,8rem)] md:mt-12">
 				{#each stations as station (station.steps[0].id)}
 					<li>
-						<div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
-							<h3 class="display text-poster" use:reveal>{station.name}</h3>
-							<p class="text-tertiary tabular-nums" use:reveal={70}>{station.span}</p>
-						</div>
+						<h3 class="display text-poster" use:reveal>{station.name}</h3>
 
 						<ol class="mt-8 space-y-12 md:mt-12 lg:space-y-14">
 							{#each station.steps as step (step.id)}

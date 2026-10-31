@@ -3,7 +3,6 @@ type BlogLocation = 'blogs-section' | 'blogs-index';
 
 type UmamiEvents = {
 	'contact-click': { location: ContactLocation };
-	'contact-submit': { location: 'footer' };
 	'social-click': { network: 'github' | 'linkedin'; location: ContactLocation };
 	'project-open': { project: string };
 	'project-link-click': { project: string; target: 'demo' | 'github' };

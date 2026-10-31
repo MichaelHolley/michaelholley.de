@@ -52,43 +52,42 @@
 </svelte:head>
 
 <ContentPageComponent>
-	<div class="mt-4">
-		<article class="prose prose-sm sm:prose-base dark:prose-invert prose-neutral mx-auto">
-			<div class="mb-2 flex flex-row justify-start gap-3 text-sm text-neutral-400">
-				<div class="flex flex-row items-center font-normal">
-					<time datetime={blog.released} class="mr-5">{formatDisplayDate(blog.released)}</time>
-					<div class="flex flex-row items-center gap-1.5">
-						{#each blog.tags as tag (tag.id)}
-							<TagComponent
-								value={tag.value}
-								class="dark:border-neutral-600 dark:text-neutral-400"
-							/>
-						{/each}
-					</div>
-				</div>
-			</div>
-			<h1 class="text-4xl font-extrabold tracking-tight">
+	<article class="mx-auto mt-12 max-w-[68ch] md:mt-20">
+		<header>
+			<time datetime={blog.released} class="text-tertiary dark:text-muted tabular-nums">
+				{formatDisplayDate(blog.released)}
+			</time>
+			<h1
+				class="mt-3 text-[clamp(1.75rem,1.2rem+2.2vw,2.75rem)] leading-[1.1] font-semibold tracking-[-0.015em]"
+			>
 				{blog.title}
 			</h1>
-			{#if blog.teaserImage}
-				<img
-					src={blog.teaserImage.url}
-					alt={blog.teaserImage.alternativeText || blog.title}
-					class="w-full"
-				/>
+			{#if blog.tags?.length}
+				<div class="mt-5 flex flex-wrap gap-1.5">
+					{#each blog.tags as tag (tag.id)}
+						<TagComponent value={tag.value} class="dark:bg-surface dark:text-white" />
+					{/each}
+				</div>
 			{/if}
-			<div class="motion-preset-slide-up-sm motion-delay-50 motion-duration-500">
-				<!-- eslint-disable svelte/no-at-html-tags -->
-				{@html blog.content}
-				<!-- eslint-enable svelte/no-at-html-tags -->
-			</div>
-			<p
-				class="pt-10 text-center text-xs"
-				use:trackOnce={() => track('article-read', { blog: blog.slug })}
-			>
-				Dieser Artikel wurde von einem Menschen geschrieben und mit KI-Werkzeugen auf sprachliche
-				Korrektheit und Übersetzungskonsistenz geprüft.
-			</p>
-		</article>
-	</div>
+		</header>
+		{#if blog.teaserImage}
+			<img
+				src={blog.teaserImage.url}
+				alt={blog.teaserImage.alternativeText || blog.title}
+				class="bg-paper-surface dark:bg-surface mt-10 aspect-video w-full object-cover"
+			/>
+		{/if}
+		<div class="prose dark:prose-invert mt-10 max-w-none">
+			<!-- eslint-disable svelte/no-at-html-tags -->
+			{@html blog.content}
+			<!-- eslint-enable svelte/no-at-html-tags -->
+		</div>
+		<p
+			class="text-small text-tertiary dark:text-muted mt-16"
+			use:trackOnce={() => track('article-read', { blog: blog.slug })}
+		>
+			Dieser Artikel wurde von einem Menschen geschrieben und mit KI-Werkzeugen auf sprachliche
+			Korrektheit und Übersetzungskonsistenz geprüft.
+		</p>
+	</article>
 </ContentPageComponent>

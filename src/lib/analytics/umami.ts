@@ -3,12 +3,13 @@ type BlogLocation = 'blogs-section' | 'blogs-index';
 
 type UmamiEvents = {
 	'contact-click': { location: ContactLocation };
+	'contact-submit': { location: 'footer' };
 	'social-click': { network: 'github' | 'linkedin'; location: ContactLocation };
 	'project-open': { project: string };
 	'project-link-click': { project: string; target: 'demo' | 'github' };
 	'blog-open': { blog: string; location: BlogLocation; external?: boolean };
 	'blog-index-open': { location: 'blogs-section' };
-	'section-view': { section: 'dev' | 'experience' | 'projects' | 'blog' };
+	'section-view': { section: 'experience' | 'projects' | 'blog' };
 	'article-read': { blog: string };
 };
 

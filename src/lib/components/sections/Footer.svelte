@@ -1,71 +1,120 @@
 <script lang="ts">
+	import { reveal } from '#lib/actions/reveal.js';
 	import { track } from '#lib/analytics/umami.js';
+	import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from '#lib/contact.js';
 	import Icon from '@iconify/svelte';
-	import DotPattern from '#lib/components/shared/misc/DotPattern.svelte';
+
+	const SUBJECT = 'Nachricht über michaelholley.de';
+	const [mailbox, domain] = CONTACT_EMAIL.split('@');
+
+	let message = $state('');
+
+	// Opens the visitor's mail program with the message already written. Without JavaScript the
+	// form submits to the same mailto: address on its own.
+	function compose(event: SubmitEvent) {
+		event.preventDefault();
+		track('contact-submit', { location: 'footer' });
+		const params = `subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(message)}`;
+		window.location.href = `mailto:${CONTACT_EMAIL}?${params}`;
+	}
 </script>
 
-<footer class="relative bg-black">
-	<div class="container space-y-6 pt-8 pb-4 text-white">
-		<div class="flex flex-col justify-center gap-8 sm:flex-row">
-			<div class="hidden space-y-2 text-right sm:block">
-				<p class="text-4xl leading-10">Code</p>
-				<p class="text-4xl leading-10">mit</p>
-				<p class="text-4xl leading-10">Leidenschaft.</p>
-			</div>
-
-			<div class="flex flex-row justify-center">
-				<div
-					class="flex flex-col items-start justify-center gap-x-10 gap-y-2 sm:gap-x-0 sm:gap-y-3"
-				>
-					<a
-						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="Per E-Mail kontaktieren"
-						onclick={() => track('contact-click', { location: 'footer' })}
+<footer id="contact" class="bg-primary text-black" aria-labelledby="contact-title">
+	<div class="page-grid container gap-y-12 pt-[clamp(4.5rem,2.5rem+8vw,10rem)] pb-8">
+		<div class="col-span-12 lg:col-span-5" use:reveal>
+			<h2 id="contact-title" class="text-lead font-medium">Kontakt</h2>
+			<form
+				class="mt-8"
+				action="mailto:{CONTACT_EMAIL}"
+				method="get"
+				enctype="text/plain"
+				onsubmit={compose}
+			>
+				<input type="hidden" name="subject" value={SUBJECT} />
+				<label for="contact-message" class="text-lead block font-medium">
+					<span class="block opacity-70">Ein Projekt, eine Stelle, eine Frage?</span>
+					<span class="block">Schreib mir ein paar Zeilen.</span>
+				</label>
+				<div class="relative mt-7">
+					<input
+						id="contact-message"
+						name="body"
+						type="text"
+						autocomplete="off"
+						bind:value={message}
+						placeholder="Hallo Michael, …"
+						aria-describedby="contact-hint"
+						class="placeholder:text-tertiary h-16 w-full bg-white pr-16 pl-5 text-black outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-inset"
+					/>
+					<button
+						type="submit"
+						class="press hover:bg-tertiary absolute top-1/2 right-2.5 flex size-11 -translate-y-1/2 items-center justify-center bg-black text-white"
+						aria-label="Nachricht im E-Mail-Programm öffnen"
 					>
-						<div class="transition-all group-hover:scale-110">
-							<Icon icon="tdesign:mail-filled" class="text-2xl" />
-						</div>
-						Contact me
-					</a>
-					<a
-						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-						href="https://github.com/MichaelHolley"
-						target="_blank"
-						rel="noreferrer"
-						aria-label="GitHub-Profil"
-						onclick={() => track('social-click', { network: 'github', location: 'footer' })}
-					>
-						<div class="transition-all group-hover:scale-110">
-							<Icon icon="fa:github" class="text-2xl" />
-						</div>
-						GitHub
-					</a>
-					<a
-						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-						href="https://www.linkedin.com/in/michael-holley-791a64228/"
-						target="_blank"
-						rel="noreferrer"
-						aria-label="LinkedIn-Profil"
-						onclick={() => track('social-click', { network: 'linkedin', location: 'footer' })}
-					>
-						<div class="transition-all group-hover:scale-110">
-							<Icon icon="fa:linkedin-square" class="text-2xl" />
-						</div>
-						LinkedIn
-					</a>
+						<Icon icon="ic:baseline-arrow-forward" class="size-5" aria-hidden="true" />
+					</button>
 				</div>
-			</div>
+				<p id="contact-hint" class="text-small mt-4">
+					Öffnet dein E-Mail-Programm mit dieser Nachricht.
+				</p>
+			</form>
 		</div>
-		<p class="text-center text-sm">&copy; {new Date().getFullYear()} Michael Holley</p>
-	</div>
 
-	<DotPattern
-		width={20}
-		height={20}
-		cx={10}
-		cy={10}
-		cr={1}
-		class="mask-[linear-gradient(to_bottom_left,white,transparent,transparent)]"
-	/>
+		<dl
+			class="col-span-12 grid grid-cols-[auto_1fr] content-end gap-x-8 gap-y-3 lg:col-span-6 lg:col-start-7"
+			use:reveal={90}
+		>
+			<dt class="opacity-70">GitHub</dt>
+			<dd>
+				<a
+					class="link-underline font-medium"
+					href={GITHUB_URL}
+					target="_blank"
+					rel="noreferrer"
+					onclick={() => track('social-click', { network: 'github', location: 'footer' })}
+				>
+					github.com/MichaelHolley
+				</a>
+			</dd>
+			<dt class="opacity-70">LinkedIn</dt>
+			<dd>
+				<a
+					class="link-underline font-medium"
+					href={LINKEDIN_URL}
+					target="_blank"
+					rel="noreferrer"
+					onclick={() => track('social-click', { network: 'linkedin', location: 'footer' })}
+				>
+					linkedin.com/in/michael-holley
+				</a>
+			</dd>
+		</dl>
+
+		<p class="col-span-12 mt-[clamp(2rem,8vw,7rem)]" use:reveal={140}>
+			<a
+				class="email display link-underline block"
+				href="mailto:{CONTACT_EMAIL}"
+				onclick={() => track('contact-click', { location: 'footer' })}
+			>
+				<span class="block">{mailbox}</span>
+				<span class="block">@{domain}</span>
+			</a>
+		</p>
+
+		<div
+			class="text-small col-span-12 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2"
+		>
+			<p>&copy; {new Date().getFullYear()} Michael Holley</p>
+			<a class="link-underline inline-flex min-h-11 items-center" href="#top">Nach oben</a>
+		</div>
+	</div>
 </footer>
+
+<style>
+	/* Fills the width on a phone; the poster size from there on. */
+	.email {
+		font-size: min(var(--text-poster), 10vw);
+		line-height: 0.9;
+		overflow-wrap: anywhere;
+	}
+</style>

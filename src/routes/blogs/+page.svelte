@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { reveal } from '#lib/actions/reveal.js';
 	import { track } from '#lib/analytics/umami.js';
 	import { getBlogs } from '#lib/api/blogs.remote.js';
 	import ArrowLink from '#lib/components/shared/ArrowLink.svelte';
 	import TagComponent from '#lib/components/shared/TagComponent.svelte';
 	import { formatDisplayDate } from '#lib/components/shared/util/formatDisplayDate.js';
-	import { getThumbnailImageUrl } from '#lib/components/shared/util/getThumbnailImageUrl.js';
+	import { getImageUrl } from '#lib/components/shared/util/getImageUrl.js';
 	import Icon from '@iconify/svelte';
 
 	const description =
@@ -24,23 +25,26 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<section class="min-h-svh bg-black text-white">
-	<div class="container py-8 md:py-16">
-		<ArrowLink href="/" direction="back">Zurück</ArrowLink>
+<section class="min-h-svh bg-black pt-8 pb-[clamp(4.5rem,2.5rem+8vw,10rem)] text-white">
+	<div class="container">
+		<ArrowLink href="/" direction="back">Startseite</ArrowLink>
 
-		<header class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-			<h1 class="text-5xl font-bold tracking-tighter lowercase text-shadow-md sm:text-7xl">blog</h1>
+		<header class="mt-12 md:mt-20">
+			<h1 class="display text-poster">Artikel</h1>
+			<p class="text-lead mt-5 max-w-[40ch]">
+				Über Webentwicklung, Software-Architektur und die Werkzeuge dazwischen.
+			</p>
 		</header>
 
 		{#if blogs.length > 0}
-			<ul class="mt-12 border-t border-white/15">
-				{#each blogs as b (b.id)}
-					<li>
+			<ul class="mt-16 space-y-14 md:mt-24 md:space-y-20">
+				{#each blogs as b, i (b.id)}
+					<li use:reveal={Math.min(i, 3) * 70}>
 						<a
 							href={b.isExternal ? b.externalUrl : `/blogs/${b.slug}`}
 							target={b.isExternal ? '_blank' : undefined}
 							rel={b.isExternal ? 'noopener noreferrer' : undefined}
-							class="focus-visible:outline-secondary group grid grid-cols-[1fr] items-start gap-x-8 gap-y-3 border-b border-white/15 py-8 transition-colors hover:bg-white/[0.03] focus-visible:outline-2 focus-visible:-outline-offset-2 sm:grid-cols-[8rem_1fr_9rem]"
+							class="group page-grid gap-y-4"
 							data-sveltekit-preload-data="tap"
 							onclick={() =>
 								track('blog-open', {
@@ -49,47 +53,46 @@
 									external: b.isExternal
 								})}
 						>
-							<time
-								datetime={b.released}
-								class="font-mono text-xs tracking-widest text-neutral-500 uppercase sm:pt-2"
-							>
-								{formatDisplayDate(b.released)}
-							</time>
-
-							<div class="flex flex-col gap-2">
-								<div class="flex flex-row flex-wrap items-center gap-2">
-									<h2
-										class="group-hover:text-primary text-2xl font-semibold tracking-tight text-balance transition-colors sm:text-3xl"
-									>
-										{b.title}
-									</h2>
-									{#if b.isExternal}
-										<span
-											class="flex flex-row items-center gap-1 border border-neutral-600 px-1.5 py-0.5 text-xs text-neutral-400"
-										>
-											<Icon icon="ic:baseline-open-in-new" class="size-3.5" />
-											{b.externalSource ? `Extern · ${b.externalSource}` : 'Extern'}
-										</span>
-									{/if}
-								</div>
-								<p class="max-w-prose leading-relaxed text-neutral-400">{b.description}</p>
-								{#if b.tags?.length}
-									<div class="mt-1 flex flex-row flex-wrap gap-1.5">
-										{#each b.tags as tag (tag.id)}
-											<TagComponent value={tag.value} class="border-neutral-600 text-neutral-400" />
-										{/each}
-									</div>
-								{/if}
-							</div>
-
 							{#if b.teaserImage}
-								<img
-									src={getThumbnailImageUrl(b.teaserImage)}
-									alt={b.teaserImage.alternativeText || b.title}
-									loading="lazy"
-									class="hidden h-24 w-full object-cover object-center opacity-70 transition-opacity duration-300 group-hover:opacity-100 sm:block"
-								/>
+								<span
+									class="bg-surface col-span-12 block overflow-clip md:col-span-4 lg:col-span-3"
+								>
+									<img
+										src={getImageUrl(b.teaserImage, 'medium')}
+										alt=""
+										width="750"
+										height="422"
+										loading="lazy"
+										class="aspect-video w-full object-cover transition-transform duration-700 ease-(--ease-out) group-hover:scale-[1.03]"
+									/>
+								</span>
 							{/if}
+
+							<span class="col-span-12 block md:col-span-8 lg:col-span-7 lg:col-start-6">
+								<time datetime={b.released} class="text-muted tabular-nums">
+									{formatDisplayDate(b.released)}
+								</time>
+								<h2 class="text-lead group-hover:text-primary mt-1 font-medium transition-colors">
+									{b.title}
+									{#if b.isExternal}
+										<span class="sr-only">(öffnet in neuem Tab)</span>
+									{/if}
+								</h2>
+								<span class="mt-3 block max-w-[62ch]">{b.description}</span>
+								{#if b.isExternal}
+									<span class="mt-3 flex items-center gap-2 font-medium">
+										<Icon icon="ic:baseline-open-in-new" class="size-4" aria-hidden="true" />
+										{b.externalSource ? `Erschienen bei ${b.externalSource}` : 'Externer Artikel'}
+									</span>
+								{/if}
+								{#if b.tags?.length}
+									<span class="mt-4 flex flex-wrap gap-1.5">
+										{#each b.tags as tag (tag.id)}
+											<TagComponent value={tag.value} class="bg-surface text-white" />
+										{/each}
+									</span>
+								{/if}
+							</span>
 						</a>
 					</li>
 				{/each}

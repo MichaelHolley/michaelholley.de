@@ -10,7 +10,7 @@
 	import Icon from '@iconify/svelte';
 
 	const description =
-		'Alle Artikel von Michael Holley — über Webentwicklung, Software-Architektur und die Werkzeuge dazwischen.';
+		'Der Blog von Michael Holley — über Webentwicklung, Software-Architektur und die Werkzeuge dazwischen.';
 
 	const { blogs } = await getBlogs();
 </script>
@@ -30,7 +30,7 @@
 		<ArrowLink href="/" direction="back">Startseite</ArrowLink>
 
 		<header class="mt-12 md:mt-20">
-			<h1 class="display text-poster">Artikel</h1>
+			<h1 class="display text-poster">Blog</h1>
 			<p class="text-lead mt-5 max-w-[40ch]">
 				Über Webentwicklung, Software-Architektur und die Werkzeuge dazwischen.
 			</p>

@@ -9,7 +9,7 @@
 
 	const title = 'Michael Holley – Software Engineer';
 	const description =
-		'Michael Holley, Full-Stack Software Engineer: Webanwendungen mit .NET, Java, Vue und Svelte. Projekte, Werdegang und Artikel über Webentwicklung.';
+		'Michael Holley, Full-Stack Software Engineer: Webanwendungen mit .NET, Java, Vue und Svelte. Projekte, Werdegang und Blog über Webentwicklung.';
 	const origin = $derived(page.url.origin);
 
 	const structuredData = $derived(

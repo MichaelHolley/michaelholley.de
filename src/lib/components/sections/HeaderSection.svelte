@@ -18,7 +18,7 @@
 	const sections = [
 		{ href: '#experience', label: 'Werdegang' },
 		{ href: '#projects', label: 'Projekte' },
-		{ href: '#blog', label: 'Artikel' }
+		{ href: '#blog', label: 'Blog' }
 	];
 </script>
 

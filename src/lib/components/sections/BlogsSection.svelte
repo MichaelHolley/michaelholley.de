@@ -31,13 +31,13 @@
 	>
 		<div class="page-grid container gap-y-8">
 			<div class="col-span-12 flex items-baseline justify-between gap-6" use:reveal>
-				<h2 id="blog-title" class="text-lead font-medium">Artikel</h2>
+				<h2 id="blog-title" class="text-lead font-medium">Blog</h2>
 				<a
 					href="/blogs"
 					class="link-underline press inline-flex min-h-11 items-center gap-2 font-medium"
 					onclick={() => track('blog-index-open', { location: 'blogs-section' })}
 				>
-					Alle Artikel
+					Zum Blog
 					<Icon icon="ic:baseline-arrow-forward" class="size-5" aria-hidden="true" />
 				</a>
 			</div>

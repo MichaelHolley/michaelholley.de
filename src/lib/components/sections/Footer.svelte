@@ -12,12 +12,15 @@
 					Sag mal <span class="text-primary">Hallo.</span>
 				</h2>
 				<a
-					class="group link-underline sm:text-lead mt-4 inline-flex max-w-full items-center gap-3 font-medium"
+					class="group sm:text-lead mt-4 inline-flex max-w-full items-center gap-3 font-medium"
 					href="mailto:{CONTACT_EMAIL}"
 					onclick={() => track('contact-click', { location: 'footer' })}
 				>
 					<span class="wave inline-block" aria-hidden="true">👋</span>
-					<span class="min-w-0 [overflow-wrap:anywhere]">{CONTACT_EMAIL}</span>
+					<span
+						class="link-underline min-w-0 [overflow-wrap:anywhere] group-focus-visible:decoration-current pointer-fine:group-hover:decoration-current"
+						>{CONTACT_EMAIL}</span
+					>
 				</a>
 			</div>
 

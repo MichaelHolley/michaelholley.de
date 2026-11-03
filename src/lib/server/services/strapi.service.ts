@@ -127,6 +127,9 @@ async function cached<T>(key: string, load: () => Promise<T>): Promise<T> {
 async function fetchStrapi<T>(url: string): Promise<T> {
 	const res = await fetch(url);
 
+	// Strapi v5 answers 404 for an unpublished single type; collections answer 200 []
+	if (res.status === 404) return null as T;
+
 	if (!res.ok) {
 		throw new Error(`${res.status} ${res.statusText} (${await res.text()})`);
 	}

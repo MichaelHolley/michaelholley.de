@@ -16,7 +16,7 @@
 		use:trackOnce={() => track('section-view', { section: 'experience' })}
 	>
 		<div class="container">
-			<h2 id="experience-title" class="text-lead font-medium" use:reveal>Werdegang</h2>
+			<h2 id="experience-title" class="text-lead font-medium" use:reveal>Experience</h2>
 
 			<ol class="mt-8 space-y-[clamp(4.5rem,8vw,8rem)] md:mt-12">
 				{#each stations as station (station.steps[0].id)}

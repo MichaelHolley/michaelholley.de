@@ -16,7 +16,7 @@
 		: 'Software Engineer';
 
 	const sections = [
-		{ href: '#experience', label: 'Werdegang' },
+		{ href: '#experience', label: 'Experience' },
 		{ href: '#projects', label: 'Projekte' },
 		{ href: '#blog', label: 'Blog' }
 	];

@@ -1,4 +1,5 @@
 import { STRAPI_URL } from '$app/env/private';
+import { error } from '@sveltejs/kit';
 import { cache } from '#lib/server/cache.js';
 import { buildStrapiUrl } from '#lib/server/services/util/strapi-url-builder.js';
 import type {
@@ -99,212 +100,99 @@ function normalizeBlog(blog: Blog): Blog {
 }
 
 /**
- * Fetches all blogs from Strapi with caching support
- * @returns Array of blogs or empty array on error
+ * Serves fresh cache, otherwise loads from Strapi. On failure falls back to stale cache,
+ * then answers 503 so crawlers retry instead of de-indexing pages as 404s.
  */
-export async function fetchBlogs(): Promise<Blog[]> {
-	let cachedBlogs = cache.get<Blog[]>('blogs');
+async function cached<T>(key: string, load: () => Promise<T>): Promise<T> {
+	const fresh = cache.get<T>(key);
+	if (fresh) {
+		console.log(`Using cached data (${key})`);
+		return fresh;
+	}
 
 	try {
-		if (cachedBlogs) {
-			console.log('Using cached data (blogs)');
-			return cachedBlogs;
-		}
+		console.log(`No cached data (${key}) - Fetching from Strapi...`);
+		const data = await load();
+		// Skipping misses keeps random crawler slugs out of the cache
+		if (data !== null) cache.set(key, data);
+		return data;
+	} catch (e) {
+		console.error(`Error fetching ${key}:`, e);
+		const stale = cache.getIgnoreInvalidation<T>(key);
+		if (stale) return stale;
+		error(503, 'Content temporarily unavailable');
+	}
+}
 
-		console.log('No cached data (blogs) - Fetching from Strapi...');
+async function fetchStrapi<T>(url: string): Promise<T> {
+	const res = await fetch(url);
 
-		const strapiUrl = buildStrapiUrl('blogs')
+	// Strapi v5 answers 404 for an unpublished single type; collections answer 200 []
+	if (res.status === 404) return null as T;
+
+	if (!res.ok) {
+		throw new Error(`${res.status} ${res.statusText} (${await res.text()})`);
+	}
+
+	return ((await res.json()) as { data: T }).data;
+}
+
+function single<T>(entries: T[]): T | null {
+	return entries.length === 1 ? (entries[0] as T) : null;
+}
+
+export function fetchBlogs(): Promise<Blog[]> {
+	return cached('blogs', async () => {
+		const url = buildStrapiUrl('blogs')
 			.fields(blogSelectFields)
 			.populate(blogPopulateFields)
 			.build();
-		const res = await fetch(strapiUrl);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch blogs: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const filterResult = (await res.json()) as { data: Blog[] };
-		const normalizedBlogs = filterResult.data.map(normalizeBlog);
-
-		cache.set('blogs', normalizedBlogs);
-
-		return normalizedBlogs;
-	} catch (e) {
-		console.error('Error fetching blogs:', e);
-
-		cachedBlogs = cache.getIgnoreInvalidation<Blog[]>('blogs');
-
-		return cachedBlogs || [];
-	}
+		return (await fetchStrapi<Blog[]>(url)).map(normalizeBlog);
+	});
 }
 
 /**
- * Fetches a single blog by slug from Strapi with caching support
- * @param slug - The blog slug to fetch
- * @returns Blog object or null if not found
+ * @returns The blog, or null if no single entry matches the slug
  */
-export async function fetchBlogBySlug(slug: string): Promise<Blog | null> {
-	let cachedBlog = cache.get<Blog>(`blog-${slug}`);
-
-	try {
-		if (cachedBlog) {
-			console.log(`Using cached data (blog-slug: ${slug})`);
-			return cachedBlog;
-		}
-
-		console.log(`No cached data (blog-slug: ${slug}) - Fetching from Strapi...`);
-		const strapiUrl = buildStrapiUrl('blogs')
+export function fetchBlogBySlug(slug: string): Promise<Blog | null> {
+	return cached(`blog-${slug}`, async () => {
+		const url = buildStrapiUrl('blogs')
 			.filter('slug', '$eq', slug)
 			.populate(blogPopulateFields)
 			.build();
-		const res = await fetch(strapiUrl);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch blog ${slug}: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const filterResult = ((await res.json()) as { data: Blog[] }).data;
-
-		if (filterResult.length !== 1) {
-			throw new Error(`Blog with slug ${slug} not found or multiple entries exist.`);
-		}
-
-		const blog = filterResult[0] as Blog;
-		const normalizedBlog = normalizeBlog(blog);
-
-		cache.set(`blog-${slug}`, normalizedBlog);
-
-		return normalizedBlog;
-	} catch (e) {
-		console.error('Error fetching blog:', e);
-
-		cachedBlog = cache.getIgnoreInvalidation<Blog>(`blog-${slug}`);
-		return cachedBlog || null;
-	}
+		const blog = single(await fetchStrapi<Blog[]>(url));
+		return blog && normalizeBlog(blog);
+	});
 }
 
-/**
- * Fetches all projects from Strapi with caching support
- * @returns Array of projects or empty array on error
- */
-export async function fetchProjects(): Promise<Project[]> {
-	let cachedProjects = cache.get<Project[]>('projects');
-
-	try {
-		if (cachedProjects) {
-			console.log('Using cached data (projects)');
-			return cachedProjects;
-		}
-
-		console.log('No cached data (projects) - Fetching from Strapi...');
-
-		const strapiUrl = buildStrapiUrl('projects')
+export function fetchProjects(): Promise<Project[]> {
+	return cached('projects', async () => {
+		const url = buildStrapiUrl('projects')
 			.fields(projectSelectFields)
 			.populate(projectPopulateFields)
 			.build();
-		const res = await fetch(strapiUrl);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch projects: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const filterResult = (await res.json()) as { data: Project[] };
-
-		const normalizedProjects = filterResult.data.map(normalizeProject);
-
-		cache.set('projects', normalizedProjects);
-
-		return normalizedProjects;
-	} catch (e) {
-		console.error('Error fetching projects:', e);
-
-		cachedProjects = cache.getIgnoreInvalidation<Project[]>('projects');
-
-		return cachedProjects || [];
-	}
+		return (await fetchStrapi<Project[]>(url)).map(normalizeProject);
+	});
 }
 
-export async function fetchExperienceSection(): Promise<ExperienceSectionData | null> {
-	let cached = cache.get<ExperienceSectionData>('experience-section');
-
-	try {
-		if (cached) {
-			console.log('Using cached data (experience-section)');
-			return cached;
-		}
-
-		console.log('No cached data (experience-section) - Fetching from Strapi...');
-
-		const strapiUrl = buildStrapiUrl('experience-section')
-			.populate(['Steps', 'Steps.Work'])
-			.build();
-		const res = await fetch(strapiUrl);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch experience-section: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const result = (await res.json()) as { data: ExperienceSectionData };
-		cache.set('experience-section', result.data);
-		return result.data;
-	} catch (e) {
-		console.error('Error fetching experience-section:', e);
-		cached = cache.getIgnoreInvalidation<ExperienceSectionData>('experience-section');
-		return cached || null;
-	}
+export function fetchExperienceSection(): Promise<ExperienceSectionData | null> {
+	return cached('experience-section', () =>
+		fetchStrapi<ExperienceSectionData | null>(
+			buildStrapiUrl('experience-section').populate(['Steps', 'Steps.Work']).build()
+		)
+	);
 }
 
 /**
- * Fetches a single project by slug from Strapi with caching support
- * @param slug - The project slug to fetch
- * @returns Project object or null if not found
+ * @returns The project, or null if no single entry matches the slug
  */
-export async function fetchProjectBySlug(slug: string): Promise<Project | null> {
-	let cachedProject = cache.get<Project>(`project-${slug}`);
-
-	try {
-		if (cachedProject) {
-			console.log(`Using cached data (project-slug: ${slug})`);
-			return cachedProject;
-		}
-
-		console.log(`No cached data (project-slug: ${slug}) - Fetching from Strapi...`);
-		const strapiUrl = buildStrapiUrl('projects')
+export function fetchProjectBySlug(slug: string): Promise<Project | null> {
+	return cached(`project-${slug}`, async () => {
+		const url = buildStrapiUrl('projects')
 			.filter('slug', '$eq', slug)
 			.populate(projectPopulateFields)
 			.build();
-		const res = await fetch(strapiUrl);
-
-		if (!res.ok) {
-			throw new Error(
-				`Failed to fetch project ${slug}: ${res.status} ${res.statusText} (${await res.text()})`
-			);
-		}
-
-		const filterResult = ((await res.json()) as { data: Project[] }).data;
-
-		if (filterResult.length !== 1) {
-			throw new Error(`Project with slug ${slug} not found or multiple entries exist.`);
-		}
-
-		const project = filterResult[0] as Project;
-		const normalizedProject = normalizeProject(project);
-
-		cache.set(`project-${slug}`, normalizedProject);
-
-		return normalizedProject;
-	} catch (e) {
-		console.error('Error fetching project:', e);
-
-		cachedProject = cache.getIgnoreInvalidation<Project>(`project-${slug}`);
-		return cachedProject || null;
-	}
+		const project = single(await fetchStrapi<Project[]>(url));
+		return project && normalizeProject(project);
+	});
 }

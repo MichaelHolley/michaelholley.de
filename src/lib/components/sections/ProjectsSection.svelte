@@ -10,12 +10,6 @@
 	// name was last pointed at or focused.
 	let active = $state(0);
 	const shown = $derived(projects[active]);
-
-	const techOf = (tech: { techLabel: string }[] | undefined) =>
-		(tech ?? [])
-			.slice(0, 3)
-			.map((t) => t.techLabel)
-			.join(', ');
 </script>
 
 {#if projects && projects.length > 0}
@@ -59,9 +53,6 @@
 								{p.title}
 							</span>
 							<span class="mt-3 block max-w-[62ch] lg:sr-only">{p.description}</span>
-							{#if p.tech?.length}
-								<span class="text-muted mt-2 block lg:sr-only">{techOf(p.tech)}</span>
-							{/if}
 						</a>
 					</li>
 				{/each}

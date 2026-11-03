@@ -6,17 +6,16 @@ production domains via `data-domains`, so local and preview traffic is never cou
 
 Custom events are declared and typed in `src/lib/analytics/umami.ts`:
 
-| Event                | Data                                             | Fired when                                   |
-| -------------------- | ------------------------------------------------ | -------------------------------------------- |
-| `contact-click`      | `location: header \| footer`                     | Mail link clicked                            |
-| `contact-submit`     | `location: footer`                               | Contact field sent to the visitor's mail app |
-| `social-click`       | `network: github \| linkedin`, `location`        | Social link clicked                          |
-| `project-open`       | `project`                                        | Project name clicked                         |
-| `project-link-click` | `project`, `target: demo \| github`              | Outbound link on a project page clicked      |
-| `blog-open`          | `blog`, `location: blogs-section \| blogs-index` | Article opened from a list                   |
-| `blog-index-open`    | `location: blogs-section`                        | "Alle Artikel" clicked                       |
-| `section-view`       | `section: experience \| projects \| blog`        | Homepage section scrolled into view          |
-| `article-read`       | `blog`                                           | End of an article reached                    |
+| Event                | Data                                             | Fired when                              |
+| -------------------- | ------------------------------------------------ | --------------------------------------- |
+| `contact-click`      | `location: header \| footer`                     | Mail link clicked                       |
+| `social-click`       | `network: github \| linkedin`, `location`        | Social link clicked                     |
+| `project-open`       | `project`                                        | Project name clicked                    |
+| `project-link-click` | `project`, `target: demo \| github`              | Outbound link on a project page clicked |
+| `blog-open`          | `blog`, `location: blogs-section \| blogs-index` | Article opened from a list              |
+| `blog-index-open`    | `location: blogs-section`                        | "Zum Blog" clicked                      |
+| `section-view`       | `section: experience \| projects \| blog`        | Homepage section scrolled into view     |
+| `article-read`       | `blog`                                           | End of an article reached               |
 
 To keep your own visits out of the data, run this once per browser on the production domain:
 

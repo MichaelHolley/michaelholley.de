@@ -87,9 +87,6 @@
 						{/each}
 					</div>
 					<p class="mt-5 max-w-[48ch]">{shown.description}</p>
-					{#if shown.tech?.length}
-						<p class="text-muted mt-2">{techOf(shown.tech)}</p>
-					{/if}
 				</div>
 			</div>
 		</div>

@@ -55,7 +55,7 @@
 						>
 							{#if b.teaserImage}
 								<span
-									class="bg-surface col-span-12 block overflow-clip md:col-span-4 lg:col-span-3"
+									class="col-span-12 block self-start overflow-clip md:col-span-4 lg:col-span-3"
 								>
 									<img
 										src={getImageUrl(b.teaserImage, 'medium')}

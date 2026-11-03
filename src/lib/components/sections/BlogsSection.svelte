@@ -82,7 +82,7 @@
 				{/if}
 
 				{#if earlier.length}
-					<h3 class="mt-12 font-medium">Davor</h3>
+					<h3 class="mt-12 font-medium">Ältere Beiträge</h3>
 					<ul class="mt-2">
 						{#each earlier as b (b.id)}
 							<li>

@@ -60,22 +60,7 @@
 			</ul>
 		</div>
 
-		<div
-			class="text-small text-muted mt-12 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2"
-		>
-			<p>&copy; {new Date().getFullYear()} Michael Holley</p>
-			<a
-				class="group link-underline inline-flex min-h-11 items-center gap-1 hover:text-white"
-				href="#top"
-			>
-				Nach oben
-				<Icon
-					icon="ic:baseline-arrow-upward"
-					class="size-4 transition-transform group-hover:-translate-y-1"
-					aria-hidden="true"
-				/>
-			</a>
-		</div>
+		<p class="text-small text-muted mt-12">&copy; {new Date().getFullYear()} Michael Holley</p>
 	</div>
 </footer>
 

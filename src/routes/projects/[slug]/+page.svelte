@@ -2,6 +2,7 @@
 	import { track } from '#lib/analytics/umami.js';
 	import { getProjectBySlug } from '#lib/api/projects.remote.js';
 	import ContentPageComponent from '#lib/components/shared/ContentPageComponent.svelte';
+	import { getImageUrl } from '#lib/components/shared/util/getImageUrl.js';
 	import Icon from '@iconify/svelte';
 
 	const { params } = $props();
@@ -24,88 +25,75 @@
 </svelte:head>
 
 <ContentPageComponent>
-	<header class="mt-10 lg:mt-20">
-		<h1 class="text-5xl font-bold tracking-tight lg:text-6xl">
-			{project.title}
-		</h1>
+	<header class="page-grid mt-12 gap-y-8 md:mt-20">
+		<h1 class="display text-poster col-span-12 hyphens-auto">{project.title}</h1>
+		<div class="col-span-12 lg:col-span-5">
+			<p class="text-lead max-w-[40ch]">{project.description}</p>
 
-		<p
-			class="motion-opacity-in-0 motion-translate-y-in-[20px] motion-duration-700 motion-delay-100 mt-4 max-w-2xl text-base leading-relaxed text-neutral-500 dark:text-neutral-400"
-		>
-			{project.description}
-		</p>
+			{#if project.url || project.github_ref}
+				<div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+					{#if project.url}
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noreferrer"
+							class="press hover:bg-tertiary dark:hover:bg-tertiary-active inline-flex h-11 items-center gap-2 bg-black px-5 font-medium text-white dark:bg-white dark:text-black"
+							onclick={() =>
+								track('project-link-click', { project: project.title, target: 'demo' })}
+						>
+							<Icon icon="bi:globe" class="size-4" aria-hidden="true" />
+							Live-Demo öffnen
+						</a>
+					{/if}
+					{#if project.github_ref}
+						<a
+							href={project.github_ref}
+							target="_blank"
+							rel="noreferrer"
+							class="link-underline inline-flex min-h-11 items-center gap-2 font-medium"
+							onclick={() =>
+								track('project-link-click', { project: project.title, target: 'github' })}
+						>
+							<Icon icon="fa:github" class="size-5" aria-hidden="true" />
+							Code auf GitHub
+						</a>
+					{/if}
+				</div>
+			{/if}
+		</div>
 
-		{#if project.url || project.github_ref}
-			<div
-				class="motion-opacity-in-0 motion-duration-700 motion-delay-200 mt-6 flex flex-row flex-wrap gap-3"
-			>
-				{#if project.url}
-					<a
-						href={project.url}
-						target="_blank"
-						class="group hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary inline-flex items-center gap-2 rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-600 transition-all duration-200 dark:border-neutral-700 dark:text-neutral-400"
-						aria-label="Live-Demo öffnen"
-						onclick={() => track('project-link-click', { project: project.title, target: 'demo' })}
-					>
-						<Icon
-							icon="bi:globe"
-							class="size-3.5 transition-transform duration-200 group-hover:scale-110"
-						/>
-						Live Demo
-					</a>
-				{/if}
-				{#if project.github_ref}
-					<a
-						href={project.github_ref}
-						target="_blank"
-						class="group inline-flex items-center gap-2 rounded-full border border-neutral-200 px-4 py-1.5 text-sm text-neutral-600 transition-all duration-200 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-200"
-						aria-label="GitHub Repository"
-						onclick={() =>
-							track('project-link-click', { project: project.title, target: 'github' })}
-					>
-						<Icon
-							icon="fa:github"
-							class="size-3.5 transition-transform duration-200 group-hover:scale-110"
-						/>
-						GitHub
-					</a>
-				{/if}
-			</div>
+		{#if project.teaserImage}
+			<img
+				src={getImageUrl(project.teaserImage, 'large')}
+				alt={project.teaserImage.alternativeText || ''}
+				width="1000"
+				height="625"
+				class="bg-paper-surface dark:bg-surface col-span-12 aspect-16/10 w-full object-cover lg:col-span-7 lg:col-start-6"
+			/>
 		{/if}
 	</header>
 
-	<div class="motion-opacity-in-0 motion-duration-700 motion-delay-200 mt-8">
-		<article class="prose dark:prose-invert prose-neutral max-w-none">
+	<div class="page-grid mt-16 gap-y-12 md:mt-24">
+		<article class="prose dark:prose-invert col-span-12 max-w-none lg:col-span-7">
 			<!-- eslint-disable svelte/no-at-html-tags -->
 			{@html project.content}
 			<!-- eslint-enable svelte/no-at-html-tags -->
 		</article>
-	</div>
 
-	{#if project.tech && project.tech.length > 0}
-		<div
-			class="motion-opacity-in-0 motion-duration-700 motion-delay-450 mt-12 border-t border-neutral-200 pt-8 dark:border-neutral-800"
-		>
-			<p class="mb-4 text-xs tracking-widest text-neutral-400 uppercase">Built with</p>
-			<div class="flex flex-row flex-wrap gap-x-6 gap-y-3">
-				{#each project.tech as t (t.techLabel)}
-					<div
-						class="group flex flex-row items-center gap-2 text-neutral-500 dark:text-neutral-500"
-					>
-						{#if t.icon?.iconIdentifier}
-							<Icon
-								icon={t.icon.iconIdentifier}
-								class="size-4 text-neutral-400 dark:text-neutral-600"
-							/>
-						{/if}
-						<span
-							class="text-sm transition-colors duration-200 group-hover:text-black dark:group-hover:text-neutral-200"
-						>
+		{#if project.tech && project.tech.length > 0}
+			<aside class="col-span-12 lg:col-span-4 lg:col-start-9" aria-labelledby="tech-title">
+				<h2 id="tech-title" class="text-lead font-medium">Gebaut mit</h2>
+				<ul class="mt-4 space-y-2">
+					{#each project.tech as t (t.techLabel)}
+						<li class="flex items-center gap-3">
+							{#if t.icon?.iconIdentifier}
+								<Icon icon={t.icon.iconIdentifier} class="size-5" aria-hidden="true" />
+							{/if}
 							{t.techLabel}
-						</span>
-					</div>
-				{/each}
-			</div>
-		</div>
-	{/if}
+						</li>
+					{/each}
+				</ul>
+			</aside>
+		{/if}
+	</div>
 </ContentPageComponent>

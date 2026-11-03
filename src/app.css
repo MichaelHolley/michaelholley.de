@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-@plugin 'tailwindcss-motion';
 @plugin '@tailwindcss/typography';
 
 @theme {
@@ -12,7 +11,9 @@
 	--list-style-type-decimal: decimal;
 	--list-style-type-square: square;
 
+	/* Paper and ink: the light and the dark end of the brand. */
 	--color-white: #f5f5f5;
+	--color-black: #0b0d0d;
 
 	--color-primary: #dd7373;
 	--color-primary-hover: #ff9595;
@@ -26,55 +27,235 @@
 	--color-tertiary-hover: #7e8e8a;
 	--color-tertiary-active: #a4ada9;
 
-	--font-weight-semibold: 550;
-	--font-weight-bold: 600;
-	--font-weight-extrabold: 650;
+	/* One tone step from each ground, for filled surfaces instead of lines. */
+	--color-surface: #171b1a;
+	--color-paper-surface: #e6e9e8;
+	/* Secondary text: #a4ada9 on the dark ground, #586f6b (tertiary) on paper. */
+	--color-muted: #a4ada9;
 
-	--font-sans: 'Inter Variable', sans-serif;
-	--font-heading: 'Raleway Variable', sans-serif;
+	--font-sans: 'Work Sans Variable', 'Helvetica Neue', Arial, sans-serif;
+	--font-display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+
+	/* Five steps; the hero name has its own monument size (see HeaderSection). */
+	--text-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+	--text-small--line-height: 1.45;
+	--text-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+	--text-body--line-height: 1.55;
+	--text-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+	--text-lead--line-height: 1.3;
+	/* Sized so the longest single word in the CMS ("Wissenschaftspreis") fits its column;
+	   from 64rem up it follows 7.8vw (see :root below). */
+	--text-poster: clamp(2.5rem, 11vw, 8.5rem);
+	--text-poster--line-height: 0.9;
+
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 @utility container {
+	width: 100%;
+	max-width: 1920px;
 	margin-inline: auto;
-	padding-inline: 2rem;
-	@media (width >= theme(--breakpoint-sm)) {
-		padding-inline: 3rem;
-	}
-	@media (width >= theme(--breakpoint-lg)) {
-		padding-inline: 4rem;
+	padding-inline: var(--margin);
+}
+
+/* The one 12-column grid of the page. */
+@utility page-grid {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	column-gap: var(--gutter);
+}
+
+/* Vertical rhythm between sections: 72px on a phone, 160px on desktop. */
+@utility section-space {
+	padding-block: clamp(4.5rem, 2.5rem + 8vw, 10rem);
+}
+
+@utility display {
+	font-family: var(--font-display);
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+	line-height: 0.9;
+	font-kerning: normal;
+	text-wrap: balance;
+	hyphens: none;
+}
+
+/* Feedback on every control: a short press, colour on hover. */
+@utility press {
+	transition:
+		transform 140ms var(--ease-out),
+		background-color 180ms ease,
+		color 180ms ease,
+		opacity 180ms ease;
+
+	&:active {
+		transform: scale(0.97);
 	}
 }
 
-html {
-	background-color: var(--color-black);
+@utility link-underline {
+	text-decoration-line: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 0.07em;
+	transition: text-decoration-color 180ms ease;
+
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			text-decoration-color: currentColor;
+		}
+	}
+	&:focus-visible {
+		text-decoration-color: currentColor;
+	}
 }
 
 @layer base {
+	:root {
+		--margin: clamp(1rem, 2.2vw, 2rem);
+		--gutter: clamp(0.75rem, 1.4vw, 1.5rem);
+		color-scheme: dark;
+
+		@media (width >= 64rem) {
+			--text-poster: min(7.8vw, 8.5rem);
+		}
+	}
+
+	html {
+		background-color: var(--color-black);
+	}
+
 	body {
 		color: var(--color-white);
-		font-optical-sizing: auto;
-		font-style: normal;
+		font-family: var(--font-sans);
+		font-size: var(--text-body);
+		line-height: 1.55;
+		font-kerning: normal;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	p {
+		text-wrap: pretty;
 	}
 
 	h1,
 	h2,
 	h3 {
-		font-family: var(--font-heading);
+		text-wrap: balance;
+	}
+
+	::selection {
+		background: var(--color-primary);
+		color: var(--color-black);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 3px;
+	}
+}
+
+/*
+ * Entrances. The hidden state only exists while an element waits below the fold
+ * (set by the `reveal` action) and only when motion is welcome, so the page is
+ * complete without JavaScript and under reduced motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+	[data-reveal] {
+		transition:
+			opacity 700ms var(--ease-out),
+			transform 900ms var(--ease-out);
+		transition-delay: var(--reveal-delay, 0ms);
+	}
+
+	[data-reveal='pending'] {
+		opacity: 0;
+		transform: translateY(24px);
 	}
 }
 
 .prose {
-	/* Sets the color for inline <code> tags */
-	--tw-prose-code: var(--color-secondary);
+	--tw-prose-body: var(--color-black);
+	--tw-prose-headings: var(--color-black);
+	--tw-prose-links: var(--color-black);
+	--tw-prose-bold: var(--color-black);
+	--tw-prose-quotes: var(--color-black);
+	--tw-prose-bullets: var(--color-tertiary);
+	--tw-prose-counters: var(--color-tertiary);
+	--tw-prose-captions: var(--color-tertiary);
+	--tw-prose-hr: var(--color-paper-surface);
+	--tw-prose-quote-borders: var(--color-primary);
+	--tw-prose-code: var(--color-black);
+	--tw-prose-pre-bg: var(--color-paper-surface);
+	--tw-prose-pre-code: var(--color-black);
+	--tw-prose-th-borders: var(--color-tertiary-active);
+	--tw-prose-td-borders: var(--color-paper-surface);
 
-	--tw-prose-pre-bg: var(--color-neutral-200);
-	--tw-prose-pre-code: var(--tw-prose-body);
+	--tw-prose-invert-body: var(--color-white);
+	--tw-prose-invert-headings: var(--color-white);
+	--tw-prose-invert-links: var(--color-white);
+	--tw-prose-invert-bold: var(--color-white);
+	--tw-prose-invert-quotes: var(--color-white);
+	--tw-prose-invert-bullets: var(--color-muted);
+	--tw-prose-invert-counters: var(--color-muted);
+	--tw-prose-invert-captions: var(--color-muted);
+	--tw-prose-invert-hr: var(--color-surface);
+	--tw-prose-invert-quote-borders: var(--color-primary);
+	--tw-prose-invert-code: var(--color-white);
+	--tw-prose-invert-pre-bg: var(--color-surface);
+	--tw-prose-invert-pre-code: var(--color-white);
+	--tw-prose-invert-th-borders: var(--color-tertiary);
+	--tw-prose-invert-td-borders: var(--color-surface);
+
+	font-size: var(--text-body);
+	line-height: 1.6;
+}
+
+/* The block above is unlayered and would beat `dark:prose-invert`, so dark mode maps the colours here. */
+@media (prefers-color-scheme: dark) {
+	.prose {
+		--tw-prose-body: var(--tw-prose-invert-body);
+		--tw-prose-headings: var(--tw-prose-invert-headings);
+		--tw-prose-links: var(--tw-prose-invert-links);
+		--tw-prose-bold: var(--tw-prose-invert-bold);
+		--tw-prose-quotes: var(--tw-prose-invert-quotes);
+		--tw-prose-bullets: var(--tw-prose-invert-bullets);
+		--tw-prose-counters: var(--tw-prose-invert-counters);
+		--tw-prose-captions: var(--tw-prose-invert-captions);
+		--tw-prose-hr: var(--tw-prose-invert-hr);
+		--tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+		--tw-prose-code: var(--tw-prose-invert-code);
+		--tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+		--tw-prose-pre-code: var(--tw-prose-invert-pre-code);
+		--tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+		--tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+	}
+}
+
+.prose :where(h2, h3, h4):not(:where(.not-prose *)) {
+	font-family: var(--font-sans);
+	font-weight: 600;
+	letter-spacing: -0.01em;
+}
+
+.prose :where(a):not(:where(.not-prose *)) {
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 0.07em;
+}
+
+.prose :where(code):not(:where(pre code, .not-prose *)) {
+	background: var(--color-paper-surface);
+	padding: 0.1em 0.3em;
+	font-weight: 500;
 }
 
 @media (prefers-color-scheme: dark) {
-	.prose {
-		--tw-prose-pre-bg: var(--color-neutral-900);
-		--tw-prose-pre-code: var(--tw-prose-body);
+	.prose :where(code):not(:where(pre code, .not-prose *)) {
+		background: var(--color-surface);
 	}
 }
 

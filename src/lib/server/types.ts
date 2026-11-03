@@ -37,20 +37,17 @@ const ImageSchema = z.object({
 });
 
 // Icon
-export type Icon = z.infer<typeof IconSchema>;
 const IconSchema = z.object({
 	iconIdentifier: z.string()
 });
 
 // Tech
-export type Tech = z.infer<typeof TechSchema>;
 const TechSchema = z.object({
 	techLabel: z.string(),
 	icon: IconSchema.optional()
 });
 
-export type Tag = z.infer<typeof TagSchema>;
-export const TagSchema = z.object({
+const TagSchema = z.object({
 	id: z.number(),
 	value: z.string()
 });
@@ -90,17 +87,8 @@ export const ProjectSchema = z.object({
 	tech: z.array(TechSchema).optional()
 });
 
-// TechItem
-export type TechItem = z.infer<typeof TechItemSchema>;
-export const TechItemSchema = z.object({
-	icon: z.string(),
-	color: z.string(),
-	name: z.string()
-});
-
 // ExperienceWorkItem
-export type ExperienceWorkItem = z.infer<typeof ExperienceWorkItemSchema>;
-export const ExperienceWorkItemSchema = z.object({
+const ExperienceWorkItemSchema = z.object({
 	id: z.number(),
 	WorkEntry: z.string()
 });

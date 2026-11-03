@@ -213,22 +213,12 @@ void main(){ vec4 o=vec4(0.0); mainImage(o,gl_FragCoord.xy); fragColor=o; }`;
 
 		const mesh = new Mesh(gl, { geometry, program });
 
-		const setSize = () => {
-			const rect = containerRef.getBoundingClientRect();
-			const w = Math.max(1, Math.floor(rect.width));
-			const h = Math.max(1, Math.floor(rect.height));
-			renderer.setSize(w, h);
-			const res = (program.uniforms.iResolution as { value: Float32Array }).value;
-			res[0] = gl.drawingBufferWidth;
-			res[1] = gl.drawingBufferHeight;
-		};
-		const ro = new ResizeObserver(setSize);
-		ro.observe(containerRef);
-		setSize();
-
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		let raf = 0;
+		let visible = true;
 		const t0 = performance.now();
-		const loop = (t: number) => {
+
+		const draw = (t: number) => {
 			(program.uniforms.iTime as { value: number }).value = (t - t0) * 0.001;
 			(program.uniforms.uTimeSpeed as { value: number }).value = current.timeSpeed;
 			(program.uniforms.uColorBalance as { value: number }).value = current.colorBalance;
@@ -254,13 +244,54 @@ void main(){ vec4 o=vec4(0.0); mainImage(o,gl_FragCoord.xy); fragColor=o; }`;
 			(program.uniforms.uColor2 as { value: Float32Array }).value.set(hexToRgb(current.color2));
 			(program.uniforms.uColor3 as { value: Float32Array }).value.set(hexToRgb(current.color3));
 			renderer.render({ scene: mesh });
+		};
+
+		const loop = (t: number) => {
+			draw(t);
 			raf = requestAnimationFrame(loop);
 		};
-		raf = requestAnimationFrame(loop);
+		const start = () => {
+			if (raf || !visible || document.hidden) return;
+			raf = requestAnimationFrame(loop);
+		};
+		const stop = () => {
+			cancelAnimationFrame(raf);
+			raf = 0;
+		};
+
+		const setSize = () => {
+			const rect = containerRef.getBoundingClientRect();
+			const w = Math.max(1, Math.floor(rect.width));
+			const h = Math.max(1, Math.floor(rect.height));
+			renderer.setSize(w, h);
+			const res = (program.uniforms.iResolution as { value: Float32Array }).value;
+			res[0] = gl.drawingBufferWidth;
+			res[1] = gl.drawingBufferHeight;
+			// Under reduced motion the field is one still frame, redrawn only when its size changes.
+			if (reduceMotion) draw(t0);
+		};
+		const ro = new ResizeObserver(setSize);
+		ro.observe(containerRef);
+		setSize();
+
+		// Render only while the field is on screen and the tab is visible.
+		const io = new IntersectionObserver(([entry]) => {
+			visible = entry.isIntersecting;
+			if (visible) start();
+			else stop();
+		});
+		const onVisibility = () => (document.hidden ? stop() : start());
+		if (!reduceMotion) {
+			io.observe(containerRef);
+			document.addEventListener('visibilitychange', onVisibility);
+			start();
+		}
 
 		return () => {
-			cancelAnimationFrame(raf);
+			stop();
 			ro.disconnect();
+			io.disconnect();
+			document.removeEventListener('visibilitychange', onVisibility);
 			if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
 		};
 	});

@@ -17,10 +17,6 @@
 	let headerNode = $state<HTMLElement>()!;
 	const headerInViewport = new IsInViewport(() => headerNode);
 
-	const buttonVariant = cn(
-		'text-neutral-400 hover:text-neutral-500 transition-all',
-		'dark:text-neutral-600 hover:dark:text-neutral-500'
-	);
 	afterNavigate(({ from, shallow }) => {
 		if (shallow) return;
 
@@ -37,30 +33,42 @@
 	}
 </script>
 
-<div class="bg-white text-black dark:bg-transparent dark:text-white">
-	<div class="container min-h-screen py-10">
-		<div>
-			<div class="flex" bind:this={headerNode}>
-				<ArrowLink href="/" direction="back" onclick={handleBack}>Zurück</ArrowLink>
-			</div>
-
-			{@render children()}
+<div class="bg-white text-black dark:bg-black dark:text-white">
+	<div class="container min-h-svh pt-8 pb-[clamp(4.5rem,2.5rem+8vw,10rem)]">
+		<div class="flex" bind:this={headerNode}>
+			<ArrowLink href="/" direction="back" onclick={handleBack}>Zurück</ArrowLink>
 		</div>
 
+		{@render children()}
+
 		{#if headerInViewport.current === false}
-			<div class="motion-translate-y-in-150 fixed bottom-3 left-3 z-40">
-				<button
-					type="button"
-					class={cn(
-						'flex size-12 items-center justify-center transition-all active:scale-95',
-						buttonVariant
-					)}
-					onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-					aria-label="Nach oben scrollen"
-				>
-					<Icon icon="ic:baseline-arrow-back" class="rotate-90 text-2xl" aria-hidden="true" />
-				</button>
-			</div>
+			<button
+				type="button"
+				class={cn(
+					'press fixed right-(--margin) bottom-(--margin) z-40 flex size-12 items-center justify-center',
+					'hover:bg-tertiary dark:hover:bg-tertiary-active bg-black text-white dark:bg-white dark:text-black',
+					'to-top'
+				)}
+				onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+				aria-label="Nach oben scrollen"
+			>
+				<Icon icon="ic:baseline-arrow-back" class="rotate-90 text-2xl" aria-hidden="true" />
+			</button>
 		{/if}
 	</div>
 </div>
+
+<style>
+	@media (prefers-reduced-motion: no-preference) {
+		.to-top {
+			animation: to-top-in 300ms var(--ease-out);
+		}
+	}
+
+	@keyframes to-top-in {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+	}
+</style>

@@ -1,71 +1,96 @@
 <script lang="ts">
 	import { track } from '#lib/analytics/umami.js';
+	import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from '#lib/contact.js';
 	import Icon from '@iconify/svelte';
-	import DotPattern from '#lib/components/shared/misc/DotPattern.svelte';
 </script>
 
-<footer class="relative bg-black">
-	<div class="container space-y-6 pt-8 pb-4 text-white">
-		<div class="flex flex-col justify-center gap-8 sm:flex-row">
-			<div class="hidden space-y-2 text-right sm:block">
-				<p class="text-4xl leading-10">Code</p>
-				<p class="text-4xl leading-10">mit</p>
-				<p class="text-4xl leading-10">Leidenschaft.</p>
+<footer id="contact" class="bg-black text-white" aria-labelledby="contact-title">
+	<div class="container py-12 md:py-16">
+		<div class="flex flex-wrap items-end justify-between gap-x-12 gap-y-8">
+			<div>
+				<h2 id="contact-title" class="display text-[clamp(2.5rem,1.5rem+4vw,4.5rem)] leading-none">
+					Sag mal <span class="text-primary">Hallo.</span>
+				</h2>
+				<a
+					class="group sm:text-lead mt-4 inline-flex max-w-full items-center gap-3 font-medium"
+					href="mailto:{CONTACT_EMAIL}"
+					onclick={() => track('contact-click', { location: 'footer' })}
+				>
+					<span class="wave inline-block" aria-hidden="true">👋</span>
+					<span
+						class="link-underline min-w-0 [overflow-wrap:anywhere] group-focus-visible:decoration-current pointer-fine:group-hover:decoration-current"
+						>{CONTACT_EMAIL}</span
+					>
+				</a>
 			</div>
 
-			<div class="flex flex-row justify-center">
-				<div
-					class="flex flex-col items-start justify-center gap-x-10 gap-y-2 sm:gap-x-0 sm:gap-y-3"
-				>
+			<ul class="flex flex-wrap gap-x-6 gap-y-2">
+				<li>
 					<a
-						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-						href="mailto:michael.philipp.holley@gmail.com"
-						aria-label="Per E-Mail kontaktieren"
-						onclick={() => track('contact-click', { location: 'footer' })}
-					>
-						<div class="transition-all group-hover:scale-110">
-							<Icon icon="tdesign:mail-filled" class="text-2xl" />
-						</div>
-						Contact me
-					</a>
-					<a
-						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-						href="https://github.com/MichaelHolley"
+						class="group link-underline inline-flex min-h-11 items-center gap-1 font-medium"
+						href={GITHUB_URL}
 						target="_blank"
 						rel="noreferrer"
-						aria-label="GitHub-Profil"
 						onclick={() => track('social-click', { network: 'github', location: 'footer' })}
 					>
-						<div class="transition-all group-hover:scale-110">
-							<Icon icon="fa:github" class="text-2xl" />
-						</div>
 						GitHub
+						<Icon
+							icon="ic:baseline-arrow-outward"
+							class="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+							aria-hidden="true"
+						/>
 					</a>
+				</li>
+				<li>
 					<a
-						class="flex flex-row items-center justify-start gap-2 leading-9 transition-all hover:scale-105 sm:justify-center"
-						href="https://www.linkedin.com/in/michael-holley-791a64228/"
+						class="group link-underline inline-flex min-h-11 items-center gap-1 font-medium"
+						href={LINKEDIN_URL}
 						target="_blank"
 						rel="noreferrer"
-						aria-label="LinkedIn-Profil"
 						onclick={() => track('social-click', { network: 'linkedin', location: 'footer' })}
 					>
-						<div class="transition-all group-hover:scale-110">
-							<Icon icon="fa:linkedin-square" class="text-2xl" />
-						</div>
 						LinkedIn
+						<Icon
+							icon="ic:baseline-arrow-outward"
+							class="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+							aria-hidden="true"
+						/>
 					</a>
-				</div>
-			</div>
+				</li>
+			</ul>
 		</div>
-		<p class="text-center text-sm">&copy; {new Date().getFullYear()} Michael Holley</p>
-	</div>
 
-	<DotPattern
-		width={20}
-		height={20}
-		cx={10}
-		cy={10}
-		cr={1}
-		class="mask-[linear-gradient(to_bottom_left,white,transparent,transparent)]"
-	/>
+		<p class="text-small text-muted mt-12">&copy; {new Date().getFullYear()} Michael Holley</p>
+	</div>
 </footer>
+
+<style>
+	/* The hand waves when the email link is hovered or focused. */
+	:global(.group:hover) > .wave,
+	:global(.group:focus-visible) > .wave {
+		animation: wave 0.9s ease-in-out;
+		transform-origin: 70% 70%;
+	}
+
+	@keyframes wave {
+		0%,
+		100% {
+			transform: rotate(0);
+		}
+		20%,
+		60% {
+			transform: rotate(16deg);
+		}
+		40%,
+		80% {
+			transform: rotate(-8deg);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:global(.group:hover) > .wave,
+		:global(.group:focus-visible) > .wave {
+			animation: none;
+		}
+	}
+</style>

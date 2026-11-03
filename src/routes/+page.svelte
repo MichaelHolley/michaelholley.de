@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import Blogs from '#lib/components/sections/BlogsSection.svelte';
-	import Dev from '#lib/components/sections/DevSection.svelte';
 	import Experience from '#lib/components/sections/ExperienceSection.svelte';
 	import Header from '#lib/components/sections/HeaderSection.svelte';
 	import Projects from '#lib/components/sections/ProjectsSection.svelte';
+	import { GITHUB_URL, LINKEDIN_URL } from '#lib/contact.js';
 	import { jsonLdScript } from '#lib/seo/jsonLd.js';
 
 	const title = 'Michael Holley – Software Engineer';
 	const description =
-		'Michael Holley, Full-Stack Software Engineer: Webanwendungen mit .NET, Java, Vue und Svelte. Projekte, Werdegang und Artikel über Webentwicklung.';
+		'Michael Holley, Full-Stack Software Engineer: Webanwendungen mit .NET, Java, Vue und Svelte. Projekte, Werdegang und Blog über Webentwicklung.';
 	const origin = $derived(page.url.origin);
 
 	const structuredData = $derived(
@@ -30,10 +30,7 @@
 					url: `${origin}/`,
 					jobTitle: 'Software Engineer',
 					image: `${origin}/logo310.png`,
-					sameAs: [
-						'https://www.linkedin.com/in/michael-holley-791a64228/',
-						'https://github.com/MichaelHolley'
-					],
+					sameAs: [LINKEDIN_URL, GITHUB_URL],
 					knowsAbout: ['Webentwicklung', 'Software-Architektur', '.NET', 'Java', 'Vue', 'Svelte']
 				}
 			]
@@ -57,7 +54,6 @@
 </svelte:head>
 
 <Header />
-<Dev />
 <Experience />
 <Projects />
 <Blogs />

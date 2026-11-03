@@ -4,8 +4,8 @@
 	import Footer from '#lib/components/sections/Footer.svelte';
 	import type { Snippet } from 'svelte';
 	import { RenderScan } from 'svelte-render-scan';
-	import '@fontsource-variable/inter';
-	import '@fontsource-variable/raleway';
+	import '@fontsource/anton';
+	import '@fontsource-variable/work-sans';
 	import '../app.css';
 
 	const { children }: { children: Snippet } = $props();
@@ -23,5 +23,5 @@
 {/if}
 <main>
 	{@render children()}
-	<Footer />
 </main>
+<Footer />
